@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sàn TMĐT Demo</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+
+<body>
+
+    <div class="sticky-header">
+
+        <input type="checkbox" id="menu-toggle" hidden>
+
+        <header class="main-header">
+
+            <div class="header-left">
+
+                <label for="menu-toggle" class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <div class="logo-box">
+                    <img src="/assets/white-logo.png" alt="CHOF.VN" class="logo-img">
+                </div>
+
+                <div class="search-wrapper">
+                    <div class="search-box">
+                        <input type="text" id="main-search" placeholder="Tìm sản phẩm..." autocomplete="off">
+
+                        <button class="search-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                fill="none">
+                                <path
+                                    d="M18.2798 11.4399C18.2797 7.66239 15.2175 4.6001 11.4399 4.6001C7.66244 4.60018 4.60018 7.66244 4.6001 11.4399C4.6001 15.2175 7.66239 18.2797 11.4399 18.2798C15.2176 18.2798 18.2798 15.2176 18.2798 11.4399ZM20.2798 11.4399C20.2798 13.5439 19.5432 15.4748 18.3159 16.9927L21.0952 19.6812C21.4922 20.1438 21.4786 20.7232 21.1187 21.0952C20.7586 21.4674 20.1798 21.5 19.7817 21.186L16.8901 18.396C15.3881 19.5745 13.4972 20.2798 11.4399 20.2798C6.55782 20.2797 2.6001 16.3221 2.6001 11.4399C2.60018 6.55787 6.55787 2.60018 11.4399 2.6001C16.3221 2.6001 20.2797 6.55782 20.2798 11.4399Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="search-suggestions" id="search-dropdown">
+                        <div class="suggestion-tabs">
+                            <span class="tab-btn active" data-target="recent">Gần đây</span>
+                            <span class="tab-btn" data-target="saved">Đã lưu</span>
+                        </div>
+
+                        <div class="suggestion-content">
+
+                            <div class="tab-pane active" id="recent">
+                                <p class="empty-msg">Bạn chưa có tìm kiếm nào gần đây.</p>
+
+                                <h3 style="font-size:14px;margin:10px 0;">Gợi ý tìm kiếm</h3>
+
+                                <div class="suggestion-grid">
+                                    <div class="suggest-item">
+                                        <img src="/assets/nam.webp" alt="">
+                                        <div><strong>Áo thun nam</strong></div>
+                                    </div>
+
+                                    <div class="suggest-item">
+                                        <img src="/assets/nu.webp" alt="">
+                                        <div><strong>Đầm dạ hội</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="saved">
+                                <ul class="saved-keywords">
+                                    <li>Mắt kính</li>
+                                    <li>Balo</li>
+                                    <li>Mỹ phẩm</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <nav class="header-actions">
+                <a href="#">Thông báo</a>
+                <a href="#">Yêu thích</a>
+                <button class="btn-post">Đăng tin</button>
+                <a href="#" class="login-text">Đăng nhập</a>
+            </nav>
+
+        </header>
+
+        <nav class="sub-nav">
+            <ul class="menu-list">
+
+                <!-- ================= NAM ================= -->
+                <li class="has-dropdown">
+                    <a href="#">Nam</a>
+                    <ul class="mega-menu">
+
+                        <li class="has-submenu">
+                            <a href="#">Áo</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Áo Thun</a></li>
+                                <li><a href="#">Áo Sơ Mi</a></li>
+                                <li><a href="#">Áo Khoác</a></li>
+                                <li><a href="#">Áo Vest</a></li>
+                                <li><a href="#">Áo Khác</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Quần</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Quần Ngắn</a></li>
+                                <li><a href="#">Quần Dài</a></li>
+                                <li><a href="#">Quần Lót</a></li>
+                                <li><a href="#">Quần Khác</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Nón - Mắt Kính</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Nón</a></li>
+                                <li><a href="#">Mắt Kính</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Balo - Túi Xách</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Ba Lô</a></li>
+                                <li><a href="#">Túi Xách</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Đồng Hồ - Bóp Ví</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Đồng Hồ</a></li>
+                                <li><a href="#">Bóp Ví</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Đồ Lót - Giày Dép</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Đồ Lót</a></li>
+                                <li><a href="#">Giày Dép</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Nước Hoa - Mỹ Phẩm</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Nước Hoa</a></li>
+                                <li><a href="#">Mỹ Phẩm</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Phụ Kiện - Khác</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Phụ Kiện</a></li>
+                                <li><a href="#">Khác</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <!-- ================= NỮ ================= -->
+                <li class="has-dropdown">
+                    <a href="#">Nữ</a>
+                    <ul class="mega-menu">
+
+                        <li class="has-submenu">
+                            <a href="#">Áo</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Áo Thun</a></li>
+                                <li><a href="#">Áo Sơ Mi</a></li>
+                                <li><a href="#">Áo Khoác</a></li>
+                                <li><a href="#">Áo Dài</a></li>
+                                <li><a href="#">Áo Khác</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Quần - Váy Đầm</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Quần</a></li>
+                                <li><a href="#">Váy Đầm</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Nón - Mắt Kính</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Nón</a></li>
+                                <li><a href="#">Mắt Kính</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Balo - Túi Xách</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Ba Lô</a></li>
+                                <li><a href="#">Túi Xách</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Đồng Hồ - Bóp Ví</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Đồng Hồ</a></li>
+                                <li><a href="#">Bóp Ví</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Đồ Lót - Giày Dép</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Đồ Lót</a></li>
+                                <li><a href="#">Giày Dép</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Nước Hoa - Mỹ Phẩm</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Nước Hoa</a></li>
+                                <li><a href="#">Mỹ Phẩm</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Phụ Kiện - Khác</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Phụ Kiện</a></li>
+                                <li><a href="#">Khác</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <!-- ================= TRẺ EM ================= -->
+                <li class="has-dropdown">
+                    <a href="#">Trẻ Em</a>
+                    <ul class="mega-menu">
+
+                        <li class="has-submenu">
+                            <a href="#">Quần Áo Sơ Sinh</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Dưới 1 Tháng</a></li>
+                                <li><a href="#">1-6 Tháng</a></li>
+                                <li><a href="#">6-12 Tháng</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Quần Áo Bé Trai</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Dưới 3 Tuổi</a></li>
+                                <li><a href="#">3-6 Tuổi</a></li>
+                                <li><a href="#">Trên 6 Tuổi</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Quần Áo Bé Gái</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Dưới 3 Tuổi</a></li>
+                                <li><a href="#">3-6 Tuổi</a></li>
+                                <li><a href="#">Trên 6 Tuổi</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">Phụ Kiện - Khác</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Phụ Kiện</a></li>
+                                <li><a href="#">Khác</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <!-- ================= CHUYÊN ĐỀ ================= -->
+                <li class="has-dropdown">
+                    <a href="#">Chuyên Đề</a>
+                    <ul class="mega-menu">
+                        <li><a href="#">Thời Trang Gia Dụng</a></li>
+                        <li><a href="#">Thời Trang Chuyên Dụng</a></li>
+                        <li><a href="#">Thời Trang Xanh</a></li>
+                        <li><a href="#">Thời Trang Thể Thao</a></li>
+                        <li><a href="#">Thời Trang Đồng Giá</a></li>
+                        <li><a href="#">Nguyên Phụ Liệu</a></li>
+                    </ul>
+                </li>
+
+                <!-- ================= THƯƠNG HIỆU VIỆT ================= -->
+                <li class="has-dropdown">
+                    <a href="#">Thương Hiệu Việt</a>
+                    <ul class="mega-menu">
+                        <li><a href="#">Thời Trang Nam</a></li>
+                        <li><a href="#">Thời Trang Nữ</a></li>
+                        <li><a href="#">Thời Trang Trẻ Em</a></li>
+                        <li><a href="#">Trang Phục Truyền Thống</a></li>
+                    </ul>
+                </li>
+
+                <!-- ================= 4 FOREIGNER ================= -->
+                <li class="has-dropdown">
+                    <a href="#">4 Foreigner</a>
+                    <ul class="mega-menu">
+                        <li><a href="#">For Men</a></li>
+                        <li><a href="#">For Women</a></li>
+                        <li><a href="#">For Kids</a></li>
+                        <li><a href="#">Made To Order</a></li>
+                    </ul>
+                </li>
+
+                <!-- ================= DỊCH VỤ ================= -->
+                <li class="has-dropdown">
+                    <a href="#">Dịch Vụ</a>
+                    <ul class="mega-menu">
+                        <li><a href="#">Dịch Vụ May Mặc</a></li>
+                        <li><a href="#">Dịch Vụ Phụ Trợ</a></li>
+                        <li><a href="#">Theo Yêu Cầu</a></li>
+                    </ul>
+                </li>
+
+                <!-- ================= VIỆC LÀM ================= -->
+                <li class="has-dropdown">
+                    <a href="#">Việc Làm</a>
+                    <ul class="mega-menu">
+                        <li><a href="#">Việc Làm Thời Vụ</a></li>
+                        <li><a href="#">Việc Làm Chính Thức</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <label for="menu-toggle" class="mobile-overlay"></label>
+
+    </div>
+
+
+    <main class="container">
+
+        <section class="hero-section">
+            <div class="main-carousel">
+                <div class="carousel-slide">
+                    <img src="/assets/banner.png" alt="Ưu đãi khủng">
+                </div>
+            </div>
+
+            <div class="side-banners">
+                <div class="promo-item">
+                    <img src="/assets/banner2.png" alt="Sale sốc">
+                </div>
+                <div class="promo-item">
+                    <img src="/assets/banner3.png" alt="Đồ hiệu cũ">
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="categories-container">
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Bất động sản">
+                    <h4>Mỹ phẩm</h4>
+                    <p>Nữ</p>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Xe cộ">
+                    <h4>Giày cao gót</h4>
+                    <p>Nữ</p>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Thú cưng">
+                    <h4>Ví da</h4>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Đồ gia dụng">
+                    <h4>Áo khoác nam</h4>
+                    <p>Nam</p>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Giải trí">
+                    <h4>Nước hoa</h4>
+                    <p>Nam</p>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Mẹ và bé">
+                    <h4>Thời trang bé</h4>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Du lịch">
+                    <h4>Đồng hồ</h4>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Cho tặng miễn phí">
+                    <h4>Bóp ví</h4>
+                    <p>Nam</p>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Việc làm">
+                    <span class="badge hot">Tết</span>
+                    <h4>Việc làm thời vụ</h4>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Đồ điện tử">
+                    <h4>Đồ dùng</h4>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Tủ lạnh">
+                    <h4>Mắt kính</h4>
+                    <p>Nam</p>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Văn phòng">
+                    <h4>Đồ lót</h4>
+                    <p>Nam</p>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Thời trang">
+                    <h4>Mũ</h4>
+                    <p>Nam</p>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Thực phẩm">
+                    <h4>Đầm</h4>
+                    <p>Nữ</p>
+                </div>
+
+                <div class="category-item">
+                    <img src="assets/cat.png" alt="Dịch vụ nhà">
+                    <span class="badge new">Mới</span>
+                    <h4>Quần</h4>
+                    <p>Nữ</p>
+                </div>
+
+                <div class="category-item view-all">
+                    <div class="dots">
+                        <span></span>
+                        <span></span>
+                        <span class="active"></span>
+                    </div>
+                    <h4>Tất cả danh mục</h4>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="dynamic-sections">
+            <div class="section-header">
+                <h2 class="section-title">Hôm nay có gì hot</h2>
+            </div>
+
+            <div class="fashion-grid">
+
+                <!-- CARD 1 -->
+                <div class="fashion-card">
+                    <div class="product-thumb">
+                        <img src="/assets/sanpham.jpg" alt="Đầm dạ hội sang trọng">
+                        <div class="discount-tag">50% OFF</div>
+                    </div>
+
+                    <div class="product-details">
+                        <div class="shop-header">
+                            <span class="shop-name">Ana Shop</span>
+                            <span class="verified-tick">✓</span>
+                            <span class="info-trigger">!</span>
+
+                            <div class="seller-info-popup">
+                                <div class="info-item"><span>Tình trạng:</span> <b>Đã xác thực ✓</b></div>
+                                <div class="info-item"><span>Tài khoản:</span> <b>Cá nhân</b></div>
+                                <div class="info-item"><span>Ngày tham gia:</span> <b>01/01/2025</b></div>
+                                <div class="info-item"><span>Địa chỉ:</span> <b>Thạnh Mỹ, Quận 2, TP.HCM</b></div>
+                                <div class="info-item"><span>SĐT:</span> <b>0123456789</b></div>
+
+                                <div class="info-item">
+                                    <span>Chat:</span>
+                                    <div class="chat-group">
+                                        <a href="#"><img src="/assets/zalo.png"></a>
+                                        <a href="#"><img src="/assets/mess.png"></a>
+                                        <a href="#"><img src="/assets/sms.png"></a>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="all-posts-link">Tất cả bài đăng</a>
+
+                                <div class="info-item">
+                                    <span>Hệ số uy tín:</span>
+                                    <b class="rep-gold">GOLD</b>
+                                </div>
+
+                                <button class="follow-btn">Theo dõi</button>
+                            </div>
+                        </div>
+
+                        <h3 class="post-title">Đầm dạ hội sang trọng</h3>
+
+                        <div class="price-box">
+                            <span class="current-price">500.000 đ</span>
+                            <span class="old-price">1.000.000 đ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="fashion-card">
+                    <div class="product-thumb">
+                        <img src="/assets/sanpham.jpg" alt="Áo sơ mi nam công sở">
+                        <div class="discount-tag">20% OFF</div>
+                    </div>
+
+                    <div class="product-details">
+                        <div class="shop-header">
+                            <span class="shop-name">Fashion Boss</span>
+                            <span class="info-trigger">!</span>
+
+                            <div class="seller-info-popup">
+                                <div class="info-item"><span>Tình trạng:</span> <b>Mới</b></div>
+                                <div class="info-item"><span>Tài khoản:</span> <b>Cá nhân</b></div>
+                                <div class="info-item"><span>Ngày tham gia:</span> <b>01/01/2025</b></div>
+                                <div class="info-item"><span>Địa chỉ:</span> <b>Thạnh Mỹ, Quận 1, TP.HCM</b></div>
+                                <div class="info-item"><span>SĐT:</span> <b>0123456789</b></div>
+
+                                <div class="info-item">
+                                    <span>Chat:</span>
+                                    <div class="chat-group">
+                                        <a href="#"><img src="/assets/zalo.png"></a>
+                                        <a href="#"><img src="/assets/mess.png"></a>
+                                        <a href="#"><img src="/assets/sms.png"></a>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="all-posts-link">Tất cả bài đăng</a>
+
+                                <div class="info-item">
+                                    <span>Hệ số uy tín:</span>
+                                    <b class="rep-gold">GOLD</b>
+                                </div>
+
+                                <button class="follow-btn">Theo dõi</button>
+                            </div>
+                        </div>
+
+                        <h3 class="post-title">Áo sơ mi nam công sở</h3>
+
+                        <div class="price-box">
+                            <span class="current-price">400.000 đ</span>
+                            <span class="old-price">500.000 đ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fashion-card">
+                    <div class="product-thumb">
+                        <img src="/assets/sanpham.jpg" alt="Áo sơ mi nam công sở">
+                        <div class="discount-tag">20% OFF</div>
+                    </div>
+
+                    <div class="product-details">
+                        <div class="shop-header">
+                            <span class="shop-name">Fashion Boss</span>
+                            <span class="info-trigger">!</span>
+
+                            <div class="seller-info-popup">
+                                <div class="info-item"><span>Tình trạng:</span> <b>Mới</b></div>
+                                <div class="info-item"><span>Tài khoản:</span> <b>Cá nhân</b></div>
+                                <div class="info-item"><span>Ngày tham gia:</span> <b>01/01/2025</b></div>
+                                <div class="info-item"><span>Địa chỉ:</span> <b>Thạnh Mỹ, Quận 1, TP.HCM</b></div>
+                                <div class="info-item"><span>SĐT:</span> <b>0123456789</b></div>
+
+                                <div class="info-item">
+                                    <span>Chat:</span>
+                                    <div class="chat-group">
+                                        <a href="#"><img src="/assets/zalo.png"></a>
+                                        <a href="#"><img src="/assets/mess.png"></a>
+                                        <a href="#"><img src="/assets/sms.png"></a>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="all-posts-link">Tất cả bài đăng</a>
+
+                                <div class="info-item">
+                                    <span>Hệ số uy tín:</span>
+                                    <b class="rep-gold">GOLD</b>
+                                </div>
+
+                                <button class="follow-btn">Theo dõi</button>
+                            </div>
+                        </div>
+
+                        <h3 class="post-title">Áo sơ mi nam công sở</h3>
+
+                        <div class="price-box">
+                            <span class="current-price">400.000 đ</span>
+                            <span class="old-price">500.000 đ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fashion-card">
+                    <div class="product-thumb">
+                        <img src="/assets/sanpham.jpg" alt="Áo sơ mi nam công sở">
+                        <div class="discount-tag">20% OFF</div>
+                    </div>
+
+                    <div class="product-details">
+                        <div class="shop-header">
+                            <span class="shop-name">Fashion Boss</span>
+                            <span class="info-trigger">!</span>
+
+                            <div class="seller-info-popup">
+                                <div class="info-item"><span>Tình trạng:</span> <b>Mới</b></div>
+                                <div class="info-item"><span>Tài khoản:</span> <b>Cá nhân</b></div>
+                                <div class="info-item"><span>Ngày tham gia:</span> <b>01/01/2025</b></div>
+                                <div class="info-item"><span>Địa chỉ:</span> <b>Thạnh Mỹ, Quận 1, TP.HCM</b></div>
+                                <div class="info-item"><span>SĐT:</span> <b>0123456789</b></div>
+
+                                <div class="info-item">
+                                    <span>Chat:</span>
+                                    <div class="chat-group">
+                                        <a href="#"><img src="/assets/zalo.png"></a>
+                                        <a href="#"><img src="/assets/mess.png"></a>
+                                        <a href="#"><img src="/assets/sms.png"></a>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="all-posts-link">Tất cả bài đăng</a>
+
+                                <div class="info-item">
+                                    <span>Hệ số uy tín:</span>
+                                    <b class="rep-gold">GOLD</b>
+                                </div>
+
+                                <button class="follow-btn">Theo dõi</button>
+                            </div>
+                        </div>
+
+                        <h3 class="post-title">Áo sơ mi nam công sở</h3>
+
+                        <div class="price-box">
+                            <span class="current-price">400.000 đ</span>
+                            <span class="old-price">500.000 đ</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="dynamic-sections">
+            <div class="section-header">
+                <h2 class="section-title">Sản phẩm yêu thích</h2>
+            </div>
+
+            <div class="fashion-grid">
+
+                <!-- CARD 1 -->
+                <div class="fashion-card">
+                    <div class="product-thumb">
+                        <img src="/assets/sanpham.jpg" alt="Đầm dạ hội sang trọng">
+                        <div class="discount-tag">50% OFF</div>
+                    </div>
+
+                    <div class="product-details">
+                        <div class="shop-header">
+                            <span class="shop-name">Ana Shop</span>
+                            <span class="verified-tick">✓</span>
+                            <span class="info-trigger">!</span>
+
+                            <div class="seller-info-popup">
+                                <div class="info-item"><span>Tình trạng:</span> <b>Đã xác thực ✓</b></div>
+                                <div class="info-item"><span>Tài khoản:</span> <b>Cá nhân</b></div>
+                                <div class="info-item"><span>Ngày tham gia:</span> <b>01/01/2025</b></div>
+                                <div class="info-item"><span>Địa chỉ:</span> <b>Thạnh Mỹ, Quận 2, TP.HCM</b></div>
+                                <div class="info-item"><span>SĐT:</span> <b>0123456789</b></div>
+
+                                <div class="info-item">
+                                    <span>Chat:</span>
+                                    <div class="chat-group">
+                                        <a href="#"><img src="/assets/zalo.png"></a>
+                                        <a href="#"><img src="/assets/mess.png"></a>
+                                        <a href="#"><img src="/assets/sms.png"></a>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="all-posts-link">Tất cả bài đăng</a>
+
+                                <div class="info-item">
+                                    <span>Hệ số uy tín:</span>
+                                    <b class="rep-gold">GOLD</b>
+                                </div>
+
+                                <button class="follow-btn">Theo dõi</button>
+                            </div>
+                        </div>
+
+                        <h3 class="post-title">Đầm dạ hội sang trọng</h3>
+
+                        <div class="price-box">
+                            <span class="current-price">500.000 đ</span>
+                            <span class="old-price">1.000.000 đ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="fashion-card">
+                    <div class="product-thumb">
+                        <img src="/assets/sanpham.jpg" alt="Áo sơ mi nam công sở">
+                        <div class="discount-tag">20% OFF</div>
+                    </div>
+
+                    <div class="product-details">
+                        <div class="shop-header">
+                            <span class="shop-name">Fashion Boss</span>
+                            <span class="info-trigger">!</span>
+
+                            <div class="seller-info-popup">
+                                <div class="info-item"><span>Tình trạng:</span> <b>Mới</b></div>
+                                <div class="info-item"><span>Tài khoản:</span> <b>Cá nhân</b></div>
+                                <div class="info-item"><span>Ngày tham gia:</span> <b>01/01/2025</b></div>
+                                <div class="info-item"><span>Địa chỉ:</span> <b>Thạnh Mỹ, Quận 1, TP.HCM</b></div>
+                                <div class="info-item"><span>SĐT:</span> <b>0123456789</b></div>
+
+                                <div class="info-item">
+                                    <span>Chat:</span>
+                                    <div class="chat-group">
+                                        <a href="#"><img src="/assets/zalo.png"></a>
+                                        <a href="#"><img src="/assets/mess.png"></a>
+                                        <a href="#"><img src="/assets/sms.png"></a>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="all-posts-link">Tất cả bài đăng</a>
+
+                                <div class="info-item">
+                                    <span>Hệ số uy tín:</span>
+                                    <b class="rep-gold">GOLD</b>
+                                </div>
+
+                                <button class="follow-btn">Theo dõi</button>
+                            </div>
+                        </div>
+
+                        <h3 class="post-title">Áo sơ mi nam công sở</h3>
+
+                        <div class="price-box">
+                            <span class="current-price">400.000 đ</span>
+                            <span class="old-price">500.000 đ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fashion-card">
+                    <div class="product-thumb">
+                        <img src="/assets/sanpham.jpg" alt="Áo sơ mi nam công sở">
+                        <div class="discount-tag">20% OFF</div>
+                    </div>
+
+                    <div class="product-details">
+                        <div class="shop-header">
+                            <span class="shop-name">Fashion Boss</span>
+                            <span class="info-trigger">!</span>
+
+                            <div class="seller-info-popup">
+                                <div class="info-item"><span>Tình trạng:</span> <b>Mới</b></div>
+                                <div class="info-item"><span>Tài khoản:</span> <b>Cá nhân</b></div>
+                                <div class="info-item"><span>Ngày tham gia:</span> <b>01/01/2025</b></div>
+                                <div class="info-item"><span>Địa chỉ:</span> <b>Thạnh Mỹ, Quận 1, TP.HCM</b></div>
+                                <div class="info-item"><span>SĐT:</span> <b>0123456789</b></div>
+
+                                <div class="info-item">
+                                    <span>Chat:</span>
+                                    <div class="chat-group">
+                                        <a href="#"><img src="/assets/zalo.png"></a>
+                                        <a href="#"><img src="/assets/mess.png"></a>
+                                        <a href="#"><img src="/assets/sms.png"></a>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="all-posts-link">Tất cả bài đăng</a>
+
+                                <div class="info-item">
+                                    <span>Hệ số uy tín:</span>
+                                    <b class="rep-gold">GOLD</b>
+                                </div>
+
+                                <button class="follow-btn">Theo dõi</button>
+                            </div>
+                        </div>
+
+                        <h3 class="post-title">Áo sơ mi nam công sở</h3>
+
+                        <div class="price-box">
+                            <span class="current-price">400.000 đ</span>
+                            <span class="old-price">500.000 đ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fashion-card">
+                    <div class="product-thumb">
+                        <img src="/assets/sanpham.jpg" alt="Áo sơ mi nam công sở">
+                        <div class="discount-tag">20% OFF</div>
+                    </div>
+
+                    <div class="product-details">
+                        <div class="shop-header">
+                            <span class="shop-name">Fashion Boss</span>
+                            <span class="info-trigger">!</span>
+
+                            <div class="seller-info-popup">
+                                <div class="info-item"><span>Tình trạng:</span> <b>Mới</b></div>
+                                <div class="info-item"><span>Tài khoản:</span> <b>Cá nhân</b></div>
+                                <div class="info-item"><span>Ngày tham gia:</span> <b>01/01/2025</b></div>
+                                <div class="info-item"><span>Địa chỉ:</span> <b>Thạnh Mỹ, Quận 1, TP.HCM</b></div>
+                                <div class="info-item"><span>SĐT:</span> <b>0123456789</b></div>
+
+                                <div class="info-item">
+                                    <span>Chat:</span>
+                                    <div class="chat-group">
+                                        <a href="#"><img src="/assets/zalo.png"></a>
+                                        <a href="#"><img src="/assets/mess.png"></a>
+                                        <a href="#"><img src="/assets/sms.png"></a>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="all-posts-link">Tất cả bài đăng</a>
+
+                                <div class="info-item">
+                                    <span>Hệ số uy tín:</span>
+                                    <b class="rep-gold">GOLD</b>
+                                </div>
+
+                                <button class="follow-btn">Theo dõi</button>
+                            </div>
+                        </div>
+
+                        <h3 class="post-title">Áo sơ mi nam công sở</h3>
+
+                        <div class="price-box">
+                            <span class="current-price">400.000 đ</span>
+                            <span class="old-price">500.000 đ</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- <section class="dynamic-sections">
+            <div class="section-header">
+                <h2 class="section-title">Sản phẩm yêu thích</h2>
+                <div class="filter-tabs">
+                    <button class="filter-btn active">Tất cả</button>
+                    <button class="filter-btn">Bán chạy</button>
+                    <button class="filter-btn">Mới về</button>
+                </div>
+            </div>
+
+            <section class="dynamic-sections">
+                <div id="product-list" class="fashion-grid"></div>
+            </section>
+            <script src="script2.js"></script>
+        </section> -->
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">Về chúng tôi | Quy định | Liên kết</div>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+    const searchInput = document.getElementById('main-search');
+    const searchDropdown = document.getElementById('search-dropdown');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    searchInput.addEventListener('focus', () => {
+        searchDropdown.classList.add('show');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+            searchDropdown.classList.remove('show');
+        }
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(item => item.classList.remove('active'));
+
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+
+            btn.classList.add('active');
+
+            const targetId = btn.getAttribute('data-target');
+            const targetPane = document.getElementById(targetId);
+            if (targetPane) {
+                targetPane.classList.add('active');
+            }
+        });
+    });
+</script>
+
+
+<!-- <script>
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector(".sticky-header");
+
+        if (window.scrollY > 50) {
+            header.classList.add("shrink");
+        } else {
+            header.classList.remove("shrink");
+        }
+    });
+</script> -->

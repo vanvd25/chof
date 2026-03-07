@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CHOF.VN - Sàn Giao Dịch Rao Vặt Trực Tuyến</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#008a3d",
+                        "secondary": "#ffcc00",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: { "display": ["Public Sans", "sans-serif"] },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Mega Menu */
+        .mega-menu-item {
+            position: static;
+        }
+
+        .mega-dropdown {
+            display: none;
+            position: fixed;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+            z-index: 9999;
+            padding: 1.5rem;
+            gap: 0;
+        }
+
+        .mega-dropdown.open {
+            display: flex;
+        }
+
+        .mega-col-1 {
+            min-width: 180px;
+            flex-shrink: 0;
+        }
+
+        .mega-col-3 {
+            flex: 1;
+            border-left: 1px solid #f1f5f9;
+            padding-left: 1.5rem;
+            min-width: 300px;
+        }
+
+        .mega-sub-item {
+            display: inline-block;
+            padding: 0.3rem 0.65rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            color: #475569;
+            transition: all 0.15s;
+            border: 1px solid #e2e8f0;
+            margin: 2px;
+        }
+
+        .mega-sub-item:hover {
+            background: #f0fdf4;
+            color: #008a3d;
+            border-color: #86efac;
+        }
+
+        .mega-l2-item {
+            padding: 0.45rem 0.6rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: #334155;
+            font-weight: 500;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            white-space: nowrap;
+        }
+
+        .mega-l2-item:hover {
+            background: #f0fdf4;
+            color: #008a3d;
+        }
+
+        .mega-l2-item.active {
+            background: #dcfce7;
+            color: #008a3d;
+            font-weight: 600;
+        }
+
+        .l3-group {
+            display: none;
+        }
+
+        .l3-group.active {
+            display: block;
+        }
+
+        /* Banner carousel */
+        .banner-slide {
+            display: none;
+        }
+
+        .banner-slide.active {
+            display: block;
+        }
+
+        .banner-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .banner-dot.active {
+            background: white;
+            width: 24px;
+        }
+
+        /* Category nav bar */
+        .cat-nav {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .cat-nav-item {
+            padding: 0.75rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #475569;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            white-space: nowrap;
+            transition: all 0.15s;
+            position: relative;
+        }
+
+        .cat-nav-item:hover {
+            color: #008a3d;
+        }
+
+        .cat-nav-item.active {
+            color: #008a3d;
+            border-bottom-color: #008a3d;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4 lg:gap-8">
+            <div class="flex items-center gap-3 shrink-0">
+                <img src="/assets/logo.png" alt="CHOF.VN Logo" class="h-10 w-auto object-contain"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg text-white"
+                    style="display:none">
+                    <span class="material-symbols-outlined text-lg">shopping_bag</span>
+                </div>
+                <span class="text-xl font-black text-primary tracking-tighter">CHOF.VN</span>
+            </div>
+            <div class="flex-1 max-w-2xl hidden md:flex items-center">
+                <div class="relative w-full group">
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary">search</span>
+                    <input
+                        class="w-full h-11 pl-12 pr-4 bg-slate-100 dark:bg-slate-800 border-none rounded-full focus:ring-2 focus:ring-primary focus:bg-white dark:focus:bg-slate-700 transition-all text-sm"
+                        placeholder="Tìm kiếm sản phẩm, dịch vụ..." type="text" />
+                </div>
+            </div>
+            <div class="flex items-center gap-2 lg:gap-4">
+                <button
+                    class="hidden lg:flex items-center gap-2 text-slate-600 dark:text-slate-300 font-medium hover:text-red-500 px-3 py-2 rounded-lg transition-colors relative">
+                    <span class="material-symbols-outlined text-xl">favorite</span>
+                    <span
+                        class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">3</span>
+                </button>
+                <button
+                    class="hidden lg:flex items-center gap-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary px-3 py-2 rounded-lg transition-colors relative">
+                    <span class="material-symbols-outlined text-xl">notifications</span>
+                    <span
+                        class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">5</span>
+                </button>
+                <button
+                    class="hidden lg:flex items-center gap-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary px-3 py-2 rounded-lg transition-colors">
+                    <span class="material-symbols-outlined text-xl">account_circle</span>
+                    <span>Tài khoản</span>
+                </button>
+                <button
+                    class="bg-secondary hover:bg-yellow-500 text-slate-900 font-bold px-6 py-2.5 rounded-full flex items-center gap-2 shadow-sm transition-all transform hover:scale-105">
+                    <span class="material-symbols-outlined text-xl">add_circle</span>
+                    <span class="hidden sm:inline">ĐĂNG TIN</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Category Navigation Bar with Mega Menu -->
+        <div class="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4">
+                <nav class="flex items-center overflow-x-auto no-scrollbar">
+
+                    <!-- Nam -->
+                    <div class="mega-menu-item">
+                        <div class="cat-nav-item active flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">man</span> Nam
+                            <span class="material-symbols-outlined text-sm">expand_more</span>
+                        </div>
+                        <div class="mega-dropdown" style="min-width:700px;">
+                            <div class="mega-col-1">
+                                <p class="text-xs font-bold text-primary uppercase mb-2">Danh mục cấp 2</p>
+                                <div class="mega-l2-item active" data-group="nam-ao">Áo <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nam-quan">Quần <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nam-non">Nón - Mắt kính <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nam-balo">Balo - Túi xách <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nam-dongho">Đồng hồ - Bóp ví <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nam-giay">Đồ lót - Giày dép <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nam-nuochoa">Nước hoa - Mỹ phẩm <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nam-phukien">Phụ kiện - Khác <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                            </div>
+                            <div class="mega-col-3">
+                                <div id="nam-ao" class="l3-group active">
+                                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Loại áo</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Áo thun</span><span class="mega-sub-item">Áo sơ
+                                            mi</span><span class="mega-sub-item">Áo khoác</span><span
+                                            class="mega-sub-item">Áo vest</span><span class="mega-sub-item">Áo
+                                            khác</span>
+                                    </div>
+                                </div>
+                                <div id="nam-quan" class="l3-group hidden">
+                                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Loại quần</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Quần ngắn</span><span class="mega-sub-item">Quần
+                                            dài</span><span class="mega-sub-item">Quần lót</span><span
+                                            class="mega-sub-item">Quần khác</span>
+                                    </div>
+                                </div>
+                                <div id="nam-non" class="l3-group hidden">
+                                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Nón - Mắt kính</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Nón</span><span class="mega-sub-item">Mắt
+                                            kính</span>
+                                    </div>
+                                </div>
+                                <div id="nam-balo" class="l3-group hidden">
+                                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Balo - Túi xách</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Ba lô</span><span class="mega-sub-item">Túi
+                                            xách</span>
+                                    </div>
+                                </div>
+                                <div id="nam-dongho" class="l3-group hidden">
+                                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Đồng hồ - Bóp ví</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Đồng hồ</span><span class="mega-sub-item">Bóp
+                                            ví</span>
+                                    </div>
+                                </div>
+                                <div id="nam-giay" class="l3-group hidden">
+                                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Đồ lót - Giày dép</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Đồ lót</span><span class="mega-sub-item">Giày
+                                            dép</span>
+                                    </div>
+                                </div>
+                                <div id="nam-nuochoa" class="l3-group hidden">
+                                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Nước hoa - Mỹ phẩm</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Nước hoa</span><span class="mega-sub-item">Mỹ
+                                            phẩm</span>
+                                    </div>
+                                </div>
+                                <div id="nam-phukien" class="l3-group hidden">
+                                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Phụ kiện - Khác</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Phụ kiện</span><span
+                                            class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nữ -->
+                    <div class="mega-menu-item">
+                        <div class="cat-nav-item flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">woman</span> Nữ
+                            <span class="material-symbols-outlined text-sm">expand_more</span>
+                        </div>
+                        <div class="mega-dropdown">
+                            <div class="mega-col-1">
+                                <p class="text-xs font-bold text-primary uppercase mb-2">Danh mục cấp 2</p>
+                                <div class="mega-l2-item active" data-group="nu-ao">Áo <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nu-quan">Quần - Váy đầm <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nu-non">Nón - Mắt kính <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nu-balo">Balo - Túi xách <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nu-dongho">Đồng hồ - Bóp ví <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nu-giay">Đồ lót - Giày dép <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nu-nuochoa">Nước hoa - Mỹ phẩm <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="nu-phukien">Phụ kiện - Khác <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                            </div>
+                            <div class="mega-col-3">
+                                <div id="nu-ao" class="l3-group active">
+                                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Loại áo</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Áo thun</span><span class="mega-sub-item">Áo sơ
+                                            mi</span><span class="mega-sub-item">Áo khoác</span><span
+                                            class="mega-sub-item">Áo dài</span><span class="mega-sub-item">Áo
+                                            khác</span>
+                                    </div>
+                                </div>
+                                <div id="nu-quan" class="l3-group hidden">
+                                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Quần - Váy đầm</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Quần</span><span class="mega-sub-item">Váy
+                                            đầm</span>
+                                    </div>
+                                </div>
+                                <div id="nu-non" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Nón</span><span class="mega-sub-item">Mắt
+                                            kính</span>
+                                    </div>
+                                </div>
+                                <div id="nu-balo" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Ba lô</span><span class="mega-sub-item">Túi
+                                            xách</span>
+                                    </div>
+                                </div>
+                                <div id="nu-dongho" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Đồng hồ</span><span class="mega-sub-item">Bóp
+                                            ví</span>
+                                    </div>
+                                </div>
+                                <div id="nu-giay" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Đồ lót</span><span class="mega-sub-item">Giày
+                                            dép</span>
+                                    </div>
+                                </div>
+                                <div id="nu-nuochoa" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Nước hoa</span><span class="mega-sub-item">Mỹ
+                                            phẩm</span>
+                                    </div>
+                                </div>
+                                <div id="nu-phukien" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Phụ kiện</span><span
+                                            class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trẻ em -->
+                    <div class="mega-menu-item">
+                        <div class="cat-nav-item flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">child_care</span> Trẻ em
+                            <span class="material-symbols-outlined text-sm">expand_more</span>
+                        </div>
+                        <div class="mega-dropdown" style="min-width:580px;">
+                            <div class="mega-col-1">
+                                <p class="text-xs font-bold text-primary uppercase mb-2">Danh mục</p>
+                                <div class="mega-l2-item active" data-group="tre-sosinhf">Quần áo sơ sinh <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="tre-betrai">Quần áo bé trai <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="tre-begai">Quần áo bé gái <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="tre-phukien">Phụ kiện - Khác <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                            </div>
+                            <div class="mega-col-3">
+                                <div id="tre-sosinhf" class="l3-group">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Dưới 1 tháng</span><span class="mega-sub-item">1-6
+                                            tháng</span><span class="mega-sub-item">6-12 tháng</span>
+                                    </div>
+                                </div>
+                                <div id="tre-betrai" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Dưới 3 tuổi</span><span class="mega-sub-item">3-6
+                                            tuổi</span><span class="mega-sub-item">Trên 6 tuổi</span>
+                                    </div>
+                                </div>
+                                <div id="tre-begai" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Dưới 3 tuổi</span><span class="mega-sub-item">3-6
+                                            tuổi</span><span class="mega-sub-item">Trên 6 tuổi</span>
+                                    </div>
+                                </div>
+                                <div id="tre-phukien" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Phụ kiện</span><span
+                                            class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chuyên đề -->
+                    <div class="mega-menu-item">
+                        <div class="cat-nav-item flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">star</span> Chuyên đề
+                            <span class="material-symbols-outlined text-sm">expand_more</span>
+                        </div>
+                        <div class="mega-dropdown" style="min-width:680px;">
+                            <div class="mega-col-1">
+                                <p class="text-xs font-bold text-primary uppercase mb-2">Danh mục</p>
+                                <div class="mega-l2-item active" data-group="cd-giadung">Thời trang gia dụng <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="cd-chuyendung">Thời trang chuyên dụng <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="cd-xanh">Thời trang xanh <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="cd-thethao">Thời trang thể thao <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="cd-donggiasinh">Thời trang đồng giá <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="cd-npl">Nguyên phụ liệu <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                            </div>
+                            <div class="mega-col-3">
+                                <div id="cd-giadung" class="l3-group">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Mền</span><span
+                                            class="mega-sub-item">Mùng</span><span class="mega-sub-item">Áo
+                                            gối</span><span class="mega-sub-item">Ra giường</span><span
+                                            class="mega-sub-item">Rèm</span><span class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                                <div id="cd-chuyendung" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Đồng phục</span><span class="mega-sub-item">Nghề
+                                            nghiệp</span><span class="mega-sub-item">Bà bầu</span><span
+                                            class="mega-sub-item">Hội cưới</span><span class="mega-sub-item">Thú
+                                            cưng</span><span class="mega-sub-item">Sân khấu</span><span
+                                            class="mega-sub-item">Phụ kiện điện tử</span><span
+                                            class="mega-sub-item">Handmade</span><span class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                                <div id="cd-xanh" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Thời trang nam</span><span
+                                            class="mega-sub-item">Thời trang nữ</span><span class="mega-sub-item">Thời
+                                            trang trẻ em</span><span class="mega-sub-item">Đồ lót</span><span
+                                            class="mega-sub-item">Phụ kiện</span><span class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                                <div id="cd-thethao" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Thời trang nam</span><span
+                                            class="mega-sub-item">Thời trang nữ</span><span class="mega-sub-item">Thời
+                                            trang trẻ em</span><span class="mega-sub-item">Đồ lót</span><span
+                                            class="mega-sub-item">Phụ kiện</span><span class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                                <div id="cd-donggiasinh" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">10k</span><span
+                                            class="mega-sub-item">50k</span><span class="mega-sub-item">100k</span><span
+                                            class="mega-sub-item">200k</span><span class="mega-sub-item">300k</span>
+                                    </div>
+                                </div>
+                                <div id="cd-npl" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Vải</span><span class="mega-sub-item">Khoá
+                                            kéo</span><span class="mega-sub-item">Khuy nút</span><span
+                                            class="mega-sub-item">Chỉ may</span><span class="mega-sub-item">Tem
+                                            nhãn</span><span class="mega-sub-item">Máy móc</span><span
+                                            class="mega-sub-item">Manocanh</span><span class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thương hiệu Việt -->
+                    <div class="mega-menu-item">
+                        <div class="cat-nav-item flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">flag</span> Thương hiệu Việt
+                            <span class="material-symbols-outlined text-sm">expand_more</span>
+                        </div>
+                        <div class="mega-dropdown" style="min-width:620px;">
+                            <div class="mega-col-1">
+                                <p class="text-xs font-bold text-primary uppercase mb-2">Danh mục</p>
+                                <div class="mega-l2-item active" data-group="thv-nam">Thời trang nam <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="thv-nu">Thời trang nữ <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="thv-treem">Thời trang trẻ em <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="thv-truyen">Trang phục truyền thống <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                            </div>
+                            <div class="mega-col-3">
+                                <div id="thv-nam" class="l3-group">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Áo nam</span><span class="mega-sub-item">Quần
+                                            nam</span><span class="mega-sub-item">Đồ lót</span><span
+                                            class="mega-sub-item">Phụ kiện</span><span class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                                <div id="thv-nu" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Áo nữ</span><span class="mega-sub-item">Quần
+                                            nữ</span><span class="mega-sub-item">Đồ lót</span><span
+                                            class="mega-sub-item">Phụ kiện</span><span class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                                <div id="thv-treem" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Quần áo bé trai</span><span
+                                            class="mega-sub-item">Quần áo bé gái</span><span class="mega-sub-item">Phụ
+                                            kiện</span><span class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                                <div id="thv-truyen" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Trang phục nam</span><span
+                                            class="mega-sub-item">Trang phục nữ</span><span class="mega-sub-item">Trang
+                                            phục trẻ em</span><span class="mega-sub-item">Trang phục lót</span><span
+                                            class="mega-sub-item">Phụ kiện</span><span class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 Foreigner -->
+                    <div class="mega-menu-item">
+                        <div class="cat-nav-item flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">public</span> 4 Foreigner
+                            <span class="material-symbols-outlined text-sm">expand_more</span>
+                        </div>
+                        <div class="mega-dropdown" style="min-width:580px;">
+                            <div class="mega-col-1">
+                                <p class="text-xs font-bold text-primary uppercase mb-2">Danh mục</p>
+                                <div class="mega-l2-item active" data-group="ff-men">For men <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="ff-women">For women <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="ff-kids">For kids <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="ff-made">Made to order <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                            </div>
+                            <div class="mega-col-3">
+                                <div id="ff-men" class="l3-group">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Shirt</span><span
+                                            class="mega-sub-item">T-shirt</span><span
+                                            class="mega-sub-item">Short</span><span
+                                            class="mega-sub-item">Pants</span><span
+                                            class="mega-sub-item">Jacket</span><span
+                                            class="mega-sub-item">Underwear</span><span
+                                            class="mega-sub-item">Accessories</span><span
+                                            class="mega-sub-item">Others</span>
+                                    </div>
+                                </div>
+                                <div id="ff-women" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Top</span><span
+                                            class="mega-sub-item">Dress</span><span
+                                            class="mega-sub-item">Skirt</span><span
+                                            class="mega-sub-item">Short</span><span
+                                            class="mega-sub-item">Underwear</span><span
+                                            class="mega-sub-item">Accessories</span><span
+                                            class="mega-sub-item">Others</span>
+                                    </div>
+                                </div>
+                                <div id="ff-kids" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">For boy</span><span class="mega-sub-item">For
+                                            girl</span><span class="mega-sub-item">Accessories</span><span
+                                            class="mega-sub-item">Others</span>
+                                    </div>
+                                </div>
+                                <div id="ff-made" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">For men</span><span class="mega-sub-item">For
+                                            women</span><span class="mega-sub-item">For kids</span><span
+                                            class="mega-sub-item">Underwear</span><span
+                                            class="mega-sub-item">Accessories</span><span
+                                            class="mega-sub-item">Others</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dịch vụ -->
+                    <div class="mega-menu-item">
+                        <div class="cat-nav-item flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">build</span> Dịch vụ
+                            <span class="material-symbols-outlined text-sm">expand_more</span>
+                        </div>
+                        <div class="mega-dropdown" style="min-width:540px;">
+                            <div class="mega-col-1">
+                                <p class="text-xs font-bold text-primary uppercase mb-2">Danh mục</p>
+                                <div class="mega-l2-item active" data-group="dv-may">Dịch vụ may mặc <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="dv-phutro">Dịch vụ phụ trợ <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="dv-yeucau">Theo yêu cầu <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                            </div>
+                            <div class="mega-col-3">
+                                <div id="dv-may" class="l3-group">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">In thêu</span><span class="mega-sub-item">Giặt
+                                            ủi</span><span class="mega-sub-item">Sửa quần áo</span><span
+                                            class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                                <div id="dv-phutro" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Người mẫu</span><span class="mega-sub-item">Trang
+                                            điểm</span><span class="mega-sub-item">Chụp ảnh</span><span
+                                            class="mega-sub-item">Tatoo</span><span class="mega-sub-item">Khoá
+                                            học</span><span class="mega-sub-item">Khác</span>
+                                    </div>
+                                </div>
+                                <div id="dv-yeucau" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">May đo</span><span class="mega-sub-item">Gia
+                                            công</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Việc làm -->
+                    <div class="mega-menu-item">
+                        <div class="cat-nav-item flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">work</span> Việc làm
+                            <span class="material-symbols-outlined text-sm">expand_more</span>
+                        </div>
+                        <div class="mega-dropdown" style="min-width:480px;">
+                            <div class="mega-col-1">
+                                <p class="text-xs font-bold text-primary uppercase mb-2">Danh mục</p>
+                                <div class="mega-l2-item active" data-group="vl-thoi">Việc làm thời vụ <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                                <div class="mega-l2-item" data-group="vl-chinhthuc">Việc làm chính thức <span
+                                        class="material-symbols-outlined text-xs">chevron_right</span></div>
+                            </div>
+                            <div class="mega-col-3">
+                                <div id="vl-thoi" class="l3-group">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Việc tìm người</span><span
+                                            class="mega-sub-item">Người tìm việc</span>
+                                    </div>
+                                </div>
+                                <div id="vl-chinhthuc" class="l3-group hidden">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="mega-sub-item">Việc tìm người</span><span
+                                            class="mega-sub-item">Người tìm việc</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6 space-y-8">
+
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div
+                class="lg:col-span-2 relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden group cursor-pointer bg-slate-200">
+                <!-- Slides -->
+                <div class="banner-slide active absolute inset-0">
+                    <img src="assets/banner.png" alt="Banner 1"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#008a3d,#00c455)'" />
+                </div>
+                <div class="banner-slide absolute inset-0">
+                    <img src="assets/banner2.png" alt="Banner 2"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <div class="banner-slide absolute inset-0">
+                    <img src="assets/banner3.png" alt="Banner 3"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+
+                <!-- Dots -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+                    <div class="banner-dot active" data-slide="0"></div>
+                    <div class="banner-dot" data-slide="1"></div>
+                    <div class="banner-dot" data-slide="2"></div>
+                </div>
+                <button id="bannerPrev"
+                    class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center z-10 transition-all">
+                    <span class="material-symbols-outlined text-xl">chevron_left</span>
+                </button>
+                <button id="bannerNext"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center z-10 transition-all">
+                    <span class="material-symbols-outlined text-xl">chevron_right</span>
+                </button>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <div class="flex-1 bg-primary text-white rounded-2xl p-6 relative overflow-hidden group cursor-pointer">
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Ưu Đãi VIP</h3>
+                            <p class="text-white/80 text-sm">Hưởng đặc quyền ưu tiên hiển thị tin đăng 24/7</p>
+                        </div>
+                        <span class="material-symbols-outlined text-4xl text-secondary">verified_user</span>
+                    </div>
+                    <div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-[120px]">workspace_premium</span>
+                    </div>
+                </div>
+                <div
+                    class="flex-1 bg-secondary text-slate-900 rounded-2xl p-6 relative overflow-hidden group cursor-pointer">
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Quà Tặng Tháng 10</h3>
+                            <p class="text-slate-700 text-sm">Tặng ngay voucher 100k cho người dùng mới</p>
+                        </div>
+                        <span class="material-symbols-outlined text-4xl text-primary">redeem</span>
+                    </div>
+                    <div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-[120px]">featured_seasonal_and_gifts</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Listings Section -->
+        <section>
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-bold flex items-center gap-2">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    Tin đăng mới nhất
+                </h2>
+                <div class="flex gap-2">
+                    <button
+                        class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-100"><span
+                            class="material-symbols-outlined text-sm">chevron_left</span></button>
+                    <button
+                        class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-100"><span
+                            class="material-symbols-outlined text-sm">chevron_right</span></button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group">
+                    <div class="relative aspect-square overflow-hidden">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe4iLfZCmTdMZozYgGor7Zt6D7yCx2jYFkZCFNKlbNxyZqEwC_tJ46Adai5kv_NE29EG5pHBaitrO5oDEop8HE3BIxXEhJwT5UMPjc_6uz2ZiFK-FGfOT3EtLYJKQy8NEZpO9GXECq0WgNSbZZ4415B_EjomGJ4zPMhcItEdIZgMKeTJM782OQJDf31vFTh-GoXyGKfXlYdyI0vclrX1hskp0CWAh8LjNrkbcvsNR3ITYqzDLVNwhl1HTxyVJN9RiBzwKok3lvIg"
+                            alt="Giày Nike" />
+                        <button
+                            class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-slate-600 hover:text-red-500"><span
+                                class="material-symbols-outlined text-xl">favorite</span></button>
+                        <span
+                            class="absolute bottom-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded">MỚI</span>
+                    </div>
+                    <div class="p-4">
+                        <h3
+                            class="font-bold text-slate-800 dark:text-slate-100 mb-1 line-clamp-2 hover:text-primary cursor-pointer">
+                            Giày Thể Thao Nike Air Max Limited Edition</h3>
+                        <p class="text-primary font-bold text-lg mb-2">1.250.000đ</p>
+                        <div class="flex items-center justify-between text-xs text-slate-500">
+                            <div class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">location_on</span><span>Quận 1,
+                                    TP.HCM</span></div>
+                            <span>2 giờ trước</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group">
+                    <div class="relative aspect-square overflow-hidden">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEvvdLYDHm3rRFRD3B9AP9DTKDqMXBKAPYyYoXXTvc8-Ltfu8YDmAttwkOgGkXXLzFAkQXiMY2lfmDu6qC1rQcwuSnIviKaxyoVcHuU3GsXvjbDWlFZRIvbCKOm7H_-Gx9COQh0dwLJArDNlo_c5IpujNbjStipR7DkykEzySjAnghQs2PPYu93jb43DqO8_eZaasqMl-7QYCs83zbKrWOdFuEO1fAok_c3xTIU2oy86qNfBlMcLttNrBTZvAq4g5QB-Z3ic5SDg"
+                            alt="Đồng hồ" />
+                        <button
+                            class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-slate-600 hover:text-red-500"><span
+                                class="material-symbols-outlined text-xl">favorite</span></button>
+                    </div>
+                    <div class="p-4">
+                        <h3
+                            class="font-bold text-slate-800 dark:text-slate-100 mb-1 line-clamp-2 hover:text-primary cursor-pointer">
+                            Đồng Hồ Thông Minh Unisex S3 - Trắng</h3>
+                        <p class="text-primary font-bold text-lg mb-2">850.000đ</p>
+                        <div class="flex items-center justify-between text-xs text-slate-500">
+                            <div class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">location_on</span><span>Hoàn Kiếm, Hà
+                                    Nội</span></div>
+                            <span>5 giờ trước</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group">
+                    <div class="relative aspect-square overflow-hidden">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGyDXi3ec2ZATUgS3o1ha5ZPo_i9SRCe75YXfdZex5151Iyza26G2HIsFGpS7wlO9p_JUPDPBCERi0pcvEePAvWCC2nkeD-6nwcuwtLhP10CO8LqOSNHyEJwYYh4tbjuHZr0XQHca4hRiRA5wFAcWr0OggQS5vxRkSSqfIveEHH_xjFeteHiVWbtJ-v3J366OiTl_k-UWS7mE2ShKhkpeQX-IeuOtGvrAAEb_XJ8QtGHmTDrLYzqvR8tIg9BX2R7ppComBuQ-YYg"
+                            alt="Tai nghe" />
+                        <button
+                            class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-slate-600 hover:text-red-500"><span
+                                class="material-symbols-outlined text-xl">favorite</span></button>
+                    </div>
+                    <div class="p-4">
+                        <h3
+                            class="font-bold text-slate-800 dark:text-slate-100 mb-1 line-clamp-2 hover:text-primary cursor-pointer">
+                            Tai Nghe Bluetooth Chống Ồn Sony</h3>
+                        <p class="text-primary font-bold text-lg mb-2">2.100.000đ</p>
+                        <div class="flex items-center justify-between text-xs text-slate-500">
+                            <div class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">location_on</span><span>Đà Nẵng</span>
+                            </div>
+                            <span>1 ngày trước</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group">
+                    <div class="relative aspect-square overflow-hidden">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDowrwn3pas2sfwaW2RuZgKbyFtYp92DBUCmILfae3EE3hH6lICf5wQYhQO8-EI9kSOB4aWT-1YRZo_8Xrup2OsVDTMrsKVcwP9TznRB9XIyUI2E6RdBZlJJIdFBmU8uld-LW6zAPmw5UXRZ2Y5_FtCfg5FM--Av5nI1mX96y4ihr6O-suLXMLdb5I4FYAbErWXdOUY7V618zTWCK5UV3Ll1ep_C-yzVDwO217MI82YdJe_PflNUFmIdL31sY0HcCbd2YjGtfo-Q"
+                            alt="Giày" />
+                        <button
+                            class="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-slate-600 hover:text-red-500"><span
+                                class="material-symbols-outlined text-xl">favorite</span></button>
+                    </div>
+                    <div class="p-4">
+                        <h3
+                            class="font-bold text-slate-800 dark:text-slate-100 mb-1 line-clamp-2 hover:text-primary cursor-pointer">
+                            Giày Thể Thao Phố Classic - Đen Trắng</h3>
+                        <p class="text-primary font-bold text-lg mb-2">490.000đ</p>
+                        <div class="flex items-center justify-between text-xs text-slate-500">
+                            <div class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">location_on</span><span>Cầu Giấy, Hà
+                                    Nội</span></div>
+                            <span>3 giờ trước</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 flex justify-center">
+                <button
+                    class="border-2 border-primary text-primary font-bold px-10 py-3 rounded-full hover:bg-primary hover:text-white transition-all">Xem
+                    thêm tin đăng</button>
+            </div>
+        </section>
+
+        <!-- Trusted Suppliers -->
+        <section class="bg-primary/5 rounded-3xl p-8 border border-primary/10">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-xl font-bold flex items-center gap-2">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    Nhà cung cấp uy tín
+                </h2>
+                <span class="material-symbols-outlined text-primary">verified</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                <div
+                    class="bg-white dark:bg-slate-800 p-6 rounded-2xl text-center border border-slate-200 dark:border-slate-700 group hover:shadow-lg transition-all">
+                    <div class="relative w-20 h-20 mx-auto mb-4">
+                        <img class="rounded-full w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE5QPxHvDZeMdiQHIKUoimAaYAGonJXCSZi3l9Tq2CCjROI7IEQpQxy6FmLqNnZJYICgqNbbmWDHeAR3qQ5WFiEA4KClkRaUVmkbGMOvbm3N8-to2OCSZ63gddYvqfOVzcDd3S5lJiXHvm2ZeNDeG7PNbHBEvBptiF3kRCW-DQAzPWjqgQkQTHmAWQEES5bHTvQ0UiMOAv4gPCGZ_i3z6ZCow2Gk2K7XRGGnHNKXhoocfDsSyVMZ6HHfZe11w0dzh41thx3kDUZw"
+                            alt="Store" />
+                        <div
+                            class="absolute bottom-0 right-0 w-6 h-6 bg-primary rounded-full border-2 border-white flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-[12px] font-bold">check</span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Store Công Nghệ</h4>
+                    <p class="text-xs text-slate-500 mb-3">540 tin đăng</p>
+                    <button
+                        class="text-xs text-primary font-bold px-4 py-1.5 rounded-full border border-primary group-hover:bg-primary group-hover:text-white transition-colors w-full">Xem
+                        Cửa Hàng</button>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-800 p-6 rounded-2xl text-center border border-slate-200 dark:border-slate-700 group hover:shadow-lg transition-all">
+                    <div class="relative w-20 h-20 mx-auto mb-4">
+                        <img class="rounded-full w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzFmyZYvLcPtgg7RwW2I-RL7m7hISxGAm-xSAmIvMpLZbGpd2jpK52LKNArWEMEHmn2MVXXk6Bj2nLhKVwfVOWNFWYtaJDaNzrXNKRmv_RVQnipOK29JuLoY1XoqCEYHHHNyrpBemDY7ij0fvBYHUOcorQ5m2U5J6calIWmxWW-0eCYSIOPajByVAzpVfgTqW7N22r0KPtxQET2L5AiXn3Bm95qw9Ku_aPkujF4hvG9zj_bGEiWsjvIm3ZsKvudvwQgyODhrP3FQ"
+                            alt="Fashion" />
+                        <div
+                            class="absolute bottom-0 right-0 w-6 h-6 bg-primary rounded-full border-2 border-white flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-[12px] font-bold">check</span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Fashion Plus</h4>
+                    <p class="text-xs text-slate-500 mb-3">1.2k tin đăng</p>
+                    <button
+                        class="text-xs text-primary font-bold px-4 py-1.5 rounded-full border border-primary group-hover:bg-primary group-hover:text-white transition-colors w-full">Xem
+                        Cửa Hàng</button>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-800 p-6 rounded-2xl text-center border border-slate-200 dark:border-slate-700 group hover:shadow-lg transition-all">
+                    <div class="relative w-20 h-20 mx-auto mb-4">
+                        <img class="rounded-full w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMAieIY9IpXoRLEJXSWZ2t5Ewo6Mb7k6gQzbQCC_V-n2Dqk-7JWwcqBb89RgiQX0WNgMrkWENk-DBpFIdVmZpCeIG7iFbqU2nLBLOof1frf8P6QLo7cDF1G4fNXBKRHryVVo5cD4wCwE-nFeTpWkHlVi4mySHsrSwQFhq0PRfTaBJrNZPtKM9al5Ti6DLpiYuNZdS_0X2LxRaGWqREd2RRa_gsNhNzpl1Dgx9FezGFOc6Li4ZtAXE23nj0UMtCZFmzmjGayjC_xw"
+                            alt="Nội thất" />
+                        <div
+                            class="absolute bottom-0 right-0 w-6 h-6 bg-primary rounded-full border-2 border-white flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-[12px] font-bold">check</span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Nội Thất Xinh</h4>
+                    <p class="text-xs text-slate-500 mb-3">320 tin đăng</p>
+                    <button
+                        class="text-xs text-primary font-bold px-4 py-1.5 rounded-full border border-primary group-hover:bg-primary group-hover:text-white transition-colors w-full">Xem
+                        Cửa Hàng</button>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-800 p-6 rounded-2xl text-center border border-slate-200 dark:border-slate-700 group hover:shadow-lg transition-all">
+                    <div class="relative w-20 h-20 mx-auto mb-4">
+                        <img class="rounded-full w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_knEfrgZJrQ_SRDrmM7Z5xXcrc-lFIxQXOVeFJaegEWBqlLJyKtb5emlhWpR4YpMUh_HXXY_pA9zbYgTyzEVJHcuDdq6JjwwN_ejX4_4mYPP3bP-FTiTdoXbKVElejgfapI8Nf5t8TqMG0MbzWi5g81L4AUsuN933Wg6Sr8m0UAIAbRDa1sy2dxb8yZn1xTRr5rHfB7MA8xsA2EgKa8WMDRp9m-kGoJkyLFmC8g38ZDWXBhzAAXsxDrbOjRJr8GhaHN2AvR9y4Q"
+                            alt="Mẹ bé" />
+                        <div
+                            class="absolute bottom-0 right-0 w-6 h-6 bg-primary rounded-full border-2 border-white flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-[12px] font-bold">check</span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Mẹ & Bé</h4>
+                    <p class="text-xs text-slate-500 mb-3">890 tin đăng</p>
+                    <button
+                        class="text-xs text-primary font-bold px-4 py-1.5 rounded-full border border-primary group-hover:bg-primary group-hover:text-white transition-colors w-full">Xem
+                        Cửa Hàng</button>
+                </div>
+                <div
+                    class="hidden lg:block bg-white dark:bg-slate-800 p-6 rounded-2xl text-center border border-slate-200 dark:border-slate-700 group hover:shadow-lg transition-all">
+                    <div class="relative w-20 h-20 mx-auto mb-4">
+                        <img class="rounded-full w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbdTR01ZNIvVJDkR88uVCu2nANvg8jEmU3C5tgYqyXUsqei1RECJw6dN7QygtH-IkfTk3-8XKBSlktsQotsLEQRKpR0uMGc0lG-fpES3ZqCMC5RHKc0V2ruRjYaSRScQvBcZOaoGhtg3V0KlzGm7zDJQrLtaqatMsRB9NoIOseJars-kkmv1S3OhVB-2D0DlTxh4CSuNi2lfIxJlQiAMRWMryGiZs3eNZF1MJUx1861aolt3IoSRV1pb6IrS2Px8aL8UZWIGGhpQ"
+                            alt="Dịch vụ" />
+                        <div
+                            class="absolute bottom-0 right-0 w-6 h-6 bg-primary rounded-full border-2 border-white flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-[12px] font-bold">check</span>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Dịch Vụ Nhanh</h4>
+                    <p class="text-xs text-slate-500 mb-3">150 tin đăng</p>
+                    <button
+                        class="text-xs text-primary font-bold px-4 py-1.5 rounded-full border border-primary group-hover:bg-primary group-hover:text-white transition-colors w-full">Xem
+                        Cửa Hàng</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile App Promo -->
+        <section class="bg-primary rounded-3xl overflow-hidden shadow-xl">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-8 lg:p-12 flex flex-col justify-center">
+                    <h2 class="text-3xl font-bold text-white mb-4">Tải ứng dụng CHOF.VN ngay</h2>
+                    <p class="text-white/80 mb-8">Trải nghiệm mua bán rao vặt nhanh chóng, an toàn và tiện lợi ngay trên
+                        điện thoại của bạn.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="bg-black text-white px-6 py-3 rounded-xl flex items-center gap-3 hover:bg-slate-900 transition-colors">
+                            <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                            <div class="text-left">
+                                <div class="text-[10px] uppercase font-bold">Tải trên</div>
+                                <div class="text-lg font-bold leading-none">Google Play</div>
+                            </div>
+                        </button>
+                        <button
+                            class="bg-black text-white px-6 py-3 rounded-xl flex items-center gap-3 hover:bg-slate-900 transition-colors">
+                            <span class="material-symbols-outlined text-3xl">phone_iphone</span>
+                            <div class="text-left">
+                                <div class="text-[10px] uppercase font-bold">Tải trên</div>
+                                <div class="text-lg font-bold leading-none">App Store</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center justify-center p-8 bg-green-700/50">
+                    <div class="relative">
+                        <div
+                            class="w-64 h-96 bg-slate-900 rounded-[2.5rem] border-4 border-slate-800 shadow-2xl overflow-hidden">
+                            <div class="w-full h-full bg-white p-4">
+                                <div class="w-12 h-1 bg-slate-200 rounded-full mx-auto mb-4"></div>
+                                <div class="space-y-4">
+                                    <div class="h-8 bg-primary/20 rounded-lg"></div>
+                                    <div class="aspect-square bg-slate-100 rounded-xl"></div>
+                                    <div class="h-4 bg-slate-100 rounded w-3/4"></div>
+                                    <div class="h-4 bg-slate-100 rounded w-1/2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -right-8 top-12 w-48 h-12 bg-white rounded-xl shadow-lg p-3 flex items-center gap-3 animate-bounce">
+                            <span class="material-symbols-outlined text-primary">local_shipping</span>
+                            <span class="text-xs font-bold text-slate-700">Đang giao hàng...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-primary flex items-center justify-center rounded-lg text-white"><span
+                                class="material-symbols-outlined text-lg">shopping_bag</span></div>
+                        <h1 class="text-xl font-black text-primary tracking-tighter">CHOF.VN</h1>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">Sàn giao dịch rao vặt
+                        trực tuyến hàng đầu Việt Nam. Nơi kết nối người bán và người mua một cách nhanh chóng, an toàn.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all"
+                            href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+                        <a class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all"
+                            href="#"><span class="material-symbols-outlined">video_library</span></a>
+                        <a class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all"
+                            href="#"><span class="material-symbols-outlined">movie</span></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-slate-800 dark:text-slate-100">Liên kết nhanh</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">Về chúng tôi</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Quy chế hoạt động</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Chính sách bảo mật</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Giải quyết khiếu nại</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Báo chí & Tin tức</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-slate-800 dark:text-slate-100">Hỗ trợ khách hàng</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">Trung tâm trợ giúp</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">An toàn mua bán</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Quy định đăng tin</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Liên hệ hỗ trợ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-slate-800 dark:text-slate-100">Chứng nhận</h4>
+                    <div class="space-y-4">
+                        <div
+                            class="bg-slate-100 dark:bg-slate-800 p-4 rounded-xl flex items-center gap-3 border border-slate-200 dark:border-slate-700">
+                            <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+                            <div>
+                                <p class="text-[10px] font-bold text-slate-400 uppercase leading-none mb-1">Đã thông báo
+                                </p>
+                                <p class="text-xs font-bold text-slate-700 dark:text-slate-300">Bộ Công Thương</p>
+                            </div>
+                        </div>
+                        <div class="text-xs text-slate-500 leading-relaxed">
+                            <p class="font-bold mb-1">Công ty Cổ phần CHOF.VN</p>
+                            <p>Đ/c: Số 123 Đường ABC, Quận Cầu Giấy, Hà Nội</p>
+                            <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                    data-cfemail="0f67607b7d604f6c676069217961">[email&#160;protected]</a></p>
+                            <p>Hotline: 1900 1234</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+                <p>© 2024 CHOF.VN. Tất cả các quyền được bảo lưu.</p>
+                <div class="flex gap-6">
+                    <a class="hover:text-primary" href="#">Điều khoản sử dụng</a>
+                    <a class="hover:text-primary" href="#">Chính sách cookie</a>
+                    <a class="hover:text-primary" href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== BANNER CAROUSEL =====
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const dots = document.querySelectorAll('.banner-dot');
+
+        function goToSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        document.getElementById('bannerNext').addEventListener('click', () => goToSlide(currentSlide + 1));
+        document.getElementById('bannerPrev').addEventListener('click', () => goToSlide(currentSlide - 1));
+        dots.forEach(dot => dot.addEventListener('click', () => goToSlide(+dot.dataset.slide)));
+        setInterval(() => goToSlide(currentSlide + 1), 4000);
+
+        // ===== MEGA MENU =====
+        // On load: init all l3-groups - hide all except first in each dropdown
+        document.querySelectorAll('.mega-dropdown').forEach(dropdown => {
+            const groups = dropdown.querySelectorAll('.l3-group');
+            groups.forEach((g, i) => {
+                g.style.display = i === 0 ? 'block' : 'none';
+            });
+            // Mark first l2 item active
+            const firstL2 = dropdown.querySelector('.mega-l2-item');
+            if (firstL2) firstL2.classList.add('active');
+        });
+
+        // L2 hover → show corresponding L3
+        document.querySelectorAll('.mega-l2-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const groupId = item.dataset.group;
+                if (!groupId) return;
+                const dropdown = item.closest('.mega-dropdown');
+                // Hide all l3 groups
+                dropdown.querySelectorAll('.l3-group').forEach(g => g.style.display = 'none');
+                // Show target
+                const target = document.getElementById(groupId);
+                if (target) target.style.display = 'block';
+                // Update active state
+                dropdown.querySelectorAll('.mega-l2-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // Show/hide dropdown on cat-nav-item hover using fixed positioning
+        let activeDropdown = null;
+        document.querySelectorAll('.mega-menu-item').forEach(menuItem => {
+            const trigger = menuItem.querySelector('.cat-nav-item');
+            const dropdown = menuItem.querySelector('.mega-dropdown');
+            if (!trigger || !dropdown) return;
+
+            function showDropdown() {
+                // Close any other open dropdown
+                if (activeDropdown && activeDropdown !== dropdown) {
+                    activeDropdown.classList.remove('open');
+                }
+                const rect = trigger.getBoundingClientRect();
+                // Position dropdown below the trigger
+                dropdown.style.top = rect.bottom + 'px';
+                dropdown.style.left = Math.min(rect.left, window.innerWidth - 620) + 'px';
+                dropdown.classList.add('open');
+                activeDropdown = dropdown;
+            }
+
+            function hideDropdown() {
+                dropdown.classList.remove('open');
+                if (activeDropdown === dropdown) activeDropdown = null;
+            }
+
+            trigger.addEventListener('mouseenter', showDropdown);
+            menuItem.addEventListener('mouseleave', hideDropdown);
+            dropdown.addEventListener('mouseleave', hideDropdown);
+        });
+
+        // Close all dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.mega-menu-item')) {
+                document.querySelectorAll('.mega-dropdown.open').forEach(d => d.classList.remove('open'));
+                activeDropdown = null;
+            }
+        });
+    </script>
+</body>
+
+</html>
