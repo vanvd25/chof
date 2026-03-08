@@ -1,0 +1,4667 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Chof.vn – Chợ Fashion & Dịch Vụ Hàng Đầu Việt Nam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --p: #008848;
+      --pd: #006635;
+      --pl: #e8f5ee;
+      --ac: #f97316;
+      --bg: #f2f2f2;
+      --ink: #111;
+      --muted: #888;
+      --line: #e5e5e5;
+      --card: #fff;
+      --r: 12px
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: 'Lexend', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    .ms {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      direction: ltr;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle
+    }
+
+    .msf {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24
+    }
+
+    /* ══════════════════════════════════
+   HEADER — 1 row top + hero below
+   On scroll: compact sticky 1-row
+══════════════════════════════════ */
+
+    /* ── Top nav bar (always 1 row, like ChoTot) ── */
+    .hdr-top {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 600
+    }
+
+    .hdr-top-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      gap: 16px
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      text-decoration: none
+    }
+
+    .logo-badge {
+      background: var(--p);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 10px;
+      letter-spacing: -.5px;
+      line-height: 1.2
+    }
+
+    .logo-badge em {
+      color: #fde68a;
+      font-style: normal
+    }
+
+    .logo-tagline {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+      border-left: 1.5px solid var(--line);
+      padding-left: 8px;
+      line-height: 1.35
+    }
+
+    /* Top nav links (center) */
+    .hdr-nav {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      flex-shrink: 0
+    }
+
+    .hdr-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all .15s;
+      text-decoration: none;
+      white-space: nowrap
+    }
+
+    .hdr-nav-link:hover {
+      background: var(--bg);
+      color: var(--p)
+    }
+
+    .hdr-nav-link.active {
+      color: var(--p);
+      background: var(--pl)
+    }
+
+    .hdr-nav-sep {
+      width: 1px;
+      height: 16px;
+      background: var(--line);
+      margin: 0 4px;
+      flex-shrink: 0
+    }
+
+    /* Spacer */
+    .hdr-space {
+      flex: 1
+    }
+
+    /* Header actions */
+    .ha {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0
+    }
+
+    .ibtn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #555;
+      padding: 7px;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      position: relative;
+      transition: all .15s
+    }
+
+    .ibtn:hover {
+      background: var(--bg);
+      color: var(--p)
+    }
+
+    .ndot {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 7px;
+      height: 7px;
+      background: #e74c3c;
+      border-radius: 50%;
+      border: 2px solid #fff
+    }
+
+    .hdiv {
+      width: 1px;
+      height: 22px;
+      background: var(--line);
+      flex-shrink: 0;
+      margin: 0 2px
+    }
+
+    .blogin {
+      background: none;
+      border: 1.5px solid var(--line);
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #333;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 7px 16px;
+      border-radius: 20px;
+      transition: all .15s;
+      white-space: nowrap
+    }
+
+    .blogin:hover {
+      border-color: var(--p);
+      color: var(--p)
+    }
+
+    .bpost {
+      background: var(--p);
+      color: #fff;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: inherit;
+      box-shadow: 0 2px 12px rgba(0, 136, 72, .28);
+      white-space: nowrap;
+      transition: background .15s
+    }
+
+    .bpost:hover {
+      background: var(--pd)
+    }
+
+    /* ── HERO BANNER (green, like ChoTot yellow) ── */
+    .hero {
+      background: linear-gradient(120deg, #006e38 0%, #008848 45%, #00a855 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 36px 0 80px
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .06);
+      pointer-events: none
+    }
+
+    .hero-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-left {
+      flex: 1;
+      max-width: 580px
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, .15);
+      border: 1px solid rgba(255, 255, 255, .2);
+      color: rgba(255, 255, 255, .9);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      letter-spacing: .5px;
+      backdrop-filter: blur(4px)
+    }
+
+    .hero-h1 {
+      font-size: 38px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      letter-spacing: -.5px
+    }
+
+    .hero-h1 em {
+      color: #fde68a;
+      font-style: normal
+    }
+
+    .hero-sub {
+      font-size: 14.5px;
+      color: rgba(255, 255, 255, .82);
+      font-weight: 500;
+      margin-bottom: 24px;
+      line-height: 1.6
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 24px
+    }
+
+    .hero-stat {
+      text-align: center
+    }
+
+    .hero-stat-n {
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1
+    }
+
+    .hero-stat-l {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .7);
+      font-weight: 600;
+      margin-top: 2px
+    }
+
+    .hero-stat-sep {
+      width: 1px;
+      background: rgba(255, 255, 255, .2);
+      align-self: stretch;
+      margin: 2px 0
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .hero-btn-p {
+      background: #fff;
+      color: var(--p);
+      border: none;
+      padding: 12px 26px;
+      border-radius: 24px;
+      font-weight: 800;
+      font-size: 13.5px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all .18s;
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .15)
+    }
+
+    .hero-btn-p:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .2)
+    }
+
+    .hero-btn-s {
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, .35);
+      padding: 11px 22px;
+      border-radius: 24px;
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all .15s;
+      backdrop-filter: blur(4px)
+    }
+
+    .hero-btn-s:hover {
+      background: rgba(255, 255, 255, .22)
+    }
+
+    /* Hero right illustration / floating cards */
+    .hero-right {
+      flex-shrink: 0;
+      position: relative;
+      width: 320px;
+      height: 220px
+    }
+
+    .hero-float {
+      position: absolute;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .2);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 12px 16px;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .1)
+    }
+
+    .hf1 {
+      top: 0;
+      left: 10px;
+      width: 170px
+    }
+
+    .hf2 {
+      top: 50px;
+      right: 0;
+      width: 150px
+    }
+
+    .hf3 {
+      bottom: 0;
+      left: 30px;
+      width: 160px
+    }
+
+    .hf-lbl {
+      font-size: 10px;
+      color: rgba(255, 255, 255, .7);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 4px
+    }
+
+    .hf-val {
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1
+    }
+
+    .hf-sub {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .75);
+      margin-top: 2px
+    }
+
+    .hf-ico {
+      font-size: 28px;
+      margin-bottom: 6px
+    }
+
+    /* ── SEARCH BAR — floating over hero/main divide ── */
+    .hero-search-outer {
+      position: relative;
+      z-index: 500;
+      margin-top: -28px;
+      padding: 0 20px;
+      max-width: 1320px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    /* STICKY SEARCH shown when scrolled */
+    .sticky-hdr {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 700;
+      background: #fff;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, .12);
+      transform: translateY(-100%);
+      transition: transform .28s cubic-bezier(.4, 0, .2, 1);
+      pointer-events: none
+    }
+
+    .sticky-hdr.visible {
+      transform: translateY(0);
+      pointer-events: auto
+    }
+
+    .sticky-hdr-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .sticky-logo {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--p);
+      flex-shrink: 0;
+      white-space: nowrap
+    }
+
+    .sticky-logo em {
+      color: var(--ac);
+      font-style: normal;
+      background: var(--p);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #fde68a
+    }
+
+    /* ── SEARCH BOX (shared base, used in hero floating + sticky) ── */
+    .sbox {
+      display: flex;
+      align-items: stretch;
+      background: #fff;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: border-color .18s;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .1)
+    }
+
+    .sbox.hero-sb {
+      height: 54px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, .18)
+    }
+
+    .sbox.sticky-sb {
+      height: 44px;
+      box-shadow: none;
+      border: 1.5px solid var(--line);
+      border-radius: 22px
+    }
+
+    .sbox:focus-within {
+      border-color: var(--p) !important
+    }
+
+    /* category dropdown inside search */
+    .scat-wrap {
+      position: relative;
+      flex-shrink: 0
+    }
+
+    .scat-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 16px;
+      height: 100%;
+      font-size: 13px;
+      font-weight: 700;
+      color: #444;
+      background: none;
+      border: none;
+      border-right: 1.5px solid var(--line);
+      cursor: pointer;
+      font-family: inherit;
+      white-space: nowrap;
+      transition: color .15s
+    }
+
+    .scat-btn:hover {
+      color: var(--p)
+    }
+
+    /* inline mini dropdown for search category */
+    .scat-drop {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, .12);
+      min-width: 160px;
+      padding: 6px 0;
+      z-index: 800
+    }
+
+    .scat-drop.open {
+      display: block
+    }
+
+    .scat-opt {
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+      cursor: pointer;
+      transition: all .12s;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .scat-opt:hover {
+      background: var(--pl);
+      color: var(--p)
+    }
+
+    .scat-opt.active {
+      color: var(--p);
+      font-weight: 700
+    }
+
+    .sinput {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 0 14px;
+      font-size: 14px;
+      font-family: inherit;
+      background: transparent;
+      min-width: 0
+    }
+
+    .sbox.sticky-sb .sinput {
+      font-size: 13px
+    }
+
+    .sbtn {
+      background: var(--p);
+      color: #fff;
+      border: none;
+      padding: 0 26px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: inherit;
+      white-space: nowrap;
+      transition: background .15s;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .sbox.sticky-sb .sbtn {
+      padding: 0 20px;
+      font-size: 13px
+    }
+
+    .sbtn:hover {
+      background: var(--pd)
+    }
+
+    /* Search suggestion dropdown */
+    .sdrop {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .12);
+      z-index: 999;
+      padding: 18px;
+      max-height: 420px;
+      overflow-y: auto
+    }
+
+    .sdrop.open {
+      display: block
+    }
+
+    .sdt {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 10px
+    }
+
+    .sdtags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 4px
+    }
+
+    .sdtag {
+      padding: 5px 13px;
+      background: var(--bg);
+      border-radius: 20px;
+      font-size: 12px;
+      color: #555;
+      cursor: pointer;
+      transition: all .12s;
+      display: flex;
+      align-items: center;
+      gap: 4px
+    }
+
+    .sdtag:hover {
+      background: var(--pl);
+      color: var(--p)
+    }
+
+    .sditem {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 6px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .12s
+    }
+
+    .sditem:hover {
+      background: #fafafa
+    }
+
+    .sditem img {
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0
+    }
+
+    .sdn {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #222
+    }
+
+    .sdpr {
+      font-size: 12px;
+      color: #e74c3c;
+      font-weight: 700
+    }
+
+    .sdsh {
+      font-size: 11px;
+      color: #aaa
+    }
+
+    .sdsep {
+      height: 1px;
+      background: #f0f0f0;
+      margin: 10px 0
+    }
+
+    /* Quick tags below search */
+    .search-qtags {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      flex-wrap: wrap
+    }
+
+    .sqtag-lbl {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .7);
+      font-weight: 600;
+      white-space: nowrap
+    }
+
+    .sqtag {
+      padding: 4px 12px;
+      background: rgba(255, 255, 255, .15);
+      border: 1px solid rgba(255, 255, 255, .25);
+      border-radius: 16px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, .9);
+      cursor: pointer;
+      transition: all .12s;
+      white-space: nowrap
+    }
+
+    .sqtag:hover {
+      background: rgba(255, 255, 255, .28)
+    }
+
+    /* ── CATEGORY TABS below hero (like ChoTot nav links) ── */
+    .cat-tabs {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 400;
+      transition: top .28s
+    }
+
+    .cat-tabs.has-sticky {
+      top: 58px
+    }
+
+    .cat-tabs-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none
+    }
+
+    .cat-tabs-inner::-webkit-scrollbar {
+      display: none
+    }
+
+    /* Category dropdown in cat-tabs */
+    .ct-dd-wrap {
+      position: relative;
+      flex-shrink: 0
+    }
+
+    .ct-dd-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 16px;
+      height: 44px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      background: none;
+      border: none;
+      border-right: 1px solid var(--line);
+      cursor: pointer;
+      font-family: inherit;
+      white-space: nowrap;
+      transition: color .15s
+    }
+
+    .ct-dd-btn:hover,
+    .ct-dd-btn.open {
+      color: var(--p)
+    }
+
+    .ct-dd-btn.open .ct-arr {
+      transform: rotate(180deg)
+    }
+
+    .ct-arr {
+      transition: transform .2s;
+      display: inline-block
+    }
+
+    /* Mega menu dropdown — positioned below .ct-dd-wrap */
+    .mm-wrap {
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 0;
+      z-index: 1000;
+      display: none
+    }
+
+    .mm-wrap.open {
+      display: flex
+    }
+
+    .mm-box {
+      width: min(960px, 94vw);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .13);
+      overflow: hidden;
+      display: flex
+    }
+
+    .mm-left {
+      width: 210px;
+      background: #fafafa;
+      border-right: 1px solid #f0f0f0;
+      padding: 8px 0;
+      flex-shrink: 0
+    }
+
+    .ml1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-left: 3px solid transparent;
+      color: #555;
+      transition: all .12s;
+      user-select: none
+    }
+
+    .ml1:hover,
+    .ml1.active {
+      background: #fff;
+      color: var(--p);
+      border-left-color: var(--p);
+      font-weight: 700
+    }
+
+    .mm-right {
+      flex: 1;
+      padding: 22px 28px;
+      overflow-y: auto;
+      max-height: 480px
+    }
+
+    .mp {
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 20px 28px
+    }
+
+    .mp.active {
+      display: grid
+    }
+
+    .mp h3 {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--p);
+      margin-bottom: 8px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--p);
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    .mp ul {
+      list-style: none
+    }
+
+    .mp li {
+      font-size: 12.5px;
+      color: #666;
+      padding: 4px 0;
+      cursor: pointer;
+      transition: color .12s
+    }
+
+    .mp li:hover {
+      color: var(--p)
+    }
+
+    .mp li a {
+      color: inherit;
+      display: block
+    }
+
+    /* Cat tab links */
+    .ct-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 14px;
+      height: 44px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      white-space: nowrap;
+      flex-shrink: 0;
+      border-bottom: 2px solid transparent;
+      transition: all .15s;
+      cursor: pointer;
+      text-decoration: none
+    }
+
+    .ct-link:hover {
+      color: var(--p);
+      border-bottom-color: var(--p)
+    }
+
+    .ct-link.hot {
+      color: var(--ac)
+    }
+
+    .ct-link.hot:hover {
+      border-bottom-color: var(--ac)
+    }
+
+    .ct-sep {
+      width: 1px;
+      height: 18px;
+      background: var(--line);
+      flex-shrink: 0;
+      margin: 0 3px
+    }
+
+    /* ── MAIN ── */
+    .main {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 20px 20px 60px
+    }
+
+    /* ── SECTION HEADER ── */
+    .esc {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      gap: 12px
+    }
+
+    .esc-left {
+      display: flex;
+      align-items: flex-end;
+      gap: 14px
+    }
+
+    .esc-num {
+      font-size: 50px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--p);
+      opacity: .1;
+      letter-spacing: -4px;
+      margin-bottom: -4px;
+      flex-shrink: 0;
+      user-select: none
+    }
+
+    .esc-texts {
+      display: flex;
+      flex-direction: column;
+      gap: 2px
+    }
+
+    .esc-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--p);
+      text-transform: uppercase;
+      letter-spacing: 2px
+    }
+
+    .esc-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.1
+    }
+
+    .esc-tabs {
+      display: flex;
+      gap: 0;
+      margin-left: 10px
+    }
+
+    .esc-tab {
+      padding: 6px 14px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--muted);
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: color .15s;
+      position: relative
+    }
+
+    .esc-tab::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      background: var(--p);
+      transform: scaleX(0);
+      transition: transform .2s
+    }
+
+    .esc-tab.active {
+      color: var(--ink)
+    }
+
+    .esc-tab.active::after {
+      transform: scaleX(1)
+    }
+
+    .esc-more {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--p);
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      white-space: nowrap;
+      padding-bottom: 2px;
+      transition: opacity .15s
+    }
+
+    .esc-more:hover {
+      opacity: .7
+    }
+
+    /* ── SECTIONS ── */
+    .sec {
+      background: #fff;
+      border-radius: var(--r);
+      border-top: 4px solid var(--ink);
+      padding: 20px 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .05)
+    }
+
+    .sec.ap {
+      border-top-color: var(--p)
+    }
+
+    .sec.aa {
+      border-top-color: var(--ac)
+    }
+
+    /* ── CATEGORY ICONS ── */
+    .catsec {
+      background: #fff;
+      border-radius: var(--r);
+      border-top: 4px solid var(--p);
+      padding: 18px 20px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+      margin-bottom: 20px
+    }
+
+    .catbox {
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none
+    }
+
+    .catbox::-webkit-scrollbar {
+      display: none
+    }
+
+    .catrow {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 4px;
+      min-width: 860px
+    }
+
+    .catitem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 6px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .18s;
+      text-decoration: none;
+      color: inherit
+    }
+
+    .catitem:hover {
+      background: var(--pl)
+    }
+
+    .catitem:hover .clbl {
+      color: var(--p)
+    }
+
+    .cimg {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-size: 22px;
+      transition: transform .22s cubic-bezier(.34, 1.56, .64, 1)
+    }
+
+    .catitem:hover .cimg {
+      transform: translateY(-3px) scale(1.07)
+    }
+
+    .cimg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .clbl {
+      font-size: 11px;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+      line-height: 1.3;
+      transition: color .15s
+    }
+
+    .ba {
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0)
+    }
+
+    .bb {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb)
+    }
+
+    .bc {
+      background: linear-gradient(135deg, #fff8e1, #ffecb3)
+    }
+
+    .bd {
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9)
+    }
+
+    .be {
+      background: linear-gradient(135deg, #fce4ec, #f48fb1)
+    }
+
+    .bf {
+      background: linear-gradient(135deg, #ede7f6, #d1c4e9)
+    }
+
+    .bg {
+      background: linear-gradient(135deg, #e0f7fa, #b2ebf2)
+    }
+
+    .bh {
+      background: linear-gradient(135deg, #f3e5f5, #ce93d8)
+    }
+
+    .bi {
+      background: linear-gradient(135deg, #e8eaf6, #9fa8da)
+    }
+
+    .bj {
+      background: linear-gradient(135deg, #fff9c4, #fff176)
+    }
+
+    .bk {
+      background: linear-gradient(135deg, #e0f2f1, #80cbc4)
+    }
+
+    .bl {
+      background: linear-gradient(135deg, #f5f5f5, #e0e0e0)
+    }
+
+    /* ── PRODUCT CARD ── */
+    .pc {
+      background: #fff;
+      border-radius: var(--r);
+      border: 1px solid var(--line);
+      cursor: pointer;
+      position: relative;
+      transition: box-shadow .22s, transform .22s;
+      min-width: 0
+    }
+
+    .pc:hover {
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .1);
+      transform: translateY(-2px)
+    }
+
+    .pcimg {
+      position: relative;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      border-radius: var(--r) var(--r) 0 0
+    }
+
+    .pcimg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .32s
+    }
+
+    .pc:hover .pcimg img {
+      transform: scale(1.06)
+    }
+
+    .bge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 4px;
+      color: #fff;
+      letter-spacing: .3px;
+      z-index: 1
+    }
+
+    .bsale {
+      background: #e74c3c
+    }
+
+    .bnew {
+      background: var(--p)
+    }
+
+    .bsvc {
+      background: #9b59b6
+    }
+
+    .bhot {
+      background: var(--ac)
+    }
+
+    .bfav {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .88);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      transition: all .15s;
+      z-index: 1
+    }
+
+    .bfav:hover {
+      background: #fff;
+      color: #e74c3c
+    }
+
+    .pcb {
+      padding: 10px 12px 12px;
+      min-width: 0
+    }
+
+    .srow {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid #f5f5f5;
+      margin-bottom: 7px;
+      position: relative
+    }
+
+    .sname {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 0
+    }
+
+    .vico {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0
+    }
+
+    .ibwrap {
+      position: relative;
+      flex-shrink: 0;
+      z-index: 50
+    }
+
+    .infobtn {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 1.5px solid #f39c12;
+      background: #fff;
+      color: #f39c12;
+      font-size: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      font-family: inherit
+    }
+
+    .spopup {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      right: -4px;
+      width: 280px;
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      box-shadow: 0 12px 44px rgba(0, 0, 0, .18);
+      padding: 14px;
+      z-index: 9999;
+      display: none
+    }
+
+    .ibwrap:hover .spopup {
+      display: block
+    }
+
+    .ppr {
+      display: flex;
+      font-size: 11.5px;
+      line-height: 1.7;
+      padding: 3px 0;
+      border-bottom: 1px solid #f5f5f5;
+      gap: 6px
+    }
+
+    .ppr:last-of-type {
+      border-bottom: none
+    }
+
+    .pplbl {
+      color: #888;
+      white-space: nowrap;
+      min-width: 80px
+    }
+
+    .ppval {
+      color: #222;
+      font-weight: 500;
+      word-break: break-word
+    }
+
+    .ppval.ok {
+      color: var(--p)
+    }
+
+    .ppval.gold {
+      color: #c8950a;
+      font-weight: 700
+    }
+
+    .cb {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #fff;
+      display: inline-block;
+      margin: 1px
+    }
+
+    .cb.zalo {
+      background: #0068ff
+    }
+
+    .cb.fb {
+      background: #1877f2
+    }
+
+    .cb.sms {
+      background: #555
+    }
+
+    .bfol {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      padding: 7px;
+      background: var(--p);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: inherit
+    }
+
+    .bfol:hover {
+      background: var(--pd)
+    }
+
+    .pall {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--p);
+      font-weight: 700;
+      margin-top: 8px;
+      cursor: pointer
+    }
+
+    .pc-title {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 38px;
+      margin-bottom: 6px
+    }
+
+    .pc-price-sale {
+      font-size: 14px;
+      font-weight: 800;
+      color: #e74c3c
+    }
+
+    .pc-price-ori {
+      font-size: 10.5px;
+      color: #ccc;
+      text-decoration: line-through;
+      margin-left: 5px
+    }
+
+    .pc-loc {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 10.5px;
+      color: var(--muted);
+      margin: 5px 0
+    }
+
+    .pc-loc-ward {
+      font-weight: 600;
+      color: #555;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .pc-loc-sep {
+      color: #ccc
+    }
+
+    .pc-loc-city {
+      color: #888;
+      white-space: nowrap
+    }
+
+    .pc-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f5f5f5;
+      padding-top: 6px;
+      margin-top: 2px;
+      gap: 4px
+    }
+
+    .pc-stars {
+      color: #f39c12;
+      font-size: 11px
+    }
+
+    .pc-rcount {
+      font-size: 10.5px;
+      color: var(--muted)
+    }
+
+    .pc-time {
+      font-size: 10px;
+      color: #bbb;
+      white-space: nowrap
+    }
+
+    .pc-hero {
+      border-radius: var(--r);
+      border: 1px solid var(--line);
+      cursor: pointer;
+      position: relative;
+      transition: box-shadow .22s, transform .22s;
+      background: #fff
+    }
+
+    .pc-hero:hover {
+      box-shadow: 0 10px 32px rgba(0, 0, 0, .12);
+      transform: translateY(-2px)
+    }
+
+    .pc-hero .pcimg {
+      aspect-ratio: 3/4
+    }
+
+    .pc-hero .pcb {
+      padding: 14px 16px 16px
+    }
+
+    .pc-hero .pc-title {
+      font-size: 14px;
+      font-weight: 600;
+      min-height: auto;
+      -webkit-line-clamp: 3;
+      margin-bottom: 10px
+    }
+
+    .pc-hero .pc-price-sale {
+      font-size: 18px
+    }
+
+    .pgrid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px
+    }
+
+    .pgrid-ed {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 14px
+    }
+
+    .pgrid-ed .pc-hero {
+      grid-row: 1/3
+    }
+
+    .pgrid-mini {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px
+    }
+
+    .pgrid-mini-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 14px
+    }
+
+    .pctit {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 36px;
+      margin-bottom: 6px
+    }
+
+    .psal {
+      font-size: 14px;
+      font-weight: 800;
+      color: #e74c3c
+    }
+
+    .pori {
+      font-size: 11px;
+      color: #ccc;
+      text-decoration: line-through;
+      margin-left: 5px
+    }
+
+    .cft {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10.5px;
+      color: #aaa;
+      border-top: 1px solid #f5f5f5;
+      padding-top: 6px
+    }
+
+    /* ── ĐỒNG GIÁ ── */
+    .dg-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .dg-nav {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2px solid var(--ink);
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .15s;
+      font-family: inherit
+    }
+
+    .dg-nav:hover:not(:disabled) {
+      background: var(--ink);
+      color: #fff
+    }
+
+    .dg-nav:disabled {
+      opacity: .25;
+      cursor: not-allowed
+    }
+
+    .dg-outer {
+      flex: 1;
+      overflow: hidden
+    }
+
+    .dg-track {
+      display: flex;
+      gap: 10px;
+      transition: transform .38s cubic-bezier(.4, 0, .2, 1);
+      will-change: transform
+    }
+
+    .dg-item {
+      flex-shrink: 0;
+      background: var(--bg);
+      border-radius: 10px;
+      border: 2px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 10px 14px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: all .2s
+    }
+
+    .dg-item:hover {
+      border-color: var(--p);
+      background: var(--pl);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 136, 72, .15)
+    }
+
+    .dg-item.sel {
+      background: var(--p);
+      border-color: var(--pd);
+      box-shadow: 0 6px 20px rgba(0, 136, 72, .28)
+    }
+
+    .dg-item.sel .dg-price,
+    .dg-item.sel .dg-lbl,
+    .dg-item.sel .dg-cnt {
+      color: #fff
+    }
+
+    .dg-price {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--p);
+      letter-spacing: -.5px;
+      line-height: 1.1;
+      margin-bottom: 4px
+    }
+
+    .dg-lbl {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #666;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    .dg-cnt {
+      font-size: 9.5px;
+      color: #999;
+      margin-top: 3px
+    }
+
+    /* ── JOB ── */
+    .jt-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px
+    }
+
+    .jt-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px 10px 12px;
+      border-radius: 12px;
+      border: 2px solid var(--line);
+      background: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all .15s;
+      text-decoration: none;
+      color: inherit
+    }
+
+    .jt-btn:hover {
+      border-color: var(--ink);
+      background: #fafafa
+    }
+
+    .jt-ico {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .jt-ico-tv {
+      background: linear-gradient(135deg, #fff3e0, #ffe0b2)
+    }
+
+    .jt-ico-ct {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb)
+    }
+
+    .jt-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3
+    }
+
+    .jt-sub {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 1px
+    }
+
+    .jgrid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px
+    }
+
+    .jcard {
+      background: #fff;
+      border-radius: var(--r);
+      border: 1px solid var(--line);
+      cursor: pointer;
+      transition: box-shadow .2s, transform .2s;
+      position: relative
+    }
+
+    .jcard:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .1);
+      transform: translateY(-2px)
+    }
+
+    .jc-thumb {
+      position: relative;
+      height: 100px;
+      overflow: hidden;
+      border-radius: var(--r) var(--r) 0 0
+    }
+
+    .jc-thumb-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .32s
+    }
+
+    .jcard:hover .jc-thumb-bg {
+      transform: scale(1.05)
+    }
+
+    .jc-logo {
+      position: absolute;
+      bottom: -16px;
+      left: 12px;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #fff;
+      border: 2px solid #f0f0f0;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px
+    }
+
+    .jc-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 4px;
+      color: #fff;
+      letter-spacing: .3px
+    }
+
+    .jc-badge-tv {
+      background: var(--ac)
+    }
+
+    .jc-badge-ct {
+      background: #1d7af3
+    }
+
+    .jc-badge-hot {
+      background: #e74c3c
+    }
+
+    .jc-badge-new {
+      background: var(--p)
+    }
+
+    .jc-fav {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .85);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      transition: all .15s;
+      z-index: 1
+    }
+
+    .jc-fav:hover {
+      background: #fff;
+      color: #e74c3c
+    }
+
+    .jc-body {
+      padding: 24px 12px 12px
+    }
+
+    .jc-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 36px;
+      margin-bottom: 5px
+    }
+
+    .jc-company {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 7px
+    }
+
+    .jc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 7px
+    }
+
+    .jc-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      white-space: nowrap
+    }
+
+    .jt-salary {
+      background: #fff3e0;
+      color: #e65100
+    }
+
+    .jt-loc {
+      background: #e8f5e9;
+      color: #2e7d32
+    }
+
+    .jt-pos {
+      background: #e3f2fd;
+      color: #1565c0
+    }
+
+    .jc-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f5f5f5;
+      padding-top: 7px;
+      font-size: 10px;
+      color: #aaa
+    }
+
+    /* ── BRANDS ── */
+    .brand-sec {
+      background: #fff;
+      border-radius: var(--r);
+      border-top: 4px solid var(--ac);
+      padding: 20px 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .05)
+    }
+
+    .brand-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px
+    }
+
+    .brand-nav {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--line);
+      background: #fff;
+      color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all .15s;
+      font-family: inherit
+    }
+
+    .brand-nav:hover {
+      border-color: var(--p);
+      color: var(--p)
+    }
+
+    .brand-nav:disabled {
+      opacity: .3;
+      cursor: not-allowed
+    }
+
+    .brand-outer {
+      flex: 1;
+      overflow: hidden
+    }
+
+    .brand-track {
+      display: flex;
+      gap: 12px;
+      transition: transform .35s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .brand-card {
+      flex-shrink: 0;
+      border: 2px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 10px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      transition: all .2s;
+      background: #fff;
+      text-align: center
+    }
+
+    .brand-card:hover {
+      border-color: var(--p);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 136, 72, .12);
+      background: var(--pl)
+    }
+
+    .brand-logo-wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid #f0f0f0;
+      background: #f9fafb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: border-color .2s
+    }
+
+    .brand-card:hover .brand-logo-wrap {
+      border-color: var(--p)
+    }
+
+    .brand-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px
+    }
+
+    .brand-name {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--ink);
+      white-space: nowrap
+    }
+
+    .brand-meta {
+      font-size: 10.5px;
+      color: #aaa;
+      margin-top: -3px
+    }
+
+    .brand-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px
+    }
+
+    .brand-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background: #ddd;
+      cursor: pointer;
+      transition: all .2s
+    }
+
+    .brand-dot.active {
+      background: var(--p);
+      width: 18px
+    }
+
+    /* ── VIDEO ── */
+    .vgrid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px
+    }
+
+    .vcard {
+      border-radius: var(--r);
+      overflow: hidden;
+      background: #111;
+      cursor: pointer;
+      position: relative;
+      aspect-ratio: 9/16;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .1);
+      transition: box-shadow .2s, transform .2s
+    }
+
+    .vcard:hover {
+      box-shadow: 0 10px 32px rgba(0, 0, 0, .2);
+      transform: translateY(-2px)
+    }
+
+    .vcard img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .88
+    }
+
+    .vplay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      background: rgba(0, 0, 0, .2);
+      transition: opacity .2s
+    }
+
+    .vcard:hover .vplay {
+      opacity: 1
+    }
+
+    .vinfo {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, .8))
+    }
+
+    .vtit {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #fff;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.4
+    }
+
+    .vview {
+      font-size: 10px;
+      color: rgba(255, 255, 255, .75);
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 3px
+    }
+
+    .lm {
+      display: flex;
+      justify-content: center;
+      margin-top: 18px
+    }
+
+    .boutp {
+      padding: 10px 44px;
+      border: 2px solid var(--ink);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 20px;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all .18s
+    }
+
+    .boutp:hover {
+      background: var(--ink);
+      color: #fff
+    }
+
+    .seobox {
+      background: #fff;
+      border-radius: var(--r);
+      padding: 22px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+      margin-bottom: 20px;
+      border-left: 4px solid var(--p)
+    }
+
+    .seotag {
+      padding: 4px 12px;
+      background: var(--bg);
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #555;
+      display: inline-block;
+      margin: 3px
+    }
+
+    .cta {
+      background: var(--p);
+      border-radius: 18px;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .07);
+      pointer-events: none
+    }
+
+    footer {
+      background: var(--ink)
+    }
+
+    .fi {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 36px 20px 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr 1fr;
+      gap: 32px
+    }
+
+    .fi-logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.5px;
+      line-height: 1;
+      margin-bottom: 12px
+    }
+
+    .fi-logo em {
+      color: var(--ac);
+      font-style: normal
+    }
+
+    .fi h4 {
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px
+    }
+
+    .fi a,
+    .fi li {
+      font-size: 12.5px;
+      color: #888;
+      line-height: 2.4;
+      transition: color .15s
+    }
+
+    .fi a:hover {
+      color: #fff
+    }
+
+    .fi ul {
+      list-style: none
+    }
+
+    .fb2 {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      border-top: 1px solid #222;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #555
+    }
+
+    .fb2 a {
+      color: #666;
+      text-decoration: underline
+    }
+
+    .fb2 a:hover {
+      color: #fff
+    }
+
+    .sticky-banner {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 600;
+      padding: 10px 12px;
+      background: #fffbea;
+      border-top: 1.5px solid #fbbf24;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, .1)
+    }
+
+    .sticky-banner-inner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 640px;
+      margin: 0 auto
+    }
+
+    .sticky-banner-txt {
+      flex: 1;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #333;
+      line-height: 1.45
+    }
+
+    .sticky-banner-btn {
+      background: #f59e0b;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: inherit;
+      white-space: nowrap;
+      flex-shrink: 0
+    }
+
+    .sticky-banner-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #999;
+      padding: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px) {
+      .pgrid {
+        grid-template-columns: repeat(4, 1fr)
+      }
+
+      .vgrid {
+        grid-template-columns: repeat(4, 1fr)
+      }
+
+      .jgrid {
+        grid-template-columns: repeat(4, 1fr)
+      }
+
+      .pgrid-ed {
+        grid-template-columns: 200px 1fr
+      }
+
+      .pgrid-mini {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    @media(max-width:768px) {
+      .hdr-top-inner {
+        padding: 0 12px;
+        gap: 8px
+      }
+
+      .blogin {
+        display: none
+      }
+
+      .pgrid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .vgrid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .jgrid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .pgrid-ed {
+        grid-template-columns: 1fr
+      }
+
+      .pgrid-ed .pc-hero {
+        grid-row: auto
+      }
+
+      .pgrid-mini {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .fi {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px
+      }
+
+      .jt-row {
+        flex-wrap: wrap
+      }
+
+      .jt-btn {
+        flex: 1 1 calc(50% - 6px)
+      }
+
+      .main {
+        padding: 14px 12px 70px
+      }
+
+      .sticky-banner {
+        display: block
+      }
+
+      .cta {
+        flex-direction: column;
+        padding: 24px 20px
+      }
+
+      .esc-num {
+        font-size: 38px
+      }
+
+      .esc-title {
+        font-size: 17px
+      }
+
+      .hero-h1 {
+        font-size: 26px
+      }
+
+      .hero-right {
+        display: none
+      }
+
+      .hero {
+        padding: 28px 0 70px
+      }
+    }
+
+    @media(max-width:480px) {
+      .fi {
+        grid-template-columns: 1fr
+      }
+
+      .pgrid-mini {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    /* ============================================================
+   CHOF.VN — MOBILE RESPONSIVE FIXES
+   Thêm vào cuối thẻ <style> hoặc nhúng link stylesheet này
+   ============================================================ */
+
+/* ── MOBILE: max 768px ── */
+@media (max-width: 768px) {
+
+  /* 1. Header: ẩn nav links, rút gọn */
+  .hdr-nav { display: none; }
+  .logo-tagline { display: none; }
+  .hdr-top-inner { padding: 0 12px; gap: 8px; }
+  .blogin { display: none !important; }
+
+  /* 2. Hero */
+  .hero { padding: 22px 0 60px; }
+  .hero-inner { flex-direction: column; gap: 16px; }
+  .hero-left { max-width: 100%; }
+  .hero-right { display: none; }
+  .hero-h1 { font-size: 24px; letter-spacing: -0.3px; }
+  .hero-sub { font-size: 13px; margin-bottom: 16px; }
+  .hero-stats { gap: 14px; margin-bottom: 16px; }
+  .hero-stat-n { font-size: 18px; }
+  .hero-stat-l { font-size: 10px; }
+  .hero-btn-p, .hero-btn-s { padding: 10px 18px; font-size: 13px; }
+  .hero-ctas { gap: 8px; }
+
+  /* 3. Search box: ẩn category dropdown để không tràn */
+  .sbox.hero-sb { height: 48px; }
+  .scat-wrap { display: none; }
+  .sinput { font-size: 13px; padding: 0 10px; }
+  .sbtn { padding: 0 16px; font-size: 13px; }
+
+  /* Ẩn divider giữa scat và input */
+  .sbox > div[style*="1.5px"],
+  .sbox > div[style*="width:1.5px"] { display: none; }
+
+  /* 4. Cat tabs */
+  .cat-tabs-inner { padding: 0 8px; }
+  .ct-link { padding: 0 10px; font-size: 12px; }
+  .ct-dd-wrap { display: none; } /* ẩn mega-menu btn trên mobile */
+
+  /* 5. Sticky header: gọn lại */
+  .sticky-hdr-inner { padding: 0 10px; gap: 8px; height: 52px; }
+  #stickyCtWrap { display: none; }
+  .sbox.sticky-sb { height: 38px; }
+
+  /* 6. Layout grids */
+  .pgrid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
+  .pgrid-ed { grid-template-columns: 1fr !important; }
+  .pgrid-ed .pc-hero { grid-row: auto !important; }
+  .pgrid-mini { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
+  .pgrid-mini-wrap { gap: 10px; }
+  .vgrid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
+  .jgrid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
+
+  /* Hero card aspect ratio dễ nhìn hơn */
+  .pc-hero .pcimg { aspect-ratio: 4/3; }
+
+  /* 7. Job type buttons */
+  .jt-row { flex-wrap: wrap; gap: 8px; }
+  .jt-btn { flex: 1 1 calc(50% - 4px); padding: 8px 10px; }
+  .jt-ico { width: 32px; height: 32px; }
+  .jt-name { font-size: 12px; }
+  .jt-sub { font-size: 10px; }
+
+  /* 8. Section headings */
+  .esc-num { font-size: 36px !important; }
+  .esc-title { font-size: 15px !important; }
+  .esc-tabs .esc-tab { padding: 5px 10px; font-size: 11.5px; }
+
+  /* 9. Đồng giá slider */
+  .dg-price { font-size: 16px; }
+  .dg-lbl { font-size: 9.5px; }
+  .dg-cnt { font-size: 9px; }
+  .dg-item { padding: 12px 6px 10px; }
+  .dg-nav { width: 32px; height: 32px; }
+
+  /* 10. Brand carousel */
+  .brand-logo-wrap { width: 48px; height: 48px; }
+  .brand-name { font-size: 11px; }
+  .brand-card { padding: 10px 8px 9px; }
+
+  /* 11. Category icons */
+  .catrow { min-width: 600px; }
+  .cimg { width: 44px; height: 44px; font-size: 18px; }
+  .clbl { font-size: 10px; }
+
+  /* 12. Product card */
+  .pcb { padding: 8px 10px 10px; }
+  .pc-title, .pctit { font-size: 11.5px; min-height: auto; }
+  .pc-price-sale, .psal { font-size: 13px; }
+
+  /* 13. Main padding */
+  .main { padding: 12px 10px 80px; }
+  .sec { padding: 16px 14px; }
+  .catsec { padding: 14px 12px 16px; }
+
+  /* 14. CTA banner */
+  .cta { flex-direction: column; padding: 22px 16px; gap: 16px; }
+  .cta h2 { font-size: 22px !important; }
+  .cta > div:last-child { flex-direction: row; justify-content: center; }
+
+  /* 15. Footer */
+  .fi { grid-template-columns: 1fr 1fr; gap: 16px; padding: 24px 14px 14px; }
+  .fi-logo { font-size: 20px; margin-bottom: 8px; }
+
+  /* 16. SEO box */
+  .seobox { padding: 14px; }
+}
+
+/* ── EXTRA SMALL: max 480px ── */
+@media (max-width: 480px) {
+
+  /* Header */
+  .hdr-top-inner { padding: 0 10px; gap: 6px; }
+  .logo-badge { font-size: 17px; padding: 3px 8px; }
+
+  /* Hero: ẩn stat thứ 3 */
+  .hero-h1 { font-size: 20px; }
+  .hero-eyebrow { font-size: 10px; padding: 4px 10px; }
+  .hero-stat:last-child { display: none; }
+  .hero-stat-sep:last-of-type { display: none; }
+
+  /* Category icons: 6 cột thay vì 12 */
+  .catrow {
+    grid-template-columns: repeat(6, 1fr);
+    min-width: 0;
+    gap: 2px;
+  }
+  .cimg { width: 38px; height: 38px; font-size: 16px; }
+  .clbl { font-size: 9px; }
+  .catitem { padding: 8px 4px; gap: 5px; }
+
+  /* Grids */
+  .pgrid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+  .pgrid-mini { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+  .vgrid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+  .jgrid { grid-template-columns: 1fr !important; }
+  .jt-btn { flex: 1 1 100%; }
+
+  /* Section */
+  .sec { padding: 12px 10px; margin-bottom: 12px; }
+  .catsec { padding: 10px 8px 12px; margin-bottom: 12px; }
+  .main { padding: 10px 8px 80px; }
+
+  /* Footer: 1 cột */
+  .fi { grid-template-columns: 1fr; gap: 14px; }
+  .fb2 { flex-direction: column; gap: 6px; text-align: center; }
+  .fb2 > div { gap: 12px; }
+
+  /* Brand section */
+  .brand-sec { padding: 14px 12px; }
+
+  /* SEO */
+  .seobox { padding: 12px; }
+  .seobox h2 { font-size: 14px !important; }
+}
+
+/* ── TABLET: 769px – 1024px ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hdr-nav .hdr-nav-link { padding: 6px 8px; font-size: 12.5px; }
+  .hero-h1 { font-size: 30px; }
+  .pgrid { grid-template-columns: repeat(3, 1fr); }
+  .pgrid-ed { grid-template-columns: 200px 1fr; }
+  .pgrid-mini { grid-template-columns: repeat(3, 1fr); }
+  .jgrid { grid-template-columns: repeat(3, 1fr); }
+  .vgrid { grid-template-columns: repeat(3, 1fr); }
+  .fi { grid-template-columns: 2fr 1fr 1fr; gap: 24px; }
+}
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════
+     TOP NAV BAR (1 row, always)
+════════════════════════════════ -->
+  <div class="hdr-top">
+    <div class="hdr-top-inner">
+      <a href="/" class="logo">
+        <img src="/assets/logo.png" alt="Chof.vn" style="height:38px;object-fit:contain;display:block">
+        <div class="logo-tagline">Chợ thời trang<br>Việt Nam</div>
+      </a>
+
+      <nav class="hdr-nav">
+        <a href="/" class="hdr-nav-link active">Chof.vn</a>
+        <div class="hdr-nav-sep"></div>
+        <a href="/listing.html?cat=vieclam" class="hdr-nav-link">Việc làm</a>
+        <a href="/listing.html?cat=dichvu" class="hdr-nav-link">Dịch vụ</a>
+        <a href="/listing.html?cat=thuonghieu" class="hdr-nav-link">Thương hiệu</a>
+      </nav>
+
+      <div class="hdr-space"></div>
+
+      <div class="ha">
+        <button class="ibtn" title="Yêu thích"><span class="ms">favorite</span></button>
+        <button class="ibtn" title="Thông báo"><span class="ms">notifications</span><span class="ndot"></span></button>
+        <div class="hdiv"></div>
+        <button class="blogin">Đăng nhập</button>
+        <button onclick="location.href='/manage.html'" class="bpost" id="bpost">
+          <span class="ms" style="font-size:16px">add_box</span>
+          <span id="bpost-txt">Đăng tin</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+     HERO BANNER (green, big)
+════════════════════════════════ -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow">🔥 Sàn thời trang #1 Việt Nam</div>
+        <h1 class="hero-h1">Mua bán thời trang<br><em>dễ dàng & nhanh chóng</em></h1>
+        <p class="hero-sub">Hàng ngàn sản phẩm thời trang chính hãng.<br>Tìm việc, đăng tin hoàn toàn miễn phí.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-n">500k+</div>
+            <div class="hero-stat-l">Tin đăng</div>
+          </div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-n">200k+</div>
+            <div class="hero-stat-l">Người dùng</div>
+          </div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-n">50k+</div>
+            <div class="hero-stat-l">Shop uy tín</div>
+          </div>
+        </div>
+        <div class="hero-ctas">
+          <button class="hero-btn-p" onclick="location.href='/listing.html'">Khám phá ngay</button>
+          <button class="hero-btn-s" onclick="location.href='/manage.html'">Đăng tin miễn phí</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-float hf1">
+          <div class="hf-ico">👗</div>
+          <div class="hf-lbl">Mới đăng</div>
+          <div class="hf-val">1,240</div>
+          <div class="hf-sub">sản phẩm hôm nay</div>
+        </div>
+        <div class="hero-float hf2">
+          <div class="hf-ico">💼</div>
+          <div class="hf-lbl">Việc làm hot</div>
+          <div class="hf-val">380</div>
+          <div class="hf-sub">vị trí đang tuyển</div>
+        </div>
+        <div class="hero-float hf3">
+          <div class="hf-ico">⭐</div>
+          <div class="hf-lbl">Đánh giá trung bình</div>
+          <div class="hf-val">4.8 / 5</div>
+          <div class="hf-sub">từ 80k+ đánh giá</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+     SEARCH BAR (floating, below hero)
+════════════════════════════════ -->
+  <div style="background:linear-gradient(to bottom,#008848 0%,var(--bg) 100%);padding:0 20px 16px">
+    <div style="max-width:1320px;margin:0 auto;position:relative">
+      <div class="sbox hero-sb" id="heroSbox">
+        <!-- Category selector -->
+        <div class="scat-wrap" id="scatWrap">
+          <button class="scat-btn" id="scatBtn">
+            <span id="scatLabel"></span>
+          </button>
+          <div class="scat-drop" id="scatDrop">
+            <div class="scat-opt active" data-val="all" onclick="pickCat(this)">🛍️ Tất cả danh mục</div>
+            <div class="scat-opt" data-val="nam" onclick="pickCat(this)">👔 Thời trang Nam</div>
+            <div class="scat-opt" data-val="nu" onclick="pickCat(this)">👗 Thời trang Nữ</div>
+            <div class="scat-opt" data-val="treEm" onclick="pickCat(this)">👶 Trẻ em</div>
+            <div class="scat-opt" data-val="giay" onclick="pickCat(this)">👟 Giày dép</div>
+            <div class="scat-opt" data-val="tui" onclick="pickCat(this)">👜 Túi xách</div>
+            <div class="scat-opt" data-val="dongho" onclick="pickCat(this)">⌚ Đồng hồ</div>
+            <div class="scat-opt" data-val="dichvu" onclick="pickCat(this)">🔧 Dịch vụ</div>
+            <div class="scat-opt" data-val="vieclam" onclick="pickCat(this)">💼 Việc làm</div>
+          </div>
+        </div>
+        <div style="width:1.5px;background:var(--line);margin:10px 0;flex-shrink:0"></div>
+        <input class="sinput" id="sinput" type="text" placeholder="Tìm kiếm sản phẩm thời trang, dịch vụ, việc làm..."
+          autocomplete="off" />
+        <button class="sbtn" onclick="location.href='/listing.html'"><span class="ms"
+            style="font-size:18px">search</span> Tìm kiếm</button>
+      </div>
+
+      <!-- Search suggestion dropdown -->
+      <div class="sdrop" id="sdrop" style="top:calc(100% + 8px)">
+        <div class="sdt">🔥 Tìm kiếm phổ biến</div>
+        <div class="sdtags">
+          <span class="sdtag" onclick="fillSearch(this)"><span class="ms" style="font-size:11px">trending_up</span>Áo
+            thun oversize</span>
+          <span class="sdtag" onclick="fillSearch(this)"><span class="ms" style="font-size:11px">trending_up</span>Váy
+            đầm nữ</span>
+          <span class="sdtag" onclick="fillSearch(this)"><span class="ms" style="font-size:11px">trending_up</span>Giày
+            sneaker</span>
+          <span class="sdtag" onclick="fillSearch(this)"><span class="ms" style="font-size:11px">trending_up</span>Túi
+            xách nữ</span>
+          <span class="sdtag" onclick="fillSearch(this)"><span class="ms" style="font-size:11px">trending_up</span>Đồng
+            hồ Casio</span>
+          <span class="sdtag" onclick="fillSearch(this)"><span class="ms" style="font-size:11px">trending_up</span>Nước
+            hoa nam</span>
+          <span class="sdtag" onclick="fillSearch(this)"><span class="ms" style="font-size:11px">trending_up</span>May
+            đo vest</span>
+        </div>
+        <div class="sdsep"></div>
+        <div class="sdt" style="margin-bottom:8px">⭐ Gợi ý nổi bật</div>
+        <div class="sditem"><img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
+            alt="">
+          <div>
+            <div class="sdn">Đầm voan hoa nhí cổ V phong cách Hàn Quốc</div>
+            <div class="sdpr">250.000 đ</div>
+            <div class="sdsh">Ana Fashion · Quận 1</div>
+          </div>
+        </div>
+        <div class="sditem"><img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
+            alt="">
+          <div>
+            <div class="sdn">Giày Sneaker Nike Air Max size 40–44</div>
+            <div class="sdpr">3.500.000 đ</div>
+            <div class="sdsh">Sneaker World · Bình Thạnh</div>
+          </div>
+        </div>
+        <div class="sdsep"></div>
+        <div style="text-align:center"><a href="/listing.html" style="font-size:12px;color:var(--p);font-weight:700">Xem
+            tất cả kết quả →</a></div>
+      </div>
+    </div>
+    <!-- Quick tags -->
+    <div style="max-width:1320px;margin:10px auto 0;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span style="font-size:12px;color:rgba(255,255,255,.7);font-weight:600">Gợi ý:</span>
+      <span class="sqtag" onclick="fillSearch(this)">Áo thun</span>
+      <span class="sqtag" onclick="fillSearch(this)">Váy đầm</span>
+      <span class="sqtag" onclick="fillSearch(this)">Giày sneaker</span>
+      <span class="sqtag" onclick="fillSearch(this)">Túi xách</span>
+      <span class="sqtag" onclick="fillSearch(this)">Việc làm thời trang</span>
+      <span class="sqtag" onclick="fillSearch(this)">Đồng phục</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+     STICKY HEADER (shows on scroll)
+════════════════════════════════ -->
+  <div class="sticky-hdr" id="stickyHdr">
+    <div class="sticky-hdr-inner">
+      <div class="sticky-logo">
+        <img src="/assets/logo.png" alt="Chof.vn" style="height:30px;object-fit:contain;display:block">
+      </div>
+      <!-- Category dropdown for sticky -->
+      <div class="ct-dd-wrap" id="stickyCtWrap" style="position:relative;flex-shrink:0">
+        <button class="ct-dd-btn" id="stickyCtBtn"
+          style="height:40px;border-radius:20px;border:1.5px solid var(--line);padding:0 14px;font-family:inherit">
+          <span class="ms" style="font-size:16px">menu</span>
+          <span>Danh mục</span>
+          <span class="ms ct-arr" style="font-size:14px">expand_more</span>
+        </button>
+        <!-- Reuse the same mega menu but positioned from sticky wrap -->
+        <div class="mm-wrap" id="mmWrapSticky">
+          <div class="mm-box">
+            <div class="mm-left" id="mmLeftSticky">
+              <div class="ml1 active" data-cat="nam">Nam <span class="ms" style="font-size:13px">chevron_right</span>
+              </div>
+              <div class="ml1" data-cat="nu">Nữ <span class="ms" style="font-size:13px">chevron_right</span></div>
+              <div class="ml1" data-cat="treEm">Trẻ em <span class="ms" style="font-size:13px">chevron_right</span>
+              </div>
+              <div class="ml1" data-cat="chuyenDe">Chuyên đề <span class="ms"
+                  style="font-size:13px">chevron_right</span></div>
+              <div class="ml1" data-cat="vietBrand">TH Việt <span class="ms" style="font-size:13px">chevron_right</span>
+              </div>
+              <div class="ml1" data-cat="foreigner">4 Foreigner <span class="ms"
+                  style="font-size:13px">chevron_right</span></div>
+              <div class="ml1" data-cat="dichvu">Dịch vụ <span class="ms" style="font-size:13px">chevron_right</span>
+              </div>
+              <div class="ml1" data-cat="viecLam">Việc làm <span class="ms" style="font-size:13px">chevron_right</span>
+              </div>
+            </div>
+            <div class="mm-right" id="mmRightSticky">
+              <div class="mp active" id="sp-nam">
+                <div>
+                  <h3>Áo</h3>
+                  <ul>
+                    <li><a href="/listing.html">Áo thun</a></li>
+                    <li><a href="/listing.html">Áo sơ mi</a></li>
+                    <li><a href="/listing.html">Áo khoác</a></li>
+                    <li><a href="/listing.html">Áo vest</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Quần</h3>
+                  <ul>
+                    <li><a href="/listing.html">Quần ngắn</a></li>
+                    <li><a href="/listing.html">Quần dài</a></li>
+                    <li><a href="/listing.html">Quần lót</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Nón – Kính</h3>
+                  <ul>
+                    <li><a href="/listing.html">Nón</a></li>
+                    <li><a href="/listing.html">Mắt kính</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Balo – Túi</h3>
+                  <ul>
+                    <li><a href="/listing.html">Ba lô</a></li>
+                    <li><a href="/listing.html">Túi xách</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Đồng hồ – Bóp</h3>
+                  <ul>
+                    <li><a href="/listing.html">Đồng hồ</a></li>
+                    <li><a href="/listing.html">Bóp ví</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Giày dép</h3>
+                  <ul>
+                    <li><a href="/listing.html">Giày thể thao</a></li>
+                    <li><a href="/listing.html">Dép</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Mỹ phẩm</h3>
+                  <ul>
+                    <li><a href="/listing.html">Nước hoa</a></li>
+                    <li><a href="/listing.html">Mỹ phẩm</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Phụ kiện</h3>
+                  <ul>
+                    <li><a href="/listing.html">Phụ kiện</a></li>
+                    <li><a href="/listing.html">Khác</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="sp-nu">
+                <div>
+                  <h3>Áo</h3>
+                  <ul>
+                    <li><a href="/listing.html">Áo thun</a></li>
+                    <li><a href="/listing.html">Áo sơ mi</a></li>
+                    <li><a href="/listing.html">Áo khoác</a></li>
+                    <li><a href="/listing.html">Áo dài</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Quần – Váy</h3>
+                  <ul>
+                    <li><a href="/listing.html">Quần</a></li>
+                    <li><a href="/listing.html">Váy đầm</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Nón – Kính</h3>
+                  <ul>
+                    <li><a href="/listing.html">Nón</a></li>
+                    <li><a href="/listing.html">Mắt kính</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Túi xách</h3>
+                  <ul>
+                    <li><a href="/listing.html">Ba lô</a></li>
+                    <li><a href="/listing.html">Túi xách</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Mỹ phẩm</h3>
+                  <ul>
+                    <li><a href="/listing.html">Nước hoa</a></li>
+                    <li><a href="/listing.html">Mỹ phẩm</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="sp-treEm">
+                <div>
+                  <h3>Sơ sinh</h3>
+                  <ul>
+                    <li><a href="/listing.html">Dưới 1 tháng</a></li>
+                    <li><a href="/listing.html">1–6 tháng</a></li>
+                    <li><a href="/listing.html">6–12 tháng</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Bé trai</h3>
+                  <ul>
+                    <li><a href="/listing.html">Dưới 3 tuổi</a></li>
+                    <li><a href="/listing.html">3–6 tuổi</a></li>
+                    <li><a href="/listing.html">Trên 6 tuổi</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Bé gái</h3>
+                  <ul>
+                    <li><a href="/listing.html">Dưới 3 tuổi</a></li>
+                    <li><a href="/listing.html">3–6 tuổi</a></li>
+                    <li><a href="/listing.html">Trên 6 tuổi</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="sp-chuyenDe">
+                <div>
+                  <h3>TT Gia dụng</h3>
+                  <ul>
+                    <li><a href="/listing.html">Mền/mùng</a></li>
+                    <li><a href="/listing.html">Áo gối/ra giường</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>TT Chuyên dụng</h3>
+                  <ul>
+                    <li><a href="/listing.html">Đồng phục</a></li>
+                    <li><a href="/listing.html">Bà bầu/hội cưới</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>TT Đồng giá</h3>
+                  <ul>
+                    <li><a href="/listing.html">10k–99k</a></li>
+                    <li><a href="/listing.html">100k–499k</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Nguyên phụ liệu</h3>
+                  <ul>
+                    <li><a href="/listing.html">Vải/khoá kéo</a></li>
+                    <li><a href="/listing.html">Máy móc/khác</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="sp-vietBrand">
+                <div>
+                  <h3>TT Nam</h3>
+                  <ul>
+                    <li><a href="/listing.html">Áo nam</a></li>
+                    <li><a href="/listing.html">Quần nam</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>TT Nữ</h3>
+                  <ul>
+                    <li><a href="/listing.html">Áo nữ</a></li>
+                    <li><a href="/listing.html">Quần/đồ lót</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>TT Trẻ em</h3>
+                  <ul>
+                    <li><a href="/listing.html">Bé trai/gái</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>TP Truyền thống</h3>
+                  <ul>
+                    <li><a href="/listing.html">Nam/Nữ/Trẻ em</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="sp-foreigner">
+                <div>
+                  <h3>For Men</h3>
+                  <ul>
+                    <li><a href="/listing.html">Shirt/T-shirt</a></li>
+                    <li><a href="/listing.html">Short/Pants</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>For Women</h3>
+                  <ul>
+                    <li><a href="/listing.html">Top/Dress</a></li>
+                    <li><a href="/listing.html">Accessories</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>For Kids</h3>
+                  <ul>
+                    <li><a href="/listing.html">Boy/Girl</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Made to Order</h3>
+                  <ul>
+                    <li><a href="/listing.html">Custom</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="sp-dichvu">
+                <div>
+                  <h3>DV May mặc</h3>
+                  <ul>
+                    <li><a href="/listing.html">In thêu</a></li>
+                    <li><a href="/listing.html">Giặt ủi</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>DV Phụ trợ</h3>
+                  <ul>
+                    <li><a href="/listing.html">Người mẫu</a></li>
+                    <li><a href="/listing.html">Chụp ảnh</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Theo yêu cầu</h3>
+                  <ul>
+                    <li><a href="/listing.html">May đo</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="sp-viecLam">
+                <div>
+                  <h3>Thời vụ</h3>
+                  <ul>
+                    <li><a href="/listing.html">Việc tìm người</a></li>
+                    <li><a href="/listing.html">Người tìm việc</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Chính thức</h3>
+                  <ul>
+                    <li><a href="/listing.html">Việc tìm người</a></li>
+                    <li><a href="/listing.html">Người tìm việc</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sticky search -->
+      <div style="flex:1;position:relative;min-width:0">
+        <div class="sbox sticky-sb">
+          <input class="sinput" id="sinputSticky" type="text" placeholder="Tìm kiếm thời trang, dịch vụ, việc làm..."
+            autocomplete="off" />
+          <button class="sbtn" onclick="location.href='/listing.html'"><span class="ms"
+              style="font-size:16px">search</span></button>
+        </div>
+      </div>
+      <div class="ha" style="gap:6px">
+        <button class="ibtn"><span class="ms">notifications</span><span class="ndot"></span></button>
+        <div class="hdiv"></div>
+        <button class="blogin" style="display:block">Đăng nhập</button>
+        <button class="bpost" onclick="location.href='/manage.html'"><span class="ms"
+            style="font-size:15px">add_box</span> Đăng tin</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+     CATEGORY TAB BAR (below hero)
+════════════════════════════════ -->
+  <div class="cat-tabs" id="catTabs">
+    <div class="cat-tabs-inner">
+      <!-- Dropdown mega menu button -->
+      <div class="ct-dd-wrap" id="ctDdWrap">
+        <div class="mm-wrap" id="mmWrap">
+          <div class="mm-box">
+            <div class="mm-left" id="mmLeft">
+              <div class="ml1 active" data-cat="nam">Nam <span class="ms" style="font-size:13px">chevron_right</span>
+              </div>
+              <div class="ml1" data-cat="nu">Nữ <span class="ms" style="font-size:13px">chevron_right</span></div>
+              <div class="ml1" data-cat="treEm">Trẻ em <span class="ms" style="font-size:13px">chevron_right</span>
+              </div>
+              <div class="ml1" data-cat="chuyenDe">Chuyên đề <span class="ms"
+                  style="font-size:13px">chevron_right</span></div>
+              <div class="ml1" data-cat="vietBrand">Thương hiệu Việt <span class="ms"
+                  style="font-size:13px">chevron_right</span></div>
+              <div class="ml1" data-cat="foreigner">4 Foreigner <span class="ms"
+                  style="font-size:13px">chevron_right</span></div>
+              <div class="ml1" data-cat="dichvu">Dịch vụ <span class="ms" style="font-size:13px">chevron_right</span>
+              </div>
+              <div class="ml1" data-cat="viecLam">Việc làm <span class="ms" style="font-size:13px">chevron_right</span>
+              </div>
+            </div>
+            <div class="mm-right" id="mmRight">
+              <div class="mp active" id="p-nam">
+                <div>
+                  <h3>Áo</h3>
+                  <ul>
+                    <li><a href="/listing.html">Áo thun</a></li>
+                    <li><a href="/listing.html">Áo sơ mi</a></li>
+                    <li><a href="/listing.html">Áo khoác</a></li>
+                    <li><a href="/listing.html">Áo vest</a></li>
+                    <li><a href="/listing.html">Áo khác</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Quần</h3>
+                  <ul>
+                    <li><a href="/listing.html">Quần ngắn</a></li>
+                    <li><a href="/listing.html">Quần dài</a></li>
+                    <li><a href="/listing.html">Quần lót</a></li>
+                    <li><a href="/listing.html">Quần khác</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Nón – Mắt kính</h3>
+                  <ul>
+                    <li><a href="/listing.html">Nón</a></li>
+                    <li><a href="/listing.html">Mắt kính</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Balo – Túi xách</h3>
+                  <ul>
+                    <li><a href="/listing.html">Ba lô</a></li>
+                    <li><a href="/listing.html">Túi xách</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Đồng hồ – Bóp ví</h3>
+                  <ul>
+                    <li><a href="/listing.html">Đồng hồ</a></li>
+                    <li><a href="/listing.html">Bóp ví</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Đồ lót – Giày dép</h3>
+                  <ul>
+                    <li><a href="/listing.html">Đồ lót</a></li>
+                    <li><a href="/listing.html">Giày dép</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Nước hoa – Mỹ phẩm</h3>
+                  <ul>
+                    <li><a href="/listing.html">Nước hoa</a></li>
+                    <li><a href="/listing.html">Mỹ phẩm</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Phụ kiện – Khác</h3>
+                  <ul>
+                    <li><a href="/listing.html">Phụ kiện</a></li>
+                    <li><a href="/listing.html">Khác</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="p-nu">
+                <div>
+                  <h3>Áo</h3>
+                  <ul>
+                    <li><a href="/listing.html">Áo thun</a></li>
+                    <li><a href="/listing.html">Áo sơ mi</a></li>
+                    <li><a href="/listing.html">Áo khoác</a></li>
+                    <li><a href="/listing.html">Áo dài</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Quần – Váy đầm</h3>
+                  <ul>
+                    <li><a href="/listing.html">Quần</a></li>
+                    <li><a href="/listing.html">Váy đầm</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Nón – Mắt kính</h3>
+                  <ul>
+                    <li><a href="/listing.html">Nón</a></li>
+                    <li><a href="/listing.html">Mắt kính</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Túi xách</h3>
+                  <ul>
+                    <li><a href="/listing.html">Ba lô</a></li>
+                    <li><a href="/listing.html">Túi xách</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Mỹ phẩm</h3>
+                  <ul>
+                    <li><a href="/listing.html">Nước hoa</a></li>
+                    <li><a href="/listing.html">Mỹ phẩm</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="p-treEm">
+                <div>
+                  <h3>Sơ sinh</h3>
+                  <ul>
+                    <li><a href="/listing.html">Dưới 1 tháng</a></li>
+                    <li><a href="/listing.html">1–6 tháng</a></li>
+                    <li><a href="/listing.html">6–12 tháng</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Bé trai</h3>
+                  <ul>
+                    <li><a href="/listing.html">Dưới 3 tuổi</a></li>
+                    <li><a href="/listing.html">3–6 tuổi</a></li>
+                    <li><a href="/listing.html">Trên 6 tuổi</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Bé gái</h3>
+                  <ul>
+                    <li><a href="/listing.html">Dưới 3 tuổi</a></li>
+                    <li><a href="/listing.html">3–6 tuổi</a></li>
+                    <li><a href="/listing.html">Trên 6 tuổi</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="p-chuyenDe">
+                <div>
+                  <h3>TT Gia dụng</h3>
+                  <ul>
+                    <li><a href="/listing.html">Mền/mùng</a></li>
+                    <li><a href="/listing.html">Áo gối/ra giường</a></li>
+                    <li><a href="/listing.html">Rèm/khác</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>TT Chuyên dụng</h3>
+                  <ul>
+                    <li><a href="/listing.html">Đồng phục</a></li>
+                    <li><a href="/listing.html">Bà bầu/hội cưới</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>TT Đồng giá</h3>
+                  <ul>
+                    <li><a href="/listing.html">10k/50k/100k</a></li>
+                    <li><a href="/listing.html">200k/300k</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Nguyên phụ liệu</h3>
+                  <ul>
+                    <li><a href="/listing.html">Vải/khoá kéo</a></li>
+                    <li><a href="/listing.html">Máy móc/khác</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="p-vietBrand">
+                <div>
+                  <h3>TT Nam</h3>
+                  <ul>
+                    <li><a href="/listing.html">Áo nam</a></li>
+                    <li><a href="/listing.html">Quần nam</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>TT Nữ</h3>
+                  <ul>
+                    <li><a href="/listing.html">Áo nữ</a></li>
+                    <li><a href="/listing.html">Quần/đồ lót</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>TT Trẻ em</h3>
+                  <ul>
+                    <li><a href="/listing.html">Bé trai/gái</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>TP Truyền thống</h3>
+                  <ul>
+                    <li><a href="/listing.html">Nam/Nữ/Trẻ em</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="p-foreigner">
+                <div>
+                  <h3>For Men</h3>
+                  <ul>
+                    <li><a href="/listing.html">Shirt/T-shirt</a></li>
+                    <li><a href="/listing.html">Short/Pants</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>For Women</h3>
+                  <ul>
+                    <li><a href="/listing.html">Top/Dress</a></li>
+                    <li><a href="/listing.html">Accessories</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>For Kids</h3>
+                  <ul>
+                    <li><a href="/listing.html">Boy/Girl</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Made to Order</h3>
+                  <ul>
+                    <li><a href="/listing.html">Custom</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="p-dichvu">
+                <div>
+                  <h3>DV May mặc</h3>
+                  <ul>
+                    <li><a href="/listing.html">In thêu</a></li>
+                    <li><a href="/listing.html">Giặt ủi</a></li>
+                    <li><a href="/listing.html">Sửa quần áo</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>DV Phụ trợ</h3>
+                  <ul>
+                    <li><a href="/listing.html">Người mẫu</a></li>
+                    <li><a href="/listing.html">Trang điểm</a></li>
+                    <li><a href="/listing.html">Chụp ảnh</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Theo yêu cầu</h3>
+                  <ul>
+                    <li><a href="/listing.html">May đo</a></li>
+                    <li><a href="/listing.html">Gia công</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mp" id="p-viecLam">
+                <div>
+                  <h3>Việc làm thời vụ</h3>
+                  <ul>
+                    <li><a href="/listing.html">Việc tìm người</a></li>
+                    <li><a href="/listing.html">Người tìm việc</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Việc làm chính thức</h3>
+                  <ul>
+                    <li><a href="/listing.html">Việc tìm người</a></li>
+                    <li><a href="/listing.html">Người tìm việc</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ct-sep"></div>
+      <a href="/listing.html?hot=1" class="ct-link hot">🔥 Hôm nay Hot</a>
+      <a href="/listing.html?cat=nam" class="ct-link">Thời trang Nam</a>
+      <a href="/listing.html?cat=nu" class="ct-link">Thời trang Nữ</a>
+      <a href="/listing.html?cat=treEm" class="ct-link">Trẻ em</a>
+      <div class="ct-sep"></div>
+      <a href="/listing.html?cat=giay" class="ct-link">Giày dép</a>
+      <a href="/listing.html?cat=tui" class="ct-link">Túi xách</a>
+      <a href="/listing.html?cat=dongho" class="ct-link">Đồng hồ</a>
+      <div class="ct-sep"></div>
+      <a href="/listing.html?cat=dichvu" class="ct-link">Dịch vụ</a>
+      <a href="/listing.html?cat=vieclam" class="ct-link">Việc làm</a>
+      <div class="ct-sep"></div>
+      <a href="/listing.html?cat=thuonghieu" class="ct-link">Thương hiệu Việt</a>
+      <a href="/listing.html?cat=foreigner" class="ct-link">4 Foreigner</a>
+    </div>
+  </div>
+
+  <!-- ═══ MAIN ═══ -->
+  <div class="main">
+
+    <!-- DANH MỤC -->
+    <div class="catsec">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+        <div style="display:flex;align-items:center;gap:8px"><span
+            style="display:inline-block;width:4px;height:18px;background:var(--p);border-radius:2px"></span><span
+            style="font-size:15px;font-weight:800;color:var(--ink)">Danh mục nổi bật</span></div>
+        <a href="/listing.html" class="esc-more">Xem tất cả <span class="ms"
+            style="font-size:14px">chevron_right</span></a>
+      </div>
+      <div class="catbox">
+        <div class="catrow">
+          <a class="catitem" href="/listing.html">
+            <div class="cimg ba"><img src="/assets/sanpham.jpg" alt="" onerror="this.innerHTML='👗'"></div><span
+              class="clbl">Váy nữ</span>
+          </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg bb"><img src="/assets/dongho.jpg" alt="" onerror="this.innerHTML='⌚'"></div><span
+              class="clbl">Đồng Hồ</span>
+          </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg bc"><img src="/assets/tui.jpg" alt="" onerror="this.innerHTML='👜'"></div><span
+              class="clbl">Túi Xách</span>
+          </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg bd"><img src="/assets/giay.webp" alt="" onerror="this.innerHTML='👟'"></div><span
+              class="clbl">Giày Dép</span>
+          </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg be"><img src="/assets/mypham.jpg" alt="" onerror="this.innerHTML='💄'"></div><span
+              class="clbl">Mỹ Phẩm</span>
+          </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg bf"><img src="/assets/nuochoa.jpg" alt="" onerror="this.innerHTML='🌸'"></div><span
+              class="clbl">Nước Hoa</span>
+          </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg bg"><img src="/assets/work.avif" alt="" onerror="this.innerHTML='💼'"></div><span
+              class="clbl">Việc Làm</span>
+          </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg bh"><img src="/assets/kinh.png" alt="" onerror="this.innerHTML='✨'"></div><span
+              class="clbl">Mắt kính</span>
+          </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg be"><img src="/assets/tresosinh.jpg" alt="" onerror="this.innerHTML='👶'"></div><span
+              class="clbl">Q.áo sơ sinh</span>
+          </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg bf"><img src="/assets/balo.jpeg" alt="" onerror="this.innerHTML='🎒'"></div><span
+              class="clbl">Balo</span>
+          </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg bg"><img src="/assets/dam.webp" alt="" onerror="this.innerHTML='👗'"></div><span
+              class="clbl">Đầm</span>
+          </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg bh"><img src="/assets/jacket.webp" alt="" onerror="this.innerHTML='🧥'"></div><span
+              class="clbl">Jacket</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ĐỒNG GIÁ -->
+    <div class="sec ap">
+      <div class="esc">
+        <div class="esc-left">
+          <span class="esc-num">01</span>
+          <div class="esc-texts">
+            <span class="esc-eyebrow">Chuyên mục</span>
+            <span class="esc-title">Mua hàng đồng giá</span>
+          </div>
+        </div>
+        <a href="/listing.html" class="esc-more">Xem tất cả <span class="ms"
+            style="font-size:14px">chevron_right</span></a>
+      </div>
+      <div class="dg-wrap">
+        <button class="dg-nav" id="dgPrev" disabled><span class="ms" style="font-size:20px">chevron_left</span></button>
+        <div class="dg-outer" id="dgOuter">
+          <div class="dg-track" id="dgTrack"></div>
+        </div>
+        <button class="dg-nav" id="dgNext"><span class="ms" style="font-size:20px">chevron_right</span></button>
+      </div>
+    </div>
+
+    <!-- HÔM NAY HOT -->
+    <div class="sec ap">
+      <div class="esc">
+        <div class="esc-left">
+          <span class="esc-num">02</span>
+          <div class="esc-texts">
+            <span class="esc-eyebrow">Xu hướng</span>
+            <div style="display:flex;align-items:center">
+              <span class="esc-title">Hôm nay có gì Hot</span>
+              <div class="esc-tabs">
+                <button class="esc-tab active" onclick="setTab(this,'hotGrid')">Hot</button>
+                <button class="esc-tab" onclick="setTab(this,'hotGrid')">Xu hướng</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/listing.html" class="esc-more">Xem thêm <span class="ms"
+            style="font-size:14px">chevron_right</span></a>
+      </div>
+      <div id="hotGrid">
+        <div class="pgrid-ed">
+          <!-- Hero card -->
+          <div class="pc-hero">
+            <div class="pcimg"><img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
+                alt=""><span class="bge bsale">–50%</span><button class="bfav"><span class="ms msf"
+                  style="font-size:13px">favorite</span></button></div>
+            <div class="pcb">
+              <div class="srow">
+                <span class="sname">Ana Fashion</span>
+                <svg class="vico" viewBox="0 0 24 24" fill="none" stroke="#008848" stroke-width="2.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <div class="ibwrap">
+                  <button class="infobtn">!</button>
+                  <div class="spopup">
+                    <div class="ppr"><span class="pplbl">Tình trạng:</span><span class="ppval ok">Đã xác thực ✓</span>
+                    </div>
+                    <div class="ppr"><span class="pplbl">Tài khoản:</span><span class="ppval">Cá nhân</span></div>
+                    <div class="ppr"><span class="pplbl">Tham gia:</span><span class="ppval">01/01/2025</span></div>
+                    <div class="ppr"><span class="pplbl">Địa chỉ:</span><span class="ppval">Quận 1, TP.HCM</span></div>
+                    <div class="ppr"><span class="pplbl">SĐT:</span><span class="ppval">0123456789</span></div>
+                    <div class="ppr"><span class="pplbl">Chat:</span><span class="ppval"><span
+                          class="cb zalo">Zalo</span><span class="cb fb">FB</span><span class="cb sms">SMS</span></span>
+                    </div>
+                    <div class="ppr"><span class="pplbl">Uy tín:</span><span class="ppval gold">GOLD ⭐</span></div>
+                    <div class="pall"><span>Tất cả bài đăng</span><span>→</span></div>
+                    <button class="bfol">Theo dõi</button>
+                  </div>
+                </div>
+              </div>
+              <a href="/detail.html">
+                <p class="pc-title">Đầm voan hoa nhí cổ V phong cách Hàn Quốc cực xinh cho mùa hè</p>
+              </a>
+              <div style="margin-bottom:8px"><span class="pc-price-sale">250.000 đ</span><span
+                  class="pc-price-ori">500.000 đ</span></div>
+              <div class="pc-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg><span class="pc-loc-ward">Phường 1</span><span class="pc-loc-sep">·</span><span
+                  class="pc-loc-city">TP. Hồ Chí Minh</span></div>
+              <div class="pc-foot">
+                <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
+                    class="pc-rcount">(2 bình luận)</span></div><span class="pc-time">Vừa đăng</span>
+              </div>
+            </div>
+          </div>
+          <!-- Right: 2 rows of 4 mini cards -->
+          <div class="pgrid-mini-wrap">
+            <div class="pgrid-mini">
+              <div class="pc">
+                <div class="pcimg"><img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
+                    alt=""><span class="bge bhot">HOT</span><button class="bfav"><span class="ms msf"
+                      style="font-size:13px">favorite</span></button></div>
+                <div class="pcb">
+                  <div class="srow"><span class="sname">Sneaker World</span>
+                    <div class="ibwrap"><button class="infobtn">!</button>
+                      <div class="spopup">
+                        <div class="ppr"><span class="pplbl">Tình trạng:</span><span class="ppval ok">Đã xác thực
+                            ✓</span></div>
+                        <div class="ppr"><span class="pplbl">Địa chỉ:</span><span class="ppval">Bình Thạnh, HCM</span>
+                        </div>
+                        <div class="ppr"><span class="pplbl">Uy tín:</span><span class="ppval gold">GOLD ⭐</span></div>
+                        <button class="bfol">Theo dõi</button>
+                      </div>
+                    </div>
+                  </div><a href="/detail.html">
+                    <p class="pc-title">Giày Sneaker Nike Air Max đỏ đô size 40–44</p>
+                  </a>
+                  <div><span class="pc-price-sale">3.500.000 đ</span></div>
+                  <div class="pc-foot">
+                    <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4</span><span
+                        class="pc-rcount">(8 bình luận)</span></div><span class="pc-time">2 giờ trước</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pc">
+                <div class="pcimg"><img src="/assets/dongho.jpg" alt=""
+                    onerror="this.src='https://via.placeholder.com/300x300/e8f5e9/008848?text=Đồng+hồ'"><button
+                    class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+                <div class="pcb">
+                  <div class="srow"><span class="sname">Watch Station</span><svg class="vico" viewBox="0 0 24 24"
+                      fill="none" stroke="#008848" stroke-width="2.5">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg></div><a href="/detail.html">
+                    <p class="pc-title">Đồng hồ Casio Edifice chính hãng fullbox 99%</p>
+                  </a>
+                  <div><span class="pc-price-sale">1.200.000 đ</span><span class="pc-price-ori">2.100.000 đ</span></div>
+                  <div class="pc-foot">
+                    <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
+                        class="pc-rcount">(14 bình luận)</span></div><span class="pc-time">1 ngày</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pc">
+                <div class="pcimg"><img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
+                    alt=""><span class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
+                      style="font-size:13px">favorite</span></button></div>
+                <div class="pcb">
+                  <div class="srow"><span class="sname">Suit &amp; Style</span></div><a href="/detail.html">
+                    <p class="pc-title">Bộ vest nam lịch lãm 2 cúc slim fit</p>
+                  </a>
+                  <div><span class="pc-price-sale">890.000 đ</span><span class="pc-price-ori">1.200.000 đ</span></div>
+                  <div class="pc-foot">
+                    <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4</span><span
+                        class="pc-rcount">(5 bình luận)</span></div><span class="pc-time">3 giờ</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pc">
+                <div class="pcimg"><img src="/assets/mypham.jpg" alt=""
+                    onerror="this.src='https://via.placeholder.com/300x300/fce4ec/e74c3c?text=Mỹ+phẩm'"><button
+                    class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+                <div class="pcb">
+                  <div class="srow"><span class="sname">Makeup by Linh</span></div><a href="/detail.html">
+                    <p class="pc-title">Bộ mỹ phẩm dưỡng da cao cấp chính hãng</p>
+                  </a>
+                  <div><span class="pc-price-sale">900.000 đ</span></div>
+                  <div class="pc-foot">
+                    <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
+                        class="pc-rcount">(2 bình luận)</span></div><span class="pc-time">Vừa đăng</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pgrid-mini">
+              <div class="pc">
+                <div class="pcimg"><img src="/assets/dongho.jpg" alt=""
+                    onerror="this.src='https://via.placeholder.com/300x300/e8f5e9/008848?text=Đồng+hồ'"><button
+                    class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+                <div class="pcb">
+                  <div class="srow"><span class="sname">Watch Store LX</span></div><a href="/detail.html">
+                    <p class="pc-title">Đồng hồ nam dây da sang trọng Full Box</p>
+                  </a>
+                  <div><span class="pc-price-sale">2.500.000 đ</span></div>
+                  <div class="pc-foot">
+                    <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4.8</span><span
+                        class="pc-rcount">(15 bình luận)</span></div><span class="pc-time">2 phút</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pc">
+                <div class="pcimg"><img src="/assets/giaychaybo.webp" alt=""
+                    onerror="this.src='https://via.placeholder.com/300x300/e3f2fd/1565c0?text=Giày'"><button
+                    class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+                <div class="pcb">
+                  <div class="srow"><span class="sname">Sport World</span></div><a href="/detail.html">
+                    <p class="pc-title">Giày chạy bộ nam siêu nhẹ thoáng khí</p>
+                  </a>
+                  <div><span class="pc-price-sale">750.000 đ</span></div>
+                  <div class="pc-foot">
+                    <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4.5</span><span
+                        class="pc-rcount">(42 bình luận)</span></div><span class="pc-time">15 phút</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pc">
+                <div class="pcimg"><img src="/assets/vayhoa.jpg" alt=""
+                    onerror="this.src='https://via.placeholder.com/300x300/fce4ec/e74c3c?text=Váy'"><button
+                    class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+                <div class="pcb">
+                  <div class="srow"><span class="sname">Tiệm Đồ May</span></div><a href="/detail.html">
+                    <p class="pc-title">Váy hoa nhí dáng dài tay bồng phong cách Hàn</p>
+                  </a>
+                  <div><span class="pc-price-sale">350.000 đ</span></div>
+                  <div class="pc-foot">
+                    <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4.9</span><span
+                        class="pc-rcount">(15 bình luận)</span></div><span class="pc-time">10 phút</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pc">
+                <div class="pcimg"><img src="/assets/hoddie.webp" alt=""
+                    onerror="this.src='https://via.placeholder.com/300x300/ede7f6/673ab7?text=Hoodie'"><button
+                    class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+                <div class="pcb">
+                  <div class="srow"><span class="sname">Streetwear SG</span></div><a href="/detail.html">
+                    <p class="pc-title">Áo Hoodie nỉ bông dày form rộng Unisex</p>
+                  </a>
+                  <div><span class="pc-price-sale">280.000 đ</span></div>
+                  <div class="pc-foot">
+                    <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
+                        class="pc-rcount">(8 bình luận)</span></div><span class="pc-time">Vừa đăng</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lm"><button onclick="location.href='/listing.html'" class="boutp">Xem thêm sản phẩm</button></div>
+    </div>
+
+    <!-- VIỆC LÀM -->
+    <div class="sec" id="viecLamSec">
+      <div class="esc">
+        <div class="esc-left">
+          <span class="esc-num" style="color:var(--ac);opacity:.1">03</span>
+          <div class="esc-texts">
+            <span class="esc-eyebrow">Tuyển dụng</span>
+            <div style="display:flex;align-items:center">
+              <span class="esc-title">Việc làm thời trang</span>
+              <div class="esc-tabs">
+                <button class="esc-tab active" onclick="switchJobTab('tv',this)">Thời vụ</button>
+                <button class="esc-tab" onclick="switchJobTab('ct',this)">Chính thức</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/listing.html?cat=vieclam" class="esc-more">Xem thêm <span class="ms"
+            style="font-size:14px">chevron_right</span></a>
+      </div>
+      <div class="jt-row">
+        <a href="/listing.html?type=thoivu" class="jt-btn">
+          <div class="jt-ico jt-ico-tv"><span class="ms" style="font-size:22px;color:#e65100">schedule</span></div>
+          <div>
+            <div class="jt-name">Việc làm thời hạn</div>
+            <div class="jt-sub">Thời vụ · Bán thời gian</div>
+          </div>
+        </a>
+        <a href="/listing.html?type=chinhthuc" class="jt-btn">
+          <div class="jt-ico jt-ico-ct"><span class="ms" style="font-size:22px;color:#1565c0">work</span></div>
+          <div>
+            <div class="jt-name">Việc làm chính thức</div>
+            <div class="jt-sub">Toàn thời gian · Hợp đồng</div>
+          </div>
+        </a>
+      </div>
+      <div class="jgrid" id="jgrid-tv">
+        <div class="jcard">
+          <div class="jc-thumb"><img class="jc-thumb-bg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
+              alt="">
+            <div class="jc-logo">👗</div><span class="jc-badge jc-badge-tv">THỜI VỤ</span><button class="jc-fav"><span
+                class="ms msf" style="font-size:12px">favorite</span></button>
+          </div>
+          <div class="jc-body"><a href="/detail.html">
+              <p class="jc-title">Tuyển nhân viên bán hàng thời trang nữ cuối tuần</p>
+            </a>
+            <div class="jc-company">Ana Fashion Store</div>
+            <div class="jc-tags"><span class="jc-tag jt-salary">6–8 tr/tháng</span><span class="jc-tag jt-loc">Quận 1,
+                HCM</span><span class="jc-tag jt-pos">Bán hàng</span></div>
+            <div class="jc-footer">
+              <div style="display:flex;align-items:center;gap:3px"><span class="ms"
+                  style="font-size:11px">people</span>2 vị trí</div><span>Vừa đăng</span>
+            </div>
+          </div>
+        </div>
+        <div class="jcard">
+          <div class="jc-thumb"><img class="jc-thumb-bg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
+              alt="">
+            <div class="jc-logo">👟</div><span class="jc-badge jc-badge-hot">HOT</span><button class="jc-fav"><span
+                class="ms msf" style="font-size:12px">favorite</span></button>
+          </div>
+          <div class="jc-body"><a href="/detail.html">
+              <p class="jc-title">Cộng tác viên bán giày online – làm việc tại nhà</p>
+            </a>
+            <div class="jc-company">Sneaker World</div>
+            <div class="jc-tags"><span class="jc-tag jt-salary">Hoa hồng 15%</span><span
+                class="jc-tag jt-loc">Online</span><span class="jc-tag jt-pos">CTV</span></div>
+            <div class="jc-footer">
+              <div style="display:flex;align-items:center;gap:3px"><span class="ms"
+                  style="font-size:11px">people</span>10 vị trí</div><span>2 giờ trước</span>
+            </div>
+          </div>
+        </div>
+        <div class="jcard">
+          <div class="jc-thumb"><img class="jc-thumb-bg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
+              alt="">
+            <div class="jc-logo">✂️</div><span class="jc-badge jc-badge-tv">THỜI VỤ</span><button class="jc-fav"><span
+                class="ms msf" style="font-size:12px">favorite</span></button>
+          </div>
+          <div class="jc-body"><a href="/detail.html">
+              <p class="jc-title">Tuyển thợ may gia công áo phông, làm theo đơn hàng</p>
+            </a>
+            <div class="jc-company">Xưởng May Tân Bình</div>
+            <div class="jc-tags"><span class="jc-tag jt-salary">200–400đ/sp</span><span class="jc-tag jt-loc">Tân
+                Bình</span><span class="jc-tag jt-pos">Thợ may</span></div>
+            <div class="jc-footer">
+              <div style="display:flex;align-items:center;gap:3px"><span class="ms"
+                  style="font-size:11px">people</span>5 vị trí</div><span>1 ngày trước</span>
+            </div>
+          </div>
+        </div>
+        <div class="jcard">
+          <div class="jc-thumb"><img class="jc-thumb-bg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
+              alt="">
+            <div class="jc-logo">📸</div><span class="jc-badge jc-badge-new">MỚI</span><button class="jc-fav"><span
+                class="ms msf" style="font-size:12px">favorite</span></button>
+          </div>
+          <div class="jc-body"><a href="/detail.html">
+              <p class="jc-title">Tuyển người mẫu chụp ảnh lookbook thời trang</p>
+            </a>
+            <div class="jc-company">LookBook Studio</div>
+            <div class="jc-tags"><span class="jc-tag jt-salary">800k–1.5tr/buổi</span><span class="jc-tag jt-loc">Quận
+                3</span><span class="jc-tag jt-pos">Người mẫu</span></div>
+            <div class="jc-footer">
+              <div style="display:flex;align-items:center;gap:3px"><span class="ms"
+                  style="font-size:11px">people</span>3 vị trí</div><span>3 giờ trước</span>
+            </div>
+          </div>
+        </div>
+        <div class="jcard">
+          <div class="jc-thumb"><img class="jc-thumb-bg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX_zG51x9_HlDzqyWXE_LcbJUtRD_8Wmracv34LmDYoqKx-oEvKoMkHN_x5VphToHVV5WALzcpu1D99eH03MpjOfbDlPVfCOjNxrGeLBmSU4YPvcjY9vKo6l9AR7qqD_gfsX_7B7mRTpQ2Q-fl4j-ZCsHuVmZntGaYYq8GKhm4-74RSgKOv9CEAbj4nFPZtO8RfP2MpnPbKtGtqFzNSLnmc_YT3vMGELoz7fwL_bNz7CTcxPs72JslbUat5GZh8B-iWEE7b2XMMxs"
+              alt="">
+            <div class="jc-logo">💄</div><span class="jc-badge jc-badge-tv">THỜI VỤ</span><button class="jc-fav"><span
+                class="ms msf" style="font-size:12px">favorite</span></button>
+          </div>
+          <div class="jc-body"><a href="/detail.html">
+              <p class="jc-title">Trang điểm cô dâu mùa cưới – cần thêm trợ lý makeup</p>
+            </a>
+            <div class="jc-company">Beauty by Hana</div>
+            <div class="jc-tags"><span class="jc-tag jt-salary">5–7 tr/tháng</span><span class="jc-tag jt-loc">Quận
+                7</span><span class="jc-tag jt-pos">Makeup</span></div>
+            <div class="jc-footer">
+              <div style="display:flex;align-items:center;gap:3px"><span class="ms"
+                  style="font-size:11px">people</span>2 vị trí</div><span>5 giờ trước</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="jgrid" id="jgrid-ct" style="display:none">
+        <div class="jcard">
+          <div class="jc-thumb"><img class="jc-thumb-bg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
+              alt="">
+            <div class="jc-logo">🏢</div><span class="jc-badge jc-badge-ct">CHÍNH THỨC</span>
+          </div>
+          <div class="jc-body"><a href="/detail.html">
+              <p class="jc-title">Quản lý cửa hàng thời trang nữ cao cấp – fulltime</p>
+            </a>
+            <div class="jc-company">Elle Vietnam</div>
+            <div class="jc-tags"><span class="jc-tag jt-salary">15–20 tr/tháng</span><span class="jc-tag jt-loc">Quận
+                1</span><span class="jc-tag jt-pos">Quản lý</span></div>
+            <div class="jc-footer">
+              <div style="display:flex;align-items:center;gap:3px"><span class="ms"
+                  style="font-size:11px">people</span>1 vị trí</div><span>Vừa đăng</span>
+            </div>
+          </div>
+        </div>
+        <div class="jcard">
+          <div class="jc-thumb"><img class="jc-thumb-bg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
+              alt="">
+            <div class="jc-logo">🎨</div><span class="jc-badge jc-badge-hot">HOT</span>
+          </div>
+          <div class="jc-body"><a href="/detail.html">
+              <p class="jc-title">Nhà thiết kế thời trang – Local Brand tăng trưởng nhanh</p>
+            </a>
+            <div class="jc-company">Routine Studio</div>
+            <div class="jc-tags"><span class="jc-tag jt-salary">12–18 tr/tháng</span><span class="jc-tag jt-loc">Bình
+                Thạnh</span><span class="jc-tag jt-pos">Thiết kế</span></div>
+            <div class="jc-footer">
+              <div style="display:flex;align-items:center;gap:3px"><span class="ms"
+                  style="font-size:11px">people</span>2 vị trí</div><span>1 ngày</span>
+            </div>
+          </div>
+        </div>
+        <div class="jcard">
+          <div class="jc-thumb"><img class="jc-thumb-bg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
+              alt="">
+            <div class="jc-logo">📦</div><span class="jc-badge jc-badge-ct">CHÍNH THỨC</span>
+          </div>
+          <div class="jc-body"><a href="/detail.html">
+              <p class="jc-title">Nhân viên kho – xuất nhập hàng thời trang xuất khẩu</p>
+            </a>
+            <div class="jc-company">Garment Export Co.</div>
+            <div class="jc-tags"><span class="jc-tag jt-salary">8–10 tr/tháng</span><span class="jc-tag jt-loc">Thủ
+                Đức</span><span class="jc-tag jt-pos">Kho vận</span></div>
+            <div class="jc-footer">
+              <div style="display:flex;align-items:center;gap:3px"><span class="ms"
+                  style="font-size:11px">people</span>4 vị trí</div><span>2 ngày</span>
+            </div>
+          </div>
+        </div>
+        <div class="jcard">
+          <div class="jc-thumb"><img class="jc-thumb-bg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
+              alt="">
+            <div class="jc-logo">✏️</div><span class="jc-badge jc-badge-new">MỚI</span>
+          </div>
+          <div class="jc-body"><a href="/detail.html">
+              <p class="jc-title">Chuyên viên marketing thời trang – quản lý fanpage</p>
+            </a>
+            <div class="jc-company">Fasito Brand</div>
+            <div class="jc-tags"><span class="jc-tag jt-salary">10–14 tr/tháng</span><span class="jc-tag jt-loc">Tân
+                Phú</span><span class="jc-tag jt-pos">Marketing</span></div>
+            <div class="jc-footer">
+              <div style="display:flex;align-items:center;gap:3px"><span class="ms"
+                  style="font-size:11px">people</span>1 vị trí</div><span>4 giờ</span>
+            </div>
+          </div>
+        </div>
+        <div class="jcard">
+          <div class="jc-thumb"><img class="jc-thumb-bg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX_zG51x9_HlDzqyWXE_LcbJUtRD_8Wmracv34LmDYoqKx-oEvKoMkHN_x5VphToHVV5WALzcpu1D99eH03MpjOfbDlPVfCOjNxrGeLBmSU4YPvcjY9vKo6l9AR7qqD_gfsX_7B7mRTpQ2Q-fl4j-ZCsHuVmZntGaYYq8GKhm4-74RSgKOv9CEAbj4nFPZtO8RfP2MpnPbKtGtqFzNSLnmc_YT3vMGELoz7fwL_bNz7CTcxPs72JslbUat5GZh8B-iWEE7b2XMMxs"
+              alt="">
+            <div class="jc-logo">🧵</div><span class="jc-badge jc-badge-ct">CHÍNH THỨC</span>
+          </div>
+          <div class="jc-body"><a href="/detail.html">
+              <p class="jc-title">Trưởng chuyền may – xưởng may hàng xuất khẩu EU</p>
+            </a>
+            <div class="jc-company">VN Textile Export</div>
+            <div class="jc-tags"><span class="jc-tag jt-salary">16–22 tr/tháng</span><span class="jc-tag jt-loc">Long
+                An</span><span class="jc-tag jt-pos">Trưởng chuyền</span></div>
+            <div class="jc-footer">
+              <div style="display:flex;align-items:center;gap:3px"><span class="ms"
+                  style="font-size:11px">people</span>2 vị trí</div><span>3 ngày</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lm"><button onclick="location.href='/listing.html?cat=vieclam'" class="boutp">Xem thêm việc
+          làm</button></div>
+    </div>
+
+    <!-- SẢN PHẨM VỪA ĐĂNG -->
+    <div class="sec ap">
+      <div class="esc">
+        <div class="esc-left">
+          <span class="esc-num">04</span>
+          <div class="esc-texts">
+            <span class="esc-eyebrow">Mới nhất</span>
+            <div style="display:flex;align-items:center">
+              <span class="esc-title">Sản phẩm vừa đăng</span>
+              <div class="esc-tabs">
+                <button class="esc-tab active" onclick="setTab(this,'newGrid')">Vừa đăng</button>
+                <button class="esc-tab" onclick="setTab(this,'newGrid')">Yêu thích</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/listing.html" class="esc-more">Xem thêm <span class="ms"
+            style="font-size:14px">chevron_right</span></a>
+      </div>
+      <div class="pgrid" id="newGrid">
+        <div class="pc">
+          <div class="pcimg"><img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
+              alt=""><span class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
+                style="font-size:13px">favorite</span></button></div>
+          <div class="pcb">
+            <div class="srow"><span class="sname">Style House</span></div><a href="/detail.html">
+              <p class="pctit">Áo thun oversize in hình unisex phong cách streetwear</p>
+            </a>
+            <div style="margin-bottom:6px"><span class="psal">185.000 đ</span></div>
+            <div class="cft"><span style="display:flex;align-items:center;gap:2px;font-size:10.5px;color:#aaa"><svg
+                  width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Quận 3</span><span style="font-size:10px;color:#aaa">Vừa xong</span></div>
+          </div>
+        </div>
+        <div class="pc">
+          <div class="pcimg"><img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
+              alt=""><button class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+          <div class="pcb">
+            <div class="srow"><span class="sname">Clock &amp; Watch</span></div><a href="/detail.html">
+              <p class="pctit">Đồng hồ Daniel Wellington Classic Petite chính hãng</p>
+            </a>
+            <div style="margin-bottom:6px"><span class="psal">2.800.000 đ</span></div>
+            <div class="cft"><span style="display:flex;align-items:center;gap:2px;font-size:10.5px;color:#aaa"><svg
+                  width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Quận 5</span><span style="font-size:10px;color:#aaa">1 giờ trước</span></div>
+          </div>
+        </div>
+        <div class="pc">
+          <div class="pcimg"><img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
+              alt=""><span class="bge bhot">HOT</span><button class="bfav"><span class="ms msf"
+                style="font-size:13px">favorite</span></button></div>
+          <div class="pcb">
+            <div class="srow"><span class="sname">Kicks SG</span></div><a href="/detail.html">
+              <p class="pctit">Giày Adidas Ultraboost trắng size 39–44, new 100%</p>
+            </a>
+            <div style="margin-bottom:6px"><span class="psal">4.200.000 đ</span><span class="pori">5.500.000 đ</span>
+            </div>
+            <div class="cft"><span style="display:flex;align-items:center;gap:2px;font-size:10.5px;color:#aaa"><svg
+                  width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Gò Vấp</span><span style="font-size:10px;color:#aaa">1 giờ</span></div>
+          </div>
+        </div>
+        <div class="pc">
+          <div class="pcimg"><img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
+              alt=""><span class="bge bsvc">DỊCH VỤ</span><button class="bfav"><span class="ms msf"
+                style="font-size:13px">favorite</span></button></div>
+          <div class="pcb">
+            <div class="srow"><span class="sname">Tailor House</span></div><a href="/detail.html">
+              <p class="pctit">Vest đo tay theo yêu cầu, giao tận nhà</p>
+            </a>
+            <div style="margin-bottom:6px"><span class="psal">1.500.000 đ</span></div>
+            <div class="cft"><span style="display:flex;align-items:center;gap:2px;font-size:10.5px;color:#aaa"><svg
+                  width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Tân Bình</span><span style="font-size:10px;color:#aaa">5 giờ</span></div>
+          </div>
+        </div>
+        <div class="pc">
+          <div class="pcimg"><img src="/assets/nuochoa.jpg" alt=""
+              onerror="this.src='https://via.placeholder.com/300x300/ede7f6/673ab7?text=Nước+hoa'"><span
+              class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
+                style="font-size:13px">favorite</span></button></div>
+          <div class="pcb">
+            <div class="srow"><span class="sname">Beauty Corner</span></div><a href="/detail.html">
+              <p class="pctit">Set nước hoa Dior Sauvage EDT chính hãng 60ml</p>
+            </a>
+            <div style="margin-bottom:6px"><span class="psal">2.100.000 đ</span></div>
+            <div class="cft"><span style="display:flex;align-items:center;gap:2px;font-size:10.5px;color:#aaa"><svg
+                  width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>Quận 10</span><span style="font-size:10px;color:#aaa">12 giờ</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="lm"><button onclick="location.href='/listing.html'" class="boutp">Xem thêm sản phẩm</button></div>
+    </div>
+
+    <!-- THƯƠNG HIỆU -->
+    <div class="brand-sec">
+      <div class="esc" style="margin-bottom:0">
+        <div class="esc-left">
+          <span class="esc-num" style="color:var(--ac);opacity:.1">05</span>
+          <div class="esc-texts">
+            <span class="esc-eyebrow" style="color:var(--ac)">Đối tác</span>
+            <span class="esc-title">Thương hiệu nổi bật</span>
+          </div>
+        </div>
+        <a href="/listing.html" class="esc-more">Xem tất cả <span class="ms"
+            style="font-size:14px">chevron_right</span></a>
+      </div>
+      <div class="brand-wrap">
+        <button class="brand-nav" id="brandPrev"><span class="ms" style="font-size:18px">chevron_left</span></button>
+        <div class="brand-outer">
+          <div class="brand-track" id="brandTrack">
+            <div class="brand-card">
+              <div class="brand-logo-wrap"><img src="/assets/shop.png" alt="Adidas"
+                  onerror="this.parentNode.innerHTML='🏃'"></div>
+              <div class="brand-name">Adidas</div>
+            </div>
+            <div class="brand-card">
+              <div class="brand-logo-wrap"><img src="/assets/Logo_NIKE.svg" alt="Nike"
+                  onerror="this.parentNode.innerHTML='✔️'"></div>
+              <div class="brand-name">Nike</div>
+            </div>
+            <div class="brand-card">
+              <div class="brand-logo-wrap"><img src="/assets/puma2.jpg" alt="Puma"
+                  onerror="this.parentNode.innerHTML='🐆'"></div>
+              <div class="brand-name">Puma</div>
+            </div>
+            <div class="brand-card">
+              <div class="brand-logo-wrap"><img src="/assets/UNIQLO_logo.svg.png" alt="Uniqlo"
+                  onerror="this.parentNode.innerHTML='👕'"></div>
+              <div class="brand-name">Uniqlo</div>
+            </div>
+            <div class="brand-card">
+              <div class="brand-logo-wrap"><img src="/assets/4man.png" alt="4Man"
+                  onerror="this.parentNode.innerHTML='👔'"></div>
+              <div class="brand-name">4Man</div>
+            </div>
+            <div class="brand-card">
+              <div class="brand-logo-wrap"><img src="/assets/polo.png" alt="PoloMan"
+                  onerror="this.parentNode.innerHTML='🏇'"></div>
+              <div class="brand-name">PoloMan</div>
+            </div>
+            <div class="brand-card">
+              <div class="brand-logo-wrap"><img src="/assets/gucci-logo-inkythuatso-01-02-09-59-44.jpg" alt="Gucci"
+                  onerror="this.parentNode.innerHTML='💎'"></div>
+              <div class="brand-name">Gucci</div>
+            </div>
+          </div>
+        </div>
+        <button class="brand-nav" id="brandNext"><span class="ms" style="font-size:18px">chevron_right</span></button>
+      </div>
+      <div class="brand-dots" id="brandDots"></div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="sec">
+      <div class="esc">
+        <div class="esc-left">
+          <span class="esc-num">06</span>
+          <div class="esc-texts">
+            <span class="esc-eyebrow">Khám phá</span>
+            <span class="esc-title">🎬 Video Fashion</span>
+          </div>
+        </div>
+        <a href="/listing.html" class="esc-more">Xem thêm <span class="ms"
+            style="font-size:14px">chevron_right</span></a>
+      </div>
+      <div class="vgrid">
+        <div class="vcard"><img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
+            alt="">
+          <div class="vplay"><span class="ms msf" style="color:#fff;font-size:48px">play_circle</span></div>
+          <div class="vinfo">
+            <p class="vtit">Review phối đồ công sở sang chảnh cho nàng</p>
+            <div class="vview"><span class="ms" style="font-size:11px">visibility</span>12.5k</div>
+          </div>
+        </div>
+        <div class="vcard"><img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
+            alt="">
+          <div class="vplay"><span class="ms msf" style="color:#fff;font-size:48px">play_circle</span></div>
+          <div class="vinfo">
+            <p class="vtit">BST Đồng hồ mới nhất hè 2025 – review thật</p>
+            <div class="vview"><span class="ms" style="font-size:11px">visibility</span>8.2k</div>
+          </div>
+        </div>
+        <div class="vcard"><img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
+            alt="">
+          <div class="vplay"><span class="ms msf" style="color:#fff;font-size:48px">play_circle</span></div>
+          <div class="vinfo">
+            <p class="vtit">Unboxing giày Sneaker hot nhất tuần này</p>
+            <div class="vview"><span class="ms" style="font-size:11px">visibility</span>25k</div>
+          </div>
+        </div>
+        <div class="vcard"><img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
+            alt="">
+          <div class="vplay"><span class="ms msf" style="color:#fff;font-size:48px">play_circle</span></div>
+          <div class="vinfo">
+            <p class="vtit">Hướng dẫn lấy số đo vest tại nhà chuẩn xác</p>
+            <div class="vview"><span class="ms" style="font-size:11px">visibility</span>4.1k</div>
+          </div>
+        </div>
+        <div class="vcard"><img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX_zG51x9_HlDzqyWXE_LcbJUtRD_8Wmracv34LmDYoqKx-oEvKoMkHN_x5VphToHVV5WALzcpu1D99eH03MpjOfbDlPVfCOjNxrGeLBmSU4YPvcjY9vKo6l9AR7qqD_gfsX_7B7mRTpQ2Q-fl4j-ZCsHuVmZntGaYYq8GKhm4-74RSgKOv9CEAbj4nFPZtO8RfP2MpnPbKtGtqFzNSLnmc_YT3vMGELoz7fwL_bNz7CTcxPs72JslbUat5GZh8B-iWEE7b2XMMxs"
+            alt="">
+          <div class="vplay"><span class="ms msf" style="color:#fff;font-size:48px">play_circle</span></div>
+          <div class="vinfo">
+            <p class="vtit">Makeup tone Hàn Quốc cho buổi hẹn hò</p>
+            <div class="vview"><span class="ms" style="font-size:11px">visibility</span>19.3k</div>
+          </div>
+        </div>
+      </div>
+      <div class="lm"><button onclick="location.href='/listing.html'" class="boutp">Khám phá thêm Video</button></div>
+    </div>
+
+    <!-- SEO -->
+    <div class="seobox">
+      <h2 style="font-size:16px;font-weight:800;margin-bottom:10px">Chof.vn – Sàn Đăng Tin Mua Bán, Rao Vặt Thời Trang
+        Hàng Đầu Của Người Việt</h2>
+      <p style="font-size:13px;color:#555;line-height:1.8"><strong>Chof.vn</strong> là nền tảng <strong>đăng tin rao vặt
+          thời trang chuyên biệt</strong> đầu tiên tại Việt Nam, nơi kết nối trực tiếp giữa người bán – người mua – cửa
+        hàng – xưởng may – nhà thiết kế trong lĩnh vực thời trang.</p>
+      <div style="margin-top:14px"><span class="seotag">Rao vặt váy đầm nữ</span><span class="seotag">Mua bán đồ trẻ
+          em</span><span class="seotag">Tìm việc ngành thời trang</span><span class="seotag">Rao vặt quần áo</span><span
+          class="seotag">Chợ thời trang online</span><span class="seotag">Mua bán giày dép</span><span
+          class="seotag">Đăng tin miễn phí</span></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="max-width:1280px;margin:0 auto;padding:0 16px 24px">
+    <div class="cta">
+      <div style="position:relative;z-index:1">
+        <h2 style="font-size:28px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:10px">Ngàn quà tặng<br>dành
+          cho người dùng mới</h2>
+        <p style="font-size:14px;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:18px">Tham gia đăng ký ngay
+          để nhận voucher lên tới 500k!</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOs29Plhv0Hu2cbz8ysdi3qTGvfavlKiikGqRHEWEUhdc9-Gt3dcouIrzt4p0Oc0-YQ8Zyb1hltunUuqLjGlPplcB3hIy-N3yIbLvM_Sfu-awpXAj10UqUwpgcsv_5v8w1QzxmxuolMW6s7roePv2Rp6K5p-en-cALyZRNvIhnGPRxVrfPXaiwGSSGjYih0-PkS0-D08plQr4W_MzHAwzIwVcNuaqzrGaOYBhEMSrzvcTsfQ6P-7zpSyMW-xy63I6u0ddl_PCPSI0"
+            alt="App Store" style="height:40px;cursor:pointer;border-radius:8px">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzSJDVWYCnQGmx1jFfHRkKH8JuMwJqWyWnRtMX_3_OpoqqttfxQSD9ArAIh9mWvXjfXU72hMDaXq0egPRthyu0HHQG_Lz5MBCLT7DWj97ary1zcCsnr9yrpJ_5A-zBxLXcFF-brg1F24esztJfdeMN6ET0TWbUJV2yYC6sajT2GpjdQvES_DAAHlOL5NjrrNZEL_eFLaKjLL7cjVjV4nt8qQzfZIThanXNsaZaEzjll6MJQQCPLm2oX6p8teUk3MKAyHhPf23zJXg"
+            alt="Google Play" style="height:40px;cursor:pointer;border-radius:8px">
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;align-items:flex-end;position:relative;z-index:1">
+        <div
+          style="background:#fff;padding:10px;border-radius:16px;box-shadow:0 10px 32px rgba(0,0,0,.2);transform:rotate(8deg)">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0q6q1nKOXVLTTt215ssmjT6TBszs_bLAi2NBY3-btrT2IT5kjetYLgbylP6mksHC-S-vBOmUsX-lbK6lIuMCFILQMGWDYg1RQAIObYP1onJ_gifPHzLvtK3W96j9-mVdornUcqnlSuJEB8za_FUdSxBWYPx0XrmGjj_4ZAy6ZJSm7lEErl68O3sw2xx0KrvZrD11ZX5_p1TgHk3c2EiGyRNbZ_5beLtrpEQATdlz36PU9Z2MOBad3WyRCxpkJ8NVPlyGVHK9vrfo"
+            alt="" style="height:120px">
+        </div>
+        <div
+          style="background:#fff;padding:10px;border-radius:16px;box-shadow:0 10px 32px rgba(0,0,0,.2);transform:rotate(-5deg)">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7HWpzIPixsiAXMJV08hmhc06pltNbjnQfMvQJyFvAgC950WwhPbxRGfZLSpP7cnPOFcjo9ZVa2SpNrnUS-UiotpywbvO6dE0ACPBdByy_Jjk_Rwu_GHSn3UHifyKCK3l7fw7YNNSXlR-6FOOmTsUHEHQNLC8NvKWpafUmoEzMCk3K7_4pH8Pf7U8BMUZchnPOkFCxwbjg7A0gqMmypYqynQpMndNwF6SYdGdWFHyZDT_Gh3P-JweW5OLnh3EWR120SQsiOckNUO8"
+            alt="" style="height:120px">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="fi">
+      <div>
+        <div class="fi-logo">
+          <img src="/assets/logo.png" alt="Chof.vn"
+            style="height:36px;object-fit:contain;display:block;filter:brightness(0) invert(1)">
+        </div>
+        <p style="font-size:12.5px;color:#666;line-height:1.7;margin-bottom:12px">Sàn đăng tin rao vặt thời trang hàng
+          đầu Việt Nam</p>
+        <div style="font-size:12.5px;color:#666;line-height:2.3">
+          <p><b style="color:#aaa">Địa chỉ:</b> 165 Đường D5, P.25, Q.Bình Thạnh, TP.HCM</p>
+          <p><b style="color:#aaa">SĐT:</b> 0123 456 789</p>
+          <p><b style="color:#aaa">Email:</b> chof@gmail.com</p>
+        </div>
+      </div>
+      <div>
+        <h4>Về chúng tôi</h4>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tầm nhìn - sứ mệnh</a></li>
+          <li><a href="#">Sơ đồ tổ chức</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quy định</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr">
+          <ul>
+            <li><a href="#">Quy định thành viên</a></li>
+            <li><a href="#">Quy định đăng tin</a></li>
+            <li><a href="#">Quy định sản phẩm</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Quy định giao hàng</a></li>
+            <li><a href="#">Quy định thanh toán</a></li>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h4>Theo dõi</h4>
+        <div style="display:flex;gap:10px">
+          <a href="#"
+            style="width:32px;height:32px;background:#1877f2;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700">f</a>
+          <a href="#"
+            style="width:32px;height:32px;background:#ff0050;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">TT</a>
+          <a href="#"
+            style="width:32px;height:32px;background:#ff0000;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff"><span
+              class="ms msf" style="font-size:15px">play_circle</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="fb2">
+      <p>© 2026 - Bản quyền thuộc về Chof.vn</p>
+      <div style="display:flex;gap:16px"><a href="#">Điều khoản sử dụng</a><a href="#">Chính sách bảo mật</a></div>
+    </div>
+  </footer>
+
+  <!-- STICKY BANNER MOBILE -->
+  <div class="sticky-banner" id="stickyBanner">
+    <div class="sticky-banner-inner">
+      <span class="ms" style="font-size:18px;color:var(--ac);flex-shrink:0">info</span>
+      <span class="sticky-banner-txt">Đăng nhập ngay để không bỏ lỡ deal mới gần bạn.</span>
+      <button class="sticky-banner-btn">Đăng nhập</button>
+      <button class="sticky-banner-close" onclick="document.getElementById('stickyBanner').style.display='none'"><span
+          class="ms" style="font-size:18px">close</span></button>
+    </div>
+  </div>
+
+  <script>
+    // ════════════════════════════════════════
+    // SCROLL — show sticky header, move cat tabs
+    // ════════════════════════════════════════
+    var stickyHdr = document.getElementById('stickyHdr');
+    var catTabs = document.getElementById('catTabs');
+    var heroBottom = 0;
+
+    function calcHeroBottom() {
+      var hero = document.querySelector('.hero');
+      var searchZone = document.querySelector('[style*="background:linear-gradient"]');
+      if (searchZone) heroBottom = searchZone.getBoundingClientRect().bottom + window.scrollY;
+    }
+
+    window.addEventListener('load', calcHeroBottom);
+    window.addEventListener('resize', calcHeroBottom);
+
+    window.addEventListener('scroll', function () {
+      var scrollY = window.scrollY;
+      var threshold = heroBottom - 80;
+      if (scrollY > threshold) {
+        stickyHdr.classList.add('visible');
+        catTabs.style.top = '58px';
+      } else {
+        stickyHdr.classList.remove('visible');
+        catTabs.style.top = '0';
+      }
+    }, { passive: true });
+
+    // ════════════════════════════════════════
+    // MEGA MENU — cat-tabs dropdown
+    // ════════════════════════════════════════
+    function setupMegaMenu(btnId, wrapId, leftId, rightPrefix) {
+      var btn = document.getElementById(btnId);
+      var wrap = document.getElementById(wrapId);
+      var left = document.getElementById(leftId);
+      if (!btn || !wrap || !left) return;
+      var open = false;
+      var arr = btn.querySelector('.ct-arr') || btn.querySelector('#ctArr');
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        open = !open;
+        wrap.classList.toggle('open', open);
+        btn.classList.toggle('open', open);
+        if (arr) arr.style.transform = open ? 'rotate(180deg)' : '';
+      });
+
+      left.querySelectorAll('.ml1').forEach(function (item) {
+        item.addEventListener('mouseenter', function () {
+          left.querySelectorAll('.ml1').forEach(function (i) { i.classList.remove('active'); });
+          item.classList.add('active');
+          var cat = item.getAttribute('data-cat');
+          var right = document.getElementById(rightPrefix + '-' + cat) ||
+            document.getElementById('p-' + cat) ||
+            document.getElementById('sp-' + cat);
+          var allPanels = wrap.querySelectorAll('.mp');
+          allPanels.forEach(function (p) { p.classList.remove('active'); });
+          if (right) right.classList.add('active');
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        if (open && !wrap.contains(e.target) && !btn.contains(e.target)) {
+          open = false;
+          wrap.classList.remove('open');
+          btn.classList.remove('open');
+          if (arr) arr.style.transform = '';
+        }
+      });
+    }
+
+    setupMegaMenu('ctDdBtn', 'mmWrap', 'mmLeft', 'p');
+    setupMegaMenu('stickyCtBtn', 'mmWrapSticky', 'mmLeftSticky', 'sp');
+
+    // ════════════════════════════════════════
+    // SEARCH CATEGORY PICKER
+    // ════════════════════════════════════════
+    var scatBtn = document.getElementById('scatBtn');
+    var scatDrop = document.getElementById('scatDrop');
+    var scatArr = document.getElementById('scatArr');
+    var scatOpen = false;
+
+    scatBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      scatOpen = !scatOpen;
+      scatDrop.classList.toggle('open', scatOpen);
+      scatArr.textContent = scatOpen ? 'expand_less' : 'expand_more';
+    });
+
+    document.addEventListener('click', function (e) {
+      if (scatOpen && !document.getElementById('scatWrap').contains(e.target)) {
+        scatOpen = false;
+        scatDrop.classList.remove('open');
+        scatArr.textContent = 'expand_more';
+      }
+    });
+
+    function pickCat(el) {
+      document.querySelectorAll('.scat-opt').forEach(function (o) { o.classList.remove('active'); });
+      el.classList.add('active');
+      // set label (strip emoji)
+      var txt = el.textContent.trim().replace(/^[^\w\u00C0-\u024F]+/, '');
+      document.getElementById('scatLabel').textContent = txt.length > 14 ? 'Danh mục' : txt;
+      scatOpen = false;
+      scatDrop.classList.remove('open');
+      scatArr.textContent = 'expand_more';
+    }
+
+    // ════════════════════════════════════════
+    // SEARCH DROPDOWN
+    // ════════════════════════════════════════
+    var sinput = document.getElementById('sinput');
+    var sdrop = document.getElementById('sdrop');
+
+    sinput.addEventListener('focus', function () {
+      sdrop.classList.add('open');
+      // close cat menus
+      document.getElementById('mmWrap').classList.remove('open');
+      document.getElementById('ctDdBtn').classList.remove('open');
+    });
+
+    document.addEventListener('click', function (e) {
+      var heroSbox = document.getElementById('heroSbox');
+      if (heroSbox && !heroSbox.contains(e.target)) sdrop.classList.remove('open');
+    });
+
+    function fillSearch(el) {
+      var nodes = el.childNodes, txt = '';
+      nodes.forEach(function (n) { if (n.nodeType === 3) txt += n.textContent; });
+      var val = txt.trim();
+      sinput.value = val;
+      document.getElementById('sinputSticky').value = val;
+      sdrop.classList.remove('open');
+      sinput.focus();
+    }
+
+    // ════════════════════════════════════════
+    // SQTAGS (hero quick tags)
+    // ════════════════════════════════════════
+    document.querySelectorAll('.sqtag').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var txt = el.textContent.trim();
+        sinput.value = txt;
+        document.getElementById('sinputSticky').value = txt;
+      });
+    });
+
+    // ════════════════════════════════════════
+    // TAB SWITCHER
+    // ════════════════════════════════════════
+    function setTab(btn, gridId) {
+      btn.closest('.esc-tabs').querySelectorAll('.esc-tab').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+    }
+
+    function switchJobTab(type, btn) {
+      document.getElementById('jgrid-tv').style.display = type === 'tv' ? 'grid' : 'none';
+      document.getElementById('jgrid-ct').style.display = type === 'ct' ? 'grid' : 'none';
+      document.getElementById('viecLamSec').querySelectorAll('.esc-tabs .esc-tab').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+    }
+
+    // ════════════════════════════════════════
+    // ĐỒNG GIÁ SLIDER
+    // ════════════════════════════════════════
+    (function () {
+      var prices = [
+        { l: '10k', v: 10000, c: '120+ tin' }, { l: '20k', v: 20000, c: '85+ tin' },
+        { l: '39k', v: 39000, c: '210+ tin' }, { l: '49k', v: 49000, c: '340+ tin' },
+        { l: '59k', v: 59000, c: '180+ tin' }, { l: '79k', v: 79000, c: '95+ tin' },
+        { l: '99k', v: 99000, c: '560+ tin' }, { l: '149k', v: 149000, c: '290+ tin' },
+        { l: '199k', v: 199000, c: '430+ tin' }, { l: '249k', v: 249000, c: '310+ tin' },
+        { l: '299k', v: 299000, c: '480+ tin' }, { l: '399k', v: 399000, c: '220+ tin' },
+        { l: '499k', v: 499000, c: '370+ tin' }, { l: '699k', v: 699000, c: '190+ tin' },
+        { l: '999k', v: 999000, c: '260+ tin' }
+      ];
+      var track = document.getElementById('dgTrack');
+      var outer = document.getElementById('dgOuter');
+      var prevBtn = document.getElementById('dgPrev');
+      var nextBtn = document.getElementById('dgNext');
+      var GAP = 10, offset = 0;
+      if (!track) return;
+
+      prices.forEach(function (p, i) {
+        var a = document.createElement('a');
+        a.className = 'dg-item' + (i === 6 ? ' sel' : '');
+        a.href = '/listing.html?price=' + p.v;
+        a.innerHTML = '<span class="dg-price">' + p.l + '</span><span class="dg-lbl">Đồng giá</span><span class="dg-cnt">' + p.c + '</span>';
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelectorAll('.dg-item').forEach(function (x) { x.classList.remove('sel'); });
+          a.classList.add('sel');
+        });
+        track.appendChild(a);
+      });
+
+      function vis() { var w = outer.offsetWidth; if (w < 400) return 2; if (w < 600) return 3; if (w < 900) return 4; return 5; }
+      function iw() { return (outer.offsetWidth - GAP * (vis() - 1)) / vis(); }
+      function render() {
+        var v = vis(), w = iw();
+        track.querySelectorAll('.dg-item').forEach(function (el) { el.style.width = w + 'px'; });
+        var max = Math.max(0, prices.length - v);
+        if (offset > max) offset = max;
+        track.style.transform = 'translateX(-' + (offset * (w + GAP)) + 'px)';
+        prevBtn.disabled = offset <= 0;
+        nextBtn.disabled = offset >= max;
+      }
+      prevBtn.addEventListener('click', function () { offset = Math.max(0, offset - 1); render(); });
+      nextBtn.addEventListener('click', function () { offset = Math.min(Math.max(0, prices.length - vis()), offset + 1); render(); });
+      render();
+      window.addEventListener('resize', render);
+    })();
+
+    // ════════════════════════════════════════
+    // BRAND CAROUSEL
+    // ════════════════════════════════════════
+    (function () {
+      var GAP = 12, offset = 0;
+      var track = document.getElementById('brandTrack');
+      var outer = track ? track.parentElement : null;
+      var dotsWrap = document.getElementById('brandDots');
+      var prevBtn = document.getElementById('brandPrev');
+      var nextBtn = document.getElementById('brandNext');
+      if (!track || !outer) return;
+      var cards = track.querySelectorAll('.brand-card');
+      var total = cards.length;
+
+      function vis() { var w = outer.offsetWidth; if (w < 400) return 2; if (w < 600) return 3; if (w < 800) return 4; return 5; }
+      function iw() { return (outer.offsetWidth - GAP * (vis() - 1)) / vis(); }
+      function render() {
+        var v = vis(), w = iw();
+        cards.forEach(function (c) { c.style.width = w + 'px'; });
+        var max = Math.max(0, total - v);
+        if (offset > max) offset = max;
+        track.style.transform = 'translateX(-' + (offset * (w + GAP)) + 'px)';
+        prevBtn.disabled = offset <= 0;
+        nextBtn.disabled = offset >= max;
+        var pages = Math.ceil(total / v);
+        dotsWrap.innerHTML = '';
+        for (var i = 0; i < pages; i++) {
+          var d = document.createElement('div');
+          d.className = 'brand-dot' + (Math.floor(offset / v) === i ? ' active' : '');
+          (function (idx) { d.addEventListener('click', function () { offset = idx * v; render(); }); })(i);
+          dotsWrap.appendChild(d);
+        }
+      }
+      prevBtn.addEventListener('click', function () { offset = Math.max(0, offset - 1); render(); });
+      nextBtn.addEventListener('click', function () { offset = Math.min(Math.max(0, total - vis()), offset + 1); render(); });
+      render();
+      window.addEventListener('resize', render);
+    })();
+
+    // ════════════════════════════════════════
+    // RESPONSIVE POST BUTTON
+    // ════════════════════════════════════════
+    (function () {
+      var bpost = document.getElementById('bpost');
+      var btxt = document.getElementById('bpost-txt');
+      function check() {
+        var mob = window.innerWidth <= 768;
+        if (mob) {
+          bpost.style.cssText = 'width:36px;height:36px;padding:0;border-radius:50%;display:flex;justify-content:center;align-items:center';
+          if (btxt) btxt.style.display = 'none';
+        } else {
+          bpost.style.cssText = '';
+          if (btxt) btxt.style.display = '';
+        }
+      }
+      check();
+      window.addEventListener('resize', check);
+    })();
+  </script>
+</body>
+
+</html>
