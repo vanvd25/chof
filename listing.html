@@ -55,7 +55,10 @@
             font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
 
-        /* ══ HEADER ══ */
+
+        /* ══════════════════════════════════════
+           [HEADER] Sticky header & logo
+        ══════════════════════════════════════ */
         header {
             position: sticky;
             top: 0;
@@ -75,6 +78,13 @@
             gap: 12px;
         }
 
+        .logo img {
+            height: 46px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
         .logo-txt {
             font-size: 22px;
             font-weight: 900;
@@ -86,6 +96,9 @@
             font-style: normal;
         }
 
+        /* ══════════════════════════════════════
+           [HEADER] Search bar
+        ══════════════════════════════════════ */
         .sw {
             flex: 1;
             position: relative;
@@ -105,6 +118,10 @@
         .sb:focus-within {
             border-color: var(--p);
             background: #fff;
+        }
+
+        .sb:focus-within .sdiv {
+            background: #d4e9dd;
         }
 
         .scat {
@@ -133,6 +150,7 @@
             background: #ddd;
             margin: 9px 0;
             flex-shrink: 0;
+            transition: background .18s;
         }
 
         .sinput {
@@ -144,6 +162,17 @@
             font-size: 13.5px;
             font-family: inherit;
             min-width: 0;
+        }
+
+        .sico {
+            display: flex;
+            align-items: center;
+            padding: 0 8px;
+            color: #ccc;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-shrink: 0;
         }
 
         .sbtn {
@@ -165,6 +194,204 @@
             background: var(--pd);
         }
 
+        /* ══════════════════════════════════════
+           [HEADER] Mega menu
+        ══════════════════════════════════════ */
+        .manchor {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            z-index: 800;
+        }
+
+        .mm {
+            display: none;
+            width: min(920px, 96vw);
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, .13);
+            overflow: hidden;
+        }
+
+        .mm.open {
+            display: flex;
+        }
+
+        .mml {
+            width: 196px;
+            background: #f9fafb;
+            border-right: 1px solid #f0f0f0;
+            padding: 6px 0;
+            flex-shrink: 0;
+        }
+
+        .ml1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+            color: #444;
+            transition: background .12s, color .12s;
+        }
+
+        .ml1:hover,
+        .ml1.active {
+            background: #fff;
+            color: var(--p);
+            border-left-color: var(--p);
+            font-weight: 600;
+        }
+
+        .mmr {
+            flex: 1;
+            padding: 20px 24px;
+            overflow-y: auto;
+            max-height: 480px;
+        }
+
+        .mp {
+            display: none;
+        }
+
+        .mp.active {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 18px 24px;
+        }
+
+        .mp h3 {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--p);
+            margin-bottom: 7px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mp ul {
+            list-style: none;
+        }
+
+        .mp li {
+            font-size: 12px;
+            color: #555;
+            padding: 3px 0;
+            cursor: pointer;
+            transition: color .12s;
+        }
+
+        .mp li:hover {
+            color: var(--p);
+        }
+
+        /* ══════════════════════════════════════
+           [HEADER] Search dropdown
+        ══════════════════════════════════════ */
+        .sdrop {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, .1);
+            z-index: 799;
+            padding: 16px;
+        }
+
+        .sdrop.open {
+            display: block;
+        }
+
+        .sdt {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+
+        .sdtags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+
+        .sdtag {
+            padding: 5px 12px;
+            background: #f3f4f6;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #444;
+            cursor: pointer;
+            transition: background .12s, color .12s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .sdtag:hover {
+            background: var(--pl);
+            color: var(--p);
+        }
+
+        .sditem {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 6px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background .12s;
+        }
+
+        .sditem:hover {
+            background: #f9fafb;
+        }
+
+        .sditem img {
+            width: 38px;
+            height: 38px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .sdn {
+            font-size: 12.5px;
+            font-weight: 500;
+            color: #222;
+        }
+
+        .sdpr {
+            font-size: 12px;
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .sdsh {
+            font-size: 11px;
+            color: #aaa;
+        }
+
+        .sdsep {
+            height: 1px;
+            background: #f0f0f0;
+            margin: 10px 0;
+        }
+
+        /* ══════════════════════════════════════
+           [HEADER] Actions (notify, fav, login, post)
+        ══════════════════════════════════════ */
         .ha {
             display: flex;
             align-items: center;
@@ -1291,28 +1518,748 @@
     <!-- ══ HEADER ══ -->
     <header>
         <div class="hdr">
-            <a href="#" class="logo">
-                <span class="logo-txt">Chof<em>.vn</em></span>
+            <a href="/" class="logo">
+                <img src="/assets/logo.png" alt="Chof.vn"
+                    onerror="this.style.display='none';document.getElementById('ltxt').style.display='block'">
+                <span id="ltxt" class="logo-txt" style="display:none">Chof<em>.vn</em></span>
             </a>
-            <div class="sw">
+
+            <div class="sw" id="swrap">
                 <div class="sb">
-                    <button class="scat">
-                        <span class="ms" style="font-size:17px">menu</span>
-                        <span class="sc-label">Danh mục</span>
-                        <span class="ms" style="font-size:15px">expand_more</span>
-                    </button>
+                    <div style="position:relative;display:flex;align-items:center;flex-shrink:0;">
+                        <button class="scat" id="catBtn" onclick="toggleMM(event)">
+                            <span class="ms" style="font-size:17px">menu</span>
+                            <span class="sc-label">Danh mục</span>
+                            <span class="ms" style="font-size:15px" id="catArr">expand_more</span>
+                        </button>
+                        <div class="manchor">
+                            <div class="mm" id="mm">
+                                <div class="mml">
+                                    <a href="/listing.html">
+                                        <div class="ml1 active" onmouseenter="swp('nam',this)">Nam <span class="ms"
+                                                style="font-size:13px">chevron_right</span></div>
+                                    </a>
+
+                                    <a href="/listing.html">
+                                        <div class="ml1" onmouseenter="swp('nu',this)">Nữ <span class="ms"
+                                                style="font-size:13px">chevron_right</span></div>
+                                    </a>
+                                    <a href="/listing.html">
+                                        <div class="ml1" onmouseenter="swp('treEm',this)">Trẻ em <span class="ms"
+                                                style="font-size:13px">chevron_right</span></div>
+                                    </a>
+                                    <a href="/listing.html">
+                                        <div class="ml1" onmouseenter="swp('chuyenDe',this)">Chuyên đề <span class="ms"
+                                                style="font-size:13px">chevron_right</span></div>
+                                    </a>
+                                    <a href="/listing.html">
+                                        <div class="ml1" onmouseenter="swp('vietBrand',this)">Thương hiệu Việt <span
+                                                class="ms" style="font-size:13px">chevron_right</span></div>
+                                    </a>
+                                    <a href="/listing.html">
+                                        <div class="ml1" onmouseenter="swp('foreigner',this)">4 Foreigner <span
+                                                class="ms" style="font-size:13px">chevron_right</span></div>
+                                    </a>
+                                    <a href="/listing.html">
+                                        <div class="ml1" onmouseenter="swp('dichvu',this)">Dịch vụ <span class="ms"
+                                                style="font-size:13px">chevron_right</span></div>
+                                    </a>
+                                    <a href="/listing.html">
+                                        <div class="ml1" onmouseenter="swp('viecLam',this)">Việc làm <span class="ms"
+                                                style="font-size:13px">chevron_right</span></div>
+                                    </a>
+                                </div>
+                                <div class="mmr">
+                                    <div class="mp active" id="p-nam">
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Áo</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Áo thun</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Áo sơ mi</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Áo khoác</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Áo vest</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Áo khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Quần</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Quần ngắn</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Quần dài</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Quần lót</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Quần khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Nón – Mắt kính</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Nón</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Mắt kính</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Balo – Túi xách</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Ba lô</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Túi xách</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Đồng hồ – Bóp ví</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Đồng hồ</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Bóp ví</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Đồ lót – Giày dép</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Đồ lót</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Giày dép</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Nước hoa – Mỹ phẩm</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Nước hoa</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Mỹ phẩm</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Phụ kiện – Khác</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Phụ kiện</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mp" id="p-nu">
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Áo</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Áo thun</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Áo sơ mi</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Áo khoác</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Áo dài</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Áo khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Quần – Váy đầm</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Quần</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Váy đầm</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Nón – Mắt kính</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Nón</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Mắt kính</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Balo – Túi xách</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Ba lô</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Túi xách</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Đồng hồ – Bóp ví</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Đồng hồ</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Bóp ví</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Đồ lót – Giày dép</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Đồ lót</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Giày dép</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Nước hoa – Mỹ phẩm</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Nước hoa</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Mỹ phẩm</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Phụ kiện – Khác</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Phụ kiện</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mp" id="p-treEm">
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Quần áo sơ sinh</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Dưới 1 tháng</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>1–6 tháng</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>6–12 tháng</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Quần áo bé trai</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Dưới 3 tuổi</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>3–6 tuổi</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Trên 6 tuổi</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Quần áo bé gái</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Dưới 3 tuổi</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>3–6 tuổi</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Trên 6 tuổi</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Phụ kiện – Khác</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Phụ kiện</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mp" id="p-chuyenDe">
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>TT Gia dụng</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Mền/mùng</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Áo gối/ra giường</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Rèm/khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>TT Chuyên dụng</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Đồng phục/nghề nghiệp</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Bà bầu/hội cưới</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Thú cưng/sân khấu</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>PK điện tử/handmade</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Thời trang xanh</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Nam/Nữ/Trẻ em</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Đồ lót/phụ kiện/khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>TT Thể thao</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Nam/Nữ/Trẻ em</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Đồ lót/phụ kiện/khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>TT Đồng giá</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>10k/50k/100k</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>200k/300k</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Nguyên phụ liệu</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Vải/khoá kéo</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Khuy nút/chỉ may</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Tem nhãn/máy móc</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Manocanh/khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mp" id="p-vietBrand">
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Thời trang nam</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Áo nam</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Quần nam</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Đồ lót/phụ kiện/khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Thời trang nữ</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Áo nữ</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Quần/đồ lót</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Phụ kiện/khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Thời trang trẻ em</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Quần áo bé trai</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Quần áo bé gái</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Phụ kiện/khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Trang phục truyền thống</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Trang phục nam</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Trang phục nữ</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Trang phục trẻ em</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Phụ kiện/khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mp" id="p-foreigner">
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>For Men</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Shirt/T-shirt</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Short/Pants</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Jacket</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Underwear</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Accessories/Others</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>For Women</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Top/Dress</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Skirt/Short</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Underwear</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Accessories/Others</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>For Kids</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>For Boy</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>For Girl</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Accessories/Others</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Made to Order</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>For Men/Women/Kids</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Underwear/Accessories/Others</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mp" id="p-dichvu">
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>DV May mặc</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>In thêu</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Giặt ủi</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Sửa quần áo</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>DV Phụ trợ</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Người mẫu</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Trang điểm</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Chụp ảnh</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Tatoo</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Khóa học/khác</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Theo yêu cầu</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>May đo</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Gia công</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mp" id="p-viecLam">
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Việc làm thời vụ</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Việc tìm người</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Người tìm việc</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a href="/listing.html">
+                                                <h3>Việc làm chính thức</h3>
+                                            </a>
+                                            <ul>
+                                                <a href="/listing.html">
+                                                    <li>Việc tìm người</li>
+                                                </a>
+                                                <a href="/listing.html">
+                                                    <li>Người tìm việc</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="sdiv"></div>
-                    <input class="sinput" type="text" placeholder="Tìm kiếm sản phẩm fashion, dịch vụ..."
-                        autocomplete="off" />
-                    <button class="sbtn">Tìm kiếm</button>
+                    <input class="sinput" id="sinput" type="text" placeholder="Tìm kiếm sản phẩm fashion, dịch vụ..."
+                        autocomplete="off" onfocus="openDrop()" />
+                    <button class="sico"><span class="ms" style="font-size:18px">search</span></button>
+                    <button class="sbtn" onclick="window.location.href='/listing.html'">Tìm kiếm</button>
+                </div>
+
+                <!-- Search dropdown -->
+                <div class="sdrop" id="sdrop">
+                    <div class="sdt">🔥 Tìm kiếm phổ biến</div>
+                    <div class="sdtags">
+                        <span class="sdtag" onclick="fill(this)"><span class="ms"
+                                style="font-size:12px">trending_up</span>Áo thun oversize</span>
+                        <span class="sdtag" onclick="fill(this)"><span class="ms"
+                                style="font-size:12px">trending_up</span>Váy đầm nữ</span>
+                        <span class="sdtag" onclick="fill(this)"><span class="ms"
+                                style="font-size:12px">trending_up</span>Giày sneaker</span>
+                        <span class="sdtag" onclick="fill(this)"><span class="ms"
+                                style="font-size:12px">trending_up</span>Túi xách nữ</span>
+                        <span class="sdtag" onclick="fill(this)"><span class="ms"
+                                style="font-size:12px">trending_up</span>Đồng hồ Casio</span>
+                        <span class="sdtag" onclick="fill(this)"><span class="ms"
+                                style="font-size:12px">trending_up</span>Nước hoa nam</span>
+                        <span class="sdtag" onclick="fill(this)"><span class="ms"
+                                style="font-size:12px">trending_up</span>Dịch vụ may đo</span>
+                    </div>
+                    <div class="sdsep"></div>
+                    <div class="sdt" style="margin-bottom:8px">⭐ Gợi ý sản phẩm nổi bật</div>
+                    <div class="sditem"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
+                            alt="">
+                        <div>
+                            <div class="sdn">Đầm voan hoa nhí cổ V phong cách Hàn Quốc</div>
+                            <div class="sdpr">250.000 đ</div>
+                            <div class="sdsh">Ana Fashion · Quận 1, HCM</div>
+                        </div>
+                    </div>
+                    <div class="sditem"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
+                            alt="">
+                        <div>
+                            <div class="sdn">Giày Sneaker Nike Air Max đỏ đô size 40–44</div>
+                            <div class="sdpr">3.500.000 đ</div>
+                            <div class="sdsh">Sneaker World · Bình Thạnh, HCM</div>
+                        </div>
+                    </div>
+                    <div class="sditem"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
+                            alt="">
+                        <div>
+                            <div class="sdn">Đồng hồ Casio Edifice chính hãng fullbox 99%</div>
+                            <div class="sdpr">1.200.000 đ</div>
+                            <div class="sdsh">Watch Station · Thủ Đức, HCM</div>
+                        </div>
+                    </div>
+                    <div class="sdsep"></div>
+                    <div style="text-align:center"><a href="#" style="font-size:12px;color:var(--p);font-weight:600">Xem
+                            tất cả kết quả →</a></div>
                 </div>
             </div>
+
             <div class="ha">
                 <button class="ibtn"><span class="ms">notifications</span><span class="ndot"></span></button>
-                <button class="ibtn" style="display:none" id="hide-mob"><span class="ms">favorite</span></button>
+                <button class="ibtn hide-mob"><span class="ms">favorite</span></button>
                 <div class="hdiv"></div>
                 <button class="blogin">Đăng nhập</button>
-                <button class="bpost">
+                <button onclick="window.location.href='/manage.html'" class="bpost" id="bpost">
                     <span class="ms bpost-icon-desk" style="font-size:17px">add_box</span>
                     <span class="bpost-plus">+</span>
                     <span class="bpost-txt">ĐĂNG TIN</span>
@@ -1638,7 +2585,9 @@
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                                 <polyline points="22 4 12 14.01 9 11.01" />
                             </svg></div>
-                        <p class="pctit">Đầm voan hoa nhí cổ V phong cách Hàn Quốc cực xinh</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Đầm voan hoa nhí cổ V phong cách Hàn Quốc cực xinh</p>
+                        </a>
                         <div class="prow"><span class="psal">250.000 đ</span><span class="pori">500.000 đ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
@@ -1659,7 +2608,9 @@
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                                 <polyline points="22 4 12 14.01 9 11.01" />
                             </svg></div>
-                        <p class="pctit">Giày Sneaker nam Nike Air Max đỏ đô size 40–44</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Giày Sneaker nam Nike Air Max đỏ đô size 40–44</p>
+                        </a>
                         <div class="prow"><span class="psal">3.500.000 đ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
@@ -1680,7 +2631,9 @@
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                                 <polyline points="22 4 12 14.01 9 11.01" />
                             </svg></div>
-                        <p class="pctit">Đồng hồ Casio Edifice chính hãng fullbox 99% mới mua</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Đồng hồ Casio Edifice chính hãng fullbox 99% mới mua</p>
+                        </a>
                         <div class="prow"><span class="psal">1.200.000 đ</span><span class="pori">2.100.000 đ</span>
                         </div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
@@ -1698,7 +2651,9 @@
                                 style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Suit & Style</span></div>
-                        <p class="pctit">Bộ vest nam lịch lãm 2 cúc slim fit dành cho sự kiện</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Bộ vest nam lịch lãm 2 cúc slim fit dành cho sự kiện</p>
+                        </a>
                         <div class="prow"><span class="psal">890.000 đ</span><span class="pori">1.200.000 đ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
@@ -1719,7 +2674,9 @@
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                                 <polyline points="22 4 12 14.01 9 11.01" />
                             </svg></div>
-                        <p class="pctit">Dịch vụ trang điểm dự tiệc tận nơi, makeup cô dâu</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Dịch vụ trang điểm dự tiệc tận nơi, makeup cô dâu</p>
+                        </a>
                         <div class="prow"><span class="psal">300.000 đ</span><span
                                 style="font-size:10px;color:#aaa">/lần</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
@@ -1731,13 +2688,13 @@
                 </div>
 
                 <div class="pc">
-                    <div class="pcimg"><img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
-                            alt=""><span class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
-                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcimg"><img src="/assets/aothun.avif" alt=""><span class="bge bnew">MỚI</span><button
+                            class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Style House</span></div>
-                        <p class="pctit">Áo thun oversize in hình unisex phong cách streetwear</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Áo thun oversize in hình unisex phong cách streetwear</p>
+                        </a>
                         <div class="prow"><span class="psal">185.000 đ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
@@ -1748,13 +2705,13 @@
                 </div>
 
                 <div class="pc">
-                    <div class="pcimg"><img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
-                            alt=""><button class="bfav"><span class="ms msf"
+                    <div class="pcimg"><img src="/assets/dongho.jpg" alt=""><button class="bfav"><span class="ms msf"
                                 style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Clock & Watch</span></div>
-                        <p class="pctit">Đồng hồ Daniel Wellington Classic Petite chính hãng</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Đồng hồ Daniel Wellington Classic Petite chính hãng</p>
+                        </a>
                         <div class="prow"><span class="psal">2.800.000 đ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
@@ -1766,13 +2723,14 @@
                 </div>
 
                 <div class="pc">
-                    <div class="pcimg"><img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
-                            alt=""><span class="bge bhot">HOT</span><button class="bfav"><span class="ms msf"
+                    <div class="pcimg"><img src="/assets/giaychaybo.webp" alt=""><span
+                            class="bge bhot">HOT</span><button class="bfav"><span class="ms msf"
                                 style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Kicks SG</span></div>
-                        <p class="pctit">Giày Adidas Ultraboost trắng size 39–44, new 100%</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Giày Adidas Ultraboost trắng size 39–44, new 100%</p>
+                        </a>
                         <div class="prow"><span class="psal">4.200.000 đ</span><span class="pori">5.500.000 đ</span>
                         </div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
@@ -1790,7 +2748,9 @@
                                 style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Tailor House</span></div>
-                        <p class="pctit">Dịch vụ may vest đo tay theo yêu cầu, giao tận nhà</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Dịch vụ may vest đo tay theo yêu cầu, giao tận nhà</p>
+                        </a>
                         <div class="prow"><span class="psal">1.500.000 đ</span><span
                                 style="font-size:10px;color:#aaa">/bộ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
@@ -1803,13 +2763,13 @@
                 </div>
 
                 <div class="pc">
-                    <div class="pcimg"><img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX_zG51x9_HlDzqyWXE_LcbJUtRD_8Wmracv34LmDYoqKx-oEvKoMkHN_x5VphToHVV5WALzcpu1D99eH03MpjOfbDlPVfCOjNxrGeLBmSU4YPvcjY9vKo6l9AR7qqD_gfsX_7B7mRTpQ2Q-fl4j-ZCsHuVmZntGaYYq8GKhm4-74RSgKOv9CEAbj4nFPZtO8RfP2MpnPbKtGtqFzNSLnmc_YT3vMGELoz7fwL_bNz7CTcxPs72JslbUat5GZh8B-iWEE7b2XMMxs"
-                            alt=""><span class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
-                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcimg"><img src="/assets/nuochoa.jpg" alt=""><span class="bge bnew">MỚI</span><button
+                            class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Beauty Corner</span></div>
-                        <p class="pctit">Set nước hoa Dior Sauvage EDT chính hãng 60ml</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Set nước hoa Dior Sauvage EDT chính hãng 60ml</p>
+                        </a>
                         <div class="prow"><span class="psal">2.100.000 đ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
@@ -1821,17 +2781,17 @@
                 </div>
 
                 <div class="pc">
-                    <div class="pcimg"><img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
-                            alt=""><span class="bge bsale">-30%</span><button class="bfav"><span class="ms msf"
-                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcimg"><img src="/assets/Đầm midi.jpg" alt=""><span class="bge bsale">-30%</span><button
+                            class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Lady Fashion</span><svg class="vico" viewBox="0 0 24 24"
                                 fill="none" stroke="#008848" stroke-width="2.5">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                                 <polyline points="22 4 12 14.01 9 11.01" />
                             </svg></div>
-                        <p class="pctit">Đầm midi dự tiệc cúp ngực tay phồng màu đỏ</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Đầm midi dự tiệc cúp ngực tay phồng màu đỏ</p>
+                        </a>
                         <div class="prow"><span class="psal">420.000 đ</span><span class="pori">600.000 đ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
@@ -1842,13 +2802,13 @@
                 </div>
 
                 <div class="pc">
-                    <div class="pcimg"><img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
-                            alt=""><button class="bfav"><span class="ms msf"
+                    <div class="pcimg"><img src="/assets/set-gym-nu-11.jpg" alt=""><button class="bfav"><span class="ms msf"
                                 style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Sport Zone</span></div>
-                        <p class="pctit">Bộ đồ thể thao nữ tập gym áo crop quần legging</p>
+                        <a href="/detail.html">
+                            <p class="pctit">Bộ đồ thể thao nữ tập gym áo crop quần legging</p>
+                        </a>
                         <div class="prow"><span class="psal">320.000 đ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
@@ -1857,6 +2817,75 @@
                                 </svg>Quận 12, HCM</span><span class="stars">★★★☆☆</span></div>
                     </div>
                 </div>
+
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/legging.jpeg" alt=""><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Fit House</span></div>
+                        <a href="/detail.html">
+                            <p class="pctit">Set đồ tập yoga nữ co giãn 4 chiều, ôm dáng năng động</p>
+                        </a>
+                        <div class="prow"><span class="psal">289.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Gò Vấp, HCM</span><span class="stars">★★★★☆</span></div>
+                    </div>
+                </div>
+
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/thethaonu.webp" alt=""><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Active Wear</span></div>
+                        <a href="/detail.html">
+                            <p class="pctit">Bộ quần áo thể thao nữ chạy bộ thoáng khí, form tôn dáng</p>
+                        </a>
+                        <div class="prow"><span class="psal">350.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Tân Bình, HCM</span><span class="stars">★★★★★</span></div>
+                    </div>
+                </div>
+
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/36012-cam-dat-1.png" alt=""><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Gym Style</span></div>
+                        <a href="/detail.html">
+                            <p class="pctit">Áo bra kèm legging nữ tập gym chất liệu mềm mịn cao cấp</p>
+                        </a>
+                        <div class="prow"><span class="psal">410.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Thủ Đức, HCM</span><span class="stars">★★★★☆</span></div>
+                    </div>
+                </div>
+
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/bra.jpg" alt=""><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Urban Sport</span></div>
+                        <a href="/detail.html">
+                            <p class="pctit">Bộ đồ tập nữ croptop tay ngắn phối quần legging cạp cao</p>
+                        </a>
+                        <div class="prow"><span class="psal">299.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Quận 7, HCM</span><span class="stars">★★★☆☆</span></div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Pagination -->
@@ -1878,13 +2907,15 @@
     <footer>
         <div class="fi">
             <div>
-                <span class="logo-txt" style="font-size:18px;display:block;margin-bottom:10px;">Chof<em>.vn</em></span>
+                <img src="/assets/logo.png" alt="Chof.vn" style="height:44px;object-fit:contain;margin-bottom:12px;"
+                    onerror="this.style.display='none'">
                 <p style="font-size:12.5px;color:#666;line-height:1.7;margin-bottom:10px">Sàn đăng tin rao vặt thời
                     trang hàng đầu Việt Nam</p>
                 <div style="font-size:12.5px;color:#555;line-height:2.2;">
                     <p><b>Địa chỉ:</b> 165 Đường D5, P.25, Q.Bình Thạnh, TP.HCM</p>
                     <p><b>SĐT:</b> 0123 456 789</p>
-                    <p><b>Email:</b> hello@chof.vn</p>
+                    <p><b>Email:</b> <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="82e1eaede4acf4ecc2e5efe3ebeeace1edef">chof@gmail.com</a></p>
                 </div>
             </div>
             <div>
@@ -1913,27 +2944,205 @@
             <div>
                 <h4 style="font-weight:700;font-size:14px;margin-bottom:12px">Liên kết</h4>
                 <div style="display:flex;gap:10px;">
-                    <div style="width:30px;height:30px;background:#000;border-radius:6px;"></div>
-                    <div style="width:30px;height:30px;background:#1877f2;border-radius:6px;"></div>
-                    <div style="width:30px;height:30px;background:#ff0000;border-radius:6px;"></div>
+                    <a href="#"><img src="/assets/tiktok.png" alt="Tiktok" style="width:30px;height:30px"
+                            onerror="this.style.display='none'"></a>
+                    <a href="#"><img src="/assets/fb.png" alt="Facebook" style="width:30px;height:30px"
+                            onerror="this.style.display='none'"></a>
+                    <a href="#"><img src="/assets/youtube.png" alt="YouTube" style="width:30px;height:30px"
+                            onerror="this.style.display='none'"></a>
                 </div>
             </div>
         </div>
         <div class="fb2">
             <p>© 2026 - Bản quyền thuộc về Chof.vn</p>
-            <div style="display:flex;gap:14px;">
-                <a href="#" style="color:#aaa;text-decoration:underline">Điều khoản sử dụng</a>
-                <a href="#" style="color:#aaa;text-decoration:underline">Chính sách bảo mật</a>
-            </div>
+            <div style="display:flex;gap:14px;"><a href="#" style="color:#aaa;text-decoration:underline">Điều khoản sử
+                    dụng</a><a href="#" style="color:#aaa;text-decoration:underline">Chính sách bảo mật</a></div>
         </div>
     </footer>
 
-    <!-- Sticky banner -->
+    <script>
+        // ═══ MEGA MENU ═══
+        function toggleMM(e) {
+            e.stopPropagation();
+            var m = document.getElementById('mm'), a = document.getElementById('catArr');
+            var o = m.classList.toggle('open');
+            a.textContent = o ? 'expand_less' : 'expand_more';
+        }
+        function swp(id, el) {
+            document.querySelectorAll('.ml1').forEach(function (i) { i.classList.remove('active'); });
+            el.classList.add('active');
+            document.querySelectorAll('.mp').forEach(function (p) { p.classList.remove('active'); });
+            var p = document.getElementById('p-' + id);
+            if (p) p.classList.add('active');
+        }
+        document.addEventListener('click', function (e) {
+            var m = document.getElementById('mm'), b = document.getElementById('catBtn');
+            if (m && !m.contains(e.target) && !b.contains(e.target)) {
+                m.classList.remove('open');
+                document.getElementById('catArr').textContent = 'expand_more';
+            }
+        });
+
+        // ═══ SEARCH DROP ═══
+        function openDrop() { document.getElementById('sdrop').classList.add('open'); }
+        document.addEventListener('click', function (e) {
+            var w = document.getElementById('swrap');
+            if (w && !w.contains(e.target)) document.getElementById('sdrop').classList.remove('open');
+        });
+        function fill(el) {
+            var nodes = el.childNodes, txt = '';
+            nodes.forEach(function (n) { if (n.nodeType === 3) txt += n.textContent; });
+            txt = txt.trim();
+            document.getElementById('sinput').value = txt;
+            document.getElementById('sdrop').classList.remove('open');
+        }
+
+        // ═══ SHOP POPUP ═══
+        document.querySelectorAll('.ibwrap').forEach(function (wrap) {
+            var btn = wrap.querySelector('.infobtn');
+            var popup = wrap.querySelector('.spopup');
+            if (!btn || !popup) return;
+            var tid;
+            btn.addEventListener('mouseenter', function () {
+                clearTimeout(tid);
+                popup.style.opacity = '1';
+                popup.style.pointerEvents = 'auto';
+                popup.style.transform = 'translateY(0)';
+            });
+            btn.addEventListener('mouseleave', function () {
+                tid = setTimeout(function () {
+                    popup.style.opacity = '0';
+                    popup.style.pointerEvents = 'none';
+                    popup.style.transform = 'translateY(6px)';
+                }, 120);
+            });
+            popup.addEventListener('mouseenter', function () { clearTimeout(tid); });
+            popup.addEventListener('mouseleave', function () {
+                tid = setTimeout(function () {
+                    popup.style.opacity = '0';
+                    popup.style.pointerEvents = 'none';
+                    popup.style.transform = 'translateY(6px)';
+                }, 120);
+            });
+        });
+
+        // ═══ TABS ═══
+        document.querySelectorAll('.tabbtn').forEach(function (b) {
+            b.addEventListener('click', function () {
+                var p = this.closest('.schtabs');
+                p.querySelectorAll('.tabbtn').forEach(function (x) { x.classList.remove('active'); });
+                this.classList.add('active');
+            });
+        });
+
+        // ═══ ĐỒNG GIÁ SLIDER ═══
+        (function () {
+            var prices = [
+                { label: '10k', value: 10000, count: '120+ tin' },
+                { label: '20k', value: 20000, count: '85+ tin' },
+                { label: '39k', value: 39000, count: '210+ tin' },
+                { label: '49k', value: 49000, count: '340+ tin' },
+                { label: '59k', value: 59000, count: '180+ tin' },
+                { label: '79k', value: 79000, count: '95+ tin' },
+                { label: '99k', value: 99000, count: '560+ tin' },
+                { label: '149k', value: 149000, count: '290+ tin' },
+                { label: '199k', value: 199000, count: '430+ tin' },
+                { label: '249k', value: 249000, count: '310+ tin' },
+                { label: '299k', value: 299000, count: '480+ tin' },
+                { label: '399k', value: 399000, count: '220+ tin' },
+                { label: '499k', value: 499000, count: '370+ tin' },
+                { label: '699k', value: 699000, count: '190+ tin' },
+                { label: '999k', value: 999000, count: '260+ tin' },
+            ];
+
+            var track = document.getElementById('dgTrack');
+            var outer = document.getElementById('dgOuter');
+            var prevBtn = document.getElementById('dgPrev');
+            var nextBtn = document.getElementById('dgNext');
+            var offset = 0;
+            var itemW = 0;
+            var visible = 5;
+            var gap = 12;
+
+            // Build items
+            prices.forEach(function (p, i) {
+                var a = document.createElement('a');
+                a.className = 'dg-item' + (i === 6 ? ' active-price' : '');
+                a.href = 'listing.html?price=' + p.value;
+                a.innerHTML =
+                    '<span class="dg-price">' + p.label + '</span>' +
+                    '<span class="dg-label">Đồng giá</span>' +
+                    '<span class="dg-count">' + p.count + '</span>';
+                track.appendChild(a);
+            });
+
+            function getVisible() {
+                var w = outer.offsetWidth;
+                if (w < 400) return 2;
+                if (w < 600) return 3;
+                if (w < 900) return 4;
+                return 5;
+            }
+
+            function getItemW() {
+                var v = getVisible();
+                return (outer.offsetWidth - gap * (v - 1)) / v;
+            }
+
+            function updateLayout() {
+                visible = getVisible();
+                itemW = getItemW();
+                var items = track.querySelectorAll('.dg-item');
+                items.forEach(function (el) {
+                    el.style.width = itemW + 'px';
+                });
+                // clamp offset
+                var maxOffset = Math.max(0, prices.length - visible);
+                if (offset > maxOffset) offset = maxOffset;
+                applyTransform();
+                updateButtons();
+            }
+
+            function applyTransform() {
+                var step = itemW + gap;
+                track.style.transform = 'translateX(-' + (offset * step) + 'px)';
+            }
+
+            function updateButtons() {
+                var maxOffset = Math.max(0, prices.length - visible);
+                prevBtn.disabled = offset <= 0;
+                nextBtn.disabled = offset >= maxOffset;
+            }
+
+            window.dgNav = function (dir) {
+                var maxOffset = Math.max(0, prices.length - visible);
+                offset = Math.max(0, Math.min(maxOffset, offset + dir));
+                applyTransform();
+                updateButtons();
+            };
+
+            // Init
+            updateLayout();
+            window.addEventListener('resize', updateLayout);
+        })();
+        // ═══ JOB TABS ═══
+        function switchJobTab(type, btn) {
+            // toggle grids
+            document.getElementById('jgrid-tv').style.display = type === 'tv' ? 'grid' : 'none';
+            document.getElementById('jgrid-ct').style.display = type === 'ct' ? 'grid' : 'none';
+            // toggle tab buttons inside job section only
+            var sec = document.getElementById('viecLamSec');
+            sec.querySelectorAll('.tabbtn').forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+        }
+    </script>
+
+    <!-- STICKY LOGIN BANNER (mobile) -->
     <div class="sticky-banner" id="stickyBanner">
         <div class="sticky-banner-inner">
             <span class="ms" style="font-size:18px;color:#f97316;flex-shrink:0">info</span>
             <span class="sticky-banner-txt">Đăng nhập ngay để không bỏ lỡ deal mới gần bạn.</span>
-            <button class="sticky-banner-btn">Đăng nhập</button>
+            <button class="sticky-banner-btn" onclick="window.location='#'">Đăng nhập</button>
             <button class="sticky-banner-close" onclick="document.getElementById('stickyBanner').style.display='none'">
                 <span class="ms" style="font-size:18px">close</span>
             </button>
