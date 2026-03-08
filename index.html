@@ -2015,6 +2015,176 @@
                 height: 80px;
             }
         }
+
+
+        /* ══ THƯƠNG HIỆU NỔI BẬT ══ */
+        .brand-sec {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 20px 24px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .07);
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .brand-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .brand-header-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #222;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .brand-header a {
+            font-size: 12.5px;
+            color: var(--p);
+            font-weight: 600;
+        }
+
+        .brand-header a:hover {
+            text-decoration: underline;
+        }
+
+        .brand-carousel-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-nav {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1.5px solid #e5e7eb;
+            background: #fff;
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: all .15s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+        }
+
+        .brand-nav:hover {
+            border-color: var(--p);
+            color: var(--p);
+        }
+
+        .brand-nav:disabled {
+            opacity: .35;
+            cursor: not-allowed;
+        }
+
+        .brand-track-outer {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .brand-track {
+            display: flex;
+            margin-top: 10px;
+            gap: 12px;
+            transition: transform .35s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .brand-card {
+            flex-shrink: 0;
+            border: 1.5px solid #f0f0f0;
+            border-radius: 12px;
+            padding: 14px 10px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all .2s;
+            background: #fff;
+            text-align: center;
+        }
+
+        .brand-card:hover {
+            border-color: var(--p);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 136, 72, .12);
+            background: var(--pl);
+        }
+
+        .brand-logo-wrap {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 2px solid #f0f0f0;
+            background: #f9fafb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: border-color .2s;
+        }
+
+        .brand-card:hover .brand-logo-wrap {
+            border-color: var(--p);
+        }
+
+        .brand-logo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .brand-logo-placeholder {
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--p);
+        }
+
+        .brand-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: #222;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        .brand-meta {
+            font-size: 10.5px;
+            color: #aaa;
+            margin-top: -4px;
+        }
+
+        .brand-dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 14px;
+        }
+
+        .brand-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            cursor: pointer;
+            transition: all .2s;
+        }
+
+        .brand-dot.active {
+            background: var(--p);
+            width: 18px;
+        }
     </style>
 </head>
 
@@ -2780,7 +2950,8 @@
         <div class="catsec">
             <div class="cshdr">
                 <div class="cstitle">Danh mục nổi bật</div>
-                <a href="/listing.html" class="smore">Xem tất cả <span class="ms" style="font-size:15px">chevron_right</span></a>
+                <a href="/listing.html" class="smore">Xem tất cả <span class="ms"
+                        style="font-size:15px">chevron_right</span></a>
             </div>
             <div class="catbox" id="catbox">
                 <div class="catrow">
@@ -3171,7 +3342,8 @@
                     <button class="tabbtn active">Hôm nay có gì Hot</button>
                     <button class="tabbtn">Xu hướng tìm kiếm</button>
                 </div>
-                <a href="/listing.html" class="smore">Xem thêm <span class="ms" style="font-size:15px">chevron_right</span></a>
+                <a href="/listing.html" class="smore">Xem thêm <span class="ms"
+                        style="font-size:15px">chevron_right</span></a>
             </div>
             <div class="pgrid">
                 <!-- Card 1 -->
@@ -3499,7 +3671,8 @@
                     </div>
                 </div>
             </div>
-            <div class="lm"><button onclick="window.location.href='/listing.html'" class="boutp">Xem thêm sản phẩm</button></div>
+            <div class="lm"><button onclick="window.location.href='/listing.html'" class="boutp">Xem thêm sản
+                    phẩm</button></div>
         </div>
 
         <!-- SẢN PHẨM MỚI -->
@@ -3507,9 +3680,10 @@
             <div class="sch">
                 <div class="schtabs"><button class="tabbtn active">Sản phẩm vừa đăng</button><button class="tabbtn">Sản
                         phẩm yêu thích</button></div>
-                <a href="/listing.html" class="smore">Xem thêm <span class="ms" style="font-size:15px">chevron_right</span></a>
+                <a href="/listing.html" class="smore">Xem thêm <span class="ms"
+                        style="font-size:15px">chevron_right</span></a>
             </div>
-            <div class="pgrid"> 
+            <div class="pgrid">
                 <div class="pc">
                     <div class="pcimg"><img
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
@@ -3517,7 +3691,9 @@
                                 style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Style House</span></div>
-                       <a href="/detail.html"> <p class="pctit">Áo thun oversize in hình unisex phong cách streetwear</p></a>
+                        <a href="/detail.html">
+                            <p class="pctit">Áo thun oversize in hình unisex phong cách streetwear</p>
+                        </a>
                         <div class="prow"><span class="psal">185.000 đ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
@@ -3533,7 +3709,9 @@
                                 style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Clock & Watch</span></div>
-                        <a href="/detail.html"><p class="pctit">Đồng hồ Daniel Wellington Classic Petite chính hãng</p></a>
+                        <a href="/detail.html">
+                            <p class="pctit">Đồng hồ Daniel Wellington Classic Petite chính hãng</p>
+                        </a>
                         <div class="prow"><span class="psal">2.800.000 đ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
@@ -3549,7 +3727,9 @@
                                 style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Kicks SG</span></div>
-                        <a href="/detail.html"><p class="pctit">Giày Adidas Ultraboost trắng size 39–44, new 100%</p></a>
+                        <a href="/detail.html">
+                            <p class="pctit">Giày Adidas Ultraboost trắng size 39–44, new 100%</p>
+                        </a>
                         <div class="prow"><span class="psal">4.200.000 đ</span><span class="pori">5.500.000 đ</span>
                         </div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
@@ -3566,7 +3746,9 @@
                                 style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Tailor House</span></div>
-                        <a href="/detail.html"><p class="pctit">Vest đo tay theo yêu cầu, giao tận nhà</p></a>
+                        <a href="/detail.html">
+                            <p class="pctit">Vest đo tay theo yêu cầu, giao tận nhà</p>
+                        </a>
                         <div class="prow"><span class="psal">1.500.000 đ</span><span
                                 style="font-size:10px;color:#aaa">/bộ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
@@ -3582,7 +3764,9 @@
                             class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
                     <div class="pcb">
                         <div class="srow"><span class="sname">Beauty Corner</span></div>
-                        <a href="/detail.html"><p class="pctit">Set nước hoa Dior Sauvage EDT chính hãng 60ml</p></a>
+                        <a href="/detail.html">
+                            <p class="pctit">Set nước hoa Dior Sauvage EDT chính hãng 60ml</p>
+                        </a>
                         <div class="prow"><span class="psal">2.100.000 đ</span></div>
                         <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
@@ -3593,15 +3777,86 @@
                     </div>
                 </div>
             </div>
-            <div class="lm"><button onclick="window.location.href='/listing.html'" class="boutp">Xem thêm sản phẩm</button></div>
+            <div class="lm"><button onclick="window.location.href='/listing.html'" class="boutp">Xem thêm sản
+                    phẩm</button></div>
         </div>
 
+        <!-- ══ THƯƠNG HIỆU NỔI BẬT ══ -->
+        <div class="brand-sec">
+            <div class="brand-header">
+                <span class="brand-header-title">Thương hiệu nổi bật</span>
+                <a href="/listing.html">Xem tất cả →</a>
+            </div>
+            <div class="brand-carousel-wrap">
+                <button class="brand-nav" id="brandPrev" onclick="brandNav(-1)">
+                    <span class="ms" style="font-size:18px">chevron_left</span>
+                </button>
+                <div class="brand-track-outer">
+                    <div class="brand-track" id="brandTrack">
+                        <div class="brand-card">
+                            <div class="brand-logo-wrap">
+                                <img src="/assets/shop.png" alt="Adidas" class="brand-logo-placeholder">
+                            </div>
+                            <div class="brand-name">Adidas</div>
+                            <div class="brand-meta">36 sản phẩm</div>
+                        </div>
+                        <div class="brand-card">
+                            <div class="brand-logo-wrap">
+                                <img src="/assets/Logo_NIKE.svg" alt="Nike" class="brand-logo-placeholder">
+                            </div>
+                            <div class="brand-name">Nike</div>
+                            <div class="brand-meta">52 sản phẩm</div>
+                        </div>
+                        <div class="brand-card">
+                            <div class="brand-logo-wrap">
+                                <img src="/assets/puma2.jpg" alt="Puma" class="brand-logo-placeholder">
+                            </div>
+                            <div class="brand-name">Puma</div>
+                            <div class="brand-meta">28 sản phẩm</div>
+                        </div>
+                        <div class="brand-card">
+                            <div class="brand-logo-wrap">
+                                <img src="/assets/UNIQLO_logo.svg.png" alt="Uniqlo" class="brand-logo-placeholder">
+                            </div>
+                            <div class="brand-name">Uniqlo</div>
+                            <div class="brand-meta">41 sản phẩm</div>
+                        </div>
+                        <div class="brand-card">
+                            <div class="brand-logo-wrap">
+                                <img src="/assets/4man.png" alt="4Man" class="brand-logo-placeholder">
+                            </div>
+                            <div class="brand-name">4Man</div>
+                            <div class="brand-meta">19 sản phẩm</div>
+                        </div>
+                        <div class="brand-card">
+                            <div class="brand-logo-wrap">
+                                <img src="/assets/polo.png" alt="Poloman" class="brand-logo-placeholder">
+                            </div>
+                            <div class="brand-name">PoloMan</div>
+                            <div class="brand-meta">33 sản phẩm</div>
+                        </div>
+                        <div class="brand-card">
+                            <div class="brand-logo-wrap">
+                                <img src="/assets/gucci-logo-inkythuatso-01-02-09-59-44.jpg" alt="Gucci" class="brand-logo-placeholder">
+                            </div>
+                            <div class="brand-name">Gucci</div>
+                            <div class="brand-meta">60 sản phẩm</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="brand-nav" id="brandNext" onclick="brandNav(1)">
+                    <span class="ms" style="font-size:18px">chevron_right</span>
+                </button>
+            </div>
+            <div class="brand-dots" id="brandDots"></div>
+        </div>
 
         <!-- VIDEO -->
         <div class="sec">
             <div class="sch">
                 <div class="schtabs"><button class="tabbtn active">🎬 Video Fashion</button></div>
-                <a href="/listing.html" class="smore">Xem thêm <span class="ms" style="font-size:15px">chevron_right</span></a>
+                <a href="/listing.html" class="smore">Xem thêm <span class="ms"
+                        style="font-size:15px">chevron_right</span></a>
             </div>
             <div class="vgrid">
                 <div class="vcard"><img
@@ -3650,7 +3905,8 @@
                     </div>
                 </div>
             </div>
-            <div class="lm"><button onclick="window.location.href='/listing.html'" class="boutp">Khám phá thêm Video</button></div>
+            <div class="lm"><button onclick="window.location.href='/listing.html'" class="boutp">Khám phá thêm
+                    Video</button></div>
         </div>
 
 
@@ -3949,6 +4205,61 @@
             sec.querySelectorAll('.tabbtn').forEach(function (b) { b.classList.remove('active'); });
             btn.classList.add('active');
         }
+
+        // ══ BRAND CAROUSEL ══
+        (function () {
+            var VISIBLE = 5, GAP = 12, offset = 0;
+            var track = document.getElementById('brandTrack');
+            var outer = document.querySelector('.brand-track-outer');
+            var dotsWrap = document.getElementById('brandDots');
+            var cards = track.querySelectorAll('.brand-card');
+            var total = cards.length;
+
+            function getVisible() {
+                var w = outer.offsetWidth;
+                if (w < 400) return 2;
+                if (w < 600) return 3;
+                if (w < 800) return 4;
+                return 5;
+            }
+
+            function getItemW() {
+                var v = getVisible();
+                return (outer.offsetWidth - GAP * (v - 1)) / v;
+            }
+
+            function render() {
+                var v = getVisible();
+                var iw = getItemW();
+                cards.forEach(function (c) { c.style.width = iw + 'px'; });
+                var max = Math.max(0, total - v);
+                if (offset > max) offset = max;
+                track.style.transform = 'translateX(-' + offset * (iw + GAP) + 'px)';
+                document.getElementById('brandPrev').disabled = offset <= 0;
+                document.getElementById('brandNext').disabled = offset >= max;
+
+                // dots
+                var pages = Math.ceil(total / v);
+                dotsWrap.innerHTML = '';
+                for (var i = 0; i < pages; i++) {
+                    var d = document.createElement('div');
+                    d.className = 'brand-dot' + (Math.floor(offset / v) === i ? ' active' : '');
+                    d.setAttribute('data-i', i);
+                    d.onclick = (function (idx) { return function () { offset = idx * v; render(); }; })(i);
+                    dotsWrap.appendChild(d);
+                }
+            }
+
+            window.brandNav = function (dir) {
+                var v = getVisible();
+                var max = Math.max(0, total - v);
+                offset = Math.max(0, Math.min(max, offset + dir));
+                render();
+            };
+
+            render();
+            window.addEventListener('resize', render);
+        })();
     </script>
 
     <!-- STICKY LOGIN BANNER (mobile) -->
