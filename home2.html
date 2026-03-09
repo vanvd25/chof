@@ -2543,198 +2543,504 @@
       }
     }
 
-    /* ============================================================
-   CHOF.VN — MOBILE RESPONSIVE FIXES
-   Thêm vào cuối thẻ <style> hoặc nhúng link stylesheet này
-   ============================================================ */
+    /* ── MOBILE: max 768px ── */
+    @media (max-width: 768px) {
 
-/* ── MOBILE: max 768px ── */
-@media (max-width: 768px) {
+      /* 1. Header: ẩn nav links, rút gọn */
+      .hdr-nav {
+        display: none;
+      }
 
-  /* 1. Header: ẩn nav links, rút gọn */
-  .hdr-nav { display: none; }
-  .logo-tagline { display: none; }
-  .hdr-top-inner { padding: 0 12px; gap: 8px; }
-  .blogin { display: none !important; }
+      .logo-tagline {
+        display: none;
+      }
 
-  /* 2. Hero */
-  .hero { padding: 22px 0 60px; }
-  .hero-inner { flex-direction: column; gap: 16px; }
-  .hero-left { max-width: 100%; }
-  .hero-right { display: none; }
-  .hero-h1 { font-size: 24px; letter-spacing: -0.3px; }
-  .hero-sub { font-size: 13px; margin-bottom: 16px; }
-  .hero-stats { gap: 14px; margin-bottom: 16px; }
-  .hero-stat-n { font-size: 18px; }
-  .hero-stat-l { font-size: 10px; }
-  .hero-btn-p, .hero-btn-s { padding: 10px 18px; font-size: 13px; }
-  .hero-ctas { gap: 8px; }
+      .hdr-top-inner {
+        padding: 0 12px;
+        gap: 8px;
+      }
 
-  /* 3. Search box: ẩn category dropdown để không tràn */
-  .sbox.hero-sb { height: 48px; }
-  .scat-wrap { display: none; }
-  .sinput { font-size: 13px; padding: 0 10px; }
-  .sbtn { padding: 0 16px; font-size: 13px; }
+      .blogin {
+        display: none !important;
+      }
 
-  /* Ẩn divider giữa scat và input */
-  .sbox > div[style*="1.5px"],
-  .sbox > div[style*="width:1.5px"] { display: none; }
+      /* 2. Hero */
+      .hero {
+        padding: 22px 0 60px;
+      }
 
-  /* 4. Cat tabs */
-  .cat-tabs-inner { padding: 0 8px; }
-  .ct-link { padding: 0 10px; font-size: 12px; }
-  .ct-dd-wrap { display: none; } /* ẩn mega-menu btn trên mobile */
+      .hero-inner {
+        flex-direction: column;
+        gap: 16px;
+      }
 
-  /* 5. Sticky header: gọn lại */
-  .sticky-hdr-inner { padding: 0 10px; gap: 8px; height: 52px; }
-  #stickyCtWrap { display: none; }
-  .sbox.sticky-sb { height: 38px; }
+      .hero-left {
+        max-width: 100%;
+      }
 
-  /* 6. Layout grids */
-  .pgrid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
-  .pgrid-ed { grid-template-columns: 1fr !important; }
-  .pgrid-ed .pc-hero { grid-row: auto !important; }
-  .pgrid-mini { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
-  .pgrid-mini-wrap { gap: 10px; }
-  .vgrid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
-  .jgrid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
+      .hero-right {
+        display: none;
+      }
 
-  /* Hero card aspect ratio dễ nhìn hơn */
-  .pc-hero .pcimg { aspect-ratio: 4/3; }
+      .hero-h1 {
+        font-size: 24px;
+        letter-spacing: -0.3px;
+      }
 
-  /* 7. Job type buttons */
-  .jt-row { flex-wrap: wrap; gap: 8px; }
-  .jt-btn { flex: 1 1 calc(50% - 4px); padding: 8px 10px; }
-  .jt-ico { width: 32px; height: 32px; }
-  .jt-name { font-size: 12px; }
-  .jt-sub { font-size: 10px; }
+      .hero-sub {
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
 
-  /* 8. Section headings */
-  .esc-num { font-size: 36px !important; }
-  .esc-title { font-size: 15px !important; }
-  .esc-tabs .esc-tab { padding: 5px 10px; font-size: 11.5px; }
+      .hero-stats {
+        gap: 14px;
+        margin-bottom: 16px;
+      }
 
-  /* 9. Đồng giá slider */
-  .dg-price { font-size: 16px; }
-  .dg-lbl { font-size: 9.5px; }
-  .dg-cnt { font-size: 9px; }
-  .dg-item { padding: 12px 6px 10px; }
-  .dg-nav { width: 32px; height: 32px; }
+      .hero-stat-n {
+        font-size: 18px;
+      }
 
-  /* 10. Brand carousel */
-  .brand-logo-wrap { width: 48px; height: 48px; }
-  .brand-name { font-size: 11px; }
-  .brand-card { padding: 10px 8px 9px; }
+      .hero-stat-l {
+        font-size: 10px;
+      }
 
-  /* 11. Category icons */
-  .catrow { min-width: 600px; }
-  .cimg { width: 44px; height: 44px; font-size: 18px; }
-  .clbl { font-size: 10px; }
+      .hero-btn-p,
+      .hero-btn-s {
+        padding: 10px 18px;
+        font-size: 13px;
+      }
 
-  /* 12. Product card */
-  .pcb { padding: 8px 10px 10px; }
-  .pc-title, .pctit { font-size: 11.5px; min-height: auto; }
-  .pc-price-sale, .psal { font-size: 13px; }
+      .hero-ctas {
+        gap: 8px;
+      }
 
-  /* 13. Main padding */
-  .main { padding: 12px 10px 80px; }
-  .sec { padding: 16px 14px; }
-  .catsec { padding: 14px 12px 16px; }
+      /* 3. Search box: ẩn category dropdown để không tràn */
+      .sbox.hero-sb {
+        height: 48px;
+      }
 
-  /* 14. CTA banner */
-  .cta { flex-direction: column; padding: 22px 16px; gap: 16px; }
-  .cta h2 { font-size: 22px !important; }
-  .cta > div:last-child { flex-direction: row; justify-content: center; }
+      .scat-wrap {
+        display: none;
+      }
 
-  /* 15. Footer */
-  .fi { grid-template-columns: 1fr 1fr; gap: 16px; padding: 24px 14px 14px; }
-  .fi-logo { font-size: 20px; margin-bottom: 8px; }
+      .sinput {
+        font-size: 13px;
+        padding: 0 10px;
+      }
 
-  /* 16. SEO box */
-  .seobox { padding: 14px; }
-}
+      .sbtn {
+        padding: 0 16px;
+        font-size: 13px;
+      }
 
-/* ── EXTRA SMALL: max 480px ── */
-@media (max-width: 480px) {
+      /* Ẩn divider giữa scat và input */
+      .sbox>div[style*="1.5px"],
+      .sbox>div[style*="width:1.5px"] {
+        display: none;
+      }
 
-  /* Header */
-  .hdr-top-inner { padding: 0 10px; gap: 6px; }
-  .logo-badge { font-size: 17px; padding: 3px 8px; }
+      /* 4. Cat tabs */
+      .cat-tabs-inner {
+        padding: 0 8px;
+      }
 
-  /* Hero: ẩn stat thứ 3 */
-  .hero-h1 { font-size: 20px; }
-  .hero-eyebrow { font-size: 10px; padding: 4px 10px; }
-  .hero-stat:last-child { display: none; }
-  .hero-stat-sep:last-of-type { display: none; }
+      .ct-link {
+        padding: 0 10px;
+        font-size: 12px;
+      }
 
-  /* Category icons: 6 cột thay vì 12 */
-  .catrow {
-    grid-template-columns: repeat(6, 1fr);
-    min-width: 0;
-    gap: 2px;
-  }
-  .cimg { width: 38px; height: 38px; font-size: 16px; }
-  .clbl { font-size: 9px; }
-  .catitem { padding: 8px 4px; gap: 5px; }
+      .ct-dd-wrap {
+        display: none;
+      }
 
-  /* Grids */
-  .pgrid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
-  .pgrid-mini { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
-  .vgrid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
-  .jgrid { grid-template-columns: 1fr !important; }
-  .jt-btn { flex: 1 1 100%; }
+      /* ẩn mega-menu btn trên mobile */
 
-  /* Section */
-  .sec { padding: 12px 10px; margin-bottom: 12px; }
-  .catsec { padding: 10px 8px 12px; margin-bottom: 12px; }
-  .main { padding: 10px 8px 80px; }
+      /* 5. Sticky header: gọn lại */
+      .sticky-hdr-inner {
+        padding: 0 10px;
+        gap: 8px;
+        height: 52px;
+      }
 
-  /* Footer: 1 cột */
-  .fi { grid-template-columns: 1fr; gap: 14px; }
-  .fb2 { flex-direction: column; gap: 6px; text-align: center; }
-  .fb2 > div { gap: 12px; }
+      #stickyCtWrap {
+        display: none;
+      }
 
-  /* Brand section */
-  .brand-sec { padding: 14px 12px; }
+      .sbox.sticky-sb {
+        height: 38px;
+      }
 
-  /* SEO */
-  .seobox { padding: 12px; }
-  .seobox h2 { font-size: 14px !important; }
-}
+      /* 6. Layout grids */
+      .pgrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+      }
 
-/* ── TABLET: 769px – 1024px ── */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .hdr-nav .hdr-nav-link { padding: 6px 8px; font-size: 12.5px; }
-  .hero-h1 { font-size: 30px; }
-  .pgrid { grid-template-columns: repeat(3, 1fr); }
-  .pgrid-ed { grid-template-columns: 200px 1fr; }
-  .pgrid-mini { grid-template-columns: repeat(3, 1fr); }
-  .jgrid { grid-template-columns: repeat(3, 1fr); }
-  .vgrid { grid-template-columns: repeat(3, 1fr); }
-  .fi { grid-template-columns: 2fr 1fr 1fr; gap: 24px; }
-}
+      .pgrid-ed {
+        grid-template-columns: 1fr !important;
+      }
+
+      .pgrid-ed .pc-hero {
+        grid-row: auto !important;
+      }
+
+      .pgrid-mini {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+      }
+
+      .pgrid-mini-wrap {
+        gap: 10px;
+      }
+
+      .vgrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+      }
+
+      .jgrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+      }
+
+      /* Hero card aspect ratio dễ nhìn hơn */
+      .pc-hero .pcimg {
+        aspect-ratio: 4/3;
+      }
+
+      /* 7. Job type buttons */
+      .jt-row {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .jt-btn {
+        flex: 1 1 calc(50% - 4px);
+        padding: 8px 10px;
+      }
+
+      .jt-ico {
+        width: 32px;
+        height: 32px;
+      }
+
+      .jt-name {
+        font-size: 12px;
+      }
+
+      .jt-sub {
+        font-size: 10px;
+      }
+
+      /* 8. Section headings */
+      .esc-num {
+        font-size: 36px !important;
+      }
+
+      .esc-title {
+        font-size: 15px !important;
+      }
+
+      .esc-tabs .esc-tab {
+        padding: 5px 10px;
+        font-size: 11.5px;
+      }
+
+      /* 9. Đồng giá slider */
+      .dg-price {
+        font-size: 16px;
+      }
+
+      .dg-lbl {
+        font-size: 9.5px;
+      }
+
+      .dg-cnt {
+        font-size: 9px;
+      }
+
+      .dg-item {
+        padding: 12px 6px 10px;
+      }
+
+      .dg-nav {
+        width: 32px;
+        height: 32px;
+      }
+
+      /* 10. Brand carousel */
+      .brand-logo-wrap {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-name {
+        font-size: 11px;
+      }
+
+      .brand-card {
+        padding: 10px 8px 9px;
+      }
+
+      /* 11. Category icons */
+      .catrow {
+        min-width: 600px;
+      }
+
+      .cimg {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+      }
+
+      .clbl {
+        font-size: 10px;
+      }
+
+      /* 12. Product card */
+      .pcb {
+        padding: 8px 10px 10px;
+      }
+
+      .pc-title,
+      .pctit {
+        font-size: 11.5px;
+        min-height: auto;
+      }
+
+      .pc-price-sale,
+      .psal {
+        font-size: 13px;
+      }
+
+      /* 13. Main padding */
+      .main {
+        padding: 12px 10px 80px;
+      }
+
+      .sec {
+        padding: 16px 14px;
+      }
+
+      .catsec {
+        padding: 14px 12px 16px;
+      }
+
+      /* 14. CTA banner */
+      .cta {
+        flex-direction: column;
+        padding: 22px 16px;
+        gap: 16px;
+      }
+
+      .cta h2 {
+        font-size: 22px !important;
+      }
+
+      .cta>div:last-child {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      /* 15. Footer */
+      .fi {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding: 24px 14px 14px;
+      }
+
+      .fi-logo {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+
+      /* 16. SEO box */
+      .seobox {
+        padding: 14px;
+      }
+    }
+
+    /* ── EXTRA SMALL: max 480px ── */
+    @media (max-width: 480px) {
+
+      /* Header */
+      .hdr-top-inner {
+        padding: 0 10px;
+        gap: 6px;
+      }
+
+      .logo-badge {
+        font-size: 17px;
+        padding: 3px 8px;
+      }
+
+      /* Hero: ẩn stat thứ 3 */
+      .hero-h1 {
+        font-size: 20px;
+      }
+
+      .hero-eyebrow {
+        font-size: 10px;
+        padding: 4px 10px;
+      }
+
+      .hero-stat:last-child {
+        display: none;
+      }
+
+      .hero-stat-sep:last-of-type {
+        display: none;
+      }
+
+      /* Category icons: 6 cột thay vì 12 */
+      .catrow {
+        grid-template-columns: repeat(6, 1fr);
+        min-width: 0;
+        gap: 2px;
+      }
+
+      .cimg {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+      }
+
+      .clbl {
+        font-size: 9px;
+      }
+
+      .catitem {
+        padding: 8px 4px;
+        gap: 5px;
+      }
+
+      /* Grids */
+      .pgrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+      }
+
+      .pgrid-mini {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+      }
+
+      .vgrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+      }
+
+      .jgrid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .jt-btn {
+        flex: 1 1 100%;
+      }
+
+      /* Section */
+      .sec {
+        padding: 12px 10px;
+        margin-bottom: 12px;
+      }
+
+      .catsec {
+        padding: 10px 8px 12px;
+        margin-bottom: 12px;
+      }
+
+      .main {
+        padding: 10px 8px 80px;
+      }
+
+      /* Footer: 1 cột */
+      .fi {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .fb2 {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+      }
+
+      .fb2>div {
+        gap: 12px;
+      }
+
+      /* Brand section */
+      .brand-sec {
+        padding: 14px 12px;
+      }
+
+      /* SEO */
+      .seobox {
+        padding: 12px;
+      }
+
+      .seobox h2 {
+        font-size: 14px !important;
+      }
+    }
+
+    /* ── TABLET: 769px – 1024px ── */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .hdr-nav .hdr-nav-link {
+        padding: 6px 8px;
+        font-size: 12.5px;
+      }
+
+      .hero-h1 {
+        font-size: 30px;
+      }
+
+      .pgrid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .pgrid-ed {
+        grid-template-columns: 200px 1fr;
+      }
+
+      .pgrid-mini {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .jgrid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .vgrid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .fi {
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 24px;
+      }
+    }
   </style>
-  
+
 </head>
 
 <body>
 
-  <!-- ════════════════════════════════
-     TOP NAV BAR (1 row, always)
-════════════════════════════════ -->
+  <!-- TOP NAV BAR (1 row, always) -->
   <div class="hdr-top">
     <div class="hdr-top-inner">
-      <a href="/" class="logo">
+      <a href="/home2.html" class="logo">
         <img src="/assets/logo.png" alt="Chof.vn" style="height:38px;object-fit:contain;display:block">
         <div class="logo-tagline">Chợ thời trang<br>Việt Nam</div>
       </a>
 
       <nav class="hdr-nav">
-        <a href="/" class="hdr-nav-link active">Chof.vn</a>
+        <a href="/home2.html" class="hdr-nav-link active">Chof.vn</a>
         <div class="hdr-nav-sep"></div>
-        <a href="/listing.html?cat=vieclam" class="hdr-nav-link">Việc làm</a>
-        <a href="/listing.html?cat=dichvu" class="hdr-nav-link">Dịch vụ</a>
-        <a href="/listing.html?cat=thuonghieu" class="hdr-nav-link">Thương hiệu</a>
+        <a href="/listing2.html?cat=vieclam" class="hdr-nav-link">Việc làm</a>
+        <a href="/listing2.html?cat=dichvu" class="hdr-nav-link">Dịch vụ</a>
+        <a href="/listing2.html?cat=thuonghieu" class="hdr-nav-link">Thương hiệu</a>
       </nav>
 
       <div class="hdr-space"></div>
@@ -2744,7 +3050,7 @@
         <button class="ibtn" title="Thông báo"><span class="ms">notifications</span><span class="ndot"></span></button>
         <div class="hdiv"></div>
         <button class="blogin">Đăng nhập</button>
-        <button onclick="location.href='/manage.html'" class="bpost" id="bpost">
+        <button onclick="location.href='/manage2.html'" class="bpost" id="bpost">
           <span class="ms" style="font-size:16px">add_box</span>
           <span id="bpost-txt">Đăng tin</span>
         </button>
@@ -2778,8 +3084,8 @@
           </div>
         </div>
         <div class="hero-ctas">
-          <button class="hero-btn-p" onclick="location.href='/listing.html'">Khám phá ngay</button>
-          <button class="hero-btn-s" onclick="location.href='/manage.html'">Đăng tin miễn phí</button>
+          <button class="hero-btn-p" onclick="location.href='/listing2.html'">Khám phá ngay</button>
+          <button class="hero-btn-s" onclick="location.href='/manage2.html'">Đăng tin miễn phí</button>
         </div>
       </div>
       <div class="hero-right">
@@ -2831,7 +3137,7 @@
         <div style="width:1.5px;background:var(--line);margin:10px 0;flex-shrink:0"></div>
         <input class="sinput" id="sinput" type="text" placeholder="Tìm kiếm sản phẩm thời trang, dịch vụ, việc làm..."
           autocomplete="off" />
-        <button class="sbtn" onclick="location.href='/listing.html'"><span class="ms"
+        <button class="sbtn" onclick="location.href='/listing2.html'"><span class="ms"
             style="font-size:18px">search</span> Tìm kiếm</button>
       </div>
 
@@ -2875,7 +3181,7 @@
           </div>
         </div>
         <div class="sdsep"></div>
-        <div style="text-align:center"><a href="/listing.html" style="font-size:12px;color:var(--p);font-weight:700">Xem
+        <div style="text-align:center"><a href="/listing2.html" style="font-size:12px;color:var(--p);font-weight:700">Xem
             tất cả kết quả →</a></div>
       </div>
     </div>
@@ -2932,60 +3238,60 @@
                 <div>
                   <h3>Áo</h3>
                   <ul>
-                    <li><a href="/listing.html">Áo thun</a></li>
-                    <li><a href="/listing.html">Áo sơ mi</a></li>
-                    <li><a href="/listing.html">Áo khoác</a></li>
-                    <li><a href="/listing.html">Áo vest</a></li>
+                    <li><a href="/listing2.html">Áo thun</a></li>
+                    <li><a href="/listing2.html">Áo sơ mi</a></li>
+                    <li><a href="/listing2.html">Áo khoác</a></li>
+                    <li><a href="/listing2.html">Áo vest</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Quần</h3>
                   <ul>
-                    <li><a href="/listing.html">Quần ngắn</a></li>
-                    <li><a href="/listing.html">Quần dài</a></li>
-                    <li><a href="/listing.html">Quần lót</a></li>
+                    <li><a href="/listing2.html">Quần ngắn</a></li>
+                    <li><a href="/listing2.html">Quần dài</a></li>
+                    <li><a href="/listing2.html">Quần lót</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Nón – Kính</h3>
                   <ul>
-                    <li><a href="/listing.html">Nón</a></li>
-                    <li><a href="/listing.html">Mắt kính</a></li>
+                    <li><a href="/listing2.html">Nón</a></li>
+                    <li><a href="/listing2.html">Mắt kính</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Balo – Túi</h3>
                   <ul>
-                    <li><a href="/listing.html">Ba lô</a></li>
-                    <li><a href="/listing.html">Túi xách</a></li>
+                    <li><a href="/listing2.html">Ba lô</a></li>
+                    <li><a href="/listing2.html">Túi xách</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Đồng hồ – Bóp</h3>
                   <ul>
-                    <li><a href="/listing.html">Đồng hồ</a></li>
-                    <li><a href="/listing.html">Bóp ví</a></li>
+                    <li><a href="/listing2.html">Đồng hồ</a></li>
+                    <li><a href="/listing2.html">Bóp ví</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Giày dép</h3>
                   <ul>
-                    <li><a href="/listing.html">Giày thể thao</a></li>
-                    <li><a href="/listing.html">Dép</a></li>
+                    <li><a href="/listing2.html">Giày thể thao</a></li>
+                    <li><a href="/listing2.html">Dép</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Mỹ phẩm</h3>
                   <ul>
-                    <li><a href="/listing.html">Nước hoa</a></li>
-                    <li><a href="/listing.html">Mỹ phẩm</a></li>
+                    <li><a href="/listing2.html">Nước hoa</a></li>
+                    <li><a href="/listing2.html">Mỹ phẩm</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Phụ kiện</h3>
                   <ul>
-                    <li><a href="/listing.html">Phụ kiện</a></li>
-                    <li><a href="/listing.html">Khác</a></li>
+                    <li><a href="/listing2.html">Phụ kiện</a></li>
+                    <li><a href="/listing2.html">Khác</a></li>
                   </ul>
                 </div>
               </div>
@@ -2993,38 +3299,38 @@
                 <div>
                   <h3>Áo</h3>
                   <ul>
-                    <li><a href="/listing.html">Áo thun</a></li>
-                    <li><a href="/listing.html">Áo sơ mi</a></li>
-                    <li><a href="/listing.html">Áo khoác</a></li>
-                    <li><a href="/listing.html">Áo dài</a></li>
+                    <li><a href="/listing2.html">Áo thun</a></li>
+                    <li><a href="/listing2.html">Áo sơ mi</a></li>
+                    <li><a href="/listing2.html">Áo khoác</a></li>
+                    <li><a href="/listing2.html">Áo dài</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Quần – Váy</h3>
                   <ul>
-                    <li><a href="/listing.html">Quần</a></li>
-                    <li><a href="/listing.html">Váy đầm</a></li>
+                    <li><a href="/listing2.html">Quần</a></li>
+                    <li><a href="/listing2.html">Váy đầm</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Nón – Kính</h3>
                   <ul>
-                    <li><a href="/listing.html">Nón</a></li>
-                    <li><a href="/listing.html">Mắt kính</a></li>
+                    <li><a href="/listing2.html">Nón</a></li>
+                    <li><a href="/listing2.html">Mắt kính</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Túi xách</h3>
                   <ul>
-                    <li><a href="/listing.html">Ba lô</a></li>
-                    <li><a href="/listing.html">Túi xách</a></li>
+                    <li><a href="/listing2.html">Ba lô</a></li>
+                    <li><a href="/listing2.html">Túi xách</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Mỹ phẩm</h3>
                   <ul>
-                    <li><a href="/listing.html">Nước hoa</a></li>
-                    <li><a href="/listing.html">Mỹ phẩm</a></li>
+                    <li><a href="/listing2.html">Nước hoa</a></li>
+                    <li><a href="/listing2.html">Mỹ phẩm</a></li>
                   </ul>
                 </div>
               </div>
@@ -3032,25 +3338,25 @@
                 <div>
                   <h3>Sơ sinh</h3>
                   <ul>
-                    <li><a href="/listing.html">Dưới 1 tháng</a></li>
-                    <li><a href="/listing.html">1–6 tháng</a></li>
-                    <li><a href="/listing.html">6–12 tháng</a></li>
+                    <li><a href="/listing2.html">Dưới 1 tháng</a></li>
+                    <li><a href="/listing2.html">1–6 tháng</a></li>
+                    <li><a href="/listing2.html">6–12 tháng</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Bé trai</h3>
                   <ul>
-                    <li><a href="/listing.html">Dưới 3 tuổi</a></li>
-                    <li><a href="/listing.html">3–6 tuổi</a></li>
-                    <li><a href="/listing.html">Trên 6 tuổi</a></li>
+                    <li><a href="/listing2.html">Dưới 3 tuổi</a></li>
+                    <li><a href="/listing2.html">3–6 tuổi</a></li>
+                    <li><a href="/listing2.html">Trên 6 tuổi</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Bé gái</h3>
                   <ul>
-                    <li><a href="/listing.html">Dưới 3 tuổi</a></li>
-                    <li><a href="/listing.html">3–6 tuổi</a></li>
-                    <li><a href="/listing.html">Trên 6 tuổi</a></li>
+                    <li><a href="/listing2.html">Dưới 3 tuổi</a></li>
+                    <li><a href="/listing2.html">3–6 tuổi</a></li>
+                    <li><a href="/listing2.html">Trên 6 tuổi</a></li>
                   </ul>
                 </div>
               </div>
@@ -3058,29 +3364,29 @@
                 <div>
                   <h3>TT Gia dụng</h3>
                   <ul>
-                    <li><a href="/listing.html">Mền/mùng</a></li>
-                    <li><a href="/listing.html">Áo gối/ra giường</a></li>
+                    <li><a href="/listing2.html">Mền/mùng</a></li>
+                    <li><a href="/listing2.html">Áo gối/ra giường</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>TT Chuyên dụng</h3>
                   <ul>
-                    <li><a href="/listing.html">Đồng phục</a></li>
-                    <li><a href="/listing.html">Bà bầu/hội cưới</a></li>
+                    <li><a href="/listing2.html">Đồng phục</a></li>
+                    <li><a href="/listing2.html">Bà bầu/hội cưới</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>TT Đồng giá</h3>
                   <ul>
-                    <li><a href="/listing.html">10k–99k</a></li>
-                    <li><a href="/listing.html">100k–499k</a></li>
+                    <li><a href="/listing2.html">10k–99k</a></li>
+                    <li><a href="/listing2.html">100k–499k</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Nguyên phụ liệu</h3>
                   <ul>
-                    <li><a href="/listing.html">Vải/khoá kéo</a></li>
-                    <li><a href="/listing.html">Máy móc/khác</a></li>
+                    <li><a href="/listing2.html">Vải/khoá kéo</a></li>
+                    <li><a href="/listing2.html">Máy móc/khác</a></li>
                   </ul>
                 </div>
               </div>
@@ -3088,27 +3394,27 @@
                 <div>
                   <h3>TT Nam</h3>
                   <ul>
-                    <li><a href="/listing.html">Áo nam</a></li>
-                    <li><a href="/listing.html">Quần nam</a></li>
+                    <li><a href="/listing2.html">Áo nam</a></li>
+                    <li><a href="/listing2.html">Quần nam</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>TT Nữ</h3>
                   <ul>
-                    <li><a href="/listing.html">Áo nữ</a></li>
-                    <li><a href="/listing.html">Quần/đồ lót</a></li>
+                    <li><a href="/listing2.html">Áo nữ</a></li>
+                    <li><a href="/listing2.html">Quần/đồ lót</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>TT Trẻ em</h3>
                   <ul>
-                    <li><a href="/listing.html">Bé trai/gái</a></li>
+                    <li><a href="/listing2.html">Bé trai/gái</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>TP Truyền thống</h3>
                   <ul>
-                    <li><a href="/listing.html">Nam/Nữ/Trẻ em</a></li>
+                    <li><a href="/listing2.html">Nam/Nữ/Trẻ em</a></li>
                   </ul>
                 </div>
               </div>
@@ -3116,27 +3422,27 @@
                 <div>
                   <h3>For Men</h3>
                   <ul>
-                    <li><a href="/listing.html">Shirt/T-shirt</a></li>
-                    <li><a href="/listing.html">Short/Pants</a></li>
+                    <li><a href="/listing2.html">Shirt/T-shirt</a></li>
+                    <li><a href="/listing2.html">Short/Pants</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>For Women</h3>
                   <ul>
-                    <li><a href="/listing.html">Top/Dress</a></li>
-                    <li><a href="/listing.html">Accessories</a></li>
+                    <li><a href="/listing2.html">Top/Dress</a></li>
+                    <li><a href="/listing2.html">Accessories</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>For Kids</h3>
                   <ul>
-                    <li><a href="/listing.html">Boy/Girl</a></li>
+                    <li><a href="/listing2.html">Boy/Girl</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Made to Order</h3>
                   <ul>
-                    <li><a href="/listing.html">Custom</a></li>
+                    <li><a href="/listing2.html">Custom</a></li>
                   </ul>
                 </div>
               </div>
@@ -3144,21 +3450,21 @@
                 <div>
                   <h3>DV May mặc</h3>
                   <ul>
-                    <li><a href="/listing.html">In thêu</a></li>
-                    <li><a href="/listing.html">Giặt ủi</a></li>
+                    <li><a href="/listing2.html">In thêu</a></li>
+                    <li><a href="/listing2.html">Giặt ủi</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>DV Phụ trợ</h3>
                   <ul>
-                    <li><a href="/listing.html">Người mẫu</a></li>
-                    <li><a href="/listing.html">Chụp ảnh</a></li>
+                    <li><a href="/listing2.html">Người mẫu</a></li>
+                    <li><a href="/listing2.html">Chụp ảnh</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Theo yêu cầu</h3>
                   <ul>
-                    <li><a href="/listing.html">May đo</a></li>
+                    <li><a href="/listing2.html">May đo</a></li>
                   </ul>
                 </div>
               </div>
@@ -3166,15 +3472,15 @@
                 <div>
                   <h3>Thời vụ</h3>
                   <ul>
-                    <li><a href="/listing.html">Việc tìm người</a></li>
-                    <li><a href="/listing.html">Người tìm việc</a></li>
+                    <li><a href="/listing2.html">Việc tìm người</a></li>
+                    <li><a href="/listing2.html">Người tìm việc</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Chính thức</h3>
                   <ul>
-                    <li><a href="/listing.html">Việc tìm người</a></li>
-                    <li><a href="/listing.html">Người tìm việc</a></li>
+                    <li><a href="/listing2.html">Việc tìm người</a></li>
+                    <li><a href="/listing2.html">Người tìm việc</a></li>
                   </ul>
                 </div>
               </div>
@@ -3187,7 +3493,7 @@
         <div class="sbox sticky-sb">
           <input class="sinput" id="sinputSticky" type="text" placeholder="Tìm kiếm thời trang, dịch vụ, việc làm..."
             autocomplete="off" />
-          <button class="sbtn" onclick="location.href='/listing.html'"><span class="ms"
+          <button class="sbtn" onclick="location.href='/listing2.html'"><span class="ms"
               style="font-size:16px">search</span></button>
         </div>
       </div>
@@ -3195,7 +3501,7 @@
         <button class="ibtn"><span class="ms">notifications</span><span class="ndot"></span></button>
         <div class="hdiv"></div>
         <button class="blogin" style="display:block">Đăng nhập</button>
-        <button class="bpost" onclick="location.href='/manage.html'"><span class="ms"
+        <button class="bpost" onclick="location.href='/manage2.html'"><span class="ms"
             style="font-size:15px">add_box</span> Đăng tin</button>
       </div>
     </div>
@@ -3232,62 +3538,62 @@
                 <div>
                   <h3>Áo</h3>
                   <ul>
-                    <li><a href="/listing.html">Áo thun</a></li>
-                    <li><a href="/listing.html">Áo sơ mi</a></li>
-                    <li><a href="/listing.html">Áo khoác</a></li>
-                    <li><a href="/listing.html">Áo vest</a></li>
-                    <li><a href="/listing.html">Áo khác</a></li>
+                    <li><a href="/listing2.html">Áo thun</a></li>
+                    <li><a href="/listing2.html">Áo sơ mi</a></li>
+                    <li><a href="/listing2.html">Áo khoác</a></li>
+                    <li><a href="/listing2.html">Áo vest</a></li>
+                    <li><a href="/listing2.html">Áo khác</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Quần</h3>
                   <ul>
-                    <li><a href="/listing.html">Quần ngắn</a></li>
-                    <li><a href="/listing.html">Quần dài</a></li>
-                    <li><a href="/listing.html">Quần lót</a></li>
-                    <li><a href="/listing.html">Quần khác</a></li>
+                    <li><a href="/listing2.html">Quần ngắn</a></li>
+                    <li><a href="/listing2.html">Quần dài</a></li>
+                    <li><a href="/listing2.html">Quần lót</a></li>
+                    <li><a href="/listing2.html">Quần khác</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Nón – Mắt kính</h3>
                   <ul>
-                    <li><a href="/listing.html">Nón</a></li>
-                    <li><a href="/listing.html">Mắt kính</a></li>
+                    <li><a href="/listing2.html">Nón</a></li>
+                    <li><a href="/listing2.html">Mắt kính</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Balo – Túi xách</h3>
                   <ul>
-                    <li><a href="/listing.html">Ba lô</a></li>
-                    <li><a href="/listing.html">Túi xách</a></li>
+                    <li><a href="/listing2.html">Ba lô</a></li>
+                    <li><a href="/listing2.html">Túi xách</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Đồng hồ – Bóp ví</h3>
                   <ul>
-                    <li><a href="/listing.html">Đồng hồ</a></li>
-                    <li><a href="/listing.html">Bóp ví</a></li>
+                    <li><a href="/listing2.html">Đồng hồ</a></li>
+                    <li><a href="/listing2.html">Bóp ví</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Đồ lót – Giày dép</h3>
                   <ul>
-                    <li><a href="/listing.html">Đồ lót</a></li>
-                    <li><a href="/listing.html">Giày dép</a></li>
+                    <li><a href="/listing2.html">Đồ lót</a></li>
+                    <li><a href="/listing2.html">Giày dép</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Nước hoa – Mỹ phẩm</h3>
                   <ul>
-                    <li><a href="/listing.html">Nước hoa</a></li>
-                    <li><a href="/listing.html">Mỹ phẩm</a></li>
+                    <li><a href="/listing2.html">Nước hoa</a></li>
+                    <li><a href="/listing2.html">Mỹ phẩm</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Phụ kiện – Khác</h3>
                   <ul>
-                    <li><a href="/listing.html">Phụ kiện</a></li>
-                    <li><a href="/listing.html">Khác</a></li>
+                    <li><a href="/listing2.html">Phụ kiện</a></li>
+                    <li><a href="/listing2.html">Khác</a></li>
                   </ul>
                 </div>
               </div>
@@ -3295,38 +3601,38 @@
                 <div>
                   <h3>Áo</h3>
                   <ul>
-                    <li><a href="/listing.html">Áo thun</a></li>
-                    <li><a href="/listing.html">Áo sơ mi</a></li>
-                    <li><a href="/listing.html">Áo khoác</a></li>
-                    <li><a href="/listing.html">Áo dài</a></li>
+                    <li><a href="/listing2.html">Áo thun</a></li>
+                    <li><a href="/listing2.html">Áo sơ mi</a></li>
+                    <li><a href="/listing2.html">Áo khoác</a></li>
+                    <li><a href="/listing2.html">Áo dài</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Quần – Váy đầm</h3>
                   <ul>
-                    <li><a href="/listing.html">Quần</a></li>
-                    <li><a href="/listing.html">Váy đầm</a></li>
+                    <li><a href="/listing2.html">Quần</a></li>
+                    <li><a href="/listing2.html">Váy đầm</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Nón – Mắt kính</h3>
                   <ul>
-                    <li><a href="/listing.html">Nón</a></li>
-                    <li><a href="/listing.html">Mắt kính</a></li>
+                    <li><a href="/listing2.html">Nón</a></li>
+                    <li><a href="/listing2.html">Mắt kính</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Túi xách</h3>
                   <ul>
-                    <li><a href="/listing.html">Ba lô</a></li>
-                    <li><a href="/listing.html">Túi xách</a></li>
+                    <li><a href="/listing2.html">Ba lô</a></li>
+                    <li><a href="/listing2.html">Túi xách</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Mỹ phẩm</h3>
                   <ul>
-                    <li><a href="/listing.html">Nước hoa</a></li>
-                    <li><a href="/listing.html">Mỹ phẩm</a></li>
+                    <li><a href="/listing2.html">Nước hoa</a></li>
+                    <li><a href="/listing2.html">Mỹ phẩm</a></li>
                   </ul>
                 </div>
               </div>
@@ -3334,25 +3640,25 @@
                 <div>
                   <h3>Sơ sinh</h3>
                   <ul>
-                    <li><a href="/listing.html">Dưới 1 tháng</a></li>
-                    <li><a href="/listing.html">1–6 tháng</a></li>
-                    <li><a href="/listing.html">6–12 tháng</a></li>
+                    <li><a href="/listing2.html">Dưới 1 tháng</a></li>
+                    <li><a href="/listing2.html">1–6 tháng</a></li>
+                    <li><a href="/listing2.html">6–12 tháng</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Bé trai</h3>
                   <ul>
-                    <li><a href="/listing.html">Dưới 3 tuổi</a></li>
-                    <li><a href="/listing.html">3–6 tuổi</a></li>
-                    <li><a href="/listing.html">Trên 6 tuổi</a></li>
+                    <li><a href="/listing2.html">Dưới 3 tuổi</a></li>
+                    <li><a href="/listing2.html">3–6 tuổi</a></li>
+                    <li><a href="/listing2.html">Trên 6 tuổi</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Bé gái</h3>
                   <ul>
-                    <li><a href="/listing.html">Dưới 3 tuổi</a></li>
-                    <li><a href="/listing.html">3–6 tuổi</a></li>
-                    <li><a href="/listing.html">Trên 6 tuổi</a></li>
+                    <li><a href="/listing2.html">Dưới 3 tuổi</a></li>
+                    <li><a href="/listing2.html">3–6 tuổi</a></li>
+                    <li><a href="/listing2.html">Trên 6 tuổi</a></li>
                   </ul>
                 </div>
               </div>
@@ -3360,30 +3666,30 @@
                 <div>
                   <h3>TT Gia dụng</h3>
                   <ul>
-                    <li><a href="/listing.html">Mền/mùng</a></li>
-                    <li><a href="/listing.html">Áo gối/ra giường</a></li>
-                    <li><a href="/listing.html">Rèm/khác</a></li>
+                    <li><a href="/listing2.html">Mền/mùng</a></li>
+                    <li><a href="/listing2.html">Áo gối/ra giường</a></li>
+                    <li><a href="/listing2.html">Rèm/khác</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>TT Chuyên dụng</h3>
                   <ul>
-                    <li><a href="/listing.html">Đồng phục</a></li>
-                    <li><a href="/listing.html">Bà bầu/hội cưới</a></li>
+                    <li><a href="/listing2.html">Đồng phục</a></li>
+                    <li><a href="/listing2.html">Bà bầu/hội cưới</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>TT Đồng giá</h3>
                   <ul>
-                    <li><a href="/listing.html">10k/50k/100k</a></li>
-                    <li><a href="/listing.html">200k/300k</a></li>
+                    <li><a href="/listing2.html">10k/50k/100k</a></li>
+                    <li><a href="/listing2.html">200k/300k</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Nguyên phụ liệu</h3>
                   <ul>
-                    <li><a href="/listing.html">Vải/khoá kéo</a></li>
-                    <li><a href="/listing.html">Máy móc/khác</a></li>
+                    <li><a href="/listing2.html">Vải/khoá kéo</a></li>
+                    <li><a href="/listing2.html">Máy móc/khác</a></li>
                   </ul>
                 </div>
               </div>
@@ -3391,27 +3697,27 @@
                 <div>
                   <h3>TT Nam</h3>
                   <ul>
-                    <li><a href="/listing.html">Áo nam</a></li>
-                    <li><a href="/listing.html">Quần nam</a></li>
+                    <li><a href="/listing2.html">Áo nam</a></li>
+                    <li><a href="/listing2.html">Quần nam</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>TT Nữ</h3>
                   <ul>
-                    <li><a href="/listing.html">Áo nữ</a></li>
-                    <li><a href="/listing.html">Quần/đồ lót</a></li>
+                    <li><a href="/listing2.html">Áo nữ</a></li>
+                    <li><a href="/listing2.html">Quần/đồ lót</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>TT Trẻ em</h3>
                   <ul>
-                    <li><a href="/listing.html">Bé trai/gái</a></li>
+                    <li><a href="/listing2.html">Bé trai/gái</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>TP Truyền thống</h3>
                   <ul>
-                    <li><a href="/listing.html">Nam/Nữ/Trẻ em</a></li>
+                    <li><a href="/listing2.html">Nam/Nữ/Trẻ em</a></li>
                   </ul>
                 </div>
               </div>
@@ -3419,27 +3725,27 @@
                 <div>
                   <h3>For Men</h3>
                   <ul>
-                    <li><a href="/listing.html">Shirt/T-shirt</a></li>
-                    <li><a href="/listing.html">Short/Pants</a></li>
+                    <li><a href="/listing2.html">Shirt/T-shirt</a></li>
+                    <li><a href="/listing2.html">Short/Pants</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>For Women</h3>
                   <ul>
-                    <li><a href="/listing.html">Top/Dress</a></li>
-                    <li><a href="/listing.html">Accessories</a></li>
+                    <li><a href="/listing2.html">Top/Dress</a></li>
+                    <li><a href="/listing2.html">Accessories</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>For Kids</h3>
                   <ul>
-                    <li><a href="/listing.html">Boy/Girl</a></li>
+                    <li><a href="/listing2.html">Boy/Girl</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Made to Order</h3>
                   <ul>
-                    <li><a href="/listing.html">Custom</a></li>
+                    <li><a href="/listing2.html">Custom</a></li>
                   </ul>
                 </div>
               </div>
@@ -3447,24 +3753,24 @@
                 <div>
                   <h3>DV May mặc</h3>
                   <ul>
-                    <li><a href="/listing.html">In thêu</a></li>
-                    <li><a href="/listing.html">Giặt ủi</a></li>
-                    <li><a href="/listing.html">Sửa quần áo</a></li>
+                    <li><a href="/listing2.html">In thêu</a></li>
+                    <li><a href="/listing2.html">Giặt ủi</a></li>
+                    <li><a href="/listing2.html">Sửa quần áo</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>DV Phụ trợ</h3>
                   <ul>
-                    <li><a href="/listing.html">Người mẫu</a></li>
-                    <li><a href="/listing.html">Trang điểm</a></li>
-                    <li><a href="/listing.html">Chụp ảnh</a></li>
+                    <li><a href="/listing2.html">Người mẫu</a></li>
+                    <li><a href="/listing2.html">Trang điểm</a></li>
+                    <li><a href="/listing2.html">Chụp ảnh</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Theo yêu cầu</h3>
                   <ul>
-                    <li><a href="/listing.html">May đo</a></li>
-                    <li><a href="/listing.html">Gia công</a></li>
+                    <li><a href="/listing2.html">May đo</a></li>
+                    <li><a href="/listing2.html">Gia công</a></li>
                   </ul>
                 </div>
               </div>
@@ -3472,15 +3778,15 @@
                 <div>
                   <h3>Việc làm thời vụ</h3>
                   <ul>
-                    <li><a href="/listing.html">Việc tìm người</a></li>
-                    <li><a href="/listing.html">Người tìm việc</a></li>
+                    <li><a href="/listing2.html">Việc tìm người</a></li>
+                    <li><a href="/listing2.html">Người tìm việc</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3>Việc làm chính thức</h3>
                   <ul>
-                    <li><a href="/listing.html">Việc tìm người</a></li>
-                    <li><a href="/listing.html">Người tìm việc</a></li>
+                    <li><a href="/listing2.html">Việc tìm người</a></li>
+                    <li><a href="/listing2.html">Người tìm việc</a></li>
                   </ul>
                 </div>
               </div>
@@ -3490,20 +3796,20 @@
       </div>
 
       <div class="ct-sep"></div>
-      <a href="/listing.html?hot=1" class="ct-link hot">🔥 Hôm nay Hot</a>
-      <a href="/listing.html?cat=nam" class="ct-link">Thời trang Nam</a>
-      <a href="/listing.html?cat=nu" class="ct-link">Thời trang Nữ</a>
-      <a href="/listing.html?cat=treEm" class="ct-link">Trẻ em</a>
+      <a href="/listing2.html?hot=1" class="ct-link hot">🔥 Hôm nay Hot</a>
+      <a href="/listing2.html?cat=nam" class="ct-link">Thời trang Nam</a>
+      <a href="/listing2.html?cat=nu" class="ct-link">Thời trang Nữ</a>
+      <a href="/listing2.html?cat=treEm" class="ct-link">Trẻ em</a>
       <div class="ct-sep"></div>
-      <a href="/listing.html?cat=giay" class="ct-link">Giày dép</a>
-      <a href="/listing.html?cat=tui" class="ct-link">Túi xách</a>
-      <a href="/listing.html?cat=dongho" class="ct-link">Đồng hồ</a>
+      <a href="/listing2.html?cat=giay" class="ct-link">Giày dép</a>
+      <a href="/listing2.html?cat=tui" class="ct-link">Túi xách</a>
+      <a href="/listing2.html?cat=dongho" class="ct-link">Đồng hồ</a>
       <div class="ct-sep"></div>
-      <a href="/listing.html?cat=dichvu" class="ct-link">Dịch vụ</a>
-      <a href="/listing.html?cat=vieclam" class="ct-link">Việc làm</a>
+      <a href="/listing2.html?cat=dichvu" class="ct-link">Dịch vụ</a>
+      <a href="/listing2.html?cat=vieclam" class="ct-link">Việc làm</a>
       <div class="ct-sep"></div>
-      <a href="/listing.html?cat=thuonghieu" class="ct-link">Thương hiệu Việt</a>
-      <a href="/listing.html?cat=foreigner" class="ct-link">4 Foreigner</a>
+      <a href="/listing2.html?cat=thuonghieu" class="ct-link">Thương hiệu Việt</a>
+      <a href="/listing2.html?cat=foreigner" class="ct-link">4 Foreigner</a>
     </div>
   </div>
 
@@ -3516,56 +3822,56 @@
         <div style="display:flex;align-items:center;gap:8px"><span
             style="display:inline-block;width:4px;height:18px;background:var(--p);border-radius:2px"></span><span
             style="font-size:15px;font-weight:800;color:var(--ink)">Danh mục nổi bật</span></div>
-        <a href="/listing.html" class="esc-more">Xem tất cả <span class="ms"
+        <a href="/listing2.html" class="esc-more">Xem tất cả <span class="ms"
             style="font-size:14px">chevron_right</span></a>
       </div>
       <div class="catbox">
         <div class="catrow">
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg ba"><img src="/assets/sanpham.jpg" alt="" onerror="this.innerHTML='👗'"></div><span
               class="clbl">Váy nữ</span>
           </a>
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg bb"><img src="/assets/dongho.jpg" alt="" onerror="this.innerHTML='⌚'"></div><span
               class="clbl">Đồng Hồ</span>
           </a>
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg bc"><img src="/assets/tui.jpg" alt="" onerror="this.innerHTML='👜'"></div><span
               class="clbl">Túi Xách</span>
           </a>
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg bd"><img src="/assets/giay.webp" alt="" onerror="this.innerHTML='👟'"></div><span
               class="clbl">Giày Dép</span>
           </a>
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg be"><img src="/assets/mypham.jpg" alt="" onerror="this.innerHTML='💄'"></div><span
               class="clbl">Mỹ Phẩm</span>
           </a>
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg bf"><img src="/assets/nuochoa.jpg" alt="" onerror="this.innerHTML='🌸'"></div><span
               class="clbl">Nước Hoa</span>
           </a>
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg bg"><img src="/assets/work.avif" alt="" onerror="this.innerHTML='💼'"></div><span
               class="clbl">Việc Làm</span>
           </a>
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg bh"><img src="/assets/kinh.png" alt="" onerror="this.innerHTML='✨'"></div><span
               class="clbl">Mắt kính</span>
           </a>
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg be"><img src="/assets/tresosinh.jpg" alt="" onerror="this.innerHTML='👶'"></div><span
               class="clbl">Q.áo sơ sinh</span>
           </a>
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg bf"><img src="/assets/balo.jpeg" alt="" onerror="this.innerHTML='🎒'"></div><span
               class="clbl">Balo</span>
           </a>
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg bg"><img src="/assets/dam.webp" alt="" onerror="this.innerHTML='👗'"></div><span
               class="clbl">Đầm</span>
           </a>
-          <a class="catitem" href="/listing.html">
+          <a class="catitem" href="/listing2.html">
             <div class="cimg bh"><img src="/assets/jacket.webp" alt="" onerror="this.innerHTML='🧥'"></div><span
               class="clbl">Jacket</span>
           </a>
@@ -3583,7 +3889,7 @@
             <span class="esc-title">Mua hàng đồng giá</span>
           </div>
         </div>
-        <a href="/listing.html" class="esc-more">Xem tất cả <span class="ms"
+        <a href="/listing2.html" class="esc-more">Xem tất cả <span class="ms"
             style="font-size:14px">chevron_right</span></a>
       </div>
       <div class="dg-wrap">
@@ -3611,7 +3917,7 @@
             </div>
           </div>
         </div>
-        <a href="/listing.html" class="esc-more">Xem thêm <span class="ms"
+        <a href="/listing2.html" class="esc-more">Xem thêm <span class="ms"
             style="font-size:14px">chevron_right</span></a>
       </div>
       <div id="hotGrid">
@@ -3647,7 +3953,7 @@
                   </div>
                 </div>
               </div>
-              <a href="/detail.html">
+              <a href="/detail2.html">
                 <p class="pc-title">Đầm voan hoa nhí cổ V phong cách Hàn Quốc cực xinh cho mùa hè</p>
               </a>
               <div style="margin-bottom:8px"><span class="pc-price-sale">250.000 đ</span><span
@@ -3684,7 +3990,7 @@
                         <button class="bfol">Theo dõi</button>
                       </div>
                     </div>
-                  </div><a href="/detail.html">
+                  </div><a href="/detail2.html">
                     <p class="pc-title">Giày Sneaker Nike Air Max đỏ đô size 40–44</p>
                   </a>
                   <div><span class="pc-price-sale">3.500.000 đ</span></div>
@@ -3703,7 +4009,7 @@
                       fill="none" stroke="#008848" stroke-width="2.5">
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
-                    </svg></div><a href="/detail.html">
+                    </svg></div><a href="/detail2.html">
                     <p class="pc-title">Đồng hồ Casio Edifice chính hãng fullbox 99%</p>
                   </a>
                   <div><span class="pc-price-sale">1.200.000 đ</span><span class="pc-price-ori">2.100.000 đ</span></div>
@@ -3719,7 +4025,7 @@
                     alt=""><span class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
                       style="font-size:13px">favorite</span></button></div>
                 <div class="pcb">
-                  <div class="srow"><span class="sname">Suit &amp; Style</span></div><a href="/detail.html">
+                  <div class="srow"><span class="sname">Suit &amp; Style</span></div><a href="/detail2.html">
                     <p class="pc-title">Bộ vest nam lịch lãm 2 cúc slim fit</p>
                   </a>
                   <div><span class="pc-price-sale">890.000 đ</span><span class="pc-price-ori">1.200.000 đ</span></div>
@@ -3734,7 +4040,7 @@
                     onerror="this.src='https://via.placeholder.com/300x300/fce4ec/e74c3c?text=Mỹ+phẩm'"><button
                     class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
                 <div class="pcb">
-                  <div class="srow"><span class="sname">Makeup by Linh</span></div><a href="/detail.html">
+                  <div class="srow"><span class="sname">Makeup by Linh</span></div><a href="/detail2.html">
                     <p class="pc-title">Bộ mỹ phẩm dưỡng da cao cấp chính hãng</p>
                   </a>
                   <div><span class="pc-price-sale">900.000 đ</span></div>
@@ -3751,7 +4057,7 @@
                     onerror="this.src='https://via.placeholder.com/300x300/e8f5e9/008848?text=Đồng+hồ'"><button
                     class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
                 <div class="pcb">
-                  <div class="srow"><span class="sname">Watch Store LX</span></div><a href="/detail.html">
+                  <div class="srow"><span class="sname">Watch Store LX</span></div><a href="/detail2.html">
                     <p class="pc-title">Đồng hồ nam dây da sang trọng Full Box</p>
                   </a>
                   <div><span class="pc-price-sale">2.500.000 đ</span></div>
@@ -3766,7 +4072,7 @@
                     onerror="this.src='https://via.placeholder.com/300x300/e3f2fd/1565c0?text=Giày'"><button
                     class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
                 <div class="pcb">
-                  <div class="srow"><span class="sname">Sport World</span></div><a href="/detail.html">
+                  <div class="srow"><span class="sname">Sport World</span></div><a href="/detail2.html">
                     <p class="pc-title">Giày chạy bộ nam siêu nhẹ thoáng khí</p>
                   </a>
                   <div><span class="pc-price-sale">750.000 đ</span></div>
@@ -3781,7 +4087,7 @@
                     onerror="this.src='https://via.placeholder.com/300x300/fce4ec/e74c3c?text=Váy'"><button
                     class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
                 <div class="pcb">
-                  <div class="srow"><span class="sname">Tiệm Đồ May</span></div><a href="/detail.html">
+                  <div class="srow"><span class="sname">Tiệm Đồ May</span></div><a href="/detail2.html">
                     <p class="pc-title">Váy hoa nhí dáng dài tay bồng phong cách Hàn</p>
                   </a>
                   <div><span class="pc-price-sale">350.000 đ</span></div>
@@ -3796,7 +4102,7 @@
                     onerror="this.src='https://via.placeholder.com/300x300/ede7f6/673ab7?text=Hoodie'"><button
                     class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
                 <div class="pcb">
-                  <div class="srow"><span class="sname">Streetwear SG</span></div><a href="/detail.html">
+                  <div class="srow"><span class="sname">Streetwear SG</span></div><a href="/detail2.html">
                     <p class="pc-title">Áo Hoodie nỉ bông dày form rộng Unisex</p>
                   </a>
                   <div><span class="pc-price-sale">280.000 đ</span></div>
@@ -3810,7 +4116,7 @@
           </div>
         </div>
       </div>
-      <div class="lm"><button onclick="location.href='/listing.html'" class="boutp">Xem thêm sản phẩm</button></div>
+      <div class="lm"><button onclick="location.href='/listing2.html'" class="boutp">Xem thêm sản phẩm</button></div>
     </div>
 
     <!-- VIỆC LÀM -->
@@ -3829,18 +4135,18 @@
             </div>
           </div>
         </div>
-        <a href="/listing.html?cat=vieclam" class="esc-more">Xem thêm <span class="ms"
+        <a href="/listing2.html?cat=vieclam" class="esc-more">Xem thêm <span class="ms"
             style="font-size:14px">chevron_right</span></a>
       </div>
       <div class="jt-row">
-        <a href="/listing.html?type=thoivu" class="jt-btn">
+        <a href="/listing2.html?type=thoivu" class="jt-btn">
           <div class="jt-ico jt-ico-tv"><span class="ms" style="font-size:22px;color:#e65100">schedule</span></div>
           <div>
             <div class="jt-name">Việc làm thời hạn</div>
             <div class="jt-sub">Thời vụ · Bán thời gian</div>
           </div>
         </a>
-        <a href="/listing.html?type=chinhthuc" class="jt-btn">
+        <a href="/listing2.html?type=chinhthuc" class="jt-btn">
           <div class="jt-ico jt-ico-ct"><span class="ms" style="font-size:22px;color:#1565c0">work</span></div>
           <div>
             <div class="jt-name">Việc làm chính thức</div>
@@ -3856,7 +4162,7 @@
             <div class="jc-logo">👗</div><span class="jc-badge jc-badge-tv">THỜI VỤ</span><button class="jc-fav"><span
                 class="ms msf" style="font-size:12px">favorite</span></button>
           </div>
-          <div class="jc-body"><a href="/detail.html">
+          <div class="jc-body"><a href="/detail2.html">
               <p class="jc-title">Tuyển nhân viên bán hàng thời trang nữ cuối tuần</p>
             </a>
             <div class="jc-company">Ana Fashion Store</div>
@@ -3875,7 +4181,7 @@
             <div class="jc-logo">👟</div><span class="jc-badge jc-badge-hot">HOT</span><button class="jc-fav"><span
                 class="ms msf" style="font-size:12px">favorite</span></button>
           </div>
-          <div class="jc-body"><a href="/detail.html">
+          <div class="jc-body"><a href="/detail2.html">
               <p class="jc-title">Cộng tác viên bán giày online – làm việc tại nhà</p>
             </a>
             <div class="jc-company">Sneaker World</div>
@@ -3894,7 +4200,7 @@
             <div class="jc-logo">✂️</div><span class="jc-badge jc-badge-tv">THỜI VỤ</span><button class="jc-fav"><span
                 class="ms msf" style="font-size:12px">favorite</span></button>
           </div>
-          <div class="jc-body"><a href="/detail.html">
+          <div class="jc-body"><a href="/detail2.html">
               <p class="jc-title">Tuyển thợ may gia công áo phông, làm theo đơn hàng</p>
             </a>
             <div class="jc-company">Xưởng May Tân Bình</div>
@@ -3913,7 +4219,7 @@
             <div class="jc-logo">📸</div><span class="jc-badge jc-badge-new">MỚI</span><button class="jc-fav"><span
                 class="ms msf" style="font-size:12px">favorite</span></button>
           </div>
-          <div class="jc-body"><a href="/detail.html">
+          <div class="jc-body"><a href="/detail2.html">
               <p class="jc-title">Tuyển người mẫu chụp ảnh lookbook thời trang</p>
             </a>
             <div class="jc-company">LookBook Studio</div>
@@ -3932,7 +4238,7 @@
             <div class="jc-logo">💄</div><span class="jc-badge jc-badge-tv">THỜI VỤ</span><button class="jc-fav"><span
                 class="ms msf" style="font-size:12px">favorite</span></button>
           </div>
-          <div class="jc-body"><a href="/detail.html">
+          <div class="jc-body"><a href="/detail2.html">
               <p class="jc-title">Trang điểm cô dâu mùa cưới – cần thêm trợ lý makeup</p>
             </a>
             <div class="jc-company">Beauty by Hana</div>
@@ -3952,7 +4258,7 @@
               alt="">
             <div class="jc-logo">🏢</div><span class="jc-badge jc-badge-ct">CHÍNH THỨC</span>
           </div>
-          <div class="jc-body"><a href="/detail.html">
+          <div class="jc-body"><a href="/detail2.html">
               <p class="jc-title">Quản lý cửa hàng thời trang nữ cao cấp – fulltime</p>
             </a>
             <div class="jc-company">Elle Vietnam</div>
@@ -3970,7 +4276,7 @@
               alt="">
             <div class="jc-logo">🎨</div><span class="jc-badge jc-badge-hot">HOT</span>
           </div>
-          <div class="jc-body"><a href="/detail.html">
+          <div class="jc-body"><a href="/detail2.html">
               <p class="jc-title">Nhà thiết kế thời trang – Local Brand tăng trưởng nhanh</p>
             </a>
             <div class="jc-company">Routine Studio</div>
@@ -3988,7 +4294,7 @@
               alt="">
             <div class="jc-logo">📦</div><span class="jc-badge jc-badge-ct">CHÍNH THỨC</span>
           </div>
-          <div class="jc-body"><a href="/detail.html">
+          <div class="jc-body"><a href="/detail2.html">
               <p class="jc-title">Nhân viên kho – xuất nhập hàng thời trang xuất khẩu</p>
             </a>
             <div class="jc-company">Garment Export Co.</div>
@@ -4006,7 +4312,7 @@
               alt="">
             <div class="jc-logo">✏️</div><span class="jc-badge jc-badge-new">MỚI</span>
           </div>
-          <div class="jc-body"><a href="/detail.html">
+          <div class="jc-body"><a href="/detail2.html">
               <p class="jc-title">Chuyên viên marketing thời trang – quản lý fanpage</p>
             </a>
             <div class="jc-company">Fasito Brand</div>
@@ -4024,7 +4330,7 @@
               alt="">
             <div class="jc-logo">🧵</div><span class="jc-badge jc-badge-ct">CHÍNH THỨC</span>
           </div>
-          <div class="jc-body"><a href="/detail.html">
+          <div class="jc-body"><a href="/detail2.html">
               <p class="jc-title">Trưởng chuyền may – xưởng may hàng xuất khẩu EU</p>
             </a>
             <div class="jc-company">VN Textile Export</div>
@@ -4037,7 +4343,7 @@
           </div>
         </div>
       </div>
-      <div class="lm"><button onclick="location.href='/listing.html?cat=vieclam'" class="boutp">Xem thêm việc
+      <div class="lm"><button onclick="location.href='/listing2.html?cat=vieclam'" class="boutp">Xem thêm việc
           làm</button></div>
     </div>
 
@@ -4057,7 +4363,7 @@
             </div>
           </div>
         </div>
-        <a href="/listing.html" class="esc-more">Xem thêm <span class="ms"
+        <a href="/listing2.html" class="esc-more">Xem thêm <span class="ms"
             style="font-size:14px">chevron_right</span></a>
       </div>
       <div class="pgrid" id="newGrid">
@@ -4067,7 +4373,7 @@
               alt=""><span class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
                 style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
-            <div class="srow"><span class="sname">Style House</span></div><a href="/detail.html">
+            <div class="srow"><span class="sname">Style House</span></div><a href="/detail2.html">
               <p class="pctit">Áo thun oversize in hình unisex phong cách streetwear</p>
             </a>
             <div style="margin-bottom:6px"><span class="psal">185.000 đ</span></div>
@@ -4083,7 +4389,7 @@
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
               alt=""><button class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
-            <div class="srow"><span class="sname">Clock &amp; Watch</span></div><a href="/detail.html">
+            <div class="srow"><span class="sname">Clock &amp; Watch</span></div><a href="/detail2.html">
               <p class="pctit">Đồng hồ Daniel Wellington Classic Petite chính hãng</p>
             </a>
             <div style="margin-bottom:6px"><span class="psal">2.800.000 đ</span></div>
@@ -4100,7 +4406,7 @@
               alt=""><span class="bge bhot">HOT</span><button class="bfav"><span class="ms msf"
                 style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
-            <div class="srow"><span class="sname">Kicks SG</span></div><a href="/detail.html">
+            <div class="srow"><span class="sname">Kicks SG</span></div><a href="/detail2.html">
               <p class="pctit">Giày Adidas Ultraboost trắng size 39–44, new 100%</p>
             </a>
             <div style="margin-bottom:6px"><span class="psal">4.200.000 đ</span><span class="pori">5.500.000 đ</span>
@@ -4118,7 +4424,7 @@
               alt=""><span class="bge bsvc">DỊCH VỤ</span><button class="bfav"><span class="ms msf"
                 style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
-            <div class="srow"><span class="sname">Tailor House</span></div><a href="/detail.html">
+            <div class="srow"><span class="sname">Tailor House</span></div><a href="/detail2.html">
               <p class="pctit">Vest đo tay theo yêu cầu, giao tận nhà</p>
             </a>
             <div style="margin-bottom:6px"><span class="psal">1.500.000 đ</span></div>
@@ -4135,7 +4441,7 @@
               class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
                 style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
-            <div class="srow"><span class="sname">Beauty Corner</span></div><a href="/detail.html">
+            <div class="srow"><span class="sname">Beauty Corner</span></div><a href="/detail2.html">
               <p class="pctit">Set nước hoa Dior Sauvage EDT chính hãng 60ml</p>
             </a>
             <div style="margin-bottom:6px"><span class="psal">2.100.000 đ</span></div>
@@ -4147,7 +4453,7 @@
           </div>
         </div>
       </div>
-      <div class="lm"><button onclick="location.href='/listing.html'" class="boutp">Xem thêm sản phẩm</button></div>
+      <div class="lm"><button onclick="location.href='/listing2.html'" class="boutp">Xem thêm sản phẩm</button></div>
     </div>
 
     <!-- THƯƠNG HIỆU -->
@@ -4160,7 +4466,7 @@
             <span class="esc-title">Thương hiệu nổi bật</span>
           </div>
         </div>
-        <a href="/listing.html" class="esc-more">Xem tất cả <span class="ms"
+        <a href="/listing2.html" class="esc-more">Xem tất cả <span class="ms"
             style="font-size:14px">chevron_right</span></a>
       </div>
       <div class="brand-wrap">
@@ -4219,7 +4525,7 @@
             <span class="esc-title">🎬 Video Fashion</span>
           </div>
         </div>
-        <a href="/listing.html" class="esc-more">Xem thêm <span class="ms"
+        <a href="/listing2.html" class="esc-more">Xem thêm <span class="ms"
             style="font-size:14px">chevron_right</span></a>
       </div>
       <div class="vgrid">
@@ -4269,7 +4575,7 @@
           </div>
         </div>
       </div>
-      <div class="lm"><button onclick="location.href='/listing.html'" class="boutp">Khám phá thêm Video</button></div>
+      <div class="lm"><button onclick="location.href='/listing2.html'" class="boutp">Khám phá thêm Video</button></div>
     </div>
 
     <!-- SEO -->
@@ -4390,9 +4696,7 @@
   </div>
 
   <script>
-    // ════════════════════════════════════════
     // SCROLL — show sticky header, move cat tabs
-    // ════════════════════════════════════════
     var stickyHdr = document.getElementById('stickyHdr');
     var catTabs = document.getElementById('catTabs');
     var heroBottom = 0;
@@ -4418,9 +4722,7 @@
       }
     }, { passive: true });
 
-    // ════════════════════════════════════════
     // MEGA MENU — cat-tabs dropdown
-    // ════════════════════════════════════════
     function setupMegaMenu(btnId, wrapId, leftId, rightPrefix) {
       var btn = document.getElementById(btnId);
       var wrap = document.getElementById(wrapId);
@@ -4464,9 +4766,7 @@
     setupMegaMenu('ctDdBtn', 'mmWrap', 'mmLeft', 'p');
     setupMegaMenu('stickyCtBtn', 'mmWrapSticky', 'mmLeftSticky', 'sp');
 
-    // ════════════════════════════════════════
     // SEARCH CATEGORY PICKER
-    // ════════════════════════════════════════
     var scatBtn = document.getElementById('scatBtn');
     var scatDrop = document.getElementById('scatDrop');
     var scatArr = document.getElementById('scatArr');
@@ -4498,9 +4798,7 @@
       scatArr.textContent = 'expand_more';
     }
 
-    // ════════════════════════════════════════
     // SEARCH DROPDOWN
-    // ════════════════════════════════════════
     var sinput = document.getElementById('sinput');
     var sdrop = document.getElementById('sdrop');
 
@@ -4526,9 +4824,7 @@
       sinput.focus();
     }
 
-    // ════════════════════════════════════════
     // SQTAGS (hero quick tags)
-    // ════════════════════════════════════════
     document.querySelectorAll('.sqtag').forEach(function (el) {
       el.addEventListener('click', function () {
         var txt = el.textContent.trim();
@@ -4537,9 +4833,7 @@
       });
     });
 
-    // ════════════════════════════════════════
     // TAB SWITCHER
-    // ════════════════════════════════════════
     function setTab(btn, gridId) {
       btn.closest('.esc-tabs').querySelectorAll('.esc-tab').forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
@@ -4552,9 +4846,7 @@
       btn.classList.add('active');
     }
 
-    // ════════════════════════════════════════
     // ĐỒNG GIÁ SLIDER
-    // ════════════════════════════════════════
     (function () {
       var prices = [
         { l: '10k', v: 10000, c: '120+ tin' }, { l: '20k', v: 20000, c: '85+ tin' },
@@ -4576,7 +4868,7 @@
       prices.forEach(function (p, i) {
         var a = document.createElement('a');
         a.className = 'dg-item' + (i === 6 ? ' sel' : '');
-        a.href = '/listing.html?price=' + p.v;
+        a.href = '/listing2.html?price=' + p.v;
         a.innerHTML = '<span class="dg-price">' + p.l + '</span><span class="dg-lbl">Đồng giá</span><span class="dg-cnt">' + p.c + '</span>';
         a.addEventListener('click', function (e) {
           e.preventDefault();
@@ -4603,9 +4895,7 @@
       window.addEventListener('resize', render);
     })();
 
-    // ════════════════════════════════════════
     // BRAND CAROUSEL
-    // ════════════════════════════════════════
     (function () {
       var GAP = 12, offset = 0;
       var track = document.getElementById('brandTrack');
@@ -4642,9 +4932,6 @@
       window.addEventListener('resize', render);
     })();
 
-    // ════════════════════════════════════════
-    // RESPONSIVE POST BUTTON
-    // ════════════════════════════════════════
     (function () {
       var bpost = document.getElementById('bpost');
       var btxt = document.getElementById('bpost-txt');

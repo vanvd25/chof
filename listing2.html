@@ -1,0 +1,2951 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách sản phẩm – Chof.vn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --p: #008848;
+            --pd: #006635;
+            --pl: #e8f5ee;
+            --ac: #f97316;
+            --bg: #f2f2f2;
+            --ink: #111;
+            --muted: #888;
+            --line: #e5e5e5;
+            --card: #fff;
+            --r: 12px
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: 'Lexend', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        .ms {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 20px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            direction: ltr;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle
+        }
+
+        .msf {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+
+        /* ══════════════════════════════════
+       HEADER
+    ══════════════════════════════════ */
+        .hdr-top {
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+            position: relative;
+            z-index: 600
+        }
+
+        .hdr-top-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            gap: 16px
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            text-decoration: none
+        }
+
+        .logo-badge {
+            background: var(--p);
+            color: #fff;
+            font-size: 20px;
+            font-weight: 900;
+            padding: 4px 10px;
+            border-radius: 10px;
+            letter-spacing: -.5px;
+            line-height: 1.2
+        }
+
+        .logo-badge em {
+            color: #fde68a;
+            font-style: normal
+        }
+
+        .logo-tagline {
+            font-size: 11px;
+            color: var(--muted);
+            font-weight: 500;
+            white-space: nowrap;
+            border-left: 1.5px solid var(--line);
+            padding-left: 8px;
+            line-height: 1.35
+        }
+
+        .hdr-nav {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            flex-shrink: 0
+        }
+
+        .hdr-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #444;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all .15s;
+            text-decoration: none;
+            white-space: nowrap
+        }
+
+        .hdr-nav-link:hover {
+            background: var(--bg);
+            color: var(--p)
+        }
+
+        .hdr-nav-link.active {
+            color: var(--p);
+            background: var(--pl)
+        }
+
+        .hdr-nav-sep {
+            width: 1px;
+            height: 16px;
+            background: var(--line);
+            margin: 0 4px;
+            flex-shrink: 0
+        }
+
+        .hdr-space {
+            flex: 1
+        }
+
+        .ha {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0
+        }
+
+        .ibtn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #555;
+            padding: 7px;
+            display: flex;
+            align-items: center;
+            border-radius: 50%;
+            position: relative;
+            transition: all .15s
+        }
+
+        .ibtn:hover {
+            background: var(--bg);
+            color: var(--p)
+        }
+
+        .ndot {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 7px;
+            height: 7px;
+            background: #e74c3c;
+            border-radius: 50%;
+            border: 2px solid #fff
+        }
+
+        .hdiv {
+            width: 1px;
+            height: 22px;
+            background: var(--line);
+            flex-shrink: 0;
+            margin: 0 2px
+        }
+
+        .blogin {
+            background: none;
+            border: 1.5px solid var(--line);
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #333;
+            cursor: pointer;
+            font-family: inherit;
+            padding: 7px 16px;
+            border-radius: 20px;
+            transition: all .15s;
+            white-space: nowrap
+        }
+
+        .blogin:hover {
+            border-color: var(--p);
+            color: var(--p)
+        }
+
+        .bpost {
+            background: var(--p);
+            color: #fff;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-family: inherit;
+            box-shadow: 0 2px 12px rgba(0, 136, 72, .28);
+            white-space: nowrap;
+            transition: background .15s
+        }
+
+        .bpost:hover {
+            background: var(--pd)
+        }
+
+        /* STICKY HEADER */
+        .sticky-hdr {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 700;
+            background: #fff;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, .12);
+            transform: translateY(-100%);
+            transition: transform .28s cubic-bezier(.4, 0, .2, 1);
+            pointer-events: none
+        }
+
+        .sticky-hdr.visible {
+            transform: translateY(0);
+            pointer-events: auto
+        }
+
+        .sticky-hdr-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .sticky-logo {
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--p);
+            flex-shrink: 0;
+            white-space: nowrap
+        }
+
+        .sbox {
+            display: flex;
+            align-items: stretch;
+            background: #fff;
+            border-radius: 26px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: border-color .18s;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .1)
+        }
+
+        .sbox.sticky-sb {
+            height: 44px;
+            box-shadow: none;
+            border: 1.5px solid var(--line);
+            border-radius: 22px
+        }
+
+        .sbox:focus-within {
+            border-color: var(--p) !important
+        }
+
+        .scat-wrap {
+            position: relative;
+            flex-shrink: 0
+        }
+
+        .scat-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 0 16px;
+            height: 100%;
+            font-size: 13px;
+            font-weight: 700;
+            color: #444;
+            background: none;
+            border: none;
+            border-right: 1.5px solid var(--line);
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            transition: color .15s
+        }
+
+        .scat-btn:hover {
+            color: var(--p)
+        }
+
+        .scat-drop {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, .12);
+            min-width: 160px;
+            padding: 6px 0;
+            z-index: 800
+        }
+
+        .scat-drop.open {
+            display: block
+        }
+
+        .scat-opt {
+            padding: 9px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #444;
+            cursor: pointer;
+            transition: all .12s;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .scat-opt:hover {
+            background: var(--pl);
+            color: var(--p)
+        }
+
+        .scat-opt.active {
+            color: var(--p);
+            font-weight: 700
+        }
+
+        .sinput {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0 14px;
+            font-size: 14px;
+            font-family: inherit;
+            background: transparent;
+            min-width: 0
+        }
+
+        .sbox.sticky-sb .sinput {
+            font-size: 13px
+        }
+
+        .sbtn {
+            background: var(--p);
+            color: #fff;
+            border: none;
+            padding: 0 26px;
+            font-weight: 800;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            transition: background .15s;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .sbox.sticky-sb .sbtn {
+            padding: 0 20px;
+            font-size: 13px
+        }
+
+        .sbtn:hover {
+            background: var(--pd)
+        }
+
+        /* CATEGORY TABS */
+        .cat-tabs {
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 400;
+            transition: top .28s
+        }
+
+        .cat-tabs.has-sticky {
+            top: 58px
+        }
+
+        .cat-tabs-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 0;
+            overflow-x: auto;
+            scrollbar-width: none
+        }
+
+        .cat-tabs-inner::-webkit-scrollbar {
+            display: none
+        }
+
+        .ct-dd-wrap {
+            position: relative;
+            flex-shrink: 0
+        }
+
+        .ct-dd-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0 16px;
+            height: 44px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ink);
+            background: none;
+            border: none;
+            border-right: 1px solid var(--line);
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            transition: color .15s
+        }
+
+        .ct-dd-btn:hover,
+        .ct-dd-btn.open {
+            color: var(--p)
+        }
+
+        .ct-dd-btn.open .ct-arr {
+            transform: rotate(180deg)
+        }
+
+        .ct-arr {
+            transition: transform .2s;
+            display: inline-block
+        }
+
+        .mm-wrap {
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0;
+            z-index: 1000;
+            display: none
+        }
+
+        .mm-wrap.open {
+            display: flex
+        }
+
+        .mm-box {
+            width: min(960px, 94vw);
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .13);
+            overflow: hidden;
+            display: flex
+        }
+
+        .mm-left {
+            width: 210px;
+            background: #fafafa;
+            border-right: 1px solid #f0f0f0;
+            padding: 8px 0;
+            flex-shrink: 0
+        }
+
+        .ml1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+            color: #555;
+            transition: all .12s;
+            user-select: none
+        }
+
+        .ml1:hover,
+        .ml1.active {
+            background: #fff;
+            color: var(--p);
+            border-left-color: var(--p);
+            font-weight: 700
+        }
+
+        .mm-right {
+            flex: 1;
+            padding: 22px 28px;
+            overflow-y: auto;
+            max-height: 480px
+        }
+
+        .mp {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px 28px
+        }
+
+        .mp.active {
+            display: grid
+        }
+
+        .mp h3 {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--p);
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--p);
+            text-transform: uppercase;
+            letter-spacing: .5px
+        }
+
+        .mp ul {
+            list-style: none
+        }
+
+        .mp li {
+            font-size: 12.5px;
+            color: #666;
+            padding: 4px 0;
+            cursor: pointer;
+            transition: color .12s
+        }
+
+        .mp li:hover {
+            color: var(--p)
+        }
+
+        .mp li a {
+            color: inherit;
+            display: block
+        }
+
+        .ct-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 0 14px;
+            height: 44px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+            white-space: nowrap;
+            flex-shrink: 0;
+            border-bottom: 2px solid transparent;
+            transition: all .15s;
+            cursor: pointer;
+            text-decoration: none
+        }
+
+        .ct-link:hover {
+            color: var(--p);
+            border-bottom-color: var(--p)
+        }
+
+        .ct-link.hot {
+            color: var(--ac)
+        }
+
+        .ct-link.hot:hover {
+            border-bottom-color: var(--ac)
+        }
+
+        .ct-sep {
+            width: 1px;
+            height: 18px;
+            background: var(--line);
+            flex-shrink: 0;
+            margin: 0 3px
+        }
+
+        /* ══ BREADCRUMB ══ */
+        .breadcrumb-bar {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .breadcrumb-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            color: #888;
+        }
+
+        .breadcrumb-inner a {
+            color: #888;
+        }
+
+        .breadcrumb-inner a:hover {
+            color: var(--p);
+        }
+
+        .breadcrumb-inner .bc-sep {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .breadcrumb-inner .bc-cur {
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* ══ MAIN LAYOUT ══ */
+        .page-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 16px 48px;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+
+        /* ══ SIDEBAR FILTER ══ */
+        .sidebar {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+            overflow: hidden;
+            position: sticky;
+            top: 80px;
+        }
+
+        .sidebar-header {
+            background: var(--p);
+            color: #fff;
+            padding: 14px 16px;
+            font-size: 14px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .filter-section {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .filter-section:last-child {
+            border-bottom: none;
+        }
+
+        .fs-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #222;
+            cursor: pointer;
+            user-select: none;
+            transition: background .12s;
+            gap: 6px;
+        }
+
+        .fs-title:hover {
+            background: #f9fafb;
+        }
+
+        .fs-title .fs-label {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            flex: 1;
+        }
+
+        .fs-title .fs-arrow {
+            font-size: 16px;
+            color: #aaa;
+            transition: transform .2s;
+            flex-shrink: 0;
+        }
+
+        .fs-title.open .fs-arrow {
+            transform: rotate(180deg);
+        }
+
+        .lv1-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--p);
+            flex-shrink: 0;
+        }
+
+        .lv2-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--ac);
+            flex-shrink: 0;
+        }
+
+        .lv3-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #9b59b6;
+            flex-shrink: 0;
+        }
+
+        .lv4-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #3498db;
+            flex-shrink: 0;
+        }
+
+        .fs-body {
+            padding: 6px 16px 12px;
+            display: none;
+        }
+
+        .fs-body.open {
+            display: block;
+        }
+
+        .sub-filter {
+            margin-left: 12px;
+            padding-left: 12px;
+            border-left: 2px solid #f0f0f0;
+            margin-bottom: 6px;
+        }
+
+        .sub-title {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #666;
+            padding: 7px 0 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .sub-title:hover {
+            color: var(--p);
+        }
+
+        .sub-title .sub-arrow {
+            font-size: 13px;
+            color: #bbb;
+            transition: transform .2s;
+            margin-left: auto;
+        }
+
+        .sub-title.open .sub-arrow {
+            transform: rotate(180deg);
+        }
+
+        .sub-body {
+            display: none;
+        }
+
+        .sub-body.open {
+            display: block;
+        }
+
+        .subsub-filter {
+            margin-left: 10px;
+            padding-left: 10px;
+            border-left: 2px solid #f5f5f5;
+            margin-bottom: 4px;
+        }
+
+        .subsub-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #888;
+            padding: 5px 0 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .subsub-title:hover {
+            color: var(--p);
+        }
+
+        .subsub-title .subsub-arrow {
+            font-size: 12px;
+            color: #ccc;
+            transition: transform .2s;
+            margin-left: auto;
+        }
+
+        .subsub-title.open .subsub-arrow {
+            transform: rotate(180deg);
+        }
+
+        .subsub-body {
+            display: none;
+        }
+
+        .subsub-body.open {
+            display: block;
+        }
+
+        .filter-opts {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 4px 0;
+        }
+
+        .fopt {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 8px;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: background .12s;
+            font-size: 12.5px;
+            color: #444;
+            user-select: none;
+        }
+
+        .fopt:hover {
+            background: var(--pl);
+            color: var(--p);
+        }
+
+        .fopt input[type=checkbox] {
+            display: none;
+        }
+
+        .fopt .fchk {
+            width: 15px;
+            height: 15px;
+            border: 1.5px solid #ccc;
+            border-radius: 4px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .12s, border-color .12s;
+        }
+
+        .fopt input:checked~.fchk {
+            background: var(--p);
+            border-color: var(--p);
+        }
+
+        .fopt input:checked~.fchk::after {
+            content: '';
+            width: 8px;
+            height: 5px;
+            border: 2px solid #fff;
+            border-top: none;
+            border-right: none;
+            transform: rotate(-45deg);
+            margin-top: -1px;
+        }
+
+        .fopt input:checked~.fopt-label {
+            color: var(--p);
+            font-weight: 600;
+        }
+
+        .fopt-label {
+            flex: 1;
+        }
+
+        .fopt-count {
+            font-size: 10.5px;
+            color: #bbb;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+
+        .price-pill {
+            padding: 6px 8px;
+            background: #f3f4f6;
+            border-radius: 7px;
+            font-size: 11.5px;
+            color: #444;
+            text-align: center;
+            cursor: pointer;
+            border: 1.5px solid transparent;
+            transition: all .12s;
+            font-weight: 500;
+        }
+
+        .price-pill:hover {
+            background: var(--pl);
+            color: var(--p);
+            border-color: var(--p);
+        }
+
+        .price-pill.active {
+            background: var(--pl);
+            color: var(--p);
+            border-color: var(--p);
+            font-weight: 700;
+        }
+
+        .promo-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .promo-tag {
+            padding: 5px 11px;
+            background: #fff8f0;
+            border: 1.5px solid #fde0c8;
+            border-radius: 20px;
+            font-size: 11.5px;
+            color: #c75f00;
+            cursor: pointer;
+            transition: all .12s;
+            font-weight: 600;
+        }
+
+        .promo-tag:hover,
+        .promo-tag.active {
+            background: #f97316;
+            color: #fff;
+            border-color: #f97316;
+        }
+
+        .active-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 10px 16px 8px;
+            border-bottom: 1px solid #f0f0f0;
+            min-height: 0;
+            display: none;
+        }
+
+        .active-filters.has-filters {
+            display: flex;
+        }
+
+        .af-tag {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            background: var(--pl);
+            border-radius: 20px;
+            font-size: 11.5px;
+            color: var(--p);
+            font-weight: 600;
+        }
+
+        .af-remove {
+            cursor: pointer;
+            font-size: 13px;
+            color: #999;
+            line-height: 1;
+        }
+
+        .af-remove:hover {
+            color: #e74c3c;
+        }
+
+        .af-clear {
+            padding: 4px 10px;
+            background: #fef2f2;
+            border-radius: 20px;
+            font-size: 11.5px;
+            color: #e74c3c;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .af-clear:hover {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        /* ══ PRODUCT AREA ══ */
+        .sort-bar {
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px 16px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .sort-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .sort-lbl {
+            font-size: 13px;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .sort-btns {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .sort-btn {
+            padding: 6px 14px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            font-size: 12.5px;
+            color: #555;
+            cursor: pointer;
+            border: 1.5px solid transparent;
+            font-weight: 500;
+            font-family: inherit;
+            transition: all .12s;
+        }
+
+        .sort-btn:hover {
+            background: var(--pl);
+            color: var(--p);
+            border-color: var(--p);
+        }
+
+        .sort-btn.active {
+            background: var(--p);
+            color: #fff;
+            border-color: var(--p);
+            font-weight: 700;
+        }
+
+        .sort-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .result-count {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .result-count b {
+            color: var(--p);
+        }
+
+        .view-btns {
+            display: flex;
+            gap: 4px;
+        }
+
+        .view-btn {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 7px;
+            border: 1.5px solid #e5e7eb;
+            background: #fff;
+            cursor: pointer;
+            color: #888;
+            transition: all .12s;
+        }
+
+        .view-btn.active,
+        .view-btn:hover {
+            background: var(--p);
+            color: #fff;
+            border-color: var(--p);
+        }
+
+        .pgrid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .pgrid.list-view {
+            grid-template-columns: 1fr;
+        }
+
+        .pc {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .07);
+            transition: box-shadow .2s, transform .2s;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+        }
+
+        .pc:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .12);
+            transform: translateY(-2px);
+            z-index: 10;
+        }
+
+        .pcimg {
+            position: relative;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .pcimg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .32s;
+        }
+
+        .pc:hover .pcimg img {
+            transform: scale(1.05);
+        }
+
+        .pgrid.list-view .pc {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .pgrid.list-view .pcimg {
+            width: 140px;
+            min-width: 140px;
+            aspect-ratio: 1/1;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .pgrid.list-view .pcb {
+            flex: 1;
+            padding: 14px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pgrid.list-view .pctit {
+            -webkit-line-clamp: 3;
+            min-height: auto;
+            font-size: 13px;
+        }
+
+        .bge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 9.5px;
+            font-weight: 700;
+            padding: 3px 7px;
+            border-radius: 4px;
+            color: #fff;
+            letter-spacing: .3px;
+            z-index: 1;
+        }
+
+        .bsale {
+            background: #e74c3c;
+        }
+
+        .bnew {
+            background: #008848;
+        }
+
+        .bsvc {
+            background: #9b59b6;
+        }
+
+        .bhot {
+            background: #f97316;
+        }
+
+        .bfav {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, .22);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: background .15s;
+            z-index: 1;
+        }
+
+        .bfav:hover {
+            background: #e74c3c;
+        }
+
+        .pcb {
+            padding: 9px 11px 11px;
+        }
+
+        .srow {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #f5f5f5;
+            margin-bottom: 6px;
+        }
+
+        .sname {
+            font-size: 11px;
+            font-weight: 600;
+            color: #555;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .vico {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+        }
+
+        .pctit {
+            font-size: 12px;
+            font-weight: 500;
+            color: #222;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 36px;
+            margin-bottom: 6px;
+        }
+
+        .prow {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+
+        .psal {
+            font-size: 14px;
+            font-weight: 700;
+            color: #e74c3c;
+        }
+
+        .pori {
+            font-size: 11px;
+            color: #ccc;
+            text-decoration: line-through;
+        }
+
+        .cft {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 10.5px;
+            color: #aaa;
+            border-top: 1px solid #f5f5f5;
+            padding-top: 6px;
+        }
+
+        .cloc {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .stars {
+            color: #f39c12;
+            font-size: 11px;
+            letter-spacing: -1px;
+        }
+
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .pg-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            border: 1.5px solid #e5e7eb;
+            background: #fff;
+            color: #555;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .12s;
+        }
+
+        .pg-btn:hover {
+            background: var(--pl);
+            color: var(--p);
+            border-color: var(--p);
+        }
+
+        .pg-btn.active {
+            background: var(--p);
+            color: #fff;
+            border-color: var(--p);
+        }
+
+        .pg-btn.disabled {
+            opacity: .4;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .mob-filter-btn {
+            display: none;
+            width: 100%;
+            padding: 10px 14px;
+            background: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--p);
+            cursor: pointer;
+            font-family: inherit;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .07);
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+        }
+
+        .sidebar-close-btn {
+            display: none;
+            width: 100%;
+            padding: 10px 16px;
+            background: #f3f4f6;
+            border: none;
+            font-size: 13px;
+            font-weight: 700;
+            color: #666;
+            cursor: pointer;
+            font-family: inherit;
+            align-items: center;
+            gap: 7px;
+            justify-content: space-between;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--ink)
+        }
+
+        .fi {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 36px 20px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr 1fr;
+            gap: 32px
+        }
+
+        .fi-logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -.5px;
+            line-height: 1;
+            margin-bottom: 12px
+        }
+
+        .fi-logo em {
+            color: var(--ac);
+            font-style: normal
+        }
+
+        .fi h4 {
+            font-size: 11px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px
+        }
+
+        .fi a,
+        .fi li {
+            font-size: 12.5px;
+            color: #888;
+            line-height: 2.4;
+            transition: color .15s
+        }
+
+        .fi a:hover {
+            color: #fff
+        }
+
+        .fi ul {
+            list-style: none
+        }
+
+        .fb2 {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            border-top: 1px solid #222;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #555
+        }
+
+        .fb2 a {
+            color: #666;
+            text-decoration: underline
+        }
+
+        .fb2 a:hover {
+            color: #fff
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .hdr-nav {
+                display: none
+            }
+
+            .logo-tagline {
+                display: none
+            }
+
+            .hdr-top-inner {
+                padding: 0 12px;
+                gap: 8px
+            }
+
+            .blogin {
+                display: none !important
+            }
+
+            .page-wrap {
+                grid-template-columns: 1fr
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 300px;
+                height: 100vh;
+                overflow-y: auto;
+                z-index: 900;
+                transition: left .3s;
+                border-radius: 0
+            }
+
+            .sidebar.open {
+                left: 0
+            }
+
+            .sidebar-close-btn {
+                display: flex
+            }
+
+            .mob-filter-btn {
+                display: flex
+            }
+
+            .pgrid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .fi {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px
+            }
+
+            .fb2 {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center
+            }
+        }
+
+        @media(max-width:480px) {
+            .pgrid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .fi {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* Sidebar overlay */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .4);
+            z-index: 850;
+        }
+
+        .sidebar-overlay.open {
+            display: block
+        }
+
+        /* Inline search bar */
+        .inline-search {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+            border: 1.5px solid var(--line);
+            transition: border-color .18s;
+        }
+
+        .inline-search:focus-within {
+            border-color: var(--p);
+        }
+
+        .inline-search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 13.5px;
+            font-family: inherit;
+            color: var(--ink);
+            background: transparent;
+            min-width: 0;
+        }
+
+        .inline-search-input::placeholder {
+            color: #bbb;
+        }
+
+        .inline-search-btn {
+            background: var(--p);
+            color: #fff;
+            border: none;
+            padding: 7px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: background .15s;
+        }
+
+        .inline-search-btn:hover {
+            background: var(--pd);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ════ TOP NAV BAR ════ -->
+    <div class="hdr-top">
+        <div class="hdr-top-inner">
+            <a href="/home2.html" class="logo">
+                <img src="/assets/logo.png" alt="Chof.vn" style="height:38px;object-fit:contain;display:block">
+                <div class="logo-tagline">Chợ thời trang<br>Việt Nam</div>
+            </a>
+
+            <nav class="hdr-nav">
+                <a href="/home2.html" class="hdr-nav-link">Chof.vn</a>
+                <div class="hdr-nav-sep"></div>
+                <a href="/listing2.html?cat=vieclam" class="hdr-nav-link">Việc làm</a>
+                <a href="/listing2.html?cat=dichvu" class="hdr-nav-link">Dịch vụ</a>
+                <a href="/listing2.html?cat=thuonghieu" class="hdr-nav-link">Thương hiệu</a>
+            </nav>
+
+            <div class="hdr-space"></div>
+
+            <div class="ha">
+                <button class="ibtn" title="Yêu thích"><span class="ms">favorite</span></button>
+                <button class="ibtn" title="Thông báo"><span class="ms">notifications</span><span
+                        class="ndot"></span></button>
+                <div class="hdiv"></div>
+                <button class="blogin">Đăng nhập</button>
+                <button onclick="location.href='/manage2.html'" class="bpost" id="bpost">
+                    <span class="ms" style="font-size:16px">add_box</span>
+                    <span id="bpost-txt">Đăng tin</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ STICKY HEADER ════ -->
+    <div class="sticky-hdr" id="stickyHdr">
+        <div class="sticky-hdr-inner">
+            <div class="sticky-logo">
+                <img src="/assets/logo.png" alt="Chof.vn" style="height:30px;object-fit:contain;display:block">
+            </div>
+            <div class="ct-dd-wrap" id="stickyCtWrap" style="position:relative;flex-shrink:0">
+                <button class="ct-dd-btn" id="stickyCtBtn"
+                    style="height:40px;border-radius:20px;border:1.5px solid var(--line);padding:0 14px;font-family:inherit">
+                    <span class="ms" style="font-size:16px">menu</span>
+                    <span>Danh mục</span>
+                    <span class="ms ct-arr" style="font-size:14px">expand_more</span>
+                </button>
+                <div class="mm-wrap" id="mmWrapSticky">
+                    <div class="mm-box">
+                        <div class="mm-left" id="mmLeftSticky">
+                            <div class="ml1 active" data-cat="nam">Nam <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="nu">Nữ <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="treEm">Trẻ em <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="chuyenDe">Chuyên đề <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="vietBrand">TH Việt <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="foreigner">4 Foreigner <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="dichvu">Dịch vụ <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="viecLam">Việc làm <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                        </div>
+                        <div class="mm-right" id="mmRightSticky">
+                            <div class="mp active" id="sp-nam">
+                                <div>
+                                    <h3>Áo</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo thun</a></li>
+                                        <li><a href="/listing2.html">Áo sơ mi</a></li>
+                                        <li><a href="/listing2.html">Áo khoác</a></li>
+                                        <li><a href="/listing2.html">Áo vest</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Quần</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Quần ngắn</a></li>
+                                        <li><a href="/listing2.html">Quần dài</a></li>
+                                        <li><a href="/listing2.html">Quần lót</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nón – Kính</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nón</a></li>
+                                        <li><a href="/listing2.html">Mắt kính</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Balo – Túi</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Ba lô</a></li>
+                                        <li><a href="/listing2.html">Túi xách</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Đồng hồ – Bóp</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Đồng hồ</a></li>
+                                        <li><a href="/listing2.html">Bóp ví</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Giày dép</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Giày thể thao</a></li>
+                                        <li><a href="/listing2.html">Dép</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Mỹ phẩm</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nước hoa</a></li>
+                                        <li><a href="/listing2.html">Mỹ phẩm</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Phụ kiện</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Phụ kiện</a></li>
+                                        <li><a href="/listing2.html">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="sp-nu">
+                                <div>
+                                    <h3>Áo</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo thun</a></li>
+                                        <li><a href="/listing2.html">Áo sơ mi</a></li>
+                                        <li><a href="/listing2.html">Áo khoác</a></li>
+                                        <li><a href="/listing2.html">Áo dài</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Quần – Váy</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Quần</a></li>
+                                        <li><a href="/listing2.html">Váy đầm</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="sp-treEm">
+                                <div>
+                                    <h3>Sơ sinh</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Dưới 1 tháng</a></li>
+                                        <li><a href="/listing2.html">1–6 tháng</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="sp-chuyenDe">
+                                <div>
+                                    <h3>TT Gia dụng</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Mền/mùng</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="sp-vietBrand">
+                                <div>
+                                    <h3>TT Nam</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo nam</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="sp-foreigner">
+                                <div>
+                                    <h3>For Men</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Shirt/T-shirt</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="sp-dichvu">
+                                <div>
+                                    <h3>DV May mặc</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">In thêu</a></li>
+                                        <li><a href="/listing2.html">Giặt ủi</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="sp-viecLam">
+                                <div>
+                                    <h3>Thời vụ</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Việc tìm người</a></li>
+                                        <li><a href="/listing2.html">Người tìm việc</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="flex:1;position:relative;min-width:0">
+                <div class="sbox sticky-sb">
+                    <input class="sinput" id="sinputSticky" type="text"
+                        placeholder="Tìm kiếm thời trang, dịch vụ, việc làm..." autocomplete="off" />
+                    <button class="sbtn" onclick="location.href='/listing2.html'"><span class="ms"
+                            style="font-size:16px">search</span></button>
+                </div>
+            </div>
+            <div class="ha" style="gap:6px">
+                <button class="ibtn"><span class="ms">notifications</span><span class="ndot"></span></button>
+                <div class="hdiv"></div>
+                <button class="blogin" style="display:block">Đăng nhập</button>
+                <button class="bpost" onclick="location.href='/manage2.html'"><span class="ms"
+                        style="font-size:15px">add_box</span> Đăng tin</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ CATEGORY TAB BAR ════ -->
+    <div class="cat-tabs" id="catTabs">
+        <div class="cat-tabs-inner">
+            <div class="ct-dd-wrap" id="ctDdWrap">
+                <div class="mm-wrap" id="mmWrap">
+                    <div class="mm-box">
+                        <div class="mm-left" id="mmLeft">
+                            <div class="ml1 active" data-cat="nam">Nam <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="nu">Nữ <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="treEm">Trẻ em <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="chuyenDe">Chuyên đề <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="vietBrand">Thương hiệu Việt <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="foreigner">4 Foreigner <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="dichvu">Dịch vụ <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="viecLam">Việc làm <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                        </div>
+                        <div class="mm-right" id="mmRight">
+                            <div class="mp active" id="p-nam">
+                                <div>
+                                    <h3>Áo</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo thun</a></li>
+                                        <li><a href="/listing2.html">Áo sơ mi</a></li>
+                                        <li><a href="/listing2.html">Áo khoác</a></li>
+                                        <li><a href="/listing2.html">Áo vest</a></li>
+                                        <li><a href="/listing2.html">Áo khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Quần</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Quần ngắn</a></li>
+                                        <li><a href="/listing2.html">Quần dài</a></li>
+                                        <li><a href="/listing2.html">Quần lót</a></li>
+                                        <li><a href="/listing2.html">Quần khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nón – Mắt kính</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nón</a></li>
+                                        <li><a href="/listing2.html">Mắt kính</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Balo – Túi xách</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Ba lô</a></li>
+                                        <li><a href="/listing2.html">Túi xách</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Đồng hồ – Bóp ví</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Đồng hồ</a></li>
+                                        <li><a href="/listing2.html">Bóp ví</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Đồ lót – Giày dép</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Đồ lót</a></li>
+                                        <li><a href="/listing2.html">Giày dép</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nước hoa – Mỹ phẩm</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nước hoa</a></li>
+                                        <li><a href="/listing2.html">Mỹ phẩm</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Phụ kiện – Khác</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Phụ kiện</a></li>
+                                        <li><a href="/listing2.html">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-nu">
+                                <div>
+                                    <h3>Áo</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo thun</a></li>
+                                        <li><a href="/listing2.html">Áo sơ mi</a></li>
+                                        <li><a href="/listing2.html">Áo khoác</a></li>
+                                        <li><a href="/listing2.html">Áo dài</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Quần – Váy đầm</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Quần</a></li>
+                                        <li><a href="/listing2.html">Váy đầm</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nón – Mắt kính</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nón</a></li>
+                                        <li><a href="/listing2.html">Mắt kính</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Túi xách</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Ba lô</a></li>
+                                        <li><a href="/listing2.html">Túi xách</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Mỹ phẩm</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nước hoa</a></li>
+                                        <li><a href="/listing2.html">Mỹ phẩm</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-treEm">
+                                <div>
+                                    <h3>Sơ sinh</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Dưới 1 tháng</a></li>
+                                        <li><a href="/listing2.html">1–6 tháng</a></li>
+                                        <li><a href="/listing2.html">6–12 tháng</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Bé trai</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Dưới 3 tuổi</a></li>
+                                        <li><a href="/listing2.html">3–6 tuổi</a></li>
+                                        <li><a href="/listing2.html">Trên 6 tuổi</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Bé gái</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Dưới 3 tuổi</a></li>
+                                        <li><a href="/listing2.html">3–6 tuổi</a></li>
+                                        <li><a href="/listing2.html">Trên 6 tuổi</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-chuyenDe">
+                                <div>
+                                    <h3>TT Gia dụng</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Mền/mùng</a></li>
+                                        <li><a href="/listing2.html">Áo gối/ra giường</a></li>
+                                        <li><a href="/listing2.html">Rèm/khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Chuyên dụng</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Đồng phục</a></li>
+                                        <li><a href="/listing2.html">Bà bầu/hội cưới</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Đồng giá</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">10k/50k/100k</a></li>
+                                        <li><a href="/listing2.html">200k/300k</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nguyên phụ liệu</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Vải/khoá kéo</a></li>
+                                        <li><a href="/listing2.html">Máy móc/khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-vietBrand">
+                                <div>
+                                    <h3>TT Nam</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo nam</a></li>
+                                        <li><a href="/listing2.html">Quần nam</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Nữ</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo nữ</a></li>
+                                        <li><a href="/listing2.html">Quần/đồ lót</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Trẻ em</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Bé trai/gái</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TP Truyền thống</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nam/Nữ/Trẻ em</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-foreigner">
+                                <div>
+                                    <h3>For Men</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Shirt/T-shirt</a></li>
+                                        <li><a href="/listing2.html">Short/Pants</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>For Women</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Top/Dress</a></li>
+                                        <li><a href="/listing2.html">Accessories</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>For Kids</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Boy/Girl</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Made to Order</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Custom</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-dichvu">
+                                <div>
+                                    <h3>DV May mặc</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">In thêu</a></li>
+                                        <li><a href="/listing2.html">Giặt ủi</a></li>
+                                        <li><a href="/listing2.html">Sửa quần áo</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>DV Phụ trợ</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Người mẫu</a></li>
+                                        <li><a href="/listing2.html">Trang điểm</a></li>
+                                        <li><a href="/listing2.html">Chụp ảnh</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Theo yêu cầu</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">May đo</a></li>
+                                        <li><a href="/listing2.html">Gia công</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-viecLam">
+                                <div>
+                                    <h3>Việc làm thời vụ</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Việc tìm người</a></li>
+                                        <li><a href="/listing2.html">Người tìm việc</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Việc làm chính thức</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Việc tìm người</a></li>
+                                        <li><a href="/listing2.html">Người tìm việc</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ct-sep"></div>
+            <a href="/listing2.html?hot=1" class="ct-link hot">🔥 Hôm nay Hot</a>
+            <a href="/listing2.html?cat=nam" class="ct-link">Thời trang Nam</a>
+            <a href="/listing2.html?cat=nu" class="ct-link">Thời trang Nữ</a>
+            <a href="/listing2.html?cat=treEm" class="ct-link">Trẻ em</a>
+            <div class="ct-sep"></div>
+            <a href="/listing2.html?cat=giay" class="ct-link">Giày dép</a>
+            <a href="/listing2.html?cat=tui" class="ct-link">Túi xách</a>
+            <a href="/listing2.html?cat=dongho" class="ct-link">Đồng hồ</a>
+            <div class="ct-sep"></div>
+            <a href="/listing2.html?cat=dichvu" class="ct-link">Dịch vụ</a>
+            <a href="/listing2.html?cat=vieclam" class="ct-link">Việc làm</a>
+            <div class="ct-sep"></div>
+            <a href="/listing2.html?cat=thuonghieu" class="ct-link">Thương hiệu Việt</a>
+            <a href="/listing2.html?cat=foreigner" class="ct-link">4 Foreigner</a>
+        </div>
+    </div>
+
+    <!-- ══ BREADCRUMB ══ -->
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-inner">
+            <a href="/home2.html">Trang chủ</a>
+            <span class="bc-sep ms" style="font-size:14px">chevron_right</span>
+            <a href="#">Thời trang nam</a>
+            <span class="bc-sep ms" style="font-size:14px">chevron_right</span>
+            <span class="bc-cur">Áo thun</span>
+        </div>
+    </div>
+
+    <!-- ══ SIDEBAR OVERLAY (mobile) ══ -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+    <!-- ══ PAGE WRAP ══ -->
+    <div class="page-wrap">
+
+        <!-- ═══ SIDEBAR ═══ -->
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close-btn" onclick="closeSidebar()">
+                <span>Bộ lọc</span>
+                <span class="ms" style="font-size:18px">close</span>
+            </button>
+            <div class="sidebar-header">
+                <span class="ms" style="font-size:18px">tune</span>
+                Lọc tại Trang sản phẩm
+            </div>
+
+            <div class="active-filters" id="activeFilters"></div>
+
+            <!-- Tỉnh/thành -->
+            <div class="filter-section">
+                <div class="fs-title open" onclick="toggleSection(this)">
+                    <span class="fs-label"><span class="lv1-dot"></span> Tỉnh/thành</span>
+                    <span class="ms fs-arrow" style="font-size:16px">expand_more</span>
+                </div>
+                <div class="fs-body open">
+                    <div class="filter-opts">
+                        <label class="fopt"><input type="checkbox"
+                                onchange="updateFilters(this,'Tỉnh/thành','TP. Hồ Chí Minh')"><span
+                                class="fchk"></span><span class="fopt-label">TP. Hồ Chí Minh</span><span
+                                class="fopt-count">1.2k</span></label>
+                        <label class="fopt"><input type="checkbox"
+                                onchange="updateFilters(this,'Tỉnh/thành','Hà Nội')"><span class="fchk"></span><span
+                                class="fopt-label">Hà Nội</span><span class="fopt-count">840</span></label>
+                        <label class="fopt"><input type="checkbox"
+                                onchange="updateFilters(this,'Tỉnh/thành','Đà Nẵng')"><span class="fchk"></span><span
+                                class="fopt-label">Đà Nẵng</span><span class="fopt-count">215</span></label>
+                        <label class="fopt"><input type="checkbox"
+                                onchange="updateFilters(this,'Tỉnh/thành','Cần Thơ')"><span class="fchk"></span><span
+                                class="fopt-label">Cần Thơ</span><span class="fopt-count">98</span></label>
+                        <label class="fopt"><input type="checkbox"
+                                onchange="updateFilters(this,'Tỉnh/thành','Khác')"><span class="fchk"></span><span
+                                class="fopt-label">Tỉnh/thành khác</span><span class="fopt-count">312</span></label>
+                    </div>
+                    <div class="sub-filter">
+                        <div class="sub-title open" onclick="toggleSub(this)"><span
+                                class="lv2-dot"></span>&nbsp;Phường/xã<span class="ms sub-arrow"
+                                style="font-size:13px">expand_more</span></div>
+                        <div class="sub-body open">
+                            <div class="filter-opts">
+                                <label class="fopt"><input type="checkbox"
+                                        onchange="updateFilters(this,'Phường/xã','Quận 1')"><span
+                                        class="fchk"></span><span class="fopt-label">Quận 1</span><span
+                                        class="fopt-count">340</span></label>
+                                <label class="fopt"><input type="checkbox"
+                                        onchange="updateFilters(this,'Phường/xã','Quận 3')"><span
+                                        class="fchk"></span><span class="fopt-label">Quận 3</span><span
+                                        class="fopt-count">220</span></label>
+                                <label class="fopt"><input type="checkbox"
+                                        onchange="updateFilters(this,'Phường/xã','Bình Thạnh')"><span
+                                        class="fchk"></span><span class="fopt-label">Bình Thạnh</span><span
+                                        class="fopt-count">185</span></label>
+                                <label class="fopt"><input type="checkbox"
+                                        onchange="updateFilters(this,'Phường/xã','Tân Bình')"><span
+                                        class="fchk"></span><span class="fopt-label">Tân Bình</span><span
+                                        class="fopt-count">163</span></label>
+                                <label class="fopt"><input type="checkbox"
+                                        onchange="updateFilters(this,'Phường/xã','Thủ Đức')"><span
+                                        class="fchk"></span><span class="fopt-label">Thủ Đức</span><span
+                                        class="fopt-count">97</span></label>
+                            </div>
+                            <div class="subsub-filter">
+                                <div class="subsub-title open" onclick="toggleSubsub(this)"><span
+                                        class="lv3-dot"></span>&nbsp;Danh mục<span class="ms subsub-arrow"
+                                        style="font-size:12px">expand_more</span></div>
+                                <div class="subsub-body open">
+                                    <div class="filter-opts">
+                                        <label class="fopt"><input type="checkbox"
+                                                onchange="updateFilters(this,'Danh mục','Mua bán')" checked><span
+                                                class="fchk"></span><span class="fopt-label">Mua bán</span><span
+                                                class="fopt-count">2.1k</span></label>
+                                        <label class="fopt"><input type="checkbox"
+                                                onchange="updateFilters(this,'Danh mục','Dịch vụ')"><span
+                                                class="fchk"></span><span class="fopt-label">Dịch vụ</span><span
+                                                class="fopt-count">430</span></label>
+                                        <label class="fopt"><input type="checkbox"
+                                                onchange="updateFilters(this,'Danh mục','Việc làm')"><span
+                                                class="fchk"></span><span class="fopt-label">Việc làm</span><span
+                                                class="fopt-count">118</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thương hiệu -->
+            <div class="filter-section">
+                <div class="fs-title open" onclick="toggleSection(this)">
+                    <span class="fs-label"><span class="lv2-dot"></span> Thương hiệu</span>
+                    <span class="ms fs-arrow" style="font-size:16px">expand_more</span>
+                </div>
+                <div class="fs-body open">
+                    <div class="filter-opts">
+                        <label class="fopt"><input type="checkbox"
+                                onchange="updateFilters(this,'Thương hiệu','Nike')"><span class="fchk"></span><span
+                                class="fopt-label">Nike</span><span class="fopt-count">542</span></label>
+                        <label class="fopt"><input type="checkbox"
+                                onchange="updateFilters(this,'Thương hiệu','Adidas')"><span class="fchk"></span><span
+                                class="fopt-label">Adidas</span><span class="fopt-count">418</span></label>
+                        <label class="fopt"><input type="checkbox"
+                                onchange="updateFilters(this,'Thương hiệu','Yody')"><span class="fchk"></span><span
+                                class="fopt-label">Yody</span><span class="fopt-count">302</span></label>
+                        <label class="fopt"><input type="checkbox"
+                                onchange="updateFilters(this,'Thương hiệu','Routine')"><span class="fchk"></span><span
+                                class="fopt-label">Routine</span><span class="fopt-count">198</span></label>
+                        <label class="fopt"><input type="checkbox"
+                                onchange="updateFilters(this,'Thương hiệu','Owen')"><span class="fchk"></span><span
+                                class="fopt-label">Owen</span><span class="fopt-count">145</span></label>
+                        <label class="fopt"><input type="checkbox"
+                                onchange="updateFilters(this,'Thương hiệu','Khác')"><span class="fchk"></span><span
+                                class="fopt-label">Thương hiệu khác</span><span class="fopt-count">870</span></label>
+                    </div>
+                    <div class="sub-filter">
+                        <div class="sub-title open" onclick="toggleSub(this)"><span class="lv3-dot"></span>&nbsp;Xuất
+                            xứ<span class="ms sub-arrow" style="font-size:13px">expand_more</span></div>
+                        <div class="sub-body open">
+                            <div class="filter-opts">
+                                <label class="fopt"><input type="checkbox"
+                                        onchange="updateFilters(this,'Xuất xứ','Việt Nam')"><span
+                                        class="fchk"></span><span class="fopt-label">Việt Nam</span><span
+                                        class="fopt-count">1.4k</span></label>
+                                <label class="fopt"><input type="checkbox"
+                                        onchange="updateFilters(this,'Xuất xứ','Nhập khẩu')"><span
+                                        class="fchk"></span><span class="fopt-label">Nhập khẩu</span><span
+                                        class="fopt-count">680</span></label>
+                            </div>
+                            <div class="subsub-filter">
+                                <div class="subsub-title open" onclick="toggleSubsub(this)"><span
+                                        class="lv4-dot"></span>&nbsp;Vận chuyển<span class="ms subsub-arrow"
+                                        style="font-size:12px">expand_more</span></div>
+                                <div class="subsub-body open">
+                                    <div class="filter-opts">
+                                        <label class="fopt"><input type="checkbox"
+                                                onchange="updateFilters(this,'Vận chuyển','Hoả tốc (12h-24h)')"><span
+                                                class="fchk"></span><span class="fopt-label">Hoả tốc
+                                                (12h–24h)</span></label>
+                                        <label class="fopt"><input type="checkbox"
+                                                onchange="updateFilters(this,'Vận chuyển','Nhanh (1-2 ngày)')"><span
+                                                class="fchk"></span><span class="fopt-label">Nhanh (1–2
+                                                ngày)</span></label>
+                                        <label class="fopt"><input type="checkbox"
+                                                onchange="updateFilters(this,'Vận chuyển','Tiêu chuẩn (3-5 ngày)')"><span
+                                                class="fchk"></span><span class="fopt-label">Tiêu chuẩn (3–5
+                                                ngày)</span></label>
+                                        <label class="fopt"><input type="checkbox"
+                                                onchange="updateFilters(this,'Vận chuyển','Tự lấy hàng')"><span
+                                                class="fchk"></span><span class="fopt-label">Tự lấy hàng</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Giá bán -->
+            <div class="filter-section">
+                <div class="fs-title open" onclick="toggleSection(this)">
+                    <span class="fs-label"><span class="lv3-dot"></span> Giá bán</span>
+                    <span class="ms fs-arrow" style="font-size:16px">expand_more</span>
+                </div>
+                <div class="fs-body open">
+                    <div class="price-grid">
+                        <div class="price-pill" onclick="togglePrice(this,'Dưới 99k')">Dưới 99k</div>
+                        <div class="price-pill" onclick="togglePrice(this,'100k – 299k')">100k – 299k</div>
+                        <div class="price-pill" onclick="togglePrice(this,'300k – 499k')">300k – 499k</div>
+                        <div class="price-pill" onclick="togglePrice(this,'500k trở lên')">500k trở lên</div>
+                    </div>
+                    <div style="display:flex;gap:6px;margin-top:10px;align-items:center;">
+                        <input type="number" placeholder="Từ"
+                            style="flex:1;padding:6px 8px;border:1.5px solid #e5e7eb;border-radius:7px;font-size:12px;font-family:inherit;outline:none;"
+                            onfocus="this.style.borderColor='var(--p)'" onblur="this.style.borderColor='#e5e7eb'">
+                        <span style="color:#ccc;font-size:12px">–</span>
+                        <input type="number" placeholder="Đến"
+                            style="flex:1;padding:6px 8px;border:1.5px solid #e5e7eb;border-radius:7px;font-size:12px;font-family:inherit;outline:none;"
+                            onfocus="this.style.borderColor='var(--p)'" onblur="this.style.borderColor='#e5e7eb'">
+                        <button
+                            style="padding:6px 10px;background:var(--p);color:#fff;border:none;border-radius:7px;font-size:12px;cursor:pointer;font-family:inherit;">OK</button>
+                    </div>
+                    <div class="sub-filter" style="margin-top:10px;">
+                        <div class="sub-title open" onclick="toggleSub(this)"><span class="lv4-dot"></span>&nbsp;Khuyến
+                            mãi<span class="ms sub-arrow" style="font-size:13px">expand_more</span></div>
+                        <div class="sub-body open">
+                            <div class="promo-tags">
+                                <div class="promo-tag" onclick="togglePromo(this,'10-30%')">10–30%</div>
+                                <div class="promo-tag" onclick="togglePromo(this,'30-50%')">30–50%</div>
+                                <div class="promo-tag" onclick="togglePromo(this,'Dưới 50%')">Dưới 50%</div>
+                            </div>
+                            <div class="subsub-filter" style="margin-top:8px;">
+                                <div class="subsub-title open" onclick="toggleSubsub(this)"><span
+                                        style="width:4px;height:4px;border-radius:50%;background:#e74c3c;flex-shrink:0;display:inline-block;"></span>&nbsp;Khác<span
+                                        class="ms subsub-arrow" style="font-size:12px">expand_more</span></div>
+                                <div class="subsub-body open">
+                                    <div class="filter-opts">
+                                        <label class="fopt"><input type="checkbox"
+                                                onchange="updateFilters(this,'Khác','Có bán sỉ')"><span
+                                                class="fchk"></span><span class="fopt-label">Có bán sỉ</span></label>
+                                        <label class="fopt"><input type="checkbox"
+                                                onchange="updateFilters(this,'Khác','Cộng tác viên (CTV)')"><span
+                                                class="fchk"></span><span class="fopt-label">Cộng tác viên
+                                                (CTV)</span></label>
+                                        <label class="fopt"><input type="checkbox"
+                                                onchange="updateFilters(this,'Khác','Có big size')"><span
+                                                class="fchk"></span><span class="fopt-label">Có big size</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding:14px 16px;">
+                <button onclick="closeSidebar()"
+                    style="width:100%;padding:11px;background:var(--p);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;transition:background .15s;"
+                    onmouseover="this.style.background='var(--pd)'" onmouseout="this.style.background='var(--p)'">
+                    ✓ Áp dụng bộ lọc
+                </button>
+            </div>
+        </aside>
+
+        <!-- ═══ PRODUCT AREA ═══ -->
+        <div class="product-area">
+            <button class="mob-filter-btn" onclick="openSidebar()">
+                <span class="ms" style="font-size:17px">tune</span>
+                Bộ lọc
+                <span id="filterCount"
+                    style="background:var(--p);color:#fff;border-radius:10px;padding:1px 7px;font-size:11px;display:none;">0</span>
+            </button>
+
+            <!-- Search bar inline -->
+            <div class="inline-search">
+                <span class="ms" style="font-size:18px;color:var(--muted);flex-shrink:0">search</span>
+                <input type="text" class="inline-search-input" placeholder="Tìm trong kết quả này..."
+                    autocomplete="off" />
+                <button class="inline-search-btn">Tìm kiếm</button>
+            </div>
+
+            <div class="sort-bar">
+                <div class="sort-left">
+                    <span class="sort-lbl">Sắp xếp:</span>
+                    <div class="sort-btns">
+                        <button class="sort-btn active" onclick="setSort(this)">Phù hợp nhất</button>
+                        <button class="sort-btn" onclick="setSort(this)">Mới nhất</button>
+                        <button class="sort-btn" onclick="setSort(this)">Giá thấp nhất</button>
+                        <button class="sort-btn" onclick="setSort(this)">Giá cao nhất</button>
+                        <button class="sort-btn" onclick="setSort(this)">Gần bạn</button>
+                    </div>
+                </div>
+                <div class="sort-right">
+                    <span class="result-count">Tìm thấy <b>2.475</b> sản phẩm</span>
+                    <div class="view-btns">
+                        <button class="view-btn active" onclick="setView('grid',this)" title="Dạng lưới"><span
+                                class="ms" style="font-size:16px">grid_view</span></button>
+                        <button class="view-btn" onclick="setView('list',this)" title="Dạng danh sách"><span class="ms"
+                                style="font-size:16px">view_list</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pgrid" id="productGrid">
+                <div class="pc">
+                    <div class="pcimg"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
+                            alt=""><span class="bge bsale">-50%</span><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Ana Fashion</span><svg class="vico" viewBox="0 0 24 24"
+                                fill="none" stroke="#008848" stroke-width="2.5">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg></div><a href="/detail2.html">
+                            <p class="pctit">Đầm voan hoa nhí cổ V phong cách Hàn Quốc cực xinh</p>
+                        </a>
+                        <div class="prow"><span class="psal">250.000 đ</span><span class="pori">500.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Quận 1, HCM</span><span class="stars">★★★★★</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
+                            alt=""><span class="bge bhot">HOT</span><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Sneaker World</span><svg class="vico" viewBox="0 0 24 24"
+                                fill="none" stroke="#008848" stroke-width="2.5">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg></div><a href="/detail2.html">
+                            <p class="pctit">Giày Sneaker nam Nike Air Max đỏ đô size 40–44</p>
+                        </a>
+                        <div class="prow"><span class="psal">3.500.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Bình Thạnh, HCM</span><span class="stars">★★★★☆</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
+                            alt=""><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Watch Station</span><svg class="vico" viewBox="0 0 24 24"
+                                fill="none" stroke="#008848" stroke-width="2.5">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg></div><a href="/detail2.html">
+                            <p class="pctit">Đồng hồ Casio Edifice chính hãng fullbox 99% mới mua</p>
+                        </a>
+                        <div class="prow"><span class="psal">1.200.000 đ</span><span class="pori">2.100.000 đ</span>
+                        </div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Thủ Đức, HCM</span><span class="stars">★★★★★</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
+                            alt=""><span class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Suit &amp; Style</span></div><a href="/detail2.html">
+                            <p class="pctit">Bộ vest nam lịch lãm 2 cúc slim fit dành cho sự kiện</p>
+                        </a>
+                        <div class="prow"><span class="psal">890.000 đ</span><span class="pori">1.200.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Tân Bình, HCM</span><span class="stars">★★★★☆</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX_zG51x9_HlDzqyWXE_LcbJUtRD_8Wmracv34LmDYoqKx-oEvKoMkHN_x5VphToHVV5WALzcpu1D99eH03MpjOfbDlPVfCOjNxrGeLBmSU4YPvcjY9vKo6l9AR7qqD_gfsX_7B7mRTpQ2Q-fl4j-ZCsHuVmZntGaYYq8GKhm4-74RSgKOv9CEAbj4nFPZtO8RfP2MpnPbKtGtqFzNSLnmc_YT3vMGELoz7fwL_bNz7CTcxPs72JslbUat5GZh8B-iWEE7b2XMMxs"
+                            alt=""><span class="bge bsvc">DỊCH VỤ</span><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Makeup by Linh</span><svg class="vico" viewBox="0 0 24 24"
+                                fill="none" stroke="#008848" stroke-width="2.5">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg></div><a href="/detail2.html">
+                            <p class="pctit">Dịch vụ trang điểm dự tiệc tận nơi, makeup cô dâu</p>
+                        </a>
+                        <div class="prow"><span class="psal">300.000 đ</span><span
+                                style="font-size:10px;color:#aaa">/lần</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Quận 7, HCM</span><span class="stars">★★★★★</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/aothun.avif" alt=""><span class="bge bnew">MỚI</span><button
+                            class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Style House</span></div><a href="/detail2.html">
+                            <p class="pctit">Áo thun oversize in hình unisex phong cách streetwear</p>
+                        </a>
+                        <div class="prow"><span class="psal">185.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Quận 3, HCM</span><span style="font-size:10px;color:#aaa">2 giờ trước</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/dongho.jpg" alt=""><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Clock &amp; Watch</span></div><a href="/detail2.html">
+                            <p class="pctit">Đồng hồ Daniel Wellington Classic Petite chính hãng</p>
+                        </a>
+                        <div class="prow"><span class="psal">2.800.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Quận 5, HCM</span><span style="font-size:10px;color:#aaa">1 ngày trước</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/giaychaybo.webp" alt=""><span
+                            class="bge bhot">HOT</span><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Kicks SG</span></div><a href="/detail2.html">
+                            <p class="pctit">Giày Adidas Ultraboost trắng size 39–44, new 100%</p>
+                        </a>
+                        <div class="prow"><span class="psal">4.200.000 đ</span><span class="pori">5.500.000 đ</span>
+                        </div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Gò Vấp, HCM</span><span style="font-size:10px;color:#aaa">Vừa xong</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
+                            alt=""><span class="bge bsvc">DỊCH VỤ</span><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Tailor House</span></div><a href="/detail2.html">
+                            <p class="pctit">Dịch vụ may vest đo tay theo yêu cầu, giao tận nhà</p>
+                        </a>
+                        <div class="prow"><span class="psal">1.500.000 đ</span><span
+                                style="font-size:10px;color:#aaa">/bộ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Tân Bình, HCM</span><span style="font-size:10px;color:#aaa">5 giờ trước</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/nuochoa.jpg" alt=""><span class="bge bnew">MỚI</span><button
+                            class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Beauty Corner</span></div><a href="/detail2.html">
+                            <p class="pctit">Set nước hoa Dior Sauvage EDT chính hãng 60ml</p>
+                        </a>
+                        <div class="prow"><span class="psal">2.100.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Quận 10, HCM</span><span style="font-size:10px;color:#aaa">3 giờ trước</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/Đầm midi.jpg" alt=""><span class="bge bsale">-30%</span><button
+                            class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Lady Fashion</span><svg class="vico" viewBox="0 0 24 24"
+                                fill="none" stroke="#008848" stroke-width="2.5">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg></div><a href="/detail2.html">
+                            <p class="pctit">Đầm midi dự tiệc cúp ngực tay phồng màu đỏ</p>
+                        </a>
+                        <div class="prow"><span class="psal">420.000 đ</span><span class="pori">600.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Quận 7, HCM</span><span class="stars">★★★★☆</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/set-gym-nu-11.jpg" alt=""><button class="bfav"><span
+                                class="ms msf" style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Sport Zone</span></div><a href="/detail2.html">
+                            <p class="pctit">Bộ đồ thể thao nữ tập gym áo crop quần legging</p>
+                        </a>
+                        <div class="prow"><span class="psal">320.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Quận 12, HCM</span><span class="stars">★★★☆☆</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/legging.jpeg" alt=""><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Fit House</span></div><a href="/detail2.html">
+                            <p class="pctit">Set đồ tập yoga nữ co giãn 4 chiều, ôm dáng năng động</p>
+                        </a>
+                        <div class="prow"><span class="psal">289.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Gò Vấp, HCM</span><span class="stars">★★★★☆</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/thethaonu.webp" alt=""><button class="bfav"><span
+                                class="ms msf" style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Active Wear</span></div><a href="/detail2.html">
+                            <p class="pctit">Bộ quần áo thể thao nữ chạy bộ thoáng khí, form tôn dáng</p>
+                        </a>
+                        <div class="prow"><span class="psal">350.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Tân Bình, HCM</span><span class="stars">★★★★★</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/36012-cam-dat-1.png" alt=""><button class="bfav"><span
+                                class="ms msf" style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Gym Style</span></div><a href="/detail2.html">
+                            <p class="pctit">Áo bra kèm legging nữ tập gym chất liệu mềm mịn cao cấp</p>
+                        </a>
+                        <div class="prow"><span class="psal">410.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Thủ Đức, HCM</span><span class="stars">★★★★☆</span></div>
+                    </div>
+                </div>
+                <div class="pc">
+                    <div class="pcimg"><img src="/assets/bra.jpg" alt=""><button class="bfav"><span class="ms msf"
+                                style="font-size:13px">favorite</span></button></div>
+                    <div class="pcb">
+                        <div class="srow"><span class="sname">Urban Sport</span></div><a href="/detail2.html">
+                            <p class="pctit">Bộ đồ tập nữ croptop tay ngắn phối quần legging cạp cao</p>
+                        </a>
+                        <div class="prow"><span class="psal">299.000 đ</span></div>
+                        <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>Quận 7, HCM</span><span class="stars">★★★☆☆</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="pg-btn disabled"><span class="ms" style="font-size:16px">chevron_left</span></button>
+                <button class="pg-btn active" onclick="setPage(this)">1</button>
+                <button class="pg-btn" onclick="setPage(this)">2</button>
+                <button class="pg-btn" onclick="setPage(this)">3</button>
+                <button class="pg-btn" onclick="setPage(this)">4</button>
+                <button class="pg-btn" onclick="setPage(this)">5</button>
+                <span style="color:#ccc;font-size:14px;padding:0 4px">…</span>
+                <button class="pg-btn" onclick="setPage(this)">24</button>
+                <button class="pg-btn"><span class="ms" style="font-size:16px">chevron_right</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ FOOTER ════ -->
+    <footer>
+        <div class="fi">
+            <div>
+                <div class="fi-logo">
+                    <img src="/assets/logo.png" alt="Chof.vn"
+                        style="height:36px;object-fit:contain;display:block;filter:brightness(0) invert(1)">
+                </div>
+                <p style="font-size:12.5px;color:#666;line-height:1.7;margin-bottom:12px">Sàn đăng tin rao vặt thời
+                    trang hàng đầu Việt Nam</p>
+                <div style="font-size:12.5px;color:#666;line-height:2.3">
+                    <p><b style="color:#aaa">Địa chỉ:</b> 165 Đường D5, P.25, Q.Bình Thạnh, TP.HCM</p>
+                    <p><b style="color:#aaa">SĐT:</b> 0123 456 789</p>
+                    <p><b style="color:#aaa">Email:</b> <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="87e4efe8e1c7e0eae6eeeba9e4e8ea">[email&#160;protected]</a></p>
+                </div>
+            </div>
+            <div>
+                <h4>Về chúng tôi</h4>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Tầm nhìn - sứ mệnh</a></li>
+                    <li><a href="#">Sơ đồ tổ chức</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Quy định</h4>
+                <div style="display:grid;grid-template-columns:1fr 1fr">
+                    <ul>
+                        <li><a href="#">Quy định thành viên</a></li>
+                        <li><a href="#">Quy định đăng tin</a></li>
+                        <li><a href="#">Quy định sản phẩm</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Quy định giao hàng</a></li>
+                        <li><a href="#">Quy định thanh toán</a></li>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h4>Theo dõi</h4>
+                <div style="display:flex;gap:10px">
+                    <a href="#"
+                        style="width:32px;height:32px;background:#1877f2;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700">f</a>
+                    <a href="#"
+                        style="width:32px;height:32px;background:#ff0050;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">TT</a>
+                    <a href="#"
+                        style="width:32px;height:32px;background:#ff0000;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff"><span
+                            class="ms msf" style="font-size:15px">play_circle</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="fb2">
+            <p>© 2026 - Bản quyền thuộc về Chof.vn</p>
+            <div style="display:flex;gap:16px"><a href="#">Điều khoản sử dụng</a><a href="#">Chính sách bảo mật</a>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        // SCROLL — sticky header + cat tabs
+        var stickyHdr = document.getElementById('stickyHdr');
+        var catTabs = document.getElementById('catTabs');
+
+        window.addEventListener('scroll', function () {
+            var scrollY = window.scrollY;
+            if (scrollY > 60) {
+                stickyHdr.classList.add('visible');
+                catTabs.style.top = '58px';
+            } else {
+                stickyHdr.classList.remove('visible');
+                catTabs.style.top = '0';
+            }
+        }, { passive: true });
+
+        // MEGA MENU
+        function setupMegaMenu(btnId, wrapId, leftId, rightPrefix) {
+            var btn = document.getElementById(btnId);
+            var wrap = document.getElementById(wrapId);
+            var left = document.getElementById(leftId);
+            if (!btn || !wrap || !left) return;
+            var open = false;
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                open = !open;
+                wrap.classList.toggle('open', open);
+                btn.classList.toggle('open', open);
+            });
+
+            left.querySelectorAll('.ml1').forEach(function (item) {
+                item.addEventListener('mouseenter', function () {
+                    left.querySelectorAll('.ml1').forEach(function (i) { i.classList.remove('active'); });
+                    item.classList.add('active');
+                    var cat = item.getAttribute('data-cat');
+                    wrap.querySelectorAll('.mp').forEach(function (p) { p.classList.remove('active'); });
+                    var panel = document.getElementById(rightPrefix + '-' + cat) || document.getElementById('p-' + cat) || document.getElementById('sp-' + cat);
+                    if (panel) panel.classList.add('active');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (open && !wrap.contains(e.target) && !btn.contains(e.target)) {
+                    open = false;
+                    wrap.classList.remove('open');
+                    btn.classList.remove('open');
+                }
+            });
+        }
+
+        setupMegaMenu('ctDdBtn', 'mmWrap', 'mmLeft', 'p');
+        setupMegaMenu('stickyCtBtn', 'mmWrapSticky', 'mmLeftSticky', 'sp');
+
+        // POST BUTTON MOBILE
+        (function () {
+            var bpost = document.getElementById('bpost');
+            var btxt = document.getElementById('bpost-txt');
+            function check() {
+                var mob = window.innerWidth <= 768;
+                if (mob) {
+                    bpost.style.cssText = 'width:36px;height:36px;padding:0;border-radius:50%;display:flex;justify-content:center;align-items:center';
+                    if (btxt) btxt.style.display = 'none';
+                } else {
+                    bpost.style.cssText = '';
+                    if (btxt) btxt.style.display = '';
+                }
+            }
+            check();
+            window.addEventListener('resize', check);
+        })();
+
+        // SIDEBAR FILTERS
+        function toggleSection(el) { el.classList.toggle('open'); el.nextElementSibling.classList.toggle('open'); }
+        function toggleSub(el) { el.classList.toggle('open'); el.nextElementSibling.classList.toggle('open'); }
+        function toggleSubsub(el) { el.classList.toggle('open'); el.nextElementSibling.classList.toggle('open'); }
+
+        var activeFilters = { 'Danh mục': ['Mua bán'] };
+
+        function updateFilters(cb, group, value) {
+            if (!activeFilters[group]) activeFilters[group] = [];
+            if (cb.checked) { if (!activeFilters[group].includes(value)) activeFilters[group].push(value); }
+            else { activeFilters[group] = activeFilters[group].filter(function (v) { return v !== value; }); if (activeFilters[group].length === 0) delete activeFilters[group]; }
+            renderActiveFilters();
+        }
+
+        function togglePrice(el, val) { el.classList.toggle('active'); updateFilterTag('Giá bán', val, el.classList.contains('active')); }
+        function togglePromo(el, val) { el.classList.toggle('active'); updateFilterTag('Khuyến mãi', val, el.classList.contains('active')); }
+
+        function updateFilterTag(group, value, add) {
+            if (!activeFilters[group]) activeFilters[group] = [];
+            if (add) { if (!activeFilters[group].includes(value)) activeFilters[group].push(value); }
+            else { activeFilters[group] = activeFilters[group].filter(function (v) { return v !== value; }); if (activeFilters[group].length === 0) delete activeFilters[group]; }
+            renderActiveFilters();
+        }
+
+        function renderActiveFilters() {
+            var bar = document.getElementById('activeFilters');
+            var allTags = [];
+            for (var group in activeFilters) { activeFilters[group].forEach(function (val) { allTags.push({ group: group, val: val }); }); }
+            if (allTags.length === 0) { bar.classList.remove('has-filters'); bar.innerHTML = ''; updateFilterCount(0); return; }
+            bar.classList.add('has-filters');
+            var html = allTags.map(function (t) { return '<div class="af-tag"><span>' + t.val + '</span><span class="af-remove" onclick="removeFilter(\'' + t.group + '\',\'' + t.val + '\')">×</span></div>'; }).join('');
+            html += '<button class="af-clear" onclick="clearAllFilters()">Xóa tất cả</button>';
+            bar.innerHTML = html;
+            updateFilterCount(allTags.length);
+        }
+
+        function removeFilter(group, val) {
+            if (activeFilters[group]) { activeFilters[group] = activeFilters[group].filter(function (v) { return v !== val; }); if (activeFilters[group].length === 0) delete activeFilters[group]; }
+            document.querySelectorAll('.fopt input').forEach(function (cb) { if (cb.getAttribute('onchange') && cb.getAttribute('onchange').includes("'" + val + "'")) cb.checked = false; });
+            document.querySelectorAll('.price-pill').forEach(function (p) { if (p.textContent.trim() === val) p.classList.remove('active'); });
+            document.querySelectorAll('.promo-tag').forEach(function (p) { if (p.textContent.trim() === val) p.classList.remove('active'); });
+            renderActiveFilters();
+        }
+
+        function clearAllFilters() {
+            activeFilters = {};
+            document.querySelectorAll('.fopt input').forEach(function (cb) { cb.checked = false; });
+            document.querySelectorAll('.price-pill').forEach(function (p) { p.classList.remove('active'); });
+            document.querySelectorAll('.promo-tag').forEach(function (p) { p.classList.remove('active'); });
+            renderActiveFilters();
+        }
+
+        function updateFilterCount(n) {
+            var badge = document.getElementById('filterCount');
+            if (n > 0) { badge.style.display = 'inline'; badge.textContent = n; } else { badge.style.display = 'none'; }
+        }
+
+        renderActiveFilters();
+
+        function setSort(btn) { document.querySelectorAll('.sort-btn').forEach(function (b) { b.classList.remove('active'); }); btn.classList.add('active'); }
+
+        function setView(type, btn) {
+            document.querySelectorAll('.view-btn').forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            var grid = document.getElementById('productGrid');
+            if (type === 'list') grid.classList.add('list-view'); else grid.classList.remove('list-view');
+        }
+
+        function setPage(btn) { document.querySelectorAll('.pg-btn').forEach(function (b) { b.classList.remove('active'); }); btn.classList.add('active'); }
+
+        function openSidebar() { document.getElementById('sidebar').classList.add('open'); document.getElementById('sidebarOverlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    </script>
+
+</body>
+
+</html>
