@@ -5,9 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Đăng tin sản phẩm – Chof.vn</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <style>
         :root {
             --p: #008848;
@@ -23,7 +26,13 @@
             --radius: 12px;
         }
 
-        *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0 }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
 
         body {
             font-family: 'Lexend', sans-serif;
@@ -34,7 +43,10 @@
             min-height: 100vh
         }
 
-        a { text-decoration: none; color: inherit }
+        a {
+            text-decoration: none;
+            color: inherit
+        }
 
         .ms {
             font-family: 'Material Symbols Outlined';
@@ -51,7 +63,9 @@
             vertical-align: middle
         }
 
-        .msf { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24 }
+        .msf {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
 
         /* ══════════════════════════════════
            HEADER
@@ -92,7 +106,10 @@
             line-height: 1.2
         }
 
-        .logo-badge em { color: #fde68a; font-style: normal }
+        .logo-badge em {
+            color: #fde68a;
+            font-style: normal
+        }
 
         .logo-tagline {
             font-size: 11px;
@@ -126,13 +143,34 @@
             white-space: nowrap
         }
 
-        .hdr-nav-link:hover { background: var(--bg); color: var(--p) }
-        .hdr-nav-link.active { color: var(--p); background: var(--pl) }
+        .hdr-nav-link:hover {
+            background: var(--bg);
+            color: var(--p)
+        }
 
-        .hdr-nav-sep { width: 1px; height: 16px; background: var(--line); margin: 0 4px; flex-shrink: 0 }
-        .hdr-space { flex: 1 }
+        .hdr-nav-link.active {
+            color: var(--p);
+            background: var(--pl)
+        }
 
-        .ha { display: flex; align-items: center; gap: 6px; flex-shrink: 0 }
+        .hdr-nav-sep {
+            width: 1px;
+            height: 16px;
+            background: var(--line);
+            margin: 0 4px;
+            flex-shrink: 0
+        }
+
+        .hdr-space {
+            flex: 1
+        }
+
+        .ha {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0
+        }
 
         .ibtn {
             background: none;
@@ -147,18 +185,29 @@
             transition: all .15s
         }
 
-        .ibtn:hover { background: var(--bg); color: var(--p) }
+        .ibtn:hover {
+            background: var(--bg);
+            color: var(--p)
+        }
 
         .ndot {
             position: absolute;
-            top: 4px; right: 4px;
-            width: 7px; height: 7px;
+            top: 4px;
+            right: 4px;
+            width: 7px;
+            height: 7px;
             background: #e74c3c;
             border-radius: 50%;
             border: 2px solid #fff
         }
 
-        .hdiv { width: 1px; height: 22px; background: var(--line); flex-shrink: 0; margin: 0 2px }
+        .hdiv {
+            width: 1px;
+            height: 22px;
+            background: var(--line);
+            flex-shrink: 0;
+            margin: 0 2px
+        }
 
         .blogin {
             background: none;
@@ -174,7 +223,10 @@
             white-space: nowrap
         }
 
-        .blogin:hover { border-color: var(--p); color: var(--p) }
+        .blogin:hover {
+            border-color: var(--p);
+            color: var(--p)
+        }
 
         .bpost {
             background: var(--p);
@@ -189,26 +241,33 @@
             align-items: center;
             gap: 5px;
             font-family: inherit;
-            box-shadow: 0 2px 12px rgba(0,136,72,.28);
+            box-shadow: 0 2px 12px rgba(0, 136, 72, .28);
             white-space: nowrap;
             transition: background .15s
         }
 
-        .bpost:hover { background: var(--pd) }
+        .bpost:hover {
+            background: var(--pd)
+        }
 
         /* STICKY HEADER */
         .sticky-hdr {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 700;
             background: #fff;
-            box-shadow: 0 2px 20px rgba(0,0,0,.12);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, .12);
             transform: translateY(-100%);
-            transition: transform .28s cubic-bezier(.4,0,.2,1);
+            transition: transform .28s cubic-bezier(.4, 0, .2, 1);
             pointer-events: none
         }
 
-        .sticky-hdr.visible { transform: translateY(0); pointer-events: auto }
+        .sticky-hdr.visible {
+            transform: translateY(0);
+            pointer-events: auto
+        }
 
         .sticky-hdr-inner {
             max-width: 1320px;
@@ -220,7 +279,13 @@
             gap: 12px
         }
 
-        .sticky-logo { font-size: 18px; font-weight: 900; color: var(--p); flex-shrink: 0; white-space: nowrap }
+        .sticky-logo {
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--p);
+            flex-shrink: 0;
+            white-space: nowrap
+        }
 
         .sbox {
             display: flex;
@@ -230,7 +295,7 @@
             overflow: hidden;
             border: 2px solid transparent;
             transition: border-color .18s;
-            box-shadow: 0 4px 24px rgba(0,0,0,.1)
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .1)
         }
 
         .sbox.sticky-sb {
@@ -240,9 +305,14 @@
             border-radius: 22px
         }
 
-        .sbox:focus-within { border-color: var(--p) !important }
+        .sbox:focus-within {
+            border-color: var(--p) !important
+        }
 
-        .scat-wrap { position: relative; flex-shrink: 0 }
+        .scat-wrap {
+            position: relative;
+            flex-shrink: 0
+        }
 
         .scat-btn {
             display: flex;
@@ -262,7 +332,9 @@
             transition: color .15s
         }
 
-        .scat-btn:hover { color: var(--p) }
+        .scat-btn:hover {
+            color: var(--p)
+        }
 
         .scat-drop {
             display: none;
@@ -272,13 +344,15 @@
             background: #fff;
             border: 1px solid var(--line);
             border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,.12);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, .12);
             min-width: 160px;
             padding: 6px 0;
             z-index: 800
         }
 
-        .scat-drop.open { display: block }
+        .scat-drop.open {
+            display: block
+        }
 
         .scat-opt {
             padding: 9px 16px;
@@ -292,8 +366,15 @@
             gap: 8px
         }
 
-        .scat-opt:hover { background: var(--pl); color: var(--p) }
-        .scat-opt.active { color: var(--p); font-weight: 700 }
+        .scat-opt:hover {
+            background: var(--pl);
+            color: var(--p)
+        }
+
+        .scat-opt.active {
+            color: var(--p);
+            font-weight: 700
+        }
 
         .sinput {
             flex: 1;
@@ -306,7 +387,9 @@
             min-width: 0
         }
 
-        .sbox.sticky-sb .sinput { font-size: 13px }
+        .sbox.sticky-sb .sinput {
+            font-size: 13px
+        }
 
         .sbtn {
             background: var(--p);
@@ -325,8 +408,14 @@
             gap: 6px
         }
 
-        .sbox.sticky-sb .sbtn { padding: 0 20px; font-size: 13px }
-        .sbtn:hover { background: var(--pd) }
+        .sbox.sticky-sb .sbtn {
+            padding: 0 20px;
+            font-size: 13px
+        }
+
+        .sbtn:hover {
+            background: var(--pd)
+        }
 
         /* CATEGORY TABS */
         .cat-tabs {
@@ -349,9 +438,14 @@
             scrollbar-width: none
         }
 
-        .cat-tabs-inner::-webkit-scrollbar { display: none }
+        .cat-tabs-inner::-webkit-scrollbar {
+            display: none
+        }
 
-        .ct-dd-wrap { position: relative; flex-shrink: 0 }
+        .ct-dd-wrap {
+            position: relative;
+            flex-shrink: 0
+        }
 
         .ct-dd-btn {
             display: flex;
@@ -371,19 +465,38 @@
             transition: color .15s
         }
 
-        .ct-dd-btn:hover,.ct-dd-btn.open { color: var(--p) }
-        .ct-dd-btn.open .ct-arr { transform: rotate(180deg) }
-        .ct-arr { transition: transform .2s; display: inline-block }
+        .ct-dd-btn:hover,
+        .ct-dd-btn.open {
+            color: var(--p)
+        }
 
-        .mm-wrap { position: absolute; top: calc(100% + 2px); left: 0; z-index: 1000; display: none }
-        .mm-wrap.open { display: flex }
+        .ct-dd-btn.open .ct-arr {
+            transform: rotate(180deg)
+        }
+
+        .ct-arr {
+            transition: transform .2s;
+            display: inline-block
+        }
+
+        .mm-wrap {
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0;
+            z-index: 1000;
+            display: none
+        }
+
+        .mm-wrap.open {
+            display: flex
+        }
 
         .mm-box {
             width: min(960px, 94vw);
             background: #fff;
             border: 1px solid var(--line);
             border-radius: 14px;
-            box-shadow: 0 20px 60px rgba(0,0,0,.13);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .13);
             overflow: hidden;
             display: flex
         }
@@ -410,17 +523,30 @@
             user-select: none
         }
 
-        .ml1:hover,.ml1.active {
+        .ml1:hover,
+        .ml1.active {
             background: #fff;
             color: var(--p);
             border-left-color: var(--p);
             font-weight: 700
         }
 
-        .mm-right { flex: 1; padding: 22px 28px; overflow-y: auto; max-height: 480px }
+        .mm-right {
+            flex: 1;
+            padding: 22px 28px;
+            overflow-y: auto;
+            max-height: 480px
+        }
 
-        .mp { display: none; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 20px 28px }
-        .mp.active { display: grid }
+        .mp {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px 28px
+        }
+
+        .mp.active {
+            display: grid
+        }
 
         .mp h3 {
             font-size: 11px;
@@ -433,7 +559,9 @@
             letter-spacing: .5px
         }
 
-        .mp ul { list-style: none }
+        .mp ul {
+            list-style: none
+        }
 
         .mp li {
             font-size: 12.5px;
@@ -443,8 +571,14 @@
             transition: color .12s
         }
 
-        .mp li:hover { color: var(--p) }
-        .mp li a { color: inherit; display: block }
+        .mp li:hover {
+            color: var(--p)
+        }
+
+        .mp li a {
+            color: inherit;
+            display: block
+        }
 
         .ct-link {
             display: flex;
@@ -463,11 +597,26 @@
             text-decoration: none
         }
 
-        .ct-link:hover { color: var(--p); border-bottom-color: var(--p) }
-        .ct-link.hot { color: var(--ac) }
-        .ct-link.hot:hover { border-bottom-color: var(--ac) }
+        .ct-link:hover {
+            color: var(--p);
+            border-bottom-color: var(--p)
+        }
 
-        .ct-sep { width: 1px; height: 18px; background: var(--line); flex-shrink: 0; margin: 0 3px }
+        .ct-link.hot {
+            color: var(--ac)
+        }
+
+        .ct-link.hot:hover {
+            border-bottom-color: var(--ac)
+        }
+
+        .ct-sep {
+            width: 1px;
+            height: 18px;
+            background: var(--line);
+            flex-shrink: 0;
+            margin: 0 3px
+        }
 
         /* ══════════════════════════════════
            MANAGE PAGE LAYOUT
@@ -486,31 +635,71 @@
             border-radius: 14px;
             padding: 18px 28px;
             margin-bottom: 24px;
-            box-shadow: 0 2px 10px rgba(0,0,0,.06);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
             gap: 0
         }
 
-        .step { display: flex; align-items: center; gap: 10px; flex: 1 }
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1
+        }
 
         .step-num {
-            width: 32px; height: 32px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 13px;
             flex-shrink: 0;
             transition: all .3s
         }
 
-        .step-num.done { background: var(--p); color: #fff }
-        .step-num.active { background: var(--ac); color: #fff; box-shadow: 0 0 0 4px rgba(249,115,22,.2) }
-        .step-num.pending { background: #f3f4f6; color: #aaa }
+        .step-num.done {
+            background: var(--p);
+            color: #fff
+        }
 
-        .step-label { font-size: 12.5px; font-weight: 600; color: #888 }
-        .step-label.active { color: var(--ac) }
-        .step-label.done { color: var(--p) }
+        .step-num.active {
+            background: var(--ac);
+            color: #fff;
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, .2)
+        }
 
-        .step-line { flex: 1; height: 2px; background: #f0f0f0; margin: 0 8px; max-width: 60px }
-        .step-line.done { background: var(--p) }
+        .step-num.pending {
+            background: #f3f4f6;
+            color: #aaa
+        }
+
+        .step-label {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #888
+        }
+
+        .step-label.active {
+            color: var(--ac)
+        }
+
+        .step-label.done {
+            color: var(--p)
+        }
+
+        .step-line {
+            flex: 1;
+            height: 2px;
+            background: #f0f0f0;
+            margin: 0 8px;
+            max-width: 60px
+        }
+
+        .step-line.done {
+            background: var(--p)
+        }
 
         /* Main grid */
         .form-grid {
@@ -524,7 +713,7 @@
         .card {
             background: #fff;
             border-radius: var(--radius);
-            box-shadow: 0 2px 12px rgba(0,0,0,.07);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .07);
             overflow: hidden;
             margin-bottom: 16px
         }
@@ -538,25 +727,62 @@
         }
 
         .card-head-icon {
-            width: 34px; height: 34px;
+            width: 34px;
+            height: 34px;
             border-radius: 9px;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-shrink: 0
         }
 
-        .card-head-icon.green { background: var(--pl) }
-        .card-head-icon.orange { background: #fff3e0 }
-        .card-head-icon.blue { background: #e3f2fd }
-        .card-head-icon.purple { background: #f3e5f5 }
+        .card-head-icon.green {
+            background: var(--pl)
+        }
 
-        .card-title { font-size: 14px; font-weight: 800; color: #222 }
-        .card-subtitle { font-size: 12px; color: #aaa; margin-top: 1px }
-        .card-body { padding: 20px }
-        .card-req { margin-left: auto; font-size: 11px; color: #aaa; font-weight: 500 }
+        .card-head-icon.orange {
+            background: #fff3e0
+        }
+
+        .card-head-icon.blue {
+            background: #e3f2fd
+        }
+
+        .card-head-icon.purple {
+            background: #f3e5f5
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #222
+        }
+
+        .card-subtitle {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 1px
+        }
+
+        .card-body {
+            padding: 20px
+        }
+
+        .card-req {
+            margin-left: auto;
+            font-size: 11px;
+            color: #aaa;
+            font-weight: 500
+        }
 
         /* Form elements */
-        .field { margin-bottom: 16px }
-        .field:last-child { margin-bottom: 0 }
+        .field {
+            margin-bottom: 16px
+        }
+
+        .field:last-child {
+            margin-bottom: 0
+        }
 
         .field-label {
             display: flex;
@@ -568,10 +794,21 @@
             margin-bottom: 7px
         }
 
-        .field-label .req { color: var(--err); font-size: 13px }
-        .field-label .hint { font-size: 11px; color: #aaa; font-weight: 400; margin-left: 4px }
+        .field-label .req {
+            color: var(--err);
+            font-size: 13px
+        }
 
-        .finput,.fselect,.ftextarea {
+        .field-label .hint {
+            font-size: 11px;
+            color: #aaa;
+            font-weight: 400;
+            margin-left: 4px
+        }
+
+        .finput,
+        .fselect,
+        .ftextarea {
             width: 100%;
             border: 1.5px solid #e5e7eb;
             border-radius: 9px;
@@ -584,13 +821,23 @@
             transition: border-color .18s, box-shadow .18s
         }
 
-        .finput:focus,.fselect:focus,.ftextarea:focus {
+        .finput:focus,
+        .fselect:focus,
+        .ftextarea:focus {
             border-color: var(--p);
-            box-shadow: 0 0 0 3px rgba(0,136,72,.12)
+            box-shadow: 0 0 0 3px rgba(0, 136, 72, .12)
         }
 
-        .finput.error,.fselect.error,.ftextarea.error { border-color: var(--err) }
-        .finput::placeholder,.ftextarea::placeholder { color: #bbb }
+        .finput.error,
+        .fselect.error,
+        .ftextarea.error {
+            border-color: var(--err)
+        }
+
+        .finput::placeholder,
+        .ftextarea::placeholder {
+            color: #bbb
+        }
 
         .fselect {
             appearance: none;
@@ -601,27 +848,48 @@
             cursor: pointer
         }
 
-        .ftextarea { resize: vertical; min-height: 110px; line-height: 1.7 }
+        .ftextarea {
+            resize: vertical;
+            min-height: 110px;
+            line-height: 1.7
+        }
 
-        .field-counter { font-size: 11px; color: #bbb; text-align: right; margin-top: 4px }
-        .field-counter.warn { color: var(--warn) }
-        .field-counter.limit { color: var(--err) }
+        .field-counter {
+            font-size: 11px;
+            color: #bbb;
+            text-align: right;
+            margin-top: 4px
+        }
 
-        .finput-wrap { position: relative }
+        .field-counter.warn {
+            color: var(--warn)
+        }
+
+        .field-counter.limit {
+            color: var(--err)
+        }
+
+        .finput-wrap {
+            position: relative
+        }
 
         .finput-icon {
             position: absolute;
-            left: 11px; top: 50%;
+            left: 11px;
+            top: 50%;
             transform: translateY(-50%);
             color: #bbb;
             pointer-events: none
         }
 
-        .finput-wrap .finput { padding-left: 37px }
+        .finput-wrap .finput {
+            padding-left: 37px
+        }
 
         .finput-suffix {
             position: absolute;
-            right: 12px; top: 50%;
+            right: 12px;
+            top: 50%;
             transform: translateY(-50%);
             font-size: 12px;
             font-weight: 600;
@@ -629,10 +897,21 @@
             pointer-events: none
         }
 
-        .finput-wrap .finput.has-suffix { padding-right: 50px }
+        .finput-wrap .finput.has-suffix {
+            padding-right: 50px
+        }
 
-        .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px }
-        .field-row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px }
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px
+        }
+
+        .field-row3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 14px
+        }
 
         /* Category picker */
         .cat-picker {
@@ -643,7 +922,10 @@
             transition: border-color .18s
         }
 
-        .cat-picker:hover,.cat-picker.selected { border-color: var(--p) }
+        .cat-picker:hover,
+        .cat-picker.selected {
+            border-color: var(--p)
+        }
 
         .cat-display {
             padding: 10px 13px;
@@ -654,22 +936,41 @@
             color: #bbb
         }
 
-        .cat-display.filled { color: #222 }
-        .cat-crumbs { display: flex; align-items: center; gap: 5px; font-size: 12.5px; flex-wrap: wrap }
-        .cat-crumb { color: var(--p); font-weight: 600 }
-        .cat-sep { color: #ccc; font-size: 12px }
+        .cat-display.filled {
+            color: #222
+        }
+
+        .cat-crumbs {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12.5px;
+            flex-wrap: wrap
+        }
+
+        .cat-crumb {
+            color: var(--p);
+            font-weight: 600
+        }
+
+        .cat-sep {
+            color: #ccc;
+            font-size: 12px
+        }
 
         .cat-modal-bg {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,.5);
+            background: rgba(0, 0, 0, .5);
             z-index: 900;
             align-items: center;
             justify-content: center
         }
 
-        .cat-modal-bg.open { display: flex }
+        .cat-modal-bg.open {
+            display: flex
+        }
 
         .cat-modal {
             background: #fff;
@@ -679,7 +980,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 24px 60px rgba(0,0,0,.2)
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .2)
         }
 
         .cat-modal-head {
@@ -690,15 +991,29 @@
             justify-content: space-between
         }
 
-        .cat-modal-head h3 { font-size: 15px; font-weight: 800 }
-
-        .cat-modal-close {
-            background: none; border: none; cursor: pointer;
-            padding: 6px; border-radius: 8px; display: flex
+        .cat-modal-head h3 {
+            font-size: 15px;
+            font-weight: 800
         }
 
-        .cat-modal-close:hover { background: #f3f4f6 }
-        .cat-modal-body { display: flex; flex: 1; overflow: hidden }
+        .cat-modal-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 8px;
+            display: flex
+        }
+
+        .cat-modal-close:hover {
+            background: #f3f4f6
+        }
+
+        .cat-modal-body {
+            display: flex;
+            flex: 1;
+            overflow: hidden
+        }
 
         .cat-l1 {
             width: 180px;
@@ -721,9 +1036,12 @@
             transition: all .12s
         }
 
-        .cat-l1-item:hover,.cat-l1-item.active {
-            background: #fff; color: var(--p);
-            border-left-color: var(--p); font-weight: 600
+        .cat-l1-item:hover,
+        .cat-l1-item.active {
+            background: #fff;
+            color: var(--p);
+            border-left-color: var(--p);
+            font-weight: 600
         }
 
         .cat-l2 {
@@ -745,16 +1063,22 @@
             border-left: 3px solid transparent
         }
 
-        .cat-l2-item:hover,.cat-l2-item.active {
-            background: #f9fafb; color: var(--p);
+        .cat-l2-item:hover,
+        .cat-l2-item.active {
+            background: #f9fafb;
+            color: var(--p);
             border-left-color: var(--p)
         }
 
-        .cat-l3 { flex: 1; overflow-y: auto; padding: 12px }
+        .cat-l3 {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px
+        }
 
         .cat-l3-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 8px
         }
 
@@ -770,7 +1094,11 @@
             color: #555
         }
 
-        .cat-l3-item:hover { border-color: var(--p); color: var(--p); background: var(--pl) }
+        .cat-l3-item:hover {
+            border-color: var(--p);
+            color: var(--p);
+            background: var(--pl)
+        }
 
         .cat-l3-item.selected {
             border-color: var(--p);
@@ -790,13 +1118,28 @@
             background: #fafafa
         }
 
-        .img-upload-area:hover,.img-upload-area.drag { border-color: var(--p); background: var(--pl) }
-        .img-upload-area p { font-size: 13px; color: #888; margin-top: 8px }
-        .img-upload-area span { font-size: 12px; color: #bbb; margin-top: 4px; display: block }
+        .img-upload-area:hover,
+        .img-upload-area.drag {
+            border-color: var(--p);
+            background: var(--pl)
+        }
+
+        .img-upload-area p {
+            font-size: 13px;
+            color: #888;
+            margin-top: 8px
+        }
+
+        .img-upload-area span {
+            font-size: 12px;
+            color: #bbb;
+            margin-top: 4px;
+            display: block
+        }
 
         .img-grid {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
             margin-top: 14px
         }
@@ -810,24 +1153,34 @@
             background: #f9fafb
         }
 
-        .img-item img { width: 100%; height: 100%; object-fit: cover }
+        .img-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
 
         .img-del {
             position: absolute;
-            top: 5px; right: 5px;
-            background: rgba(0,0,0,.55);
+            top: 5px;
+            right: 5px;
+            background: rgba(0, 0, 0, .55);
             border: none;
             border-radius: 6px;
             cursor: pointer;
             padding: 3px;
-            display: flex; align-items: center
+            display: flex;
+            align-items: center
         }
 
-        .img-del .ms { color: #fff; font-size: 16px }
+        .img-del .ms {
+            color: #fff;
+            font-size: 16px
+        }
 
         .img-main-badge {
             position: absolute;
-            bottom: 5px; left: 5px;
+            bottom: 5px;
+            left: 5px;
             background: var(--p);
             color: #fff;
             font-size: 10px;
@@ -840,16 +1193,25 @@
             aspect-ratio: 1/1;
             border-radius: 10px;
             border: 2px dashed #d1d5db;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             background: #fafafa;
             transition: all .2s
         }
 
-        .img-add:hover { border-color: var(--p); background: var(--pl) }
+        .img-add:hover {
+            border-color: var(--p);
+            background: var(--pl)
+        }
 
         /* Size selector */
-        .size-grid { display: flex; flex-wrap: wrap; gap: 8px }
+        .size-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px
+        }
 
         .size-btn {
             padding: 6px 16px;
@@ -864,16 +1226,35 @@
             color: #555
         }
 
-        .size-btn:hover { border-color: var(--p); color: var(--p) }
-        .size-btn.active { border-color: var(--p); background: var(--p); color: #fff }
+        .size-btn:hover {
+            border-color: var(--p);
+            color: var(--p)
+        }
+
+        .size-btn.active {
+            border-color: var(--p);
+            background: var(--p);
+            color: #fff
+        }
 
         /* Color selector */
-        .color-grid { display: flex; flex-wrap: wrap; gap: 8px }
+        .color-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px
+        }
 
-        .color-item { display: flex; flex-direction: column; align-items: center; gap: 5px; cursor: pointer }
+        .color-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer
+        }
 
         .color-dot {
-            width: 28px; height: 28px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             border: 2px solid transparent;
             transition: all .15s;
@@ -888,10 +1269,17 @@
             border-radius: 50%
         }
 
-        .color-label { font-size: 10.5px; color: #888 }
+        .color-label {
+            font-size: 10.5px;
+            color: #888
+        }
 
         /* Price */
-        .price-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px }
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px
+        }
 
         .price-type-tabs {
             display: flex;
@@ -915,7 +1303,11 @@
             transition: all .15s
         }
 
-        .pt-btn.active { background: #fff; color: var(--p); box-shadow: 0 1px 4px rgba(0,0,0,.1) }
+        .pt-btn.active {
+            background: #fff;
+            color: var(--p);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .1)
+        }
 
         /* Tag input */
         .tag-wrap {
@@ -929,7 +1321,10 @@
             transition: border-color .18s
         }
 
-        .tag-wrap:focus-within { border-color: var(--p); box-shadow: 0 0 0 3px rgba(0,136,72,.12) }
+        .tag-wrap:focus-within {
+            border-color: var(--p);
+            box-shadow: 0 0 0 3px rgba(0, 136, 72, .12)
+        }
 
         .tag-item {
             display: flex;
@@ -943,17 +1338,32 @@
             font-weight: 600
         }
 
-        .tag-item button { background: none; border: none; cursor: pointer; color: var(--pd); padding: 0; display: flex; line-height: 1 }
+        .tag-item button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--pd);
+            padding: 0;
+            display: flex;
+            line-height: 1
+        }
 
         .tag-input {
-            border: none; outline: none;
-            font-size: 13px; font-family: inherit;
+            border: none;
+            outline: none;
+            font-size: 13px;
+            font-family: inherit;
             background: transparent;
-            min-width: 120px; flex: 1
+            min-width: 120px;
+            flex: 1
         }
 
         /* Delivery */
-        .delivery-opts { display: flex; flex-direction: column; gap: 9px }
+        .delivery-opts {
+            display: flex;
+            flex-direction: column;
+            gap: 9px
+        }
 
         .del-opt {
             display: flex;
@@ -966,28 +1376,69 @@
             transition: all .15s
         }
 
-        .del-opt.active { border-color: var(--p); background: var(--pl) }
-        .del-opt-left { display: flex; align-items: center; gap: 10px }
+        .del-opt.active {
+            border-color: var(--p);
+            background: var(--pl)
+        }
 
-        .del-icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center }
+        .del-opt-left {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
 
-        .del-name { font-size: 13px; font-weight: 700; color: #222 }
-        .del-desc { font-size: 11.5px; color: #888; margin-top: 1px }
+        .del-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .del-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #222
+        }
+
+        .del-desc {
+            font-size: 11.5px;
+            color: #888;
+            margin-top: 1px
+        }
 
         .del-check {
-            width: 20px; height: 20px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             border: 2px solid #ddd;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-shrink: 0;
             transition: all .15s
         }
 
-        .del-opt.active .del-check { border-color: var(--p); background: var(--p) }
+        .del-opt.active .del-check {
+            border-color: var(--p);
+            background: var(--p)
+        }
 
         /* Toggle */
-        .toggle { position: relative; display: inline-block; width: 44px; height: 24px; flex-shrink: 0 }
-        .toggle input { opacity: 0; width: 0; height: 0 }
+        .toggle {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+            flex-shrink: 0
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0
+        }
 
         .toggle-slider {
             position: absolute;
@@ -1001,16 +1452,23 @@
         .toggle-slider::before {
             content: '';
             position: absolute;
-            width: 18px; height: 18px;
-            left: 3px; bottom: 3px;
+            width: 18px;
+            height: 18px;
+            left: 3px;
+            bottom: 3px;
             background: #fff;
             border-radius: 50%;
             transition: .3s;
-            box-shadow: 0 1px 3px rgba(0,0,0,.2)
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .2)
         }
 
-        .toggle input:checked+.toggle-slider { background: var(--p) }
-        .toggle input:checked+.toggle-slider::before { transform: translateX(20px) }
+        .toggle input:checked+.toggle-slider {
+            background: var(--p)
+        }
+
+        .toggle input:checked+.toggle-slider::before {
+            transform: translateX(20px)
+        }
 
         .toggle-row {
             display: flex;
@@ -1020,15 +1478,27 @@
             border-bottom: 1px solid #f5f5f5
         }
 
-        .toggle-row:last-child { border-bottom: none }
-        .toggle-row-label { font-size: 13px; font-weight: 600; color: #333 }
-        .toggle-row-desc { font-size: 11.5px; color: #aaa; margin-top: 2px }
+        .toggle-row:last-child {
+            border-bottom: none
+        }
+
+        .toggle-row-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333
+        }
+
+        .toggle-row-desc {
+            font-size: 11.5px;
+            color: #aaa;
+            margin-top: 2px
+        }
 
         /* Sidebar */
         .sidebar-card {
             background: #fff;
             border-radius: var(--radius);
-            box-shadow: 0 2px 12px rgba(0,0,0,.07);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .07);
             padding: 18px;
             margin-bottom: 16px
         }
@@ -1046,12 +1516,29 @@
         }
 
         /* Score ring */
-        .score-ring { display: flex; flex-direction: column; align-items: center; margin-bottom: 14px }
+        .score-ring {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 14px
+        }
 
-        .ring-wrap { position: relative; width: 88px; height: 88px; margin-bottom: 6px }
-        .ring-wrap svg { transform: rotate(-90deg) }
+        .ring-wrap {
+            position: relative;
+            width: 88px;
+            height: 88px;
+            margin-bottom: 6px
+        }
 
-        .ring-bg { fill: none; stroke: #f0f0f0; stroke-width: 8 }
+        .ring-wrap svg {
+            transform: rotate(-90deg)
+        }
+
+        .ring-bg {
+            fill: none;
+            stroke: #f0f0f0;
+            stroke-width: 8
+        }
 
         .ring-fill {
             fill: none;
@@ -1074,15 +1561,44 @@
             color: var(--p)
         }
 
-        .score-label { font-size: 12px; color: #888; font-weight: 600 }
-        .score-items { display: flex; flex-direction: column; gap: 7px }
+        .score-label {
+            font-size: 12px;
+            color: #888;
+            font-weight: 600
+        }
 
-        .si { display: flex; align-items: center; gap: 8px; font-size: 12.5px }
-        .si .ms { font-size: 16px }
-        .si.done { color: var(--p) }
-        .si.done .ms { color: var(--p) }
-        .si.pend { color: #bbb }
-        .si.pend .ms { color: #ddd }
+        .score-items {
+            display: flex;
+            flex-direction: column;
+            gap: 7px
+        }
+
+        .si {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12.5px
+        }
+
+        .si .ms {
+            font-size: 16px
+        }
+
+        .si.done {
+            color: var(--p)
+        }
+
+        .si.done .ms {
+            color: var(--p)
+        }
+
+        .si.pend {
+            color: #bbb
+        }
+
+        .si.pend .ms {
+            color: #ddd
+        }
 
         /* Tips */
         .tip {
@@ -1098,8 +1614,16 @@
             margin-bottom: 8px
         }
 
-        .tip .ms { color: var(--warn); font-size: 16px; flex-shrink: 0; margin-top: 1px }
-        .tip:last-child { margin-bottom: 0 }
+        .tip .ms {
+            color: var(--warn);
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 1px
+        }
+
+        .tip:last-child {
+            margin-bottom: 0
+        }
 
         /* Preview card */
         .prev-card {
@@ -1110,7 +1634,9 @@
             transition: box-shadow .18s
         }
 
-        .prev-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1) }
+        .prev-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .1)
+        }
 
         .prev-img {
             aspect-ratio: 1/1;
@@ -1121,9 +1647,15 @@
             overflow: hidden
         }
 
-        .prev-img img { width: 100%; height: 100%; object-fit: cover }
+        .prev-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
 
-        .prev-info { padding: 10px 12px }
+        .prev-info {
+            padding: 10px 12px
+        }
 
         .prev-title {
             font-size: 12.5px;
@@ -1137,11 +1669,24 @@
             overflow: hidden
         }
 
-        .prev-price { font-size: 15px; font-weight: 900; color: var(--err) }
-        .prev-shop { font-size: 11px; color: #aaa; margin-top: 3px }
+        .prev-price {
+            font-size: 15px;
+            font-weight: 900;
+            color: var(--err)
+        }
+
+        .prev-shop {
+            font-size: 11px;
+            color: #aaa;
+            margin-top: 3px
+        }
 
         /* Submit */
-        .submit-area { display: flex; gap: 12px; padding: 20px 0 }
+        .submit-area {
+            display: flex;
+            gap: 12px;
+            padding: 20px 0
+        }
 
         .btn-draft {
             flex: 1;
@@ -1157,7 +1702,11 @@
             transition: all .15s
         }
 
-        .btn-draft:hover { border-color: var(--p); color: var(--p); background: var(--pl) }
+        .btn-draft:hover {
+            border-color: var(--p);
+            color: var(--p);
+            background: var(--pl)
+        }
 
         .btn-publish {
             flex: 2;
@@ -1174,14 +1723,20 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            box-shadow: 0 3px 12px rgba(0,136,72,.3);
+            box-shadow: 0 3px 12px rgba(0, 136, 72, .3);
             transition: background .15s
         }
 
-        .btn-publish:hover { background: var(--pd) }
+        .btn-publish:hover {
+            background: var(--pd)
+        }
 
         /* Package selector */
-        .pkg-grid { display: flex; flex-direction: column; gap: 8px }
+        .pkg-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
 
         .pkg {
             border: 1.5px solid #e5e7eb;
@@ -1194,21 +1749,76 @@
             gap: 12px
         }
 
-        .pkg:hover { border-color: var(--p) }
-        .pkg.active { border-color: var(--p); background: var(--pl) }
+        .pkg:hover {
+            border-color: var(--p)
+        }
 
-        .pkg-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0 }
-        .pkg-name { font-size: 13px; font-weight: 700; color: #222 }
-        .pkg-desc { font-size: 11.5px; color: #888; margin-top: 2px }
-        .pkg-price { margin-left: auto; font-size: 13px; font-weight: 800; color: var(--p); white-space: nowrap }
-        .pkg-badge { font-size: 10px; background: var(--ac); color: #fff; padding: 2px 7px; border-radius: 4px; font-weight: 700 }
+        .pkg.active {
+            border-color: var(--p);
+            background: var(--pl)
+        }
+
+        .pkg-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0
+        }
+
+        .pkg-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #222
+        }
+
+        .pkg-desc {
+            font-size: 11.5px;
+            color: #888;
+            margin-top: 2px
+        }
+
+        .pkg-price {
+            margin-left: auto;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--p);
+            white-space: nowrap
+        }
+
+        .pkg-badge {
+            font-size: 10px;
+            background: var(--ac);
+            color: #fff;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-weight: 700
+        }
 
         /* Progress bar */
-        .prog-wrap { height: 5px; background: #f0f0f0; border-radius: 3px; margin-top: 10px; overflow: hidden }
-        .prog-fill { height: 100%; background: var(--p); border-radius: 3px; transition: width .6s ease }
+        .prog-wrap {
+            height: 5px;
+            background: #f0f0f0;
+            border-radius: 3px;
+            margin-top: 10px;
+            overflow: hidden
+        }
+
+        .prog-fill {
+            height: 100%;
+            background: var(--p);
+            border-radius: 3px;
+            transition: width .6s ease
+        }
 
         /* Section divider */
-        .sdiv { height: 1px; background: #f5f5f5; margin: 16px 0 }
+        .sdiv {
+            height: 1px;
+            background: #f5f5f5;
+            margin: 16px 0
+        }
 
         /* Toast */
         .toast {
@@ -1226,18 +1836,28 @@
             align-items: center;
             gap: 8px;
             z-index: 999;
-            box-shadow: 0 8px 24px rgba(0,0,0,.25);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
             opacity: 0;
             pointer-events: none;
             transition: opacity .3s
         }
 
-        .toast.show { opacity: 1 }
-        .toast.green { background: var(--p) }
-        .toast.red { background: var(--err) }
+        .toast.show {
+            opacity: 1
+        }
+
+        .toast.green {
+            background: var(--p)
+        }
+
+        .toast.red {
+            background: var(--err)
+        }
 
         /* FOOTER */
-        footer { background: var(--ink) }
+        footer {
+            background: var(--ink)
+        }
 
         .fi {
             max-width: 1320px;
@@ -1257,7 +1877,10 @@
             margin-bottom: 12px
         }
 
-        .fi-logo em { color: var(--ac); font-style: normal }
+        .fi-logo em {
+            color: var(--ac);
+            font-style: normal
+        }
 
         .fi h4 {
             font-size: 11px;
@@ -1268,9 +1891,21 @@
             margin-bottom: 14px
         }
 
-        .fi a,.fi li { font-size: 12.5px; color: #888; line-height: 2.4; transition: color .15s }
-        .fi a:hover { color: #fff }
-        .fi ul { list-style: none }
+        .fi a,
+        .fi li {
+            font-size: 12.5px;
+            color: #888;
+            line-height: 2.4;
+            transition: color .15s
+        }
+
+        .fi a:hover {
+            color: #fff
+        }
+
+        .fi ul {
+            list-style: none
+        }
 
         .fb2 {
             max-width: 1320px;
@@ -1284,35 +1919,90 @@
             color: #555
         }
 
-        .fb2 a { color: #666; text-decoration: underline }
-        .fb2 a:hover { color: #fff }
+        .fb2 a {
+            color: #666;
+            text-decoration: underline
+        }
+
+        .fb2 a:hover {
+            color: #fff
+        }
 
         /* RESPONSIVE */
         @media(max-width:900px) {
-            .form-grid { grid-template-columns: 1fr }
-            .field-row3 { grid-template-columns: 1fr 1fr }
-            .price-grid { grid-template-columns: 1fr 1fr }
+            .form-grid {
+                grid-template-columns: 1fr
+            }
+
+            .field-row3 {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .price-grid {
+                grid-template-columns: 1fr 1fr
+            }
         }
 
         @media(max-width:768px) {
-            .hdr-nav { display: none }
-            .logo-tagline { display: none }
-            .hdr-top-inner { padding: 0 12px; gap: 8px }
-            .blogin { display: none !important }
-            .fi { grid-template-columns: 1fr 1fr; gap: 20px }
-            .fb2 { flex-direction: column; gap: 6px; text-align: center }
+            .hdr-nav {
+                display: none
+            }
+
+            .logo-tagline {
+                display: none
+            }
+
+            .hdr-top-inner {
+                padding: 0 12px;
+                gap: 8px
+            }
+
+            .blogin {
+                display: none !important
+            }
+
+            .fi {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px
+            }
+
+            .fb2 {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center
+            }
         }
 
         @media(max-width:600px) {
-            .field-row,.field-row3,.price-grid { grid-template-columns: 1fr }
-            .steps { padding: 14px 12px; gap: 0 }
-            .step-label { display: none }
-            .step-line { max-width: 24px }
-            .img-grid { grid-template-columns: repeat(3,1fr) }
+
+            .field-row,
+            .field-row3,
+            .price-grid {
+                grid-template-columns: 1fr
+            }
+
+            .steps {
+                padding: 14px 12px;
+                gap: 0
+            }
+
+            .step-label {
+                display: none
+            }
+
+            .step-line {
+                max-width: 24px
+            }
+
+            .img-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
         }
 
         @media(max-width:480px) {
-            .fi { grid-template-columns: 1fr }
+            .fi {
+                grid-template-columns: 1fr
+            }
         }
     </style>
 </head>
@@ -1330,16 +2020,17 @@
             <nav class="hdr-nav">
                 <a href="/home2.html" class="hdr-nav-link">Chof.vn</a>
                 <div class="hdr-nav-sep"></div>
-                <a href="/listing.html?cat=vieclam" class="hdr-nav-link">Việc làm</a>
-                <a href="/listing.html?cat=dichvu" class="hdr-nav-link">Dịch vụ</a>
-                <a href="/listing.html?cat=thuonghieu" class="hdr-nav-link">Thương hiệu</a>
+                <a href="/listing2.html?cat=vieclam" class="hdr-nav-link">Việc làm</a>
+                <a href="/listing2.html?cat=dichvu" class="hdr-nav-link">Dịch vụ</a>
+                <a href="/listing2.html?cat=thuonghieu" class="hdr-nav-link">Thương hiệu</a>
             </nav>
 
             <div class="hdr-space"></div>
 
             <div class="ha">
                 <button class="ibtn" title="Yêu thích"><span class="ms">favorite</span></button>
-                <button class="ibtn" title="Thông báo"><span class="ms">notifications</span><span class="ndot"></span></button>
+                <button class="ibtn" title="Thông báo"><span class="ms">notifications</span><span
+                        class="ndot"></span></button>
                 <div class="hdiv"></div>
                 <button class="blogin">Đăng nhập</button>
                 <button onclick="location.href='/manage.html'" class="bpost" id="bpost">
@@ -1363,51 +2054,398 @@
                     <span>Danh mục</span>
                     <span class="ms ct-arr" style="font-size:14px">expand_more</span>
                 </button>
+                <!-- Reuse the same mega menu but positioned from sticky wrap -->
                 <div class="mm-wrap" id="mmWrapSticky">
                     <div class="mm-box">
                         <div class="mm-left" id="mmLeftSticky">
-                            <div class="ml1 active" data-cat="nam">Nam <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="nu">Nữ <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="treEm">Trẻ em <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="chuyenDe">Chuyên đề <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="vietBrand">TH Việt <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="foreigner">4 Foreigner <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="dichvu">Dịch vụ <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="viecLam">Việc làm <span class="ms" style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1 active" data-cat="nam">Nam <span class="ms"
+                                    style="font-size:13px">chevron_right</span>
+                            </div>
+                            <div class="ml1" data-cat="nu">Nữ <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="treEm">Trẻ em <span class="ms"
+                                    style="font-size:13px">chevron_right</span>
+                            </div>
+                            <div class="ml1" data-cat="chuyenDe">Chuyên đề <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="vietBrand">TH Việt <span class="ms"
+                                    style="font-size:13px">chevron_right</span>
+                            </div>
+                            <div class="ml1" data-cat="foreigner">4 Foreigner <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="dichvu">Dịch vụ <span class="ms"
+                                    style="font-size:13px">chevron_right</span>
+                            </div>
+                            <div class="ml1" data-cat="viecLam">Việc làm <span class="ms"
+                                    style="font-size:13px">chevron_right</span>
+                            </div>
                         </div>
                         <div class="mm-right" id="mmRightSticky">
+
+                            <!-- NAM -->
                             <div class="mp active" id="sp-nam">
-                                <div><h3>Áo</h3><ul><li><a href="/listing.html">Áo thun</a></li><li><a href="/listing.html">Áo sơ mi</a></li><li><a href="/listing.html">Áo khoác</a></li><li><a href="/listing.html">Áo vest</a></li></ul></div>
-                                <div><h3>Quần</h3><ul><li><a href="/listing.html">Quần ngắn</a></li><li><a href="/listing.html">Quần dài</a></li><li><a href="/listing.html">Quần lót</a></li></ul></div>
-                                <div><h3>Nón – Kính</h3><ul><li><a href="/listing.html">Nón</a></li><li><a href="/listing.html">Mắt kính</a></li></ul></div>
-                                <div><h3>Balo – Túi</h3><ul><li><a href="/listing.html">Ba lô</a></li><li><a href="/listing.html">Túi xách</a></li></ul></div>
-                                <div><h3>Đồng hồ – Bóp</h3><ul><li><a href="/listing.html">Đồng hồ</a></li><li><a href="/listing.html">Bóp ví</a></li></ul></div>
-                                <div><h3>Giày dép</h3><ul><li><a href="/listing.html">Giày thể thao</a></li><li><a href="/listing.html">Dép</a></li></ul></div>
-                                <div><h3>Mỹ phẩm</h3><ul><li><a href="/listing.html">Nước hoa</a></li><li><a href="/listing.html">Mỹ phẩm</a></li></ul></div>
-                                <div><h3>Phụ kiện</h3><ul><li><a href="/listing.html">Phụ kiện</a></li><li><a href="/listing.html">Khác</a></li></ul></div>
+                                <div>
+                                    <h3>Áo</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo thun</a></li>
+                                        <li><a href="/listing2.html">Áo sơ mi</a></li>
+                                        <li><a href="/listing2.html">Áo khoác</a></li>
+                                        <li><a href="/listing2.html">Áo vest</a></li>
+                                        <li><a href="/listing2.html">Áo khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Quần</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Quần ngắn</a></li>
+                                        <li><a href="/listing2.html">Quần dài</a></li>
+                                        <li><a href="/listing2.html">Quần lót</a></li>
+                                        <li><a href="/listing2.html">Quần khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nón – Mắt kính</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nón</a></li>
+                                        <li><a href="/listing2.html">Mắt kính</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Balo – Túi xách</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Ba lô</a></li>
+                                        <li><a href="/listing2.html">Túi xách</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Đồng hồ – Bóp ví</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Đồng hồ</a></li>
+                                        <li><a href="/listing2.html">Bóp ví</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Đồ lót – Giày dép</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Đồ lót</a></li>
+                                        <li><a href="/listing2.html">Giày dép</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nước hoa – Mỹ phẩm</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nước hoa</a></li>
+                                        <li><a href="/listing2.html">Mỹ phẩm</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Phụ kiện – Khác</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Phụ kiện</a></li>
+                                        <li><a href="/listing2.html">Khác</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="mp" id="sp-nu"><div><h3>Áo</h3><ul><li><a href="/listing.html">Áo thun</a></li><li><a href="/listing.html">Áo sơ mi</a></li><li><a href="/listing.html">Áo khoác</a></li><li><a href="/listing.html">Áo dài</a></li></ul></div><div><h3>Quần – Váy</h3><ul><li><a href="/listing.html">Quần</a></li><li><a href="/listing.html">Váy đầm</a></li></ul></div></div>
-                            <div class="mp" id="sp-treEm"><div><h3>Sơ sinh</h3><ul><li><a href="/listing.html">Dưới 1 tháng</a></li><li><a href="/listing.html">1–6 tháng</a></li></ul></div></div>
-                            <div class="mp" id="sp-chuyenDe"><div><h3>TT Gia dụng</h3><ul><li><a href="/listing.html">Mền/mùng</a></li></ul></div></div>
-                            <div class="mp" id="sp-vietBrand"><div><h3>TT Nam</h3><ul><li><a href="/listing.html">Áo nam</a></li></ul></div></div>
-                            <div class="mp" id="sp-foreigner"><div><h3>For Men</h3><ul><li><a href="/listing.html">Shirt/T-shirt</a></li></ul></div></div>
-                            <div class="mp" id="sp-dichvu"><div><h3>DV May mặc</h3><ul><li><a href="/listing.html">In thêu</a></li><li><a href="/listing.html">Giặt ủi</a></li></ul></div></div>
-                            <div class="mp" id="sp-viecLam"><div><h3>Thời vụ</h3><ul><li><a href="/listing.html">Việc tìm người</a></li><li><a href="/listing.html">Người tìm việc</a></li></ul></div></div>
+
+                            <!-- NỮ -->
+                            <div class="mp" id="sp-nu">
+                                <div>
+                                    <h3>Áo</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo thun</a></li>
+                                        <li><a href="/listing2.html">Áo sơ mi</a></li>
+                                        <li><a href="/listing2.html">Áo khoác</a></li>
+                                        <li><a href="/listing2.html">Áo dài</a></li>
+                                        <li><a href="/listing2.html">Áo khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Quần – Váy đầm</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Quần</a></li>
+                                        <li><a href="/listing2.html">Váy đầm</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nón – Mắt kính</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nón</a></li>
+                                        <li><a href="/listing2.html">Mắt kính</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Balo – Túi xách</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Ba lô</a></li>
+                                        <li><a href="/listing2.html">Túi xách</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Đồng hồ – Bóp ví</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Đồng hồ</a></li>
+                                        <li><a href="/listing2.html">Bóp ví</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Đồ lót – Giày dép</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Đồ lót</a></li>
+                                        <li><a href="/listing2.html">Giày dép</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nước hoa – Mỹ phẩm</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nước hoa</a></li>
+                                        <li><a href="/listing2.html">Mỹ phẩm</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Phụ kiện – Khác</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Phụ kiện</a></li>
+                                        <li><a href="/listing2.html">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- TRẺ EM -->
+                            <div class="mp" id="sp-treEm">
+                                <div>
+                                    <h3>Quần áo sơ sinh</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Dưới 1 tháng</a></li>
+                                        <li><a href="/listing2.html">1–6 tháng</a></li>
+                                        <li><a href="/listing2.html">6–12 tháng</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Quần áo bé trai</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Dưới 3 tuổi</a></li>
+                                        <li><a href="/listing2.html">3–6 tuổi</a></li>
+                                        <li><a href="/listing2.html">Trên 6 tuổi</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Quần áo bé gái</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Dưới 3 tuổi</a></li>
+                                        <li><a href="/listing2.html">3–6 tuổi</a></li>
+                                        <li><a href="/listing2.html">Trên 6 tuổi</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Phụ kiện – Khác</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Phụ kiện</a></li>
+                                        <li><a href="/listing2.html">Khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- CHUYÊN ĐỀ -->
+                            <div class="mp" id="sp-chuyenDe">
+                                <div>
+                                    <h3>TT Gia dụng</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Mền/mùng</a></li>
+                                        <li><a href="/listing2.html">Áo gối/ra giường</a></li>
+                                        <li><a href="/listing2.html">Rèm/khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Chuyên dụng</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Đồng phục/nghề nghiệp</a></li>
+                                        <li><a href="/listing2.html">Bà bầu/hội cưới</a></li>
+                                        <li><a href="/listing2.html">Thú cưng/sân khấu</a></li>
+                                        <li><a href="/listing2.html">Phụ kiện điện tử</a></li>
+                                        <li><a href="/listing2.html">Handmade/khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Xanh</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Thời trang nam</a></li>
+                                        <li><a href="/listing2.html">Thời trang nữ</a></li>
+                                        <li><a href="/listing2.html">Thời trang trẻ em</a></li>
+                                        <li><a href="/listing2.html">Đồ lót/phụ kiện/khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Thể thao</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Thời trang nam</a></li>
+                                        <li><a href="/listing2.html">Thời trang nữ</a></li>
+                                        <li><a href="/listing2.html">Thời trang trẻ em</a></li>
+                                        <li><a href="/listing2.html">Đồ lót/phụ kiện/khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Đồng giá</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">10k–50k</a></li>
+                                        <li><a href="/listing2.html">100k–200k</a></li>
+                                        <li><a href="/listing2.html">300k</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nguyên phụ liệu</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Vải/khoá kéo</a></li>
+                                        <li><a href="/listing2.html">Khuy nút/chỉ may</a></li>
+                                        <li><a href="/listing2.html">Tem nhãn/máy móc</a></li>
+                                        <li><a href="/listing2.html">Manocanh/khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- THƯƠNG HIỆU VIỆT -->
+                            <div class="mp" id="sp-vietBrand">
+                                <div>
+                                    <h3>TT Nam</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo nam</a></li>
+                                        <li><a href="/listing2.html">Quần nam</a></li>
+                                        <li><a href="/listing2.html">Đồ lót/phụ kiện/khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Nữ</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo nữ</a></li>
+                                        <li><a href="/listing2.html">Quần/đồ lót</a></li>
+                                        <li><a href="/listing2.html">Phụ kiện/khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Trẻ em</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Quần áo bé trai</a></li>
+                                        <li><a href="/listing2.html">Quần áo bé gái</a></li>
+                                        <li><a href="/listing2.html">Phụ kiện/khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TP Truyền thống</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Trang phục nam</a></li>
+                                        <li><a href="/listing2.html">Trang phục nữ</a></li>
+                                        <li><a href="/listing2.html">Trang phục trẻ em</a></li>
+                                        <li><a href="/listing2.html">Trang phục lót/phụ kiện/khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 4 FOREIGNER -->
+                            <div class="mp" id="sp-foreigner">
+                                <div>
+                                    <h3>For Men</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Shirt/T-shirt</a></li>
+                                        <li><a href="/listing2.html">Short/Pants</a></li>
+                                        <li><a href="/listing2.html">Jacket</a></li>
+                                        <li><a href="/listing2.html">Underwear</a></li>
+                                        <li><a href="/listing2.html">Accessories/Others</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>For Women</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Top/Dress</a></li>
+                                        <li><a href="/listing2.html">Skirt/Short</a></li>
+                                        <li><a href="/listing2.html">Underwear</a></li>
+                                        <li><a href="/listing2.html">Accessories/Others</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>For Kids</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">For Boy</a></li>
+                                        <li><a href="/listing2.html">For Girl</a></li>
+                                        <li><a href="/listing2.html">Accessories/Others</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Made to Order</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">For Men/Women</a></li>
+                                        <li><a href="/listing2.html">For Kids</a></li>
+                                        <li><a href="/listing2.html">Underwear</a></li>
+                                        <li><a href="/listing2.html">Accessories/Others</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- DỊCH VỤ -->
+                            <div class="mp" id="sp-dichvu">
+                                <div>
+                                    <h3>DV May mặc</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">In thêu</a></li>
+                                        <li><a href="/listing2.html">Giặt ủi</a></li>
+                                        <li><a href="/listing2.html">Sửa quần áo</a></li>
+                                        <li><a href="/listing2.html">Khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>DV Phụ trợ</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Người mẫu</a></li>
+                                        <li><a href="/listing2.html">Trang điểm</a></li>
+                                        <li><a href="/listing2.html">Chụp ảnh</a></li>
+                                        <li><a href="/listing2.html">Tatoo</a></li>
+                                        <li><a href="/listing2.html">Khoá học</a></li>
+                                        <li><a href="/listing2.html">Khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Theo yêu cầu</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">May đo</a></li>
+                                        <li><a href="/listing2.html">Gia công</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- VIỆC LÀM -->
+                            <div class="mp" id="sp-viecLam">
+                                <div>
+                                    <h3>Việc làm thời vụ</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Việc tìm người</a></li>
+                                        <li><a href="/listing2.html">Người tìm việc</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Việc làm chính thức</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Việc tìm người</a></li>
+                                        <li><a href="/listing2.html">Người tìm việc</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
             <div style="flex:1;position:relative;min-width:0">
                 <div class="sbox sticky-sb">
-                    <input class="sinput" id="sinputSticky" type="text" placeholder="Tìm kiếm thời trang, dịch vụ, việc làm..." autocomplete="off" />
-                    <button class="sbtn" onclick="location.href='/listing.html'"><span class="ms" style="font-size:16px">search</span></button>
+                    <input class="sinput" id="sinputSticky" type="text"
+                        placeholder="Tìm kiếm thời trang, dịch vụ, việc làm..." autocomplete="off" />
+                    <button class="sbtn" onclick="location.href='/listing2.html'"><span class="ms"
+                            style="font-size:16px">search</span></button>
                 </div>
             </div>
             <div class="ha" style="gap:6px">
                 <button class="ibtn"><span class="ms">notifications</span><span class="ndot"></span></button>
                 <div class="hdiv"></div>
                 <button class="blogin" style="display:block">Đăng nhập</button>
-                <button class="bpost" onclick="location.href='/manage.html'"><span class="ms" style="font-size:15px">add_box</span> Đăng tin</button>
+                <button class="bpost" onclick="location.href='/manage.html'"><span class="ms"
+                        style="font-size:15px">add_box</span> Đăng tin</button>
             </div>
         </div>
     </div>
@@ -1416,61 +2454,230 @@
     <div class="cat-tabs" id="catTabs">
         <div class="cat-tabs-inner">
             <div class="ct-dd-wrap" id="ctDdWrap">
-                <button class="ct-dd-btn" id="ctDdBtn">
-                    <span class="ms" style="font-size:17px">menu</span>
-                    Danh mục
-                    <span class="ms ct-arr" id="ctArr" style="font-size:14px">expand_more</span>
-                </button>
                 <div class="mm-wrap" id="mmWrap">
                     <div class="mm-box">
                         <div class="mm-left" id="mmLeft">
-                            <div class="ml1 active" data-cat="nam">Nam <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="nu">Nữ <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="treEm">Trẻ em <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="chuyenDe">Chuyên đề <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="vietBrand">Thương hiệu Việt <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="foreigner">4 Foreigner <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="dichvu">Dịch vụ <span class="ms" style="font-size:13px">chevron_right</span></div>
-                            <div class="ml1" data-cat="viecLam">Việc làm <span class="ms" style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1 active" data-cat="nam">Nam <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="nu">Nữ <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="treEm">Trẻ em <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="chuyenDe">Chuyên đề <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="vietBrand">Thương hiệu Việt <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="foreigner">4 Foreigner <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="dichvu">Dịch vụ <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
+                            <div class="ml1" data-cat="viecLam">Việc làm <span class="ms"
+                                    style="font-size:13px">chevron_right</span></div>
                         </div>
                         <div class="mm-right" id="mmRight">
                             <div class="mp active" id="p-nam">
-                                <div><h3>Áo</h3><ul><li><a href="/listing.html">Áo thun</a></li><li><a href="/listing.html">Áo sơ mi</a></li><li><a href="/listing.html">Áo khoác</a></li><li><a href="/listing.html">Áo vest</a></li><li><a href="/listing.html">Áo khác</a></li></ul></div>
-                                <div><h3>Quần</h3><ul><li><a href="/listing.html">Quần ngắn</a></li><li><a href="/listing.html">Quần dài</a></li><li><a href="/listing.html">Quần lót</a></li><li><a href="/listing.html">Quần khác</a></li></ul></div>
-                                <div><h3>Nón – Mắt kính</h3><ul><li><a href="/listing.html">Nón</a></li><li><a href="/listing.html">Mắt kính</a></li></ul></div>
-                                <div><h3>Balo – Túi xách</h3><ul><li><a href="/listing.html">Ba lô</a></li><li><a href="/listing.html">Túi xách</a></li></ul></div>
-                                <div><h3>Đồng hồ – Bóp ví</h3><ul><li><a href="/listing.html">Đồng hồ</a></li><li><a href="/listing.html">Bóp ví</a></li></ul></div>
-                                <div><h3>Đồ lót – Giày dép</h3><ul><li><a href="/listing.html">Đồ lót</a></li><li><a href="/listing.html">Giày dép</a></li></ul></div>
-                                <div><h3>Nước hoa – Mỹ phẩm</h3><ul><li><a href="/listing.html">Nước hoa</a></li><li><a href="/listing.html">Mỹ phẩm</a></li></ul></div>
-                                <div><h3>Phụ kiện – Khác</h3><ul><li><a href="/listing.html">Phụ kiện</a></li><li><a href="/listing.html">Khác</a></li></ul></div>
+                                <div>
+                                    <h3>Áo</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo thun</a></li>
+                                        <li><a href="/listing2.html">Áo sơ mi</a></li>
+                                        <li><a href="/listing2.html">Áo khoác</a></li>
+                                        <li><a href="/listing2.html">Áo vest</a></li>
+                                        <li><a href="/listing2.html">Áo khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Quần</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Quần ngắn</a></li>
+                                        <li><a href="/listing2.html">Quần dài</a></li>
+                                        <li><a href="/listing2.html">Quần lót</a></li>
+                                        <li><a href="/listing2.html">Quần khác</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nón – Mắt kính</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nón</a></li>
+                                        <li><a href="/listing2.html">Mắt kính</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Balo – Túi xách</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Ba lô</a></li>
+                                        <li><a href="/listing2.html">Túi xách</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Đồng hồ – Bóp ví</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Đồng hồ</a></li>
+                                        <li><a href="/listing2.html">Bóp ví</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Đồ lót – Giày dép</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Đồ lót</a></li>
+                                        <li><a href="/listing2.html">Giày dép</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Nước hoa – Mỹ phẩm</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Nước hoa</a></li>
+                                        <li><a href="/listing2.html">Mỹ phẩm</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Phụ kiện – Khác</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Phụ kiện</a></li>
+                                        <li><a href="/listing2.html">Khác</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="mp" id="p-nu"><div><h3>Áo</h3><ul><li><a href="/listing.html">Áo thun</a></li><li><a href="/listing.html">Áo sơ mi</a></li><li><a href="/listing.html">Áo khoác</a></li><li><a href="/listing.html">Áo dài</a></li></ul></div><div><h3>Quần – Váy đầm</h3><ul><li><a href="/listing.html">Quần</a></li><li><a href="/listing.html">Váy đầm</a></li></ul></div></div>
-                            <div class="mp" id="p-treEm"><div><h3>Sơ sinh</h3><ul><li><a href="/listing.html">Dưới 1 tháng</a></li><li><a href="/listing.html">1–6 tháng</a></li><li><a href="/listing.html">6–12 tháng</a></li></ul></div><div><h3>Bé trai</h3><ul><li><a href="/listing.html">Dưới 3 tuổi</a></li><li><a href="/listing.html">3–6 tuổi</a></li></ul></div><div><h3>Bé gái</h3><ul><li><a href="/listing.html">Dưới 3 tuổi</a></li><li><a href="/listing.html">3–6 tuổi</a></li></ul></div></div>
-                            <div class="mp" id="p-chuyenDe"><div><h3>TT Gia dụng</h3><ul><li><a href="/listing.html">Mền/mùng</a></li><li><a href="/listing.html">Áo gối/ra giường</a></li></ul></div><div><h3>TT Đồng giá</h3><ul><li><a href="/listing.html">10k/50k/100k</a></li></ul></div></div>
-                            <div class="mp" id="p-vietBrand"><div><h3>TT Nam</h3><ul><li><a href="/listing.html">Áo nam</a></li><li><a href="/listing.html">Quần nam</a></li></ul></div><div><h3>TT Nữ</h3><ul><li><a href="/listing.html">Áo nữ</a></li></ul></div></div>
-                            <div class="mp" id="p-foreigner"><div><h3>For Men</h3><ul><li><a href="/listing.html">Shirt/T-shirt</a></li><li><a href="/listing.html">Short/Pants</a></li></ul></div><div><h3>For Women</h3><ul><li><a href="/listing.html">Top/Dress</a></li></ul></div></div>
-                            <div class="mp" id="p-dichvu"><div><h3>DV May mặc</h3><ul><li><a href="/listing.html">In thêu</a></li><li><a href="/listing.html">Giặt ủi</a></li><li><a href="/listing.html">Sửa quần áo</a></li></ul></div><div><h3>DV Phụ trợ</h3><ul><li><a href="/listing.html">Người mẫu</a></li><li><a href="/listing.html">May đo</a></li></ul></div></div>
-                            <div class="mp" id="p-viecLam"><div><h3>Việc làm thời vụ</h3><ul><li><a href="/listing.html">Việc tìm người</a></li><li><a href="/listing.html">Người tìm việc</a></li></ul></div><div><h3>Việc làm chính thức</h3><ul><li><a href="/listing.html">Việc tìm người</a></li><li><a href="/listing.html">Người tìm việc</a></li></ul></div></div>
+                            <div class="mp" id="p-nu">
+                                <div>
+                                    <h3>Áo</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo thun</a></li>
+                                        <li><a href="/listing2.html">Áo sơ mi</a></li>
+                                        <li><a href="/listing2.html">Áo khoác</a></li>
+                                        <li><a href="/listing2.html">Áo dài</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Quần – Váy đầm</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Quần</a></li>
+                                        <li><a href="/listing2.html">Váy đầm</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-treEm">
+                                <div>
+                                    <h3>Sơ sinh</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Dưới 1 tháng</a></li>
+                                        <li><a href="/listing2.html">1–6 tháng</a></li>
+                                        <li><a href="/listing2.html">6–12 tháng</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Bé trai</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Dưới 3 tuổi</a></li>
+                                        <li><a href="/listing2.html">3–6 tuổi</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Bé gái</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Dưới 3 tuổi</a></li>
+                                        <li><a href="/listing2.html">3–6 tuổi</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-chuyenDe">
+                                <div>
+                                    <h3>TT Gia dụng</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Mền/mùng</a></li>
+                                        <li><a href="/listing2.html">Áo gối/ra giường</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Đồng giá</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">10k/50k/100k</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-vietBrand">
+                                <div>
+                                    <h3>TT Nam</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo nam</a></li>
+                                        <li><a href="/listing2.html">Quần nam</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>TT Nữ</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Áo nữ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-foreigner">
+                                <div>
+                                    <h3>For Men</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Shirt/T-shirt</a></li>
+                                        <li><a href="/listing2.html">Short/Pants</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>For Women</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Top/Dress</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-dichvu">
+                                <div>
+                                    <h3>DV May mặc</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">In thêu</a></li>
+                                        <li><a href="/listing2.html">Giặt ủi</a></li>
+                                        <li><a href="/listing2.html">Sửa quần áo</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>DV Phụ trợ</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Người mẫu</a></li>
+                                        <li><a href="/listing2.html">May đo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mp" id="p-viecLam">
+                                <div>
+                                    <h3>Việc làm thời vụ</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Việc tìm người</a></li>
+                                        <li><a href="/listing2.html">Người tìm việc</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3>Việc làm chính thức</h3>
+                                    <ul>
+                                        <li><a href="/listing2.html">Việc tìm người</a></li>
+                                        <li><a href="/listing2.html">Người tìm việc</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="ct-sep"></div>
-            <a href="/listing.html?hot=1" class="ct-link hot">🔥 Hôm nay Hot</a>
-            <a href="/listing.html?cat=nam" class="ct-link">Thời trang Nam</a>
-            <a href="/listing.html?cat=nu" class="ct-link">Thời trang Nữ</a>
-            <a href="/listing.html?cat=treEm" class="ct-link">Trẻ em</a>
+            <a href="/listing2.html?hot=1" class="ct-link hot">🔥 Hôm nay Hot</a>
+            <a href="/listing2.html?cat=nam" class="ct-link">Thời trang Nam</a>
+            <a href="/listing2.html?cat=nu" class="ct-link">Thời trang Nữ</a>
+            <a href="/listing2.html?cat=treEm" class="ct-link">Trẻ em</a>
             <div class="ct-sep"></div>
-            <a href="/listing.html?cat=giay" class="ct-link">Giày dép</a>
-            <a href="/listing.html?cat=tui" class="ct-link">Túi xách</a>
-            <a href="/listing.html?cat=dongho" class="ct-link">Đồng hồ</a>
+            <a href="/listing2.html?cat=giay" class="ct-link">Giày dép</a>
+            <a href="/listing2.html?cat=tui" class="ct-link">Túi xách</a>
+            <a href="/listing2.html?cat=dongho" class="ct-link">Đồng hồ</a>
             <div class="ct-sep"></div>
-            <a href="/listing.html?cat=dichvu" class="ct-link">Dịch vụ</a>
-            <a href="/listing.html?cat=vieclam" class="ct-link">Việc làm</a>
+            <a href="/listing2.html?cat=dichvu" class="ct-link">Dịch vụ</a>
+            <a href="/listing2.html?cat=vieclam" class="ct-link">Việc làm</a>
             <div class="ct-sep"></div>
-            <a href="/listing.html?cat=thuonghieu" class="ct-link">Thương hiệu Việt</a>
-            <a href="/listing.html?cat=foreigner" class="ct-link">4 Foreigner</a>
+            <a href="/listing2.html?cat=thuonghieu" class="ct-link">Thương hiệu Việt</a>
+            <a href="/listing2.html?cat=foreigner" class="ct-link">4 Foreigner</a>
         </div>
     </div>
 
@@ -1514,7 +2721,8 @@
                 <!-- 1. DANH MỤC -->
                 <div class="card">
                     <div class="card-head">
-                        <div class="card-head-icon green"><span class="ms" style="color:var(--p);font-size:18px">category</span></div>
+                        <div class="card-head-icon green"><span class="ms"
+                                style="color:var(--p);font-size:18px">category</span></div>
                         <div>
                             <div class="card-title">Danh mục sản phẩm</div>
                             <div class="card-subtitle">Chọn đúng danh mục để tiếp cận đúng khách hàng</div>
@@ -1528,7 +2736,8 @@
                                 <div class="cat-display" id="catDisplay">
                                     <span class="ms" style="font-size:18px;color:#bbb">account_tree</span>
                                     <span>Chọn danh mục sản phẩm...</span>
-                                    <span class="ms" style="font-size:18px;color:#bbb;margin-left:auto">expand_more</span>
+                                    <span class="ms"
+                                        style="font-size:18px;color:#bbb;margin-left:auto">expand_more</span>
                                 </div>
                             </div>
                         </div>
@@ -1538,19 +2747,23 @@
                 <!-- 2. HÌNH ẢNH -->
                 <div class="card">
                     <div class="card-head">
-                        <div class="card-head-icon orange"><span class="ms" style="color:var(--ac);font-size:18px">photo_library</span></div>
+                        <div class="card-head-icon orange"><span class="ms"
+                                style="color:var(--ac);font-size:18px">photo_library</span></div>
                         <div>
                             <div class="card-title">Hình ảnh sản phẩm</div>
                             <div class="card-subtitle">Tối đa 8 ảnh · JPEG/PNG · Tối đa 5MB/ảnh</div>
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="img-upload-area" id="dropzone" ondragover="dragOver(event)" ondrop="dropFiles(event)" ondragleave="dragLeave(event)" onclick="document.getElementById('fileInput').click()">
+                        <div class="img-upload-area" id="dropzone" ondragover="dragOver(event)"
+                            ondrop="dropFiles(event)" ondragleave="dragLeave(event)"
+                            onclick="document.getElementById('fileInput').click()">
                             <span class="ms" style="font-size:36px;color:#d1d5db">add_photo_alternate</span>
                             <p>Kéo thả ảnh vào đây hoặc <b style="color:var(--p)">chọn từ máy</b></p>
                             <span>Ảnh đầu tiên sẽ là ảnh bìa sản phẩm</span>
                         </div>
-                        <input type="file" id="fileInput" accept="image/*" multiple style="display:none" onchange="handleFiles(this.files)">
+                        <input type="file" id="fileInput" accept="image/*" multiple style="display:none"
+                            onchange="handleFiles(this.files)">
                         <div class="img-grid" id="imgGrid"></div>
                     </div>
                 </div>
@@ -1558,7 +2771,8 @@
                 <!-- 3. THÔNG TIN CƠ BẢN -->
                 <div class="card">
                     <div class="card-head">
-                        <div class="card-head-icon blue"><span class="ms" style="color:#1565c0;font-size:18px">inventory_2</span></div>
+                        <div class="card-head-icon blue"><span class="ms"
+                                style="color:#1565c0;font-size:18px">inventory_2</span></div>
                         <div>
                             <div class="card-title">Thông tin cơ bản</div>
                             <div class="card-subtitle">Tiêu đề hấp dẫn giúp tăng lượt xem lên đến 3x</div>
@@ -1566,12 +2780,15 @@
                     </div>
                     <div class="card-body">
                         <div class="field">
-                            <div class="field-label">Tiêu đề sản phẩm <span class="req">*</span> <span class="hint">(nên có từ khóa chính)</span></div>
+                            <div class="field-label">Tiêu đề sản phẩm <span class="req">*</span> <span class="hint">(nên
+                                    có từ khóa chính)</span></div>
                             <input class="finput" id="titleInput" type="text" maxlength="100"
                                 placeholder="Vd: Áo thun oversize in hình unisex phong cách streetwear – nhiều màu, form rộng"
                                 oninput="updateCounter('titleInput','titleCounter',100);updatePreview()" />
                             <div style="display:flex;justify-content:space-between;margin-top:4px">
-                                <span style="font-size:11.5px;color:#aaa"><span class="ms" style="font-size:13px;color:var(--warn)">lightbulb</span> Nên 50–80 ký tự, chứa từ khóa tìm kiếm</span>
+                                <span style="font-size:11.5px;color:#aaa"><span class="ms"
+                                        style="font-size:13px;color:var(--warn)">lightbulb</span> Nên 50–80 ký tự, chứa
+                                    từ khóa tìm kiếm</span>
                                 <span class="field-counter" id="titleCounter">0/100</span>
                             </div>
                         </div>
@@ -1580,7 +2797,8 @@
                             <div class="field-label">Thương hiệu <span class="hint">(không bắt buộc)</span></div>
                             <div class="finput-wrap">
                                 <span class="finput-icon ms" style="font-size:17px">sell</span>
-                                <input class="finput" type="text" placeholder="Vd: Style House, Zara, H&M, Hàng không nhãn hiệu..." />
+                                <input class="finput" type="text"
+                                    placeholder="Vd: Style House, Zara, H&M, Hàng không nhãn hiệu..." />
                             </div>
                         </div>
 
@@ -1600,21 +2818,31 @@
                             </div>
                             <div class="field">
                                 <div class="field-label">Chất liệu <span class="req">*</span></div>
-                                <input class="finput" type="text" placeholder="Vd: Cotton 100%, Polyester, Linen..." id="materialInput" />
+                                <input class="finput" type="text" placeholder="Vd: Cotton 100%, Polyester, Linen..."
+                                    id="materialInput" />
                             </div>
                         </div>
 
                         <div class="field">
                             <div class="field-label">Tình trạng sản phẩm <span class="req">*</span></div>
                             <div style="display:flex;gap:10px;flex-wrap:wrap">
-                                <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;transition:all .15s" id="cond1" onclick="setCond(1)">
-                                    <span class="ms msf" style="font-size:16px;color:#bbb" id="cond1ico">radio_button_unchecked</span> Mới 100%
+                                <label
+                                    style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;transition:all .15s"
+                                    id="cond1" onclick="setCond(1)">
+                                    <span class="ms msf" style="font-size:16px;color:#bbb"
+                                        id="cond1ico">radio_button_unchecked</span> Mới 100%
                                 </label>
-                                <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;transition:all .15s" id="cond2" onclick="setCond(2)">
-                                    <span class="ms msf" style="font-size:16px;color:#bbb" id="cond2ico">radio_button_unchecked</span> Đã qua sử dụng
+                                <label
+                                    style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;transition:all .15s"
+                                    id="cond2" onclick="setCond(2)">
+                                    <span class="ms msf" style="font-size:16px;color:#bbb"
+                                        id="cond2ico">radio_button_unchecked</span> Đã qua sử dụng
                                 </label>
-                                <label style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;transition:all .15s" id="cond3" onclick="setCond(3)">
-                                    <span class="ms msf" style="font-size:16px;color:#bbb" id="cond3ico">radio_button_unchecked</span> Hàng lỗi/thanh lý
+                                <label
+                                    style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;transition:all .15s"
+                                    id="cond3" onclick="setCond(3)">
+                                    <span class="ms msf" style="font-size:16px;color:#bbb"
+                                        id="cond3ico">radio_button_unchecked</span> Hàng lỗi/thanh lý
                                 </label>
                             </div>
                         </div>
@@ -1624,7 +2852,8 @@
                 <!-- 4. SIZE & MÀU SẮC -->
                 <div class="card">
                     <div class="card-head">
-                        <div class="card-head-icon purple"><span class="ms" style="color:#6a1b9a;font-size:18px">straighten</span></div>
+                        <div class="card-head-icon purple"><span class="ms"
+                                style="color:#6a1b9a;font-size:18px">straighten</span></div>
                         <div>
                             <div class="card-title">Kích thước & Màu sắc</div>
                             <div class="card-subtitle">Bỏ chọn các size/màu không có hàng</div>
@@ -1642,7 +2871,8 @@
                                 <button class="size-btn active" onclick="toggleSize(this)">2XL</button>
                                 <button class="size-btn" onclick="toggleSize(this)">3XL</button>
                                 <button class="size-btn" onclick="toggleSize(this)">4XL</button>
-                                <button class="size-btn" onclick="toggleSize(this)" style="font-size:12px">Freesize</button>
+                                <button class="size-btn" onclick="toggleSize(this)"
+                                    style="font-size:12px">Freesize</button>
                             </div>
                         </div>
 
@@ -1651,16 +2881,46 @@
                         <div class="field">
                             <div class="field-label">Màu sắc có sẵn</div>
                             <div class="color-grid" id="colorGrid">
-                                <div class="color-item" onclick="toggleColor(this)"><div class="color-dot active" style="background:#fff;border:2px solid #ddd"></div><span class="color-label">Trắng</span></div>
-                                <div class="color-item" onclick="toggleColor(this)"><div class="color-dot active" style="background:#1a1a1a"></div><span class="color-label">Đen</span></div>
-                                <div class="color-item" onclick="toggleColor(this)"><div class="color-dot" style="background:#d2b48c"></div><span class="color-label">Be</span></div>
-                                <div class="color-item" onclick="toggleColor(this)"><div class="color-dot" style="background:#003153"></div><span class="color-label">Navy</span></div>
-                                <div class="color-item" onclick="toggleColor(this)"><div class="color-dot" style="background:#e74c3c"></div><span class="color-label">Đỏ</span></div>
-                                <div class="color-item" onclick="toggleColor(this)"><div class="color-dot" style="background:#3498db"></div><span class="color-label">Xanh dương</span></div>
-                                <div class="color-item" onclick="toggleColor(this)"><div class="color-dot" style="background:#2ecc71"></div><span class="color-label">Xanh lá</span></div>
-                                <div class="color-item" onclick="toggleColor(this)"><div class="color-dot" style="background:#f39c12"></div><span class="color-label">Vàng</span></div>
-                                <div class="color-item" onclick="toggleColor(this)"><div class="color-dot" style="background:#9b59b6"></div><span class="color-label">Tím</span></div>
-                                <div class="color-item" onclick="toggleColor(this)"><div class="color-dot" style="background:#e91e63"></div><span class="color-label">Hồng</span></div>
+                                <div class="color-item" onclick="toggleColor(this)">
+                                    <div class="color-dot active" style="background:#fff;border:2px solid #ddd"></div>
+                                    <span class="color-label">Trắng</span>
+                                </div>
+                                <div class="color-item" onclick="toggleColor(this)">
+                                    <div class="color-dot active" style="background:#1a1a1a"></div><span
+                                        class="color-label">Đen</span>
+                                </div>
+                                <div class="color-item" onclick="toggleColor(this)">
+                                    <div class="color-dot" style="background:#d2b48c"></div><span
+                                        class="color-label">Be</span>
+                                </div>
+                                <div class="color-item" onclick="toggleColor(this)">
+                                    <div class="color-dot" style="background:#003153"></div><span
+                                        class="color-label">Navy</span>
+                                </div>
+                                <div class="color-item" onclick="toggleColor(this)">
+                                    <div class="color-dot" style="background:#e74c3c"></div><span
+                                        class="color-label">Đỏ</span>
+                                </div>
+                                <div class="color-item" onclick="toggleColor(this)">
+                                    <div class="color-dot" style="background:#3498db"></div><span
+                                        class="color-label">Xanh dương</span>
+                                </div>
+                                <div class="color-item" onclick="toggleColor(this)">
+                                    <div class="color-dot" style="background:#2ecc71"></div><span
+                                        class="color-label">Xanh lá</span>
+                                </div>
+                                <div class="color-item" onclick="toggleColor(this)">
+                                    <div class="color-dot" style="background:#f39c12"></div><span
+                                        class="color-label">Vàng</span>
+                                </div>
+                                <div class="color-item" onclick="toggleColor(this)">
+                                    <div class="color-dot" style="background:#9b59b6"></div><span
+                                        class="color-label">Tím</span>
+                                </div>
+                                <div class="color-item" onclick="toggleColor(this)">
+                                    <div class="color-dot" style="background:#e91e63"></div><span
+                                        class="color-label">Hồng</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1669,7 +2929,8 @@
                 <!-- 5. MÔ TẢ -->
                 <div class="card">
                     <div class="card-head">
-                        <div class="card-head-icon green"><span class="ms" style="color:var(--p);font-size:18px">description</span></div>
+                        <div class="card-head-icon green"><span class="ms"
+                                style="color:var(--p);font-size:18px">description</span></div>
                         <div>
                             <div class="card-title">Mô tả chi tiết</div>
                             <div class="card-subtitle">Mô tả đầy đủ giúp tăng tỉ lệ chốt đơn</div>
@@ -1678,10 +2939,12 @@
                     <div class="card-body">
                         <div class="field">
                             <div style="display:flex;gap:7px;margin-bottom:10px;flex-wrap:wrap">
-                                <button onclick="insertTemplate()" style="padding:5px 12px;background:var(--pl);border:1px solid #c8e6c9;border-radius:6px;font-size:12px;font-weight:600;color:var(--p);cursor:pointer;font-family:inherit">
+                                <button onclick="insertTemplate()"
+                                    style="padding:5px 12px;background:var(--pl);border:1px solid #c8e6c9;border-radius:6px;font-size:12px;font-weight:600;color:var(--p);cursor:pointer;font-family:inherit">
                                     <span class="ms" style="font-size:14px">auto_fix_high</span> Mẫu có sẵn
                                 </button>
-                                <button onclick="insertAI()" style="padding:5px 12px;background:#fff3e0;border:1px solid #ffcc80;border-radius:6px;font-size:12px;font-weight:600;color:#e65100;cursor:pointer;font-family:inherit">
+                                <button onclick="insertAI()"
+                                    style="padding:5px 12px;background:#fff3e0;border:1px solid #ffcc80;border-radius:6px;font-size:12px;font-weight:600;color:#e65100;cursor:pointer;font-family:inherit">
                                     <span class="ms" style="font-size:14px">smart_toy</span> AI viết cho tôi
                                 </button>
                             </div>
@@ -1700,12 +2963,20 @@
                         <div class="field">
                             <div class="field-label">Hashtag / Từ khóa <span class="hint">(Enter để thêm)</span></div>
                             <div class="tag-wrap" onclick="document.getElementById('tagInput').focus()">
-                                <div class="tag-item" id="tag-ao-thun"><span>áo thun</span><button onclick="removeTag(event,'tag-ao-thun')"><span class="ms" style="font-size:13px">close</span></button></div>
-                                <div class="tag-item" id="tag-oversize"><span>oversize</span><button onclick="removeTag(event,'tag-oversize')"><span class="ms" style="font-size:13px">close</span></button></div>
-                                <div class="tag-item" id="tag-unisex"><span>unisex</span><button onclick="removeTag(event,'tag-unisex')"><span class="ms" style="font-size:13px">close</span></button></div>
-                                <input class="tag-input" id="tagInput" placeholder="Thêm hashtag..." onkeydown="addTag(event)">
+                                <div class="tag-item" id="tag-ao-thun"><span>áo thun</span><button
+                                        onclick="removeTag(event,'tag-ao-thun')"><span class="ms"
+                                            style="font-size:13px">close</span></button></div>
+                                <div class="tag-item" id="tag-oversize"><span>oversize</span><button
+                                        onclick="removeTag(event,'tag-oversize')"><span class="ms"
+                                            style="font-size:13px">close</span></button></div>
+                                <div class="tag-item" id="tag-unisex"><span>unisex</span><button
+                                        onclick="removeTag(event,'tag-unisex')"><span class="ms"
+                                            style="font-size:13px">close</span></button></div>
+                                <input class="tag-input" id="tagInput" placeholder="Thêm hashtag..."
+                                    onkeydown="addTag(event)">
                             </div>
-                            <div style="font-size:11.5px;color:#aaa;margin-top:5px">Tối đa 10 hashtag · Nhấn Enter hoặc dấu phẩy để thêm</div>
+                            <div style="font-size:11.5px;color:#aaa;margin-top:5px">Tối đa 10 hashtag · Nhấn Enter hoặc
+                                dấu phẩy để thêm</div>
                         </div>
                     </div>
                 </div>
@@ -1713,7 +2984,8 @@
                 <!-- 6. GIÁ & TỒN KHO -->
                 <div class="card">
                     <div class="card-head">
-                        <div class="card-head-icon orange"><span class="ms" style="color:var(--ac);font-size:18px">payments</span></div>
+                        <div class="card-head-icon orange"><span class="ms"
+                                style="color:var(--ac);font-size:18px">payments</span></div>
                         <div>
                             <div class="card-title">Giá bán & Tồn kho</div>
                         </div>
@@ -1730,21 +3002,24 @@
                                 <div class="field">
                                     <div class="field-label">Giá gốc (vnđ)</div>
                                     <div class="finput-wrap">
-                                        <input class="finput has-suffix" type="text" id="priceOri" placeholder="199.000" oninput="formatPrice(this);calcDiscount()" />
+                                        <input class="finput has-suffix" type="text" id="priceOri" placeholder="199.000"
+                                            oninput="formatPrice(this);calcDiscount()" />
                                         <span class="finput-suffix">đ</span>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="field-label">Giá bán <span class="req">*</span></div>
                                     <div class="finput-wrap">
-                                        <input class="finput has-suffix" type="text" id="priceSale" placeholder="99.000" oninput="formatPrice(this);calcDiscount();updatePreview()" />
+                                        <input class="finput has-suffix" type="text" id="priceSale" placeholder="99.000"
+                                            oninput="formatPrice(this);calcDiscount();updatePreview()" />
                                         <span class="finput-suffix">đ</span>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="field-label">% Giảm giá</div>
                                     <div class="finput-wrap">
-                                        <input class="finput has-suffix" type="text" id="discountPct" placeholder="0" readonly style="background:#f9fafb;color:var(--err);font-weight:700" />
+                                        <input class="finput has-suffix" type="text" id="discountPct" placeholder="0"
+                                            readonly style="background:#f9fafb;color:var(--err);font-weight:700" />
                                         <span class="finput-suffix">%</span>
                                     </div>
                                 </div>
@@ -1754,14 +3029,16 @@
                                 <div class="field">
                                     <div class="field-label">Giá CTV <span class="hint">(không bắt buộc)</span></div>
                                     <div class="finput-wrap">
-                                        <input class="finput has-suffix" type="text" placeholder="Liên hệ hoặc nhập giá" />
+                                        <input class="finput has-suffix" type="text"
+                                            placeholder="Liên hệ hoặc nhập giá" />
                                         <span class="finput-suffix">đ</span>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="field-label">Giá bán sỉ <span class="hint">(từ x sản phẩm)</span></div>
                                     <div class="finput-wrap">
-                                        <input class="finput has-suffix" type="text" placeholder="Liên hệ hoặc nhập giá" />
+                                        <input class="finput has-suffix" type="text"
+                                            placeholder="Liên hệ hoặc nhập giá" />
                                         <span class="finput-suffix">đ</span>
                                     </div>
                                 </div>
@@ -1775,14 +3052,16 @@
                                 <div class="field-label">Tồn kho (tổng)</div>
                                 <div class="finput-wrap">
                                     <span class="finput-icon ms" style="font-size:17px">inventory</span>
-                                    <input class="finput" type="number" placeholder="Vd: 100" min="0" style="padding-left:37px" />
+                                    <input class="finput" type="number" placeholder="Vd: 100" min="0"
+                                        style="padding-left:37px" />
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="field-label">SKU / Mã sản phẩm</div>
                                 <div class="finput-wrap">
                                     <span class="finput-icon ms" style="font-size:17px">qr_code</span>
-                                    <input class="finput" type="text" placeholder="Vd: SH-ATOSS-001" style="padding-left:37px" />
+                                    <input class="finput" type="text" placeholder="Vd: SH-ATOSS-001"
+                                        style="padding-left:37px" />
                                 </div>
                             </div>
                         </div>
@@ -1790,10 +3069,18 @@
                         <div class="field">
                             <div class="field-label">Hình thức thanh toán</div>
                             <div style="display:flex;gap:9px;flex-wrap:wrap">
-                                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;padding:7px 13px;border:1.5px solid var(--p);border-radius:7px;background:var(--pl);font-weight:600;color:var(--p)"><input type="checkbox" checked style="accent-color:var(--p)"> COD</label>
-                                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;padding:7px 13px;border:1.5px solid var(--p);border-radius:7px;background:var(--pl);font-weight:600;color:var(--p)"><input type="checkbox" checked style="accent-color:var(--p)"> Chuyển khoản</label>
-                                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;padding:7px 13px;border:1.5px solid #e5e7eb;border-radius:7px;font-weight:600;color:#555"><input type="checkbox" style="accent-color:var(--p)"> Ví điện tử</label>
-                                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;padding:7px 13px;border:1.5px solid #e5e7eb;border-radius:7px;font-weight:600;color:#555"><input type="checkbox" style="accent-color:var(--p)"> Trả góp</label>
+                                <label
+                                    style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;padding:7px 13px;border:1.5px solid var(--p);border-radius:7px;background:var(--pl);font-weight:600;color:var(--p)"><input
+                                        type="checkbox" checked style="accent-color:var(--p)"> COD</label>
+                                <label
+                                    style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;padding:7px 13px;border:1.5px solid var(--p);border-radius:7px;background:var(--pl);font-weight:600;color:var(--p)"><input
+                                        type="checkbox" checked style="accent-color:var(--p)"> Chuyển khoản</label>
+                                <label
+                                    style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;padding:7px 13px;border:1.5px solid #e5e7eb;border-radius:7px;font-weight:600;color:#555"><input
+                                        type="checkbox" style="accent-color:var(--p)"> Ví điện tử</label>
+                                <label
+                                    style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;padding:7px 13px;border:1.5px solid #e5e7eb;border-radius:7px;font-weight:600;color:#555"><input
+                                        type="checkbox" style="accent-color:var(--p)"> Trả góp</label>
                             </div>
                         </div>
                     </div>
@@ -1802,7 +3089,8 @@
                 <!-- 7. GIAO HÀNG -->
                 <div class="card">
                     <div class="card-head">
-                        <div class="card-head-icon blue"><span class="ms" style="color:#1565c0;font-size:18px">local_shipping</span></div>
+                        <div class="card-head-icon blue"><span class="ms"
+                                style="color:#1565c0;font-size:18px">local_shipping</span></div>
                         <div>
                             <div class="card-title">Phương thức giao hàng</div>
                             <div class="card-subtitle">Có thể chọn nhiều phương thức</div>
@@ -1812,29 +3100,48 @@
                         <div class="delivery-opts">
                             <div class="del-opt active" onclick="toggleDel(this)">
                                 <div class="del-opt-left">
-                                    <div class="del-icon" style="background:#ffebee"><span class="ms msf" style="color:#e74c3c;font-size:20px">electric_bolt</span></div>
-                                    <div><div class="del-name">Hoả tốc</div><div class="del-desc">Giao trong 2–4 giờ · Chỉ nội thành HCM</div></div>
+                                    <div class="del-icon" style="background:#ffebee"><span class="ms msf"
+                                            style="color:#e74c3c;font-size:20px">electric_bolt</span></div>
+                                    <div>
+                                        <div class="del-name">Hoả tốc</div>
+                                        <div class="del-desc">Giao trong 2–4 giờ · Chỉ nội thành HCM</div>
+                                    </div>
                                 </div>
-                                <div class="del-check"><span class="ms" style="font-size:13px;color:#fff">check</span></div>
+                                <div class="del-check"><span class="ms" style="font-size:13px;color:#fff">check</span>
+                                </div>
                             </div>
                             <div class="del-opt active" onclick="toggleDel(this)">
                                 <div class="del-opt-left">
-                                    <div class="del-icon" style="background:#e3f2fd"><span class="ms msf" style="color:#1565c0;font-size:20px">flash_on</span></div>
-                                    <div><div class="del-name">Nhanh</div><div class="del-desc">Giao trong 1–2 ngày · Nội thành & ngoại ô</div></div>
+                                    <div class="del-icon" style="background:#e3f2fd"><span class="ms msf"
+                                            style="color:#1565c0;font-size:20px">flash_on</span></div>
+                                    <div>
+                                        <div class="del-name">Nhanh</div>
+                                        <div class="del-desc">Giao trong 1–2 ngày · Nội thành & ngoại ô</div>
+                                    </div>
                                 </div>
-                                <div class="del-check"><span class="ms" style="font-size:13px;color:#fff">check</span></div>
+                                <div class="del-check"><span class="ms" style="font-size:13px;color:#fff">check</span>
+                                </div>
                             </div>
                             <div class="del-opt active" onclick="toggleDel(this)">
                                 <div class="del-opt-left">
-                                    <div class="del-icon" style="background:#e8f5e9"><span class="ms" style="color:var(--p);font-size:20px">local_shipping</span></div>
-                                    <div><div class="del-name">Tiêu chuẩn</div><div class="del-desc">Giao trong 2–5 ngày · Toàn quốc</div></div>
+                                    <div class="del-icon" style="background:#e8f5e9"><span class="ms"
+                                            style="color:var(--p);font-size:20px">local_shipping</span></div>
+                                    <div>
+                                        <div class="del-name">Tiêu chuẩn</div>
+                                        <div class="del-desc">Giao trong 2–5 ngày · Toàn quốc</div>
+                                    </div>
                                 </div>
-                                <div class="del-check"><span class="ms" style="font-size:13px;color:#fff">check</span></div>
+                                <div class="del-check"><span class="ms" style="font-size:13px;color:#fff">check</span>
+                                </div>
                             </div>
                             <div class="del-opt" onclick="toggleDel(this)">
                                 <div class="del-opt-left">
-                                    <div class="del-icon" style="background:#f3e5f5"><span class="ms" style="color:#6a1b9a;font-size:20px">store</span></div>
-                                    <div><div class="del-name">Nhận tại cửa hàng</div><div class="del-desc">Khách tự đến lấy tại 165 Đường D5, Q.Bình Thạnh</div></div>
+                                    <div class="del-icon" style="background:#f3e5f5"><span class="ms"
+                                            style="color:#6a1b9a;font-size:20px">store</span></div>
+                                    <div>
+                                        <div class="del-name">Nhận tại cửa hàng</div>
+                                        <div class="del-desc">Khách tự đến lấy tại 165 Đường D5, Q.Bình Thạnh</div>
+                                    </div>
                                 </div>
                                 <div class="del-check"></div>
                             </div>
@@ -1872,31 +3179,51 @@
                 <!-- 8. CÀI ĐẶT NÂNG CAO -->
                 <div class="card">
                     <div class="card-head">
-                        <div class="card-head-icon purple"><span class="ms" style="color:#6a1b9a;font-size:18px">tune</span></div>
+                        <div class="card-head-icon purple"><span class="ms"
+                                style="color:#6a1b9a;font-size:18px">tune</span></div>
                         <div>
                             <div class="card-title">Cài đặt & Hiển thị</div>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="toggle-row">
-                            <div><div class="toggle-row-label">Hiển thị tin đăng</div><div class="toggle-row-desc">Tắt để ẩn tạm thời mà không xóa tin</div></div>
-                            <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                            <div>
+                                <div class="toggle-row-label">Hiển thị tin đăng</div>
+                                <div class="toggle-row-desc">Tắt để ẩn tạm thời mà không xóa tin</div>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span
+                                    class="toggle-slider"></span></label>
                         </div>
                         <div class="toggle-row">
-                            <div><div class="toggle-row-label">Cho phép bình luận</div><div class="toggle-row-desc">Người mua có thể đặt câu hỏi công khai</div></div>
-                            <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                            <div>
+                                <div class="toggle-row-label">Cho phép bình luận</div>
+                                <div class="toggle-row-desc">Người mua có thể đặt câu hỏi công khai</div>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span
+                                    class="toggle-slider"></span></label>
                         </div>
                         <div class="toggle-row">
-                            <div><div class="toggle-row-label">Hiển thị số điện thoại</div><div class="toggle-row-desc">Ẩn số điện thoại, chỉ dùng chat nội bộ</div></div>
-                            <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                            <div>
+                                <div class="toggle-row-label">Hiển thị số điện thoại</div>
+                                <div class="toggle-row-desc">Ẩn số điện thoại, chỉ dùng chat nội bộ</div>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span
+                                    class="toggle-slider"></span></label>
                         </div>
                         <div class="toggle-row">
-                            <div><div class="toggle-row-label">Đánh dấu hàng độc quyền</div><div class="toggle-row-desc">Hiển thị badge "Độc quyền" trên tin đăng</div></div>
+                            <div>
+                                <div class="toggle-row-label">Đánh dấu hàng độc quyền</div>
+                                <div class="toggle-row-desc">Hiển thị badge "Độc quyền" trên tin đăng</div>
+                            </div>
                             <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
                         </div>
                         <div class="toggle-row">
-                            <div><div class="toggle-row-label">Nhận thông báo hỏi giá</div><div class="toggle-row-desc">Gửi thông báo khi có người hỏi thăm sản phẩm</div></div>
-                            <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                            <div>
+                                <div class="toggle-row-label">Nhận thông báo hỏi giá</div>
+                                <div class="toggle-row-desc">Gửi thông báo khi có người hỏi thăm sản phẩm</div>
+                            </div>
+                            <label class="toggle"><input type="checkbox" checked><span
+                                    class="toggle-slider"></span></label>
                         </div>
                     </div>
                 </div>
@@ -1933,32 +3260,51 @@
                         <div class="prog-fill" id="progFill" style="width:0%"></div>
                     </div>
                     <div style="margin-top:14px" class="score-items">
-                        <div class="si pend" id="si-cat"><span class="ms">radio_button_unchecked</span> Đã chọn danh mục</div>
-                        <div class="si pend" id="si-img"><span class="ms">radio_button_unchecked</span> Có ít nhất 1 ảnh</div>
-                        <div class="si pend" id="si-title"><span class="ms">radio_button_unchecked</span> Tiêu đề ≥ 20 ký tự</div>
-                        <div class="si pend" id="si-price"><span class="ms">radio_button_unchecked</span> Đã điền giá bán</div>
-                        <div class="si pend" id="si-desc"><span class="ms">radio_button_unchecked</span> Mô tả ≥ 150 ký tự</div>
-                        <div class="si pend" id="si-material"><span class="ms">radio_button_unchecked</span> Đã điền chất liệu</div>
+                        <div class="si pend" id="si-cat"><span class="ms">radio_button_unchecked</span> Đã chọn danh mục
+                        </div>
+                        <div class="si pend" id="si-img"><span class="ms">radio_button_unchecked</span> Có ít nhất 1 ảnh
+                        </div>
+                        <div class="si pend" id="si-title"><span class="ms">radio_button_unchecked</span> Tiêu đề ≥ 20
+                            ký tự</div>
+                        <div class="si pend" id="si-price"><span class="ms">radio_button_unchecked</span> Đã điền giá
+                            bán</div>
+                        <div class="si pend" id="si-desc"><span class="ms">radio_button_unchecked</span> Mô tả ≥ 150 ký
+                            tự</div>
+                        <div class="si pend" id="si-material"><span class="ms">radio_button_unchecked</span> Đã điền
+                            chất liệu</div>
                     </div>
                 </div>
 
                 <!-- Gói đăng tin -->
                 <div class="sidebar-card">
-                    <h4><span class="ms" style="font-size:16px;color:var(--ac)">workspace_premium</span> Gói đăng tin</h4>
+                    <h4><span class="ms" style="font-size:16px;color:var(--ac)">workspace_premium</span> Gói đăng tin
+                    </h4>
                     <div class="pkg-grid">
                         <div class="pkg" onclick="selectPkg(this)">
-                            <div class="pkg-icon" style="background:#f3f4f6"><span class="ms" style="color:#888;font-size:20px">article</span></div>
-                            <div><div class="pkg-name">Tin thường</div><div class="pkg-desc">Hiển thị 7 ngày</div></div>
+                            <div class="pkg-icon" style="background:#f3f4f6"><span class="ms"
+                                    style="color:#888;font-size:20px">article</span></div>
+                            <div>
+                                <div class="pkg-name">Tin thường</div>
+                                <div class="pkg-desc">Hiển thị 7 ngày</div>
+                            </div>
                             <div class="pkg-price">Miễn phí</div>
                         </div>
                         <div class="pkg active" onclick="selectPkg(this)">
-                            <div class="pkg-icon" style="background:#fff3e0"><span class="ms msf" style="color:var(--ac);font-size:20px">star</span></div>
-                            <div><div class="pkg-name">Tin nổi bật <span class="pkg-badge">HOT</span></div><div class="pkg-desc">Hiển thị 14 ngày · Ưu tiên tìm kiếm</div></div>
+                            <div class="pkg-icon" style="background:#fff3e0"><span class="ms msf"
+                                    style="color:var(--ac);font-size:20px">star</span></div>
+                            <div>
+                                <div class="pkg-name">Tin nổi bật <span class="pkg-badge">HOT</span></div>
+                                <div class="pkg-desc">Hiển thị 14 ngày · Ưu tiên tìm kiếm</div>
+                            </div>
                             <div class="pkg-price">29k</div>
                         </div>
                         <div class="pkg" onclick="selectPkg(this)">
-                            <div class="pkg-icon" style="background:#fff8e1"><span class="ms msf" style="color:#f39c12;font-size:20px">workspace_premium</span></div>
-                            <div><div class="pkg-name">Tin VIP</div><div class="pkg-desc">Hiển thị 30 ngày · Top đầu danh mục</div></div>
+                            <div class="pkg-icon" style="background:#fff8e1"><span class="ms msf"
+                                    style="color:#f39c12;font-size:20px">workspace_premium</span></div>
+                            <div>
+                                <div class="pkg-name">Tin VIP</div>
+                                <div class="pkg-desc">Hiển thị 30 ngày · Top đầu danh mục</div>
+                            </div>
                             <div class="pkg-price">79k</div>
                         </div>
                     </div>
@@ -1981,10 +3327,14 @@
 
                 <!-- Tips -->
                 <div class="sidebar-card">
-                    <h4><span class="ms" style="font-size:16px;color:var(--warn)">lightbulb</span> Mẹo đăng tin hiệu quả</h4>
-                    <div class="tip"><span class="ms">photo_camera</span><span>Ảnh chụp nền trắng, ánh sáng tốt tăng tỉ lệ click lên <b>+180%</b></span></div>
-                    <div class="tip"><span class="ms">title</span><span>Tiêu đề chứa từ khóa "oversize", "unisex", "streetwear" giúp SEO tốt hơn</span></div>
-                    <div class="tip"><span class="ms">sell</span><span>Giá cạnh tranh hơn 10–15% so với thị trường giúp bán nhanh hơn</span></div>
+                    <h4><span class="ms" style="font-size:16px;color:var(--warn)">lightbulb</span> Mẹo đăng tin hiệu quả
+                    </h4>
+                    <div class="tip"><span class="ms">photo_camera</span><span>Ảnh chụp nền trắng, ánh sáng tốt tăng tỉ
+                            lệ click lên <b>+180%</b></span></div>
+                    <div class="tip"><span class="ms">title</span><span>Tiêu đề chứa từ khóa "oversize", "unisex",
+                            "streetwear" giúp SEO tốt hơn</span></div>
+                    <div class="tip"><span class="ms">sell</span><span>Giá cạnh tranh hơn 10–15% so với thị trường giúp
+                            bán nhanh hơn</span></div>
                 </div>
 
             </div>
@@ -2000,20 +3350,32 @@
             </div>
             <div class="cat-modal-body">
                 <div class="cat-l1" id="catL1">
-                    <div class="cat-l1-item active" onclick="selL1(this,'nam')">Nam <span class="ms" style="font-size:13px">chevron_right</span></div>
-                    <div class="cat-l1-item" onclick="selL1(this,'nu')">Nữ <span class="ms" style="font-size:13px">chevron_right</span></div>
-                    <div class="cat-l1-item" onclick="selL1(this,'te')">Trẻ em <span class="ms" style="font-size:13px">chevron_right</span></div>
-                    <div class="cat-l1-item" onclick="selL1(this,'cd')">Chuyên đề <span class="ms" style="font-size:13px">chevron_right</span></div>
-                    <div class="cat-l1-item" onclick="selL1(this,'vb')">Thương hiệu Việt <span class="ms" style="font-size:13px">chevron_right</span></div>
-                    <div class="cat-l1-item" onclick="selL1(this,'dv')">Dịch vụ <span class="ms" style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l1-item active" onclick="selL1(this,'nam')">Nam <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l1-item" onclick="selL1(this,'nu')">Nữ <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l1-item" onclick="selL1(this,'te')">Trẻ em <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l1-item" onclick="selL1(this,'cd')">Chuyên đề <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l1-item" onclick="selL1(this,'vb')">Thương hiệu Việt <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l1-item" onclick="selL1(this,'dv')">Dịch vụ <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
                 </div>
                 <div class="cat-l2" id="catL2">
-                    <div class="cat-l2-item active" onclick="selL2(this,'ao')">Áo <span class="ms" style="font-size:13px">chevron_right</span></div>
-                    <div class="cat-l2-item" onclick="selL2(this,'quan')">Quần <span class="ms" style="font-size:13px">chevron_right</span></div>
-                    <div class="cat-l2-item" onclick="selL2(this,'giay')">Giày dép <span class="ms" style="font-size:13px">chevron_right</span></div>
-                    <div class="cat-l2-item" onclick="selL2(this,'pk')">Phụ kiện <span class="ms" style="font-size:13px">chevron_right</span></div>
-                    <div class="cat-l2-item" onclick="selL2(this,'non')">Nón – Mắt kính <span class="ms" style="font-size:13px">chevron_right</span></div>
-                    <div class="cat-l2-item" onclick="selL2(this,'balo')">Balo – Túi xách <span class="ms" style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l2-item active" onclick="selL2(this,'ao')">Áo <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l2-item" onclick="selL2(this,'quan')">Quần <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l2-item" onclick="selL2(this,'giay')">Giày dép <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l2-item" onclick="selL2(this,'pk')">Phụ kiện <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l2-item" onclick="selL2(this,'non')">Nón – Mắt kính <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
+                    <div class="cat-l2-item" onclick="selL2(this,'balo')">Balo – Túi xách <span class="ms"
+                            style="font-size:13px">chevron_right</span></div>
                 </div>
                 <div class="cat-l3" id="catL3">
                     <div class="cat-l3-grid">
@@ -2036,9 +3398,11 @@
         <div class="fi">
             <div>
                 <div class="fi-logo">
-                    <img src="/assets/logo.png" alt="Chof.vn" style="height:36px;object-fit:contain;display:block;filter:brightness(0) invert(1)">
+                    <img src="/assets/logo.png" alt="Chof.vn"
+                        style="height:36px;object-fit:contain;display:block;filter:brightness(0) invert(1)">
                 </div>
-                <p style="font-size:12.5px;color:#666;line-height:1.7;margin-bottom:12px">Sàn đăng tin rao vặt thời trang hàng đầu Việt Nam</p>
+                <p style="font-size:12.5px;color:#666;line-height:1.7;margin-bottom:12px">Sàn đăng tin rao vặt thời
+                    trang hàng đầu Việt Nam</p>
                 <div style="font-size:12.5px;color:#666;line-height:2.3">
                     <p><b style="color:#aaa">Địa chỉ:</b> 165 Đường D5, P.25, Q.Bình Thạnh, TP.HCM</p>
                     <p><b style="color:#aaa">SĐT:</b> 0123 456 789</p>
@@ -2071,15 +3435,20 @@
             <div>
                 <h4>Theo dõi</h4>
                 <div style="display:flex;gap:10px">
-                    <a href="#" style="width:32px;height:32px;background:#1877f2;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700">f</a>
-                    <a href="#" style="width:32px;height:32px;background:#ff0050;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">TT</a>
-                    <a href="#" style="width:32px;height:32px;background:#ff0000;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff"><span class="ms msf" style="font-size:15px">play_circle</span></a>
+                    <a href="#"
+                        style="width:32px;height:32px;background:#1877f2;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700">f</a>
+                    <a href="#"
+                        style="width:32px;height:32px;background:#ff0050;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">TT</a>
+                    <a href="#"
+                        style="width:32px;height:32px;background:#ff0000;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff"><span
+                            class="ms msf" style="font-size:15px">play_circle</span></a>
                 </div>
             </div>
         </div>
         <div class="fb2">
             <p>© 2026 - Bản quyền thuộc về Chof.vn</p>
-            <div style="display:flex;gap:16px"><a href="#">Điều khoản sử dụng</a><a href="#">Chính sách bảo mật</a></div>
+            <div style="display:flex;gap:16px"><a href="#">Điều khoản sử dụng</a><a href="#">Chính sách bảo mật</a>
+            </div>
         </div>
     </footer>
 
