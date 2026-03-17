@@ -61,452 +61,818 @@
 
 
 
-        /* ══ FOOTER ══ */
-        footer {
-            background: #fff;
-            border-top: 1px solid #e5e7eb;
-        }
+    /* FOOTER */
+    footer {
+      background: var(--ink)
+    }
 
-        .fi {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 32px 16px 20px;
-            display: grid;
-            grid-template-columns: 2fr 1fr 2fr 1fr;
-            gap: 32px;
-        }
+    .fi {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 36px 20px 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr 1fr;
+      gap: 32px
+    }
 
-        .fb2 {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 12px 16px;
-            border-top: 1px solid #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 12px;
-            color: #aaa;
-        }
+    .fi-logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.5px;
+      line-height: 1;
+      margin-bottom: 12px
+    }
 
-        /* ══════════════════════════════════════
+    .fi h4 {
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px
+    }
+
+    .fi a,
+    .fi li {
+      font-size: 12.5px;
+      color: #888;
+      line-height: 2.4;
+      transition: color .15s
+    }
+
+    .fi a:hover {
+      color: #fff
+    }
+
+    .fi ul {
+      list-style: none
+    }
+
+    .fb2 {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      border-top: 1px solid #222;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #555
+    }
+
+    .fb2 a {
+      color: #666;
+      text-decoration: underline
+    }
+
+    .fb2 a:hover {
+      color: #fff
+    }
+
+    /* ══════════════════════════════════════
            [HEADER] Sticky header & logo
         ══════════════════════════════════════ */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 500;
-            background: #fff;
-            border-bottom: 1px solid #e5e7eb;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, .07);
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 500;
+      background: #fff;
+      border-top: 1px solid #888888;
+      border-radius: 15px 15px 15px 15px;
+      border-bottom: 1px solid #888888;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .07);
+    }
 
-        .hdr {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 16px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .hdr {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 16px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .logo img {
-            height: 46px;
-            width: auto;
-            object-fit: contain;
-            display: block;
-        }
+    .logo img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
 
-        .logo-txt {
-            font-size: 22px;
-            font-weight: 900;
-            color: var(--p);
-        }
+    .logo-txt {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--p);
+    }
 
-        .logo-txt em {
-            color: var(--ac);
-            font-style: normal;
-        }
+    .logo-txt em {
+      color: var(--ac);
+      font-style: normal;
+    }
 
-        /* ══════════════════════════════════════
+    /* ══════════════════════════════════════
            [HEADER] Search bar
         ══════════════════════════════════════ */
-        .sw {
-            flex: 1;
-            position: relative;
-            min-width: 0;
-        }
+    .sw {
+      flex: 1;
+      position: relative;
+      min-width: 0;
+    }
 
-        .sb {
-            display: flex;
-            align-items: stretch;
-            height: 44px;
-            background: #f3f4f6;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            transition: border-color .18s, background .18s;
-        }
+    .sb {
+      display: flex;
+      align-items: stretch;
+      height: 44px;
+      background: #f3f4f6;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      transition: border-color .18s, background .18s;
+    }
 
-        .sb:focus-within {
-            border-color: var(--p);
-            background: #fff;
-        }
+    .sb:focus-within {
+      border-color: var(--p);
+      background: #fff;
+    }
 
-        .sb:focus-within .sdiv {
-            background: #d4e9dd;
-        }
+    .sb:focus-within .sdiv {
+      background: #d4e9dd;
+    }
 
-        .scat {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding: 0 14px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #444;
-            background: none;
-            border: none;
-            cursor: pointer;
-            white-space: nowrap;
-            flex-shrink: 0;
-            font-family: inherit;
-            transition: color .15s;
-        }
+    .scat {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+      background: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-family: inherit;
+      transition: color .15s;
+    }
 
-        .scat:hover {
-            color: var(--p);
-        }
+    .scat:hover {
+      color: var(--p);
+    }
 
-        .sdiv {
-            width: 1px;
-            background: #ddd;
-            margin: 9px 0;
-            flex-shrink: 0;
-            transition: background .18s;
-        }
+    .sdiv {
+      width: 1px;
+      background: #ddd;
+      margin: 9px 0;
+      flex-shrink: 0;
+      transition: background .18s;
+    }
 
-        .sinput {
-            flex: 1;
-            border: none;
-            background: transparent;
-            outline: none;
-            padding: 0 12px;
-            font-size: 13.5px;
-            font-family: inherit;
-            min-width: 0;
-        }
+    .sinput {
+      flex: 1;
+      border: none;
+      background: transparent;
+      outline: none;
+      padding: 0 12px;
+      font-size: 13.5px;
+      font-family: inherit;
+      min-width: 0;
+    }
 
-        .sico {
-            display: flex;
-            align-items: center;
-            padding: 0 8px;
-            color: #ccc;
-            background: none;
-            border: none;
-            cursor: pointer;
-            flex-shrink: 0;
-        }
+    .sico {
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      color: #ccc;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
 
-        .sbtn {
-            background: var(--p);
-            color: #fff;
-            border: none;
-            padding: 0 20px;
-            font-weight: 700;
-            font-size: 13px;
-            cursor: pointer;
-            border-radius: 0 8px 8px 0;
-            font-family: inherit;
-            white-space: nowrap;
-            transition: background .15s;
-            flex-shrink: 0;
-        }
+    .sbtn {
+      background: var(--p);
+      color: #fff;
+      border: none;
+      padding: 0 20px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      border-radius: 0 8px 8px 0;
+      font-family: inherit;
+      white-space: nowrap;
+      transition: background .15s;
+      flex-shrink: 0;
+    }
 
-        .sbtn:hover {
-            background: var(--pd);
-        }
+    .sbtn:hover {
+      background: var(--pd);
+    }
 
-        /* ══════════════════════════════════════
+    /* ══════════════════════════════════════
            [HEADER] Mega menu
         ══════════════════════════════════════ */
-        .manchor {
-            position: absolute;
-            top: calc(100% + 6px);
-            left: 0;
-            z-index: 800;
-        }
+    .manchor {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      z-index: 800;
+    }
 
-        .mm {
-            display: none;
-            width: min(920px, 96vw);
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            box-shadow: 0 16px 48px rgba(0, 0, 0, .13);
-            overflow: hidden;
-        }
+    .mm {
+      display: none;
+      width: min(920px, 96vw);
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, .18);
+      overflow: hidden;
+      flex-direction: column;
+    }
 
-        .mm.open {
-            display: flex;
-        }
+    .mm.open {
+      display: flex;
+    }
 
-        .mml {
-            width: 196px;
-            background: #f9fafb;
-            border-right: 1px solid #f0f0f0;
-            padding: 6px 0;
-            flex-shrink: 0;
-        }
+    .mm-hd {
+      background: linear-gradient(120deg, var(--p) 0%, #00b85a 100%);
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
 
-        .ml1 {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 14px;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            border-left: 3px solid transparent;
-            color: #444;
-            transition: background .12s, color .12s;
-        }
+    .mm-hd-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: .1px;
+    }
 
-        .ml1:hover,
-        .ml1.active {
-            background: #fff;
-            color: var(--p);
-            border-left-color: var(--p);
-            font-weight: 600;
-        }
+    .mm-hd-sub {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .78);
+      font-weight: 500;
+    }
 
-        .mmr {
-            flex: 1;
-            padding: 20px 24px;
-            overflow-y: auto;
-            max-height: 480px;
-        }
+    .mm-body {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
 
-        .mp {
-            display: none;
-        }
+    .mml {
+      width: 196px;
+      background: #f8fafc;
+      border-right: 1px solid #eef0f3;
+      padding: 8px 0;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .mp.active {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 18px 24px;
-        }
+    .mml a {
+      display: block;
+      color: inherit;
+    }
 
-        .mp h3 {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--p);
-            margin-bottom: 7px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #f0f0f0;
-        }
+    .ml1 {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-left: 3px solid transparent;
+      color: #555;
+      transition: background .12s, color .12s, border-color .12s;
+    }
 
-        .mp ul {
-            list-style: none;
-        }
+    .ml1:hover,
+    .ml1.active {
+      background: #fff;
+      color: var(--p);
+      border-left-color: var(--p);
+      font-weight: 700;
+    }
 
-        .mp li {
-            font-size: 12px;
-            color: #555;
-            padding: 3px 0;
-            cursor: pointer;
-            transition: color .12s;
-        }
+    .ml1-icon {
+      font-size: 15px;
+      flex-shrink: 0;
+    }
 
-        .mp li:hover {
-            color: var(--p);
-        }
+    .ml1-label {
+      flex: 1;
+    }
 
-        /* ══════════════════════════════════════
+    .mml-foot {
+      margin-top: auto;
+      padding: 10px 14px;
+      border-top: 1px solid #eef0f3;
+    }
+
+    .mml-foot a {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--p);
+    }
+
+    .mml-foot a:hover {
+      text-decoration: underline;
+    }
+
+    .mmr {
+      flex: 1;
+      padding: 20px 24px;
+      overflow-y: auto;
+      max-height: 420px;
+    }
+
+    .mp {
+      display: none;
+    }
+
+    .mp.active {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px 22px;
+    }
+
+    .mp>div>a {
+      display: block;
+      color: inherit;
+    }
+
+    .mp h3 {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--p);
+      margin-bottom: 8px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--pl);
+      text-transform: uppercase;
+      letter-spacing: .3px;
+    }
+
+    .mp ul {
+      list-style: none;
+    }
+
+    .mp li {
+      font-size: 12px;
+      color: #555;
+      padding: 3px 0;
+      cursor: pointer;
+      transition: color .12s;
+    }
+
+    .mp li:hover {
+      color: var(--p);
+    }
+
+    /* ══════════════════════════════════════
+           [HEADER] Mega menu mobile overlay
+        ══════════════════════════════════════ */
+    @media(max-width:768px) {
+      .sc-label {
+        display: none
+      }
+
+      /* Danh mục mobile: full-screen overlay + bottom sheet */
+      .manchor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 900;
+        background: rgba(0, 0, 0, .48);
+        display: none;
+        align-items: flex-end;
+      }
+
+      .manchor.mob-open {
+        display: flex
+      }
+
+      .mm {
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 20px 20px 0 0;
+        max-height: 72vh;
+        overflow-y: auto;
+      }
+
+      .mm-body {
+        flex-direction: column
+      }
+
+      .mml {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eef0f3;
+        padding: 8px 0 4px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mml-foot {
+        grid-column: 1/-1
+      }
+
+      .mmr {
+        display: none
+      }
+
+      /* Hide login + search submit on mobile */
+      .blogin {
+        display: none
+      }
+
+      .sbtn {
+        display: none !important
+      }
+    }
+
+    /* ══════════════════════════════════════
            [HEADER] Search dropdown
         ══════════════════════════════════════ */
-        .sdrop {
-            display: none;
-            position: absolute;
-            top: calc(100% + 6px);
-            left: 0;
-            right: 0;
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            box-shadow: 0 12px 36px rgba(0, 0, 0, .1);
-            z-index: 799;
-            padding: 16px;
-        }
+    .sdrop {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .1);
+      z-index: 799;
+      padding: 16px;
+    }
 
-        .sdrop.open {
-            display: block;
-        }
+    .sdrop.open {
+      display: block;
+    }
 
-        .sdt {
-            font-size: 10.5px;
-            font-weight: 700;
-            color: #aaa;
-            text-transform: uppercase;
-            letter-spacing: .5px;
-            margin-bottom: 8px;
-        }
+    .sdt {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 8px;
+    }
 
-        .sdtags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 4px;
-        }
+    .sdtags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
 
-        .sdtag {
-            padding: 5px 12px;
-            background: #f3f4f6;
-            border-radius: 20px;
-            font-size: 12px;
-            color: #444;
-            cursor: pointer;
-            transition: background .12s, color .12s;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
+    .sdtag {
+      padding: 5px 12px;
+      background: #f3f4f6;
+      border-radius: 20px;
+      font-size: 12px;
+      color: #444;
+      cursor: pointer;
+      transition: background .12s, color .12s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
 
-        .sdtag:hover {
-            background: var(--pl);
-            color: var(--p);
-        }
+    .sdtag:hover {
+      background: var(--pl);
+      color: var(--p);
+    }
 
-        .sditem {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 7px 6px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background .12s;
-        }
+    .sditem {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 6px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .12s;
+    }
 
-        .sditem:hover {
-            background: #f9fafb;
-        }
+    .sditem:hover {
+      background: #f9fafb;
+    }
 
-        .sditem img {
-            width: 38px;
-            height: 38px;
-            object-fit: cover;
-            border-radius: 6px;
-            flex-shrink: 0;
-        }
+    .sditem img {
+      width: 38px;
+      height: 38px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
 
-        .sdn {
-            font-size: 12.5px;
-            font-weight: 500;
-            color: #222;
-        }
+    .sdn {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #222;
+    }
 
-        .sdpr {
-            font-size: 12px;
-            color: #e74c3c;
-            font-weight: 600;
-        }
+    .sdpr {
+      font-size: 12px;
+      color: #e74c3c;
+      font-weight: 600;
+    }
 
-        .sdsh {
-            font-size: 11px;
-            color: #aaa;
-        }
+    .sdsh {
+      font-size: 11px;
+      color: #aaa;
+    }
 
-        .sdsep {
-            height: 1px;
-            background: #f0f0f0;
-            margin: 10px 0;
-        }
+    .sdsep {
+      height: 1px;
+      background: #f0f0f0;
+      margin: 10px 0;
+    }
 
-        /* ══════════════════════════════════════
+    .uavatar {
+      display: none;
+      position: relative;
+    }
+
+    .uavatar-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--p);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      border: 2px solid var(--pl);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: box-shadow .18s;
+      padding: 0;
+    }
+
+    .uavatar-btn:hover {
+      box-shadow: 0 0 0 3px var(--pl);
+    }
+
+    .uavatar-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .udrop {
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: 220px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .13);
+      z-index: 900;
+      padding: 6px 0;
+      overflow: hidden;
+    }
+
+    .udrop.open {
+      display: block;
+    }
+
+    .udrop-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #333;
+      cursor: pointer;
+      transition: background .12s, color .12s;
+    }
+
+    .udrop-item:hover {
+      background: var(--pl);
+      color: var(--p);
+    }
+
+    .udrop-item .ms {
+      font-size: 18px;
+      color: #888;
+      flex-shrink: 0;
+    }
+
+    .udrop-item:hover .ms {
+      color: var(--p);
+    }
+
+    .udrop-sep {
+      height: 1px;
+      background: var(--line);
+      margin: 4px 0;
+    }
+
+    .udrop-item.danger {
+      color: #e74c3c;
+    }
+
+    .udrop-item.danger .ms {
+      color: #e74c3c;
+    }
+
+    .udrop-item.danger:hover {
+      background: #fff5f5;
+      color: #c0392b;
+    }
+
+    /* ══════════════════════════════════════
            [HEADER] Actions (notify, fav, login, post)
         ══════════════════════════════════════ */
-        .ha {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-shrink: 0;
-        }
+    .ha {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
 
-        .ibtn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #555;
-            padding: 7px;
-            display: flex;
-            align-items: center;
-            border-radius: 8px;
-            position: relative;
-        }
+    .ibtn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #555;
+      padding: 7px;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      position: relative;
+    }
 
-        .ibtn:hover {
-            background: #f3f4f6;
-        }
+    .ibtn:hover {
+      background: #f3f4f6;
+    }
 
-        .ndot {
-            position: absolute;
-            top: 4px;
-            right: 4px;
-            width: 7px;
-            height: 7px;
-            background: #e74c3c;
-            border-radius: 50%;
-            border: 1.5px solid #fff;
-        }
+    .ndot {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 7px;
+      height: 7px;
+      background: #e74c3c;
+      border-radius: 50%;
+      border: 1.5px solid #fff;
+    }
 
-        .hdiv {
-            width: 1px;
-            height: 26px;
-            background: #e5e7eb;
-            flex-shrink: 0;
-        }
+    .hdiv {
+      width: 1px;
+      height: 26px;
+      background: #e5e7eb;
+      flex-shrink: 0;
+    }
 
-        .blogin {
-            background: none;
-            border: none;
-            font-size: 13px;
-            font-weight: 700;
-            color: #333;
-            cursor: pointer;
-            font-family: inherit;
-            padding: 7px 10px;
-            border-radius: 8px;
-            transition: color .15s;
-        }
+    .blogin {
+      background: none;
+      border: none;
+      font-size: 13px;
+      font-weight: 700;
+      color: #333;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 7px 10px;
+      border-radius: 8px;
+      transition: color .15s;
+    }
 
-        .blogin:hover {
-            color: var(--p);
-        }
+    .blogin:hover {
+      color: var(--p);
+    }
 
-        .bpost {
-            background: var(--p);
-            color: #fff;
-            border: none;
-            padding: 9px 16px;
-            border-radius: 9px;
-            font-weight: 800;
-            font-size: 13px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-family: inherit;
-            box-shadow: 0 2px 8px rgba(0, 136, 72, .25);
-            white-space: nowrap;
-            transition: background .15s;
-        }
+    .bpost {
+      background: var(--p);
+      color: #fff;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: inherit;
+      box-shadow: 0 2px 8px rgba(0, 136, 72, .25);
+      white-space: nowrap;
+      transition: background .15s;
+    }
 
-        .bpost:hover {
-            background: var(--pd);
-        }
+    .bpost:hover {
+      background: var(--pd);
+    }
 
-        .bpost-plus {
-            display: none;
-        }
+    .bpost-plus {
+      display: none;
+    }
+
+    /* ══════════════════════════════════════
+           [HEADER] Cat-tabs
+        ══════════════════════════════════════ */
+    .cat-tabs {
+      border-top: 1px solid var(--line);
+    }
+
+    .cat-tabs-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 52px
+    }
+
+    .ct-scroll {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+      padding: 0 2px;
+      min-width: 0
+    }
+
+    .ct-scroll::-webkit-scrollbar {
+      display: none
+    }
+
+    .ct-pill {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      padding: 5px 14px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #555;
+      background: #f5f5f5;
+      border-radius: 20px;
+      text-decoration: none;
+      border: 1.5px solid transparent;
+      flex-shrink: 0;
+      transition: background .15s, color .15s, border-color .15s
+    }
+
+    .ct-pill:hover {
+      background: var(--pl);
+      color: var(--p);
+      border-color: var(--p)
+    }
+
+    .ct-pill.hot {
+      color: var(--ac);
+      background: #fff8f3;
+      border-color: #ffd5ba
+    }
+
+    .ct-pill.hot:hover {
+      background: #fef0e5;
+      border-color: var(--ac)
+    }
+
+    .ct-nav {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1.5px solid var(--line);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #666;
+      transition: all .15s;
+      padding: 0
+    }
+
+    .ct-nav:hover {
+      background: var(--pl);
+      color: var(--p);
+      border-color: var(--p)
+    }
 
 
         .bsave:hover {
@@ -2034,757 +2400,789 @@
 <body>
 
     <!-- ══ HEADER ══ -->
-    <header>
-        <div class="hdr">
-            <a href="/" class="logo">
-                <img src="/assets/logo.png" alt="Chof.vn"
-                    onerror="this.style.display='none';document.getElementById('ltxt').style.display='block'">
-                <span id="ltxt" class="logo-txt" style="display:none">Chof<em>.vn</em></span>
-            </a>
+  <header>
+    <div class="hdr">
+      <a href="/" class="logo">
+        <img src="/assets/logo.png" alt="Chof.vn"
+          onerror="this.style.display='none';document.getElementById('ltxt').style.display='block'">
+        <span id="ltxt" class="logo-txt" style="display:none">Chof<em>.vn</em></span>
+      </a>
 
-            <div class="sw" id="swrap">
-                <div class="sb">
-                    <div style="position:relative;display:flex;align-items:center;flex-shrink:0;">
-                        <button class="scat" id="catBtn" onclick="toggleMM(event)">
-                            <span class="ms" style="font-size:17px">menu</span>
-                            <span class="sc-label">Danh mục</span>
-                            <span class="ms" style="font-size:15px" id="catArr">expand_more</span>
-                        </button>
-                        <div class="manchor">
-                            <div class="mm" id="mm">
-                                <div class="mml">
-                                    <a href="/listing.html">
-                                        <div class="ml1 active" onmouseenter="swp('nam',this)">Nam <span class="ms"
-                                                style="font-size:13px">chevron_right</span></div>
-                                    </a>
-
-                                    <a href="/listing.html">
-                                        <div class="ml1" onmouseenter="swp('nu',this)">Nữ <span class="ms"
-                                                style="font-size:13px">chevron_right</span></div>
-                                    </a>
-                                    <a href="/listing.html">
-                                        <div class="ml1" onmouseenter="swp('treEm',this)">Trẻ em <span class="ms"
-                                                style="font-size:13px">chevron_right</span></div>
-                                    </a>
-                                    <a href="/listing.html">
-                                        <div class="ml1" onmouseenter="swp('chuyenDe',this)">Chuyên đề <span class="ms"
-                                                style="font-size:13px">chevron_right</span></div>
-                                    </a>
-                                    <a href="/listing.html">
-                                        <div class="ml1" onmouseenter="swp('vietBrand',this)">Thương hiệu Việt <span
-                                                class="ms" style="font-size:13px">chevron_right</span></div>
-                                    </a>
-                                    <a href="/listing.html">
-                                        <div class="ml1" onmouseenter="swp('foreigner',this)">4 Foreigner <span
-                                                class="ms" style="font-size:13px">chevron_right</span></div>
-                                    </a>
-                                    <a href="/listing.html">
-                                        <div class="ml1" onmouseenter="swp('dichvu',this)">Dịch vụ <span class="ms"
-                                                style="font-size:13px">chevron_right</span></div>
-                                    </a>
-                                    <a href="/listing.html">
-                                        <div class="ml1" onmouseenter="swp('viecLam',this)">Việc làm <span class="ms"
-                                                style="font-size:13px">chevron_right</span></div>
-                                    </a>
-                                </div>
-                                <div class="mmr">
-                                    <div class="mp active" id="p-nam">
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Áo</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Áo thun</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Áo sơ mi</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Áo khoác</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Áo vest</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Áo khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Quần</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Quần ngắn</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Quần dài</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Quần lót</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Quần khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Nón – Mắt kính</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Nón</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Mắt kính</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Balo – Túi xách</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Ba lô</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Túi xách</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Đồng hồ – Bóp ví</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Đồng hồ</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Bóp ví</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Đồ lót – Giày dép</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Đồ lót</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Giày dép</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Nước hoa – Mỹ phẩm</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Nước hoa</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Mỹ phẩm</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Phụ kiện – Khác</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Phụ kiện</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mp" id="p-nu">
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Áo</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Áo thun</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Áo sơ mi</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Áo khoác</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Áo dài</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Áo khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Quần – Váy đầm</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Quần</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Váy đầm</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Nón – Mắt kính</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Nón</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Mắt kính</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Balo – Túi xách</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Ba lô</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Túi xách</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Đồng hồ – Bóp ví</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Đồng hồ</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Bóp ví</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Đồ lót – Giày dép</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Đồ lót</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Giày dép</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Nước hoa – Mỹ phẩm</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Nước hoa</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Mỹ phẩm</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Phụ kiện – Khác</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Phụ kiện</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mp" id="p-treEm">
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Quần áo sơ sinh</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Dưới 1 tháng</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>1–6 tháng</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>6–12 tháng</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Quần áo bé trai</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Dưới 3 tuổi</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>3–6 tuổi</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Trên 6 tuổi</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Quần áo bé gái</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Dưới 3 tuổi</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>3–6 tuổi</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Trên 6 tuổi</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Phụ kiện – Khác</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Phụ kiện</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mp" id="p-chuyenDe">
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>TT Gia dụng</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Mền/mùng</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Áo gối/ra giường</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Rèm/khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>TT Chuyên dụng</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Đồng phục/nghề nghiệp</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Bà bầu/hội cưới</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Thú cưng/sân khấu</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>PK điện tử/handmade</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Thời trang xanh</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Nam/Nữ/Trẻ em</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Đồ lót/phụ kiện/khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>TT Thể thao</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Nam/Nữ/Trẻ em</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Đồ lót/phụ kiện/khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>TT Đồng giá</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>10k/50k/100k</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>200k/300k</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Nguyên phụ liệu</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Vải/khoá kéo</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Khuy nút/chỉ may</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Tem nhãn/máy móc</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Manocanh/khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mp" id="p-vietBrand">
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Thời trang nam</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Áo nam</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Quần nam</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Đồ lót/phụ kiện/khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Thời trang nữ</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Áo nữ</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Quần/đồ lót</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Phụ kiện/khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Thời trang trẻ em</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Quần áo bé trai</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Quần áo bé gái</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Phụ kiện/khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Trang phục truyền thống</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Trang phục nam</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Trang phục nữ</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Trang phục trẻ em</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Phụ kiện/khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mp" id="p-foreigner">
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>For Men</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Shirt/T-shirt</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Short/Pants</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Jacket</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Underwear</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Accessories/Others</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>For Women</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Top/Dress</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Skirt/Short</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Underwear</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Accessories/Others</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>For Kids</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>For Boy</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>For Girl</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Accessories/Others</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Made to Order</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>For Men/Women/Kids</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Underwear/Accessories/Others</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mp" id="p-dichvu">
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>DV May mặc</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>In thêu</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Giặt ủi</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Sửa quần áo</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>DV Phụ trợ</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Người mẫu</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Trang điểm</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Chụp ảnh</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Tatoo</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Khóa học/khác</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Theo yêu cầu</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>May đo</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Gia công</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mp" id="p-viecLam">
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Việc làm thời vụ</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Việc tìm người</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Người tìm việc</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <a href="/listing.html">
-                                                <h3>Việc làm chính thức</h3>
-                                            </a>
-                                            <ul>
-                                                <a href="/listing.html">
-                                                    <li>Việc tìm người</li>
-                                                </a>
-                                                <a href="/listing.html">
-                                                    <li>Người tìm việc</li>
-                                                </a>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sdiv"></div>
-                    <input class="sinput" id="sinput" type="text" placeholder="Tìm kiếm sản phẩm fashion, dịch vụ..."
-                        autocomplete="off" onfocus="openDrop()" />
-                    <button class="sico"><span class="ms" style="font-size:18px">search</span></button>
-                    <button class="sbtn" onclick="window.location.href='/listing.html'">Tìm kiếm</button>
+      <div class="sw" id="swrap">
+        <div class="sb">
+          <div style="position:relative;display:flex;align-items:center;flex-shrink:0;">
+            <button class="scat" id="catBtn" onclick="toggleMM(event)">
+              <span class="ms" style="font-size:17px">menu</span>
+              <span class="sc-label">Danh mục</span>
+              <span class="ms" style="font-size:15px" id="catArr">expand_more</span>
+            </button>
+            <div class="manchor">
+              <div class="mm" id="mm">
+                <div class="mm-hd">
+                  <span class="mm-hd-title">Khám phá danh mục</span>
+                  <span class="mm-hd-sub">Tất cả ngành hàng thời trang Chof.vn</span>
+                  <button onclick="closeMM()"
+                    style="background:rgba(255,255,255,.2);border:none;color:#fff;border-radius:50%;width:28px;height:28px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;flex-shrink:0;margin-left:10px"><span
+                      class="ms" style="font-size:18px">close</span></button>
                 </div>
-
-                <!-- Search dropdown -->
-                <div class="sdrop" id="sdrop">
-                    <div class="sdt">🔥 Tìm kiếm phổ biến</div>
-                    <div class="sdtags">
-                        <span class="sdtag" onclick="fill(this)"><span class="ms"
-                                style="font-size:12px">trending_up</span>Áo thun oversize</span>
-                        <span class="sdtag" onclick="fill(this)"><span class="ms"
-                                style="font-size:12px">trending_up</span>Váy đầm nữ</span>
-                        <span class="sdtag" onclick="fill(this)"><span class="ms"
-                                style="font-size:12px">trending_up</span>Giày sneaker</span>
-                        <span class="sdtag" onclick="fill(this)"><span class="ms"
-                                style="font-size:12px">trending_up</span>Túi xách nữ</span>
-                        <span class="sdtag" onclick="fill(this)"><span class="ms"
-                                style="font-size:12px">trending_up</span>Đồng hồ Casio</span>
-                        <span class="sdtag" onclick="fill(this)"><span class="ms"
-                                style="font-size:12px">trending_up</span>Nước hoa nam</span>
-                        <span class="sdtag" onclick="fill(this)"><span class="ms"
-                                style="font-size:12px">trending_up</span>Dịch vụ may đo</span>
+                <div class="mm-body">
+                  <div class="mml">
+                    <a href="/listing.html">
+                      <div class="ml1 active" onmouseenter="swp('nam',this)">
+                        <span class="ml1-label">Nam</span><span class="ms"
+                          style="font-size:13px;opacity:.5">chevron_right</span>
+                      </div>
+                    </a>
+                    <a href="/listing.html">
+                      <div class="ml1" onmouseenter="swp('nu',this)">
+                        <span class="ml1-label">Nữ</span><span class="ms"
+                          style="font-size:13px;opacity:.5">chevron_right</span>
+                      </div>
+                    </a>
+                    <a href="/listing.html">
+                      <div class="ml1" onmouseenter="swp('treEm',this)">
+                        <span class="ml1-label">Trẻ em</span><span class="ms"
+                          style="font-size:13px;opacity:.5">chevron_right</span>
+                      </div>
+                    </a>
+                    <a href="/listing.html">
+                      <div class="ml1" onmouseenter="swp('chuyenDe',this)">
+                        <span class="ml1-label">Chuyên đề</span><span class="ms"
+                          style="font-size:13px;opacity:.5">chevron_right</span>
+                      </div>
+                    </a>
+                    <a href="/listing.html">
+                      <div class="ml1" onmouseenter="swp('vietBrand',this)">
+                        <span class="ml1-label">Thương hiệu Việt</span><span
+                          class="ms" style="font-size:13px;opacity:.5">chevron_right</span>
+                      </div>
+                    </a>
+                    <a href="/listing.html">
+                      <div class="ml1" onmouseenter="swp('foreigner',this)">
+                        <span class="ml1-label">4 Foreigner</span><span class="ms"
+                          style="font-size:13px;opacity:.5">chevron_right</span>
+                      </div>
+                    </a>
+                    <a href="/listing.html">
+                      <div class="ml1" onmouseenter="swp('dichvu',this)">
+                        <span class="ml1-label">Dịch vụ</span><span class="ms"
+                          style="font-size:13px;opacity:.5">chevron_right</span>
+                      </div>
+                    </a>
+                    <div class="mml-foot">
+                      <a href="/listing.html"><span class="ms" style="font-size:13px">grid_view</span> Xem tất cả danh
+                        mục</a>
                     </div>
-                    <div class="sdsep"></div>
-                    <div class="sdt" style="margin-bottom:8px">⭐ Gợi ý sản phẩm nổi bật</div>
-                    <div class="sditem"><img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
-                            alt="">
-                        <div>
-                            <div class="sdn">Đầm voan hoa nhí cổ V phong cách Hàn Quốc</div>
-                            <div class="sdpr">250.000 đ</div>
-                            <div class="sdsh">Ana Fashion · Quận 1, HCM</div>
-                        </div>
+                  </div>
+                  <div class="mmr">
+                    <div class="mp active" id="p-nam">
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Áo</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Áo thun</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Áo sơ mi</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Áo khoác</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Áo vest</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Áo khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Quần</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Quần ngắn</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Quần dài</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Quần lót</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Quần khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Nón – Mắt kính</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Nón</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Mắt kính</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Balo – Túi xách</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Ba lô</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Túi xách</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Đồng hồ – Bóp ví</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Đồng hồ</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Bóp ví</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Đồ lót – Giày dép</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Đồ lót</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Giày dép</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Nước hoa – Mỹ phẩm</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Nước hoa</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Mỹ phẩm</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Phụ kiện – Khác</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Phụ kiện</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Khác</li>
+                          </a>
+                        </ul>
+                      </div>
                     </div>
-                    <div class="sditem"><img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
-                            alt="">
-                        <div>
-                            <div class="sdn">Giày Sneaker Nike Air Max đỏ đô size 40–44</div>
-                            <div class="sdpr">3.500.000 đ</div>
-                            <div class="sdsh">Sneaker World · Bình Thạnh, HCM</div>
-                        </div>
+                    <div class="mp" id="p-nu">
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Áo</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Áo thun</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Áo sơ mi</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Áo khoác</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Áo dài</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Áo khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Quần – Váy đầm</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Quần</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Váy đầm</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Nón – Mắt kính</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Nón</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Mắt kính</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Balo – Túi xách</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Ba lô</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Túi xách</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Đồng hồ – Bóp ví</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Đồng hồ</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Bóp ví</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Đồ lót – Giày dép</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Đồ lót</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Giày dép</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Nước hoa – Mỹ phẩm</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Nước hoa</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Mỹ phẩm</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Phụ kiện – Khác</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Phụ kiện</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Khác</li>
+                          </a>
+                        </ul>
+                      </div>
                     </div>
-                    <div class="sditem"><img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
-                            alt="">
-                        <div>
-                            <div class="sdn">Đồng hồ Casio Edifice chính hãng fullbox 99%</div>
-                            <div class="sdpr">1.200.000 đ</div>
-                            <div class="sdsh">Watch Station · Thủ Đức, HCM</div>
-                        </div>
+                    <div class="mp" id="p-treEm">
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Quần áo sơ sinh</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Dưới 1 tháng</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>1–6 tháng</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>6–12 tháng</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Quần áo bé trai</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Dưới 3 tuổi</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>3–6 tuổi</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Trên 6 tuổi</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Quần áo bé gái</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Dưới 3 tuổi</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>3–6 tuổi</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Trên 6 tuổi</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Phụ kiện – Khác</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Phụ kiện</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Khác</li>
+                          </a>
+                        </ul>
+                      </div>
                     </div>
-                    <div class="sdsep"></div>
-                    <div style="text-align:center"><a href="#" style="font-size:12px;color:var(--p);font-weight:600">Xem
-                            tất cả kết quả →</a></div>
-                </div>
+                    <div class="mp" id="p-chuyenDe">
+                      <div>
+                        <a href="/listing.html">
+                          <h3>TT Gia dụng</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Mền/mùng</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Áo gối/ra giường</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Rèm/khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>TT Chuyên dụng</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Đồng phục/nghề nghiệp</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Bà bầu/hội cưới</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Thú cưng/sân khấu</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>PK điện tử/handmade</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Thời trang xanh</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Nam/Nữ/Trẻ em</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Đồ lót/phụ kiện/khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>TT Thể thao</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Nam/Nữ/Trẻ em</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Đồ lót/phụ kiện/khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>TT Đồng giá</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>10k/50k/100k</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>200k/300k</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Nguyên phụ liệu</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Vải/khoá kéo</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Khuy nút/chỉ may</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Tem nhãn/máy móc</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Manocanh/khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mp" id="p-vietBrand">
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Thời trang nam</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Áo nam</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Quần nam</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Đồ lót/phụ kiện/khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Thời trang nữ</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Áo nữ</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Quần/đồ lót</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Phụ kiện/khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Thời trang trẻ em</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Quần áo bé trai</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Quần áo bé gái</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Phụ kiện/khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Trang phục truyền thống</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Trang phục nam</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Trang phục nữ</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Trang phục trẻ em</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Phụ kiện/khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mp" id="p-foreigner">
+                      <div>
+                        <a href="/listing.html">
+                          <h3>For Men</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Shirt/T-shirt</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Short/Pants</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Jacket</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Underwear</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Accessories/Others</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>For Women</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Top/Dress</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Skirt/Short</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Underwear</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Accessories/Others</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>For Kids</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>For Boy</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>For Girl</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Accessories/Others</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Made to Order</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>For Men/Women/Kids</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Underwear/Accessories/Others</li>
+                          </a>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mp" id="p-dichvu">
+                      <div>
+                        <a href="/listing.html">
+                          <h3>DV May mặc</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>In thêu</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Giặt ủi</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Sửa quần áo</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>DV Phụ trợ</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>Người mẫu</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Trang điểm</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Chụp ảnh</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Tatoo</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Khóa học/khác</li>
+                          </a>
+                        </ul>
+                      </div>
+                      <div>
+                        <a href="/listing.html">
+                          <h3>Theo yêu cầu</h3>
+                        </a>
+                        <ul>
+                          <a href="/listing.html">
+                            <li>May đo</li>
+                          </a>
+                          <a href="/listing.html">
+                            <li>Gia công</li>
+                          </a>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.mm-body -->
+              </div>
             </div>
-
-            <div class="ha">
-                <button class="ibtn"><span class="ms">notifications</span><span class="ndot"></span></button>
-                <button class="ibtn hide-mob"><span class="ms">favorite</span></button>
-                <div class="hdiv"></div>
-                <button class="blogin">Đăng nhập</button>
-                <button onclick="window.location.href='/manage.html'" class="bpost" id="bpost">
-                    <span class="ms bpost-icon-desk" style="font-size:17px">add_box</span>
-                    <span class="bpost-plus">+</span>
-                    <span class="bpost-txt">ĐĂNG TIN</span>
-                </button>
-            </div>
+          </div>
+          <div class="sdiv"></div>
+          <input class="sinput" id="sinput" type="text" placeholder="Tìm kiếm sản phẩm fashion, dịch vụ..."
+            autocomplete="off" onfocus="openDrop()" />
+          <button class="sico"><span class="ms" style="font-size:18px">search</span></button>
+          <button class="sbtn" onclick="window.location.href='/listing.html'">Tìm kiếm</button>
         </div>
-    </header>
+
+        <!-- Search dropdown -->
+        <div class="sdrop" id="sdrop">
+          <div class="sdt">🔥 Tìm kiếm phổ biến</div>
+          <div class="sdtags">
+            <span class="sdtag" onclick="fill(this)"><span class="ms" style="font-size:12px">trending_up</span>Áo thun
+              oversize</span>
+            <span class="sdtag" onclick="fill(this)"><span class="ms" style="font-size:12px">trending_up</span>Váy đầm
+              nữ</span>
+            <span class="sdtag" onclick="fill(this)"><span class="ms" style="font-size:12px">trending_up</span>Giày
+              sneaker</span>
+            <span class="sdtag" onclick="fill(this)"><span class="ms" style="font-size:12px">trending_up</span>Túi xách
+              nữ</span>
+            <span class="sdtag" onclick="fill(this)"><span class="ms" style="font-size:12px">trending_up</span>Đồng hồ
+              Casio</span>
+            <span class="sdtag" onclick="fill(this)"><span class="ms" style="font-size:12px">trending_up</span>Nước hoa
+              nam</span>
+            <span class="sdtag" onclick="fill(this)"><span class="ms" style="font-size:12px">trending_up</span>Dịch vụ
+              may đo</span>
+          </div>
+          <div class="sdsep"></div>
+          <div class="sdt" style="margin-bottom:8px">⭐ Gợi ý sản phẩm nổi bật</div>
+          <div class="sditem"><img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
+              alt="">
+            <div>
+              <div class="sdn">Đầm voan hoa nhí cổ V phong cách Hàn Quốc</div>
+              <div class="sdpr">250.000 đ</div>
+              <div class="sdsh">Ana Fashion · Quận 1, HCM</div>
+            </div>
+          </div>
+          <div class="sditem"><img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
+              alt="">
+            <div>
+              <div class="sdn">Giày Sneaker Nike Air Max đỏ đô size 40–44</div>
+              <div class="sdpr">3.500.000 đ</div>
+              <div class="sdsh">Sneaker World · Bình Thạnh, HCM</div>
+            </div>
+          </div>
+          <div class="sditem"><img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
+              alt="">
+            <div>
+              <div class="sdn">Đồng hồ Casio Edifice chính hãng fullbox 99%</div>
+              <div class="sdpr">1.200.000 đ</div>
+              <div class="sdsh">Watch Station · Thủ Đức, HCM</div>
+            </div>
+          </div>
+          <div class="sdsep"></div>
+          <div style="text-align:center"><a href="#" style="font-size:12px;color:var(--p);font-weight:600">Xem
+              tất cả kết quả →</a></div>
+        </div>
+      </div>
+
+      <div class="ha">
+        <button class="blogin" id="btnLogin" onclick="doLogin()">Đăng nhập</button>
+
+        <div class="uavatar" id="uavatarWrap">
+          <button class="uavatar-btn" id="uavatarBtn" onclick="toggleUDrop(event)">
+            <span id="uavatarInitial">T</span>
+          </button>
+          <div class="udrop" id="udrop">
+            <div class="udrop-item"><span class="ms">notifications</span>Thông báo</div>
+            <div class="udrop-item"><span class="ms">favorite</span>Tin yêu thích</div>
+            <div class="udrop-item"><span class="ms">history</span>Tin vừa xem</div>
+            <div class="udrop-item"><span class="ms">group</span>Theo dõi</div>
+            <div class="udrop-sep"></div>
+            <div class="udrop-item"><span class="ms">article</span>Tất cả bài đăng</div>
+            <div class="udrop-item"><span class="ms">manage_accounts</span>Quản lý tài khoản</div>
+            <div class="udrop-sep"></div>
+            <div class="udrop-item danger" onclick="doLogout()"><span class="ms">logout</span>Đăng xuất</div>
+          </div>
+        </div>
+
+        <button onclick="window.location.href='/manage.html'" class="bpost" id="bpost">
+          <span class="ms" style="font-size:17px">add_box</span>
+          <span class="bpost-plus">+</span>
+          <span class="bpost-txt">ĐĂNG TIN</span>
+        </button>
+      </div>
+    </div>
+    <!-- CAT TABS -->
+    <div class="cat-tabs" id="catTabs">
+      <div class="cat-tabs-inner">
+        <button class="ct-nav" id="ctPrev" aria-label="Trước" onclick="ctScroll(-1)">
+          <span class="ms" style="font-size:16px">chevron_left</span>
+        </button>
+        <div class="ct-scroll" id="ctScroll">
+          <a href="/detail.html" class="ct-pill hot">🔥 Đầm voan hoa nhí cổ V Hàn Quốc</a>
+          <a href="/detail.html" class="ct-pill">👜 Túi Gucci GG Canvas</a>
+          <a href="/detail.html" class="ct-pill">👖 Quần jean baggy cao cấp</a>
+          <a href="/detail.html" class="ct-pill">👟 Giày Adidas Ultraboost</a>
+          <a href="/detail.html" class="ct-pill">⌚ Đồng hồ Casio Edifice</a>
+          <a href="/detail.html" class="ct-pill">🌹 Nước hoa Dior Sauvage</a>
+          <a href="/detail.html" class="ct-pill">🧥 Áo Hoodie nỉ Unisex</a>
+          <a href="/detail.html" class="ct-pill">👗 Váy hoa nhí dự tiệc</a>
+          <a href="/detail.html" class="ct-pill">💄 Mỹ phẩm Laneige Water Bank</a>
+          <a href="/detail.html" class="ct-pill">🏃 Giày chạy bộ siêu nhẹ</a>
+        </div>
+        <button class="ct-nav" id="ctNext" aria-label="Tiếp" onclick="ctScroll(1)">
+          <span class="ms" style="font-size:16px">chevron_right</span>
+        </button>
+      </div>
+    </div>
+  </header>
 
     <!-- ══ WRAP ══ -->
     <div class="wrap">
@@ -3515,98 +3913,197 @@
     </div>
 
         <!-- ══ FOOTER ══ -->
-    <footer>
-        <div class="fi">
-            <div>
-                <img src="/assets/logo.png" alt="Chof.vn" style="height:44px;object-fit:contain;margin-bottom:12px;"
-                    onerror="this.style.display='none'">
-                <p style="font-size:12.5px;color:#666;line-height:1.7;margin-bottom:10px">Sàn đăng tin rao vặt thời
-                    trang hàng đầu Việt Nam</p>
-                <div style="font-size:12.5px;color:#555;line-height:2.2;">
-                    <p><b>Địa chỉ:</b> 165 Đường D5, P.25, Q.Bình Thạnh, TP.HCM</p>
-                    <p><b>SĐT:</b> 0123 456 789</p>
-                    <p><b>Email:</b> <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                            data-cfemail="82e1eaede4acf4ecc2e5efe3ebeeace1edef">chof@gmail.com</a></p>
-                </div>
-            </div>
-            <div>
-                <h4 style="font-weight:700;font-size:14px;margin-bottom:12px">Về chúng tôi</h4>
-                <ul style="list-style:none;font-size:12.5px;color:#666;line-height:2.5;">
-                    <li><a href="#" style="color:#666">Giới thiệu</a></li>
-                    <li><a href="#" style="color:#666">Tầm nhìn - sứ mệnh</a></li>
-                    <li><a href="#" style="color:#666">Sơ đồ tổ chức</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="font-weight:700;font-size:14px;margin-bottom:12px">Quy định</h4>
-                <div style="display:grid;grid-template-columns:1fr 1fr;">
-                    <ul style="list-style:none;font-size:12.5px;color:#666;line-height:2.5;">
-                        <li><a href="#" style="color:#666">Quy định thành viên</a></li>
-                        <li><a href="#" style="color:#666">Quy định đăng tin</a></li>
-                        <li><a href="#" style="color:#666">Quy định sản phẩm</a></li>
-                    </ul>
-                    <ul style="list-style:none;font-size:12.5px;color:#666;line-height:2.5;">
-                        <li><a href="#" style="color:#666">Quy định giao hàng</a></li>
-                        <li><a href="#" style="color:#666">Quy định thanh toán</a></li>
-                        <li><a href="#" style="color:#666">Câu hỏi thường gặp</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <h4 style="font-weight:700;font-size:14px;margin-bottom:12px">Liên kết</h4>
-                <div style="display:flex;gap:10px;">
-                    <a href="#"><img src="/assets/tiktok.png" alt="Tiktok" style="width:30px;height:30px"
-                            onerror="this.style.display='none'"></a>
-                    <a href="#"><img src="/assets/fb.png" alt="Facebook" style="width:30px;height:30px"
-                            onerror="this.style.display='none'"></a>
-                    <a href="#"><img src="/assets/youtube.png" alt="YouTube" style="width:30px;height:30px"
-                            onerror="this.style.display='none'"></a>
-                </div>
-            </div>
+  <footer>
+    <div class="fi">
+      <div>
+        <div class="fi-logo"><img src="/assets/logo.png" alt="Chof.vn"
+            style="height:36px;object-fit:contain;display:block;filter:brightness(0) invert(1)"></div>
+        <p style="font-size:12.5px;color:#666;line-height:1.7;margin-bottom:12px">Sàn đăng tin rao vặt thời trang hàng
+          đầu Việt Nam</p>
+        <div style="font-size:12.5px;color:#666;line-height:2.3">
+          <p><b style="color:#aaa">Địa chỉ:</b> 165 Đường D5, P.25, Q.Bình Thạnh, TP.HCM</p>
+          <p><b style="color:#aaa">SĐT:</b> 0123 456 789</p>
+          <p><b style="color:#aaa">Email:</b> chof@gmail.com</p>
         </div>
-        <div class="fb2">
-            <p>© 2026 - Bản quyền thuộc về Chof.vn</p>
-            <div style="display:flex;gap:14px;"><a href="#" style="color:#aaa;text-decoration:underline">Điều khoản sử
-                    dụng</a><a href="#" style="color:#aaa;text-decoration:underline">Chính sách bảo mật</a></div>
+      </div>
+      <div>
+        <h4>Về chúng tôi</h4>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tầm nhìn - sứ mệnh</a></li>
+          <li><a href="#">Sơ đồ tổ chức</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quy định</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr">
+          <ul>
+            <li><a href="#">Quy định thành viên</a></li>
+            <li><a href="#">Quy định đăng tin</a></li>
+            <li><a href="#">Quy định sản phẩm</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Quy định giao hàng</a></li>
+            <li><a href="#">Quy định thanh toán</a></li>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
+          </ul>
         </div>
-    </footer>
+      </div>
+      <div>
+        <h4>Theo dõi</h4>
+        <div style="display:flex;gap:10px;align-items:center">
+          <a href="#"
+            style="width:32px;height:32px;background:#1877f2;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700">f</a>
+          <a href="#"
+            style="width:32px;height:32px;background:#ff0050;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">TT</a>
+          <a href="#"
+            style="width:32px;height:32px;background:#ff0000;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff"><span
+              class="ms msf" style="font-size:15px">play_circle</span></a>
+        </div>
+      </div>
+    </div>
+    <div
+      style="background:#111;border-top:1px solid #e5e7eb;padding:26px 16px;text-align:center;font-size:13px;color:#666;">
+      <div style="margin-bottom:12px;">
+        <a href="#" style="margin:0 14px;">CHÍNH SÁCH BẢO MẬT</a> |
+        <a href="#" style="margin:0 14px;">QUY CHẾ HOẠT ĐỘNG</a> |
+        <a href="#" style="margin:0 14px;">CHÍNH SÁCH VẬN CHUYỂN</a> |
+        <a href="#" style="margin:0 14px;">CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN</a>
+      </div>
+      <div style="margin:14px 0;">
+        <img src="/assets/dkbct.png" style="height:40px;margin:0 6px;">
+        <img src="/assets/dkbct.png" style="height:40px;margin:0 6px;">
+        <img src="/assets/dkbct.png" style="height:40px;margin:0 6px;">
+      </div>
+      <div style="line-height:1.7;">
+        <div><strong>Công ty TNHH Chof.vn</strong></div>
+        <div>Địa chỉ: Việt Nam</div>
+        <div>Chăm sóc khách hàng: Liên hệ qua hệ thống hỗ trợ trên Chof.vn</div>
+        <div>Chịu Trách Nhiệm Quản Lý Nội Dung: Chof.vn</div>
+        <div>Mã số doanh nghiệp: Đang cập nhật</div>
+        <div style="margin-top:6px;">© 2026 - Bản quyền thuộc về Chof.vn</div>
+      </div>
+    </div>
+    <div class="fb2">
+      <p>© 2026 - Bản quyền thuộc về Chof.vn</p>
+      <div style="display:flex;gap:16px"><a href="#">Điều khoản sử dụng</a><a href="#">Chính sách bảo mật</a></div>
+    </div>
+  </footer>
 
     <script>
-        // ═══ MEGA MENU ═══
-        function toggleMM(e) {
-            e.stopPropagation();
-            var m = document.getElementById('mm'), a = document.getElementById('catArr');
-            var o = m.classList.toggle('open');
-            a.textContent = o ? 'expand_less' : 'expand_more';
-        }
-        function swp(id, el) {
-            document.querySelectorAll('.ml1').forEach(function (i) { i.classList.remove('active'); });
-            el.classList.add('active');
-            document.querySelectorAll('.mp').forEach(function (p) { p.classList.remove('active'); });
-            var p = document.getElementById('p-' + id);
-            if (p) p.classList.add('active');
-        }
-        document.addEventListener('click', function (e) {
-            var m = document.getElementById('mm'), b = document.getElementById('catBtn');
-            if (m && !m.contains(e.target) && !b.contains(e.target)) {
-                m.classList.remove('open');
-                document.getElementById('catArr').textContent = 'expand_more';
-            }
-        });
+    function doLogin() {
+      document.getElementById('btnLogin').style.display = 'none';
+      document.getElementById('uavatarWrap').style.display = 'block';
+    }
+    function doLogout() {
+      closeUDrop();
+      document.getElementById('uavatarWrap').style.display = 'none';
+      document.getElementById('btnLogin').style.display = '';
+    }
+    function toggleUDrop(e) {
+      e.stopPropagation();
+      document.getElementById('udrop').classList.toggle('open');
+    }
+    function closeUDrop() {
+      document.getElementById('udrop').classList.remove('open');
+    }
+    document.addEventListener('click', function (e) {
+      var wrap = document.getElementById('uavatarWrap');
+      if (wrap && !wrap.contains(e.target)) closeUDrop();
+    });
 
-        // ═══ SEARCH DROP ═══
-        function openDrop() { document.getElementById('sdrop').classList.add('open'); }
-        document.addEventListener('click', function (e) {
-            var w = document.getElementById('swrap');
-            if (w && !w.contains(e.target)) document.getElementById('sdrop').classList.remove('open');
-        });
-        function fill(el) {
-            var nodes = el.childNodes, txt = '';
-            nodes.forEach(function (n) { if (n.nodeType === 3) txt += n.textContent; });
-            txt = txt.trim();
-            document.getElementById('sinput').value = txt;
-            document.getElementById('sdrop').classList.remove('open');
+    // ═══ MEGA MENU ═══
+    function closeMM() {
+      var m = document.getElementById('mm'), a = document.getElementById('catArr');
+      if (!m) return;
+      m.classList.remove('open');
+      var anch = m.closest('.manchor');
+      if (anch) anch.classList.remove('mob-open');
+      if (a) a.textContent = 'expand_more';
+      if (window.innerWidth <= 768) document.body.style.overflow = '';
+    }
+    function toggleMM(e) {
+      e.stopPropagation();
+      var m = document.getElementById('mm'), a = document.getElementById('catArr');
+      var o = m.classList.toggle('open');
+      var anch = m.closest('.manchor');
+      if (anch) anch.classList.toggle('mob-open', o);
+      a.textContent = o ? 'expand_less' : 'expand_more';
+      if (window.innerWidth <= 768) document.body.style.overflow = o ? 'hidden' : '';
+    }
+    function swp(id, el) {
+      document.querySelectorAll('.ml1').forEach(function (i) { i.classList.remove('active'); });
+      el.classList.add('active');
+      document.querySelectorAll('.mp').forEach(function (p) { p.classList.remove('active'); });
+      var p = document.getElementById('p-' + id);
+      if (p) p.classList.add('active');
+    }
+    document.addEventListener('click', function (e) {
+      var m = document.getElementById('mm'), b = document.getElementById('catBtn');
+      if (m && m.classList.contains('open') && !m.contains(e.target) && !b.contains(e.target)) {
+        closeMM();
+      }
+    });
+
+    // ═══ SEARCH DROP ═══
+    function openDrop() { document.getElementById('sdrop').classList.add('open'); }
+    document.addEventListener('click', function (e) {
+      var w = document.getElementById('swrap');
+      if (w && !w.contains(e.target)) document.getElementById('sdrop').classList.remove('open');
+    });
+    function fill(el) {
+      var nodes = el.childNodes, txt = '';
+      nodes.forEach(function (n) { if (n.nodeType === 3) txt += n.textContent; });
+      txt = txt.trim();
+      document.getElementById('sinput').value = txt;
+      document.getElementById('sdrop').classList.remove('open');
+    }
+
+    document.addEventListener('click', function (e) {
+      if (mmOpen && !mmWrap.contains(e.target) && !ctDdBtn.contains(e.target)) {
+        mmOpen = false;
+        mmWrap.classList.remove('open');
+        ctDdBtn.classList.remove('open');
+      }
+    });
+
+    // SEARCH CATEGORY
+    var scatBtn = document.getElementById('scatBtn');
+    var scatDrop = document.getElementById('scatDrop');
+    var scatArr = document.getElementById('scatArr');
+    var scatOpen = false;
+
+    if (scatBtn) {
+      scatBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        scatOpen = !scatOpen;
+        scatDrop.classList.toggle('open', scatOpen);
+        scatArr.textContent = scatOpen ? 'expand_less' : 'expand_more';
+      });
+      document.addEventListener('click', function (e) {
+        if (scatOpen && !document.getElementById('scatWrap').contains(e.target)) {
+          scatOpen = false;
+          scatDrop.classList.remove('open');
+          scatArr.textContent = 'expand_more';
         }
+      });
+    }
+
+    function pickCat(el) {
+      document.querySelectorAll('.scat-opt').forEach(function (o) { o.classList.remove('active'); });
+      el.classList.add('active');
+      var txt = el.textContent.trim().replace(/^[^\wÀ-ỹ]+/, '');
+      document.getElementById('scatLabel').textContent = txt.length > 14 ? 'Danh mục' : txt;
+      scatOpen = false;
+      scatDrop.classList.remove('open');
+      scatArr.textContent = 'expand_more';
+    }
+
+    // CAT-TABS SCROLL
+    function ctScroll(dir) {
+      var el = document.getElementById('ctScroll');
+      if (el) el.scrollBy({ left: dir * 220, behavior: 'smooth' });
+    }
 
         // ═══ SHOP POPUP ═══
         document.querySelectorAll('.ibwrap').forEach(function (wrap) {
