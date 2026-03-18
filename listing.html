@@ -16,6 +16,11 @@
             --pl: #e8f5ee;
             --ac: #f97316;
             --bg: #f2f2f2;
+            --ink: #111;
+            --muted: #888;
+            --line: #e5e5e5;
+            --card: #fff;
+            --r: 12px;
         }
 
         * {
@@ -715,9 +720,7 @@
            [HEADER] Cat-tabs
         ══════════════════════════════════════ */
     .cat-tabs {
-      background: #fff;
       border-top: 1px solid var(--line);
-      border-radius: 0 0 15px 15px;
     }
 
     .cat-tabs-inner {
@@ -863,193 +866,113 @@
             background: #fff;
             border-radius: 14px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
-            overflow: hidden;
+            overflow-y: auto;
+            max-height: calc(100vh - 90px);
             position: sticky;
             top: 80px;
         }
 
-        .sidebar-header {
-            background: var(--p);
-            color: #fff;
-            padding: 14px 16px;
-            font-size: 14px;
-            font-weight: 800;
+        .sf-header {
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 8px;
+            padding: 14px 16px 12px;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--p);
+            border-bottom: 1px solid var(--line);
         }
 
-        .filter-section {
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .filter-section:last-child {
-            border-bottom: none;
-        }
-
-        /* Hierarchy levels — indented */
-        .fs-title {
+        .sf-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 11px 16px;
+            padding: 12px 16px;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 600;
             color: #222;
             cursor: pointer;
             user-select: none;
+            border-bottom: 1px solid #f0f0f0;
             transition: background .12s;
-            gap: 6px;
         }
 
-        .fs-title:hover {
-            background: #f9fafb;
-        }
+        .sf-row:hover { background: #fafafa; }
 
-        .fs-title .fs-label {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            flex: 1;
-        }
+        .sf-row.open .sf-icon { transform: rotate(45deg); }
 
-        .fs-title .fs-arrow {
-            font-size: 16px;
-            color: #aaa;
-            transition: transform .2s;
-            flex-shrink: 0;
-        }
-
-        .fs-title.open .fs-arrow {
-            transform: rotate(180deg);
-        }
-
-        /* Level indicator dots */
-        .lv1-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--p);
-            flex-shrink: 0;
-        }
-
-        .lv2-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--ac);
-            flex-shrink: 0;
-        }
-
-        .lv3-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #9b59b6;
-            flex-shrink: 0;
-        }
-
-        .lv4-dot {
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: #3498db;
-            flex-shrink: 0;
-        }
-
-        .fs-body {
-            padding: 6px 16px 12px;
-            display: none;
-        }
-
-        .fs-body.open {
-            display: block;
-        }
-
-        /* Nested filter groups */
-        .sub-filter {
-            margin-left: 12px;
-            padding-left: 12px;
-            border-left: 2px solid #f0f0f0;
-            margin-bottom: 6px;
-        }
-
-        .sub-title {
-            font-size: 11.5px;
-            font-weight: 700;
-            color: #666;
-            padding: 7px 0 5px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .sub-title:hover {
-            color: var(--p);
-        }
-
-        .sub-title .sub-arrow {
-            font-size: 13px;
+        .sf-icon {
+            font-size: 20px;
             color: #bbb;
             transition: transform .2s;
-            margin-left: auto;
+            flex-shrink: 0;
         }
 
-        .sub-title.open .sub-arrow {
-            transform: rotate(180deg);
-        }
-
-        .sub-body {
+        .sf-panel {
             display: none;
+            padding: 8px 16px 12px;
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        .sub-body.open {
-            display: block;
-        }
+        .sf-panel.open { display: block; }
 
-        .subsub-filter {
-            margin-left: 10px;
-            padding-left: 10px;
-            border-left: 2px solid #f5f5f5;
-            margin-bottom: 4px;
-        }
-
-        .subsub-title {
-            font-size: 11px;
-            font-weight: 700;
-            color: #888;
-            padding: 5px 0 4px;
+        .sf-footer {
             display: flex;
-            align-items: center;
-            gap: 5px;
+            gap: 8px;
+            padding: 12px 16px;
+        }
+
+        .sf-clear-btn {
+            flex: 1;
+            padding: 10px;
+            background: #f0f0f0;
+            color: #555;
+            border: none;
+            border-radius: 10px;
+            font-size: 12.5px;
+            font-weight: 700;
             cursor: pointer;
-            user-select: none;
+            font-family: inherit;
+            transition: background .15s;
         }
 
-        .subsub-title:hover {
-            color: var(--p);
+        .sf-clear-btn:hover { background: #e0e0e0; }
+
+        .sf-apply-btn {
+            flex: 1;
+            padding: 10px;
+            background: var(--p);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background .15s;
         }
 
-        .subsub-title .subsub-arrow {
-            font-size: 12px;
-            color: #ccc;
-            transition: transform .2s;
-            margin-left: auto;
+        .sf-apply-btn:hover { background: var(--pd); }
+
+        .color-opts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 6px 0;
         }
 
-        .subsub-title.open .subsub-arrow {
-            transform: rotate(180deg);
+        .color-swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            outline: 2px solid transparent;
+            transition: all .12s;
         }
 
-        .subsub-body {
-            display: none;
-        }
-
-        .subsub-body.open {
-            display: block;
-        }
+        .color-swatch:hover,
+        .color-swatch.active { outline-color: var(--p); transform: scale(1.15); }
 
         /* Checkbox / pill options */
         .filter-opts {
@@ -1271,38 +1194,82 @@
             font-size: 13px;
             color: #888;
             font-weight: 500;
+            white-space: nowrap;
         }
 
-        .sort-btns {
+        .sort-drop-wrap {
+            position: relative;
+        }
+
+        .sort-drop-btn {
             display: flex;
+            align-items: center;
             gap: 6px;
-            flex-wrap: wrap;
-        }
-
-        .sort-btn {
-            padding: 6px 14px;
-            background: #f3f4f6;
-            border-radius: 8px;
-            font-size: 12.5px;
-            color: #555;
-            cursor: pointer;
-            border: 1.5px solid transparent;
-            font-weight: 500;
-            font-family: inherit;
-            transition: all .12s;
-        }
-
-        .sort-btn:hover {
-            background: var(--pl);
-            color: var(--p);
-            border-color: var(--p);
-        }
-
-        .sort-btn.active {
+            padding: 7px 14px;
             background: var(--p);
             color: #fff;
-            border-color: var(--p);
+            border: none;
+            border-radius: 9px;
+            font-size: 13px;
             font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background .12s;
+        }
+
+        .sort-drop-btn:hover { background: var(--pd); }
+
+        .sort-drop-btn .sd-arrow {
+            font-size: 18px;
+            transition: transform .2s;
+        }
+
+        .sort-drop-wrap.open .sd-arrow { transform: rotate(180deg); }
+
+        .sort-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,.12);
+            min-width: 170px;
+            z-index: 300;
+            overflow: hidden;
+            border: 1px solid var(--line);
+        }
+
+        .sort-drop-wrap.open .sort-menu { display: block; }
+
+        .sort-opt {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            font-size: 13px;
+            color: #333;
+            cursor: pointer;
+            transition: background .1s;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .sort-opt:last-child { border-bottom: none; }
+
+        .sort-opt:hover { background: var(--pl); color: var(--p); }
+
+        .sort-opt.active {
+            color: var(--p);
+            font-weight: 700;
+        }
+
+        .sort-opt.active::after {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--p);
         }
 
         .sort-right {
@@ -1310,6 +1277,261 @@
             align-items: center;
             gap: 8px;
         }
+
+        /* ── Tìm quanh đây ── */
+        .nearby-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 7px 13px;
+            background: #fff;
+            border: 1.5px solid var(--line);
+            border-radius: 9px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #444;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all .12s;
+            white-space: nowrap;
+        }
+        .nearby-btn:hover, .nearby-btn.active {
+            border-color: var(--p);
+            color: var(--p);
+            background: var(--pl);
+        }
+
+        .nearby-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.45);
+            z-index: 600;
+            align-items: center;
+            justify-content: center;
+        }
+        .nearby-overlay.open { display: flex; }
+
+        .nearby-modal {
+            background: #fff;
+            border-radius: 18px;
+            width: 360px;
+            max-width: calc(100vw - 32px);
+            box-shadow: 0 24px 60px rgba(0,0,0,.18);
+            overflow: hidden;
+        }
+
+        .nearby-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px 14px;
+            border-bottom: 1px solid var(--line);
+        }
+        .nearby-head-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--ink);
+        }
+        .nearby-close {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: #f3f4f6;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nearby-close:hover { background: #e5e5e5; }
+
+        .nearby-map {
+            margin: 16px 20px 0;
+            height: 150px;
+            background: linear-gradient(145deg, #e8f5ee 0%, #d4ede0 100%);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            position: relative;
+            overflow: hidden;
+            border: 1.5px solid #c8e6d8;
+        }
+        .nearby-map::before {
+            content: '';
+            position: absolute;
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            background: rgba(0,136,72,.08);
+            border: 1.5px dashed rgba(0,136,72,.3);
+        }
+        .nearby-map::after {
+            content: '';
+            position: absolute;
+            width: 140px; height: 140px;
+            border-radius: 50%;
+            background: rgba(0,136,72,.04);
+            border: 1.5px dashed rgba(0,136,72,.15);
+        }
+        .nearby-pin {
+            font-size: 32px;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,.15));
+        }
+        .nearby-map-lbl {
+            font-size: 11.5px;
+            color: var(--p);
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nearby-loc {
+            margin: 12px 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            background: #f9fafb;
+            border-radius: 9px;
+            border: 1.5px solid var(--line);
+        }
+        .nearby-loc-text {
+            flex: 1;
+            font-size: 12.5px;
+            color: #444;
+            font-weight: 500;
+        }
+        .nearby-loc-lbl {
+            font-size: 10.5px;
+            color: #aaa;
+            display: block;
+            margin-bottom: 1px;
+        }
+        .nearby-get-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 10px;
+            background: var(--p);
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            transition: background .12s;
+        }
+        .nearby-get-btn:hover { background: var(--pd); }
+
+        .nearby-radius-lbl {
+            padding: 12px 20px 4px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nearby-radius-val {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--p);
+        }
+        .radius-slider-wrap {
+            padding: 4px 20px 8px;
+        }
+        .radius-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 5px;
+            border-radius: 4px;
+            background: linear-gradient(to right, var(--p) 0%, var(--p) 16%, #e0e0e0 16%, #e0e0e0 100%);
+            outline: none;
+            cursor: pointer;
+        }
+        .radius-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--p);
+            border: 3px solid #fff;
+            box-shadow: 0 2px 6px rgba(0,136,72,.35);
+            cursor: pointer;
+            transition: transform .12s;
+        }
+        .radius-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+        .radius-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--p);
+            border: 3px solid #fff;
+            box-shadow: 0 2px 6px rgba(0,136,72,.35);
+            cursor: pointer;
+        }
+        .radius-ticks {
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 2px 0;
+        }
+        .radius-tick {
+            font-size: 10.5px;
+            color: #bbb;
+            cursor: pointer;
+            transition: color .12s;
+        }
+        .radius-tick:hover { color: var(--p); }
+
+        .nearby-foot {
+            display: flex;
+            gap: 8px;
+            padding: 16px 20px;
+            margin-top: 12px;
+            border-top: 1px solid var(--line);
+        }
+        .nearby-cancel {
+            flex: 1;
+            padding: 10px;
+            background: #f3f4f6;
+            color: #555;
+            border: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .nearby-cancel:hover { background: #e5e5e5; }
+        .nearby-search {
+            flex: 2;
+            padding: 10px;
+            background: var(--p);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: background .12s;
+        }
+        .nearby-search:hover { background: var(--pd); }
 
         .result-count {
             font-size: 13px;
@@ -1455,19 +1677,20 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: rgba(0, 0, 0, .22);
+            background: rgba(255, 255, 255, .88);
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
-            transition: background .15s;
+            color: #bbb;
+            transition: all .15s;
             z-index: 1;
         }
 
         .bfav:hover {
-            background: #e74c3c;
+            background: #fff;
+            color: #e74c3c;
         }
 
         .pcb {
@@ -1487,7 +1710,6 @@
             font-size: 11px;
             font-weight: 600;
             color: #555;
-            flex: 1;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -1768,8 +1990,7 @@
             }
 
             .sbtn {
-                padding: 0 12px;
-                font-size: 12px;
+                display: none !important;
             }
 
             .blogin {
@@ -1780,28 +2001,6 @@
                 display: none;
             }
 
-            .bpost-txt {
-                display: none;
-            }
-
-            .bpost-icon-desk {
-                display: none;
-            }
-
-            .bpost-plus {
-                display: block;
-                font-size: 26px;
-                font-weight: 900;
-                line-height: 1;
-            }
-
-            .bpost {
-                width: 38px;
-                height: 38px;
-                padding: 0;
-                border-radius: 50%;
-                justify-content: center;
-            }
 
             .page-wrap {
                 grid-template-columns: 1fr;
@@ -1847,7 +2046,13 @@
 
             .fi {
                 grid-template-columns: 1fr 1fr;
-                gap: 18px;
+                gap: 16px;
+                padding: 24px 14px 14px;
+            }
+
+            .fi-logo {
+                font-size: 20px;
+                margin-bottom: 8px;
             }
 
             .sticky-banner {
@@ -1862,6 +2067,13 @@
 
             .fi {
                 grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .fb2 {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
             }
         }
 
@@ -1887,6 +2099,54 @@
                 display: flex;
             }
         }
+
+        /* ── Seller info popup ── */
+        .ibwrap { position:relative;flex-shrink:0;z-index:50 }
+        .infobtn { width:17px;height:17px;border-radius:50%;border:1.5px solid #f39c12;background:#fff;color:#f39c12;font-size:10px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;user-select:none;font-family:inherit }
+        .spopup { position:absolute;bottom:calc(100% + 8px);left:-150px;width:280px;background:#fff;border:1px solid #e8e8e8;border-radius:12px;box-shadow:0 12px 44px rgba(0,0,0,.18);padding:14px;z-index:9999;display:none }
+        .ibwrap:hover .spopup, .ibwrap.sopen .spopup { display:block }
+        .ppr { display:flex;font-size:11.5px;line-height:1.7;padding:3px 0;border-bottom:1px solid #f5f5f5;gap:6px }
+        .ppr:last-of-type { border-bottom:none }
+        .pplbl { color:#888;white-space:nowrap;min-width:80px }
+        .ppval { color:#222;font-weight:500;word-break:break-word }
+        .ppval.ok { color:var(--p) }
+        .ppval.gold { color:#c8950a;font-weight:700 }
+        .cb { font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;color:#fff;display:inline-block;margin:1px }
+        .cb.zalo { background:#0068ff }
+        .cb.fb { background:#1877f2 }
+        .cb.sms { background:#555 }
+        .bfol { display:block;width:100%;margin-top:10px;padding:7px;background:var(--p);color:#fff;font-size:12px;font-weight:700;border:none;border-radius:6px;cursor:pointer;font-family:inherit }
+        .bfol:hover { background:var(--pd) }
+        .pall { display:flex;justify-content:space-between;font-size:11px;color:var(--p);font-weight:700;margin-top:8px;cursor:pointer }
+
+        /* ── Image count badge ── */
+        .img-cnt { position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.52);color:#fff;font-size:10px;font-weight:600;padding:3px 7px 3px 5px;border-radius:20px;display:flex;align-items:center;gap:3px;pointer-events:none;z-index:2;letter-spacing:.2px;backdrop-filter:blur(2px) }
+
+        /* ── Quick view button ── */
+        .qv-btn { position:absolute;bottom:10px;left:50%;transform:translateX(-50%) translateY(8px);background:rgba(255,255,255,.96);border:none;color:#111;font-size:11.5px;font-weight:700;padding:6px 14px;border-radius:20px;cursor:pointer;font-family:inherit;white-space:nowrap;opacity:0;transition:opacity .2s,transform .2s;z-index:3;box-shadow:0 2px 10px rgba(0,0,0,.2);display:flex;align-items:center;gap:4px }
+        .pc:hover .qv-btn { opacity:1;transform:translateX(-50%) translateY(0) }
+
+        /* ── PRODUCT FEATURE TAGS (hover) ── */
+        .pc-tags { position:absolute;bottom:42px;left:8px;display:flex;gap:4px;flex-wrap:wrap;max-width:calc(100% - 16px);opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s;pointer-events:none;z-index:4; }
+        .pc:hover .pc-tags { opacity:1;transform:translateY(0); }
+        .pctag { font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:5px;letter-spacing:.2px;white-space:nowrap;backdrop-filter:blur(4px); }
+        .pctag-ctv { background:rgba(249,115,22,.9);  color:#fff; }
+        .pctag-big { background:rgba(124,58,237,.85); color:#fff; }
+        .pctag-si  { background:rgba(0,136,72,.9);    color:#fff; }
+
+        /* ── Quick view modal ── */
+        .qvm-overlay { position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px }
+        .qvm { position:relative;max-width:560px;width:100%;background:#111;border-radius:16px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.6) }
+        .qvm-img-wrap { width:100%;aspect-ratio:1/1;position:relative;background:#222 }
+        .qvm-img-wrap img { width:100%;height:100%;object-fit:contain;display:block }
+        .qvm-close { position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.55);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10 }
+        .qvm-nav { position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.92);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.25) }
+        .qvm-nav:disabled { opacity:.3;cursor:default }
+        .qvm-prev { left:10px } .qvm-next { right:10px }
+        .qvm-foot { background:#111;padding:10px 14px;display:flex;align-items:center;justify-content:center;gap:6px }
+        .qvm-dot { width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .15s,width .15s }
+        .qvm-dot.active { background:#fff;width:18px;border-radius:3px }
+        .qvm-counter { color:rgba(255,255,255,.55);font-size:11px;font-weight:600;margin-left:4px }
     </style>
 </head>
 
@@ -2339,7 +2599,7 @@
             <div class="udrop-item"><span class="ms">group</span>Theo dõi</div>
             <div class="udrop-sep"></div>
             <div class="udrop-item"><span class="ms">article</span>Tất cả bài đăng</div>
-            <div class="udrop-item"><span class="ms">manage_accounts</span>Quản lý tài khoản</div>
+            <div class="udrop-item" onclick="window.location.href='/shopmanager.html'"><span class="ms">manage_accounts</span>Quản lý tài khoản</div>
             <div class="udrop-sep"></div>
             <div class="udrop-item danger" onclick="doLogout()"><span class="ms">logout</span>Đăng xuất</div>
           </div>
@@ -2359,16 +2619,16 @@
           <span class="ms" style="font-size:16px">chevron_left</span>
         </button>
         <div class="ct-scroll" id="ctScroll">
-          <a href="/detail.html" class="ct-pill hot">🔥 Đầm voan hoa nhí cổ V Hàn Quốc</a>
-          <a href="/detail.html" class="ct-pill">👜 Túi Gucci GG Canvas</a>
-          <a href="/detail.html" class="ct-pill">👖 Quần jean baggy cao cấp</a>
-          <a href="/detail.html" class="ct-pill">👟 Giày Adidas Ultraboost</a>
-          <a href="/detail.html" class="ct-pill">⌚ Đồng hồ Casio Edifice</a>
-          <a href="/detail.html" class="ct-pill">🌹 Nước hoa Dior Sauvage</a>
-          <a href="/detail.html" class="ct-pill">🧥 Áo Hoodie nỉ Unisex</a>
-          <a href="/detail.html" class="ct-pill">👗 Váy hoa nhí dự tiệc</a>
-          <a href="/detail.html" class="ct-pill">💄 Mỹ phẩm Laneige Water Bank</a>
-          <a href="/detail.html" class="ct-pill">🏃 Giày chạy bộ siêu nhẹ</a>
+          <a href="/detail.html" class="ct-pill hot">Đầm voan hoa nhí cổ V Hàn Quốc</a>
+          <a href="/detail.html" class="ct-pill">Túi Gucci GG Canvas</a>
+          <a href="/detail.html" class="ct-pill">Quần jean baggy cao cấp</a>
+          <a href="/detail.html" class="ct-pill">Giày Adidas Ultraboost</a>
+          <a href="/detail.html" class="ct-pill">Đồng hồ Casio Edifice</a>
+          <a href="/detail.html" class="ct-pill">Nước hoa Dior Sauvage</a>
+          <a href="/detail.html" class="ct-pill">Áo Hoodie nỉ Unisex</a>
+          <a href="/detail.html" class="ct-pill">Váy hoa nhí dự tiệc</a>
+          <a href="/detail.html" class="ct-pill">Mỹ phẩm Laneige Water Bank</a>
+          <a href="/detail.html" class="ct-pill">Giày chạy bộ siêu nhẹ</a>
         </div>
         <button class="ct-nav" id="ctNext" aria-label="Tiếp" onclick="ctScroll(1)">
           <span class="ms" style="font-size:16px">chevron_right</span>
@@ -2400,248 +2660,173 @@
                 <span>Bộ lọc</span>
                 <span class="ms" style="font-size:18px">close</span>
             </button>
-            <div class="sidebar-header">
+
+            <!-- Header -->
+            <div class="sf-header">
                 <span class="ms" style="font-size:18px">tune</span>
-                Lọc tại Trang sản phẩm
+                <span>Lọc sản phẩm</span>
             </div>
 
             <!-- Active filter tags -->
             <div class="active-filters" id="activeFilters"></div>
 
-            <!-- ── LV1: Tỉnh/thành ── -->
-            <div class="filter-section">
-                <div class="fs-title open" onclick="toggleSection(this)">
-                    <span class="fs-label"><span class="lv1-dot"></span> Tỉnh/thành</span>
-                    <span class="ms fs-arrow" style="font-size:16px">expand_more</span>
+            <div class="sf-list">
+
+                <!-- Tỉnh thành -->
+                <div class="sf-row" onclick="toggleSF(this)">
+                    <span>Tỉnh thành</span>
+                    <span class="ms sf-icon">add</span>
                 </div>
-                <div class="fs-body open">
+                <div class="sf-panel">
                     <div class="filter-opts">
-                        <label class="fopt"><input type="checkbox"
-                                onchange="updateFilters(this,'Tỉnh/thành','TP. Hồ Chí Minh')"><span
-                                class="fchk"></span><span class="fopt-label">TP. Hồ Chí Minh</span><span
-                                class="fopt-count">1.2k</span></label>
-                        <label class="fopt"><input type="checkbox"
-                                onchange="updateFilters(this,'Tỉnh/thành','Hà Nội')"><span class="fchk"></span><span
-                                class="fopt-label">Hà Nội</span><span class="fopt-count">840</span></label>
-                        <label class="fopt"><input type="checkbox"
-                                onchange="updateFilters(this,'Tỉnh/thành','Đà Nẵng')"><span class="fchk"></span><span
-                                class="fopt-label">Đà Nẵng</span><span class="fopt-count">215</span></label>
-                        <label class="fopt"><input type="checkbox"
-                                onchange="updateFilters(this,'Tỉnh/thành','Cần Thơ')"><span class="fchk"></span><span
-                                class="fopt-label">Cần Thơ</span><span class="fopt-count">98</span></label>
-                        <label class="fopt"><input type="checkbox"
-                                onchange="updateFilters(this,'Tỉnh/thành','Khác')"><span class="fchk"></span><span
-                                class="fopt-label">Tỉnh/thành khác</span><span class="fopt-count">312</span></label>
-                    </div>
-
-                    <!-- LV2: Phường/xã (nested) -->
-                    <div class="sub-filter">
-                        <div class="sub-title open" onclick="toggleSub(this)">
-                            <span class="lv2-dot"></span>&nbsp;Phường/xã
-                            <span class="ms sub-arrow" style="font-size:13px">expand_more</span>
-                        </div>
-                        <div class="sub-body open">
-                            <div class="filter-opts">
-                                <label class="fopt"><input type="checkbox"
-                                        onchange="updateFilters(this,'Phường/xã','Quận 1')"><span
-                                        class="fchk"></span><span class="fopt-label">Quận 1</span><span
-                                        class="fopt-count">340</span></label>
-                                <label class="fopt"><input type="checkbox"
-                                        onchange="updateFilters(this,'Phường/xã','Quận 3')"><span
-                                        class="fchk"></span><span class="fopt-label">Quận 3</span><span
-                                        class="fopt-count">220</span></label>
-                                <label class="fopt"><input type="checkbox"
-                                        onchange="updateFilters(this,'Phường/xã','Bình Thạnh')"><span
-                                        class="fchk"></span><span class="fopt-label">Bình Thạnh</span><span
-                                        class="fopt-count">185</span></label>
-                                <label class="fopt"><input type="checkbox"
-                                        onchange="updateFilters(this,'Phường/xã','Tân Bình')"><span
-                                        class="fchk"></span><span class="fopt-label">Tân Bình</span><span
-                                        class="fopt-count">163</span></label>
-                                <label class="fopt"><input type="checkbox"
-                                        onchange="updateFilters(this,'Phường/xã','Thủ Đức')"><span
-                                        class="fchk"></span><span class="fopt-label">Thủ Đức</span><span
-                                        class="fopt-count">97</span></label>
-                            </div>
-
-                            <!-- LV3: Danh mục -->
-                            <div class="subsub-filter">
-                                <div class="subsub-title open" onclick="toggleSubsub(this)">
-                                    <span class="lv3-dot"></span>&nbsp;Danh mục
-                                    <span class="ms subsub-arrow" style="font-size:12px">expand_more</span>
-                                </div>
-                                <div class="subsub-body open">
-                                    <div class="filter-opts">
-                                        <label class="fopt"><input type="checkbox"
-                                                onchange="updateFilters(this,'Danh mục','Mua bán')" checked><span
-                                                class="fchk"></span><span class="fopt-label">Mua bán</span><span
-                                                class="fopt-count">2.1k</span></label>
-                                        <label class="fopt"><input type="checkbox"
-                                                onchange="updateFilters(this,'Danh mục','Dịch vụ')"><span
-                                                class="fchk"></span><span class="fopt-label">Dịch vụ</span><span
-                                                class="fopt-count">430</span></label>
-                                        <label class="fopt"><input type="checkbox"
-                                                onchange="updateFilters(this,'Danh mục','Việc làm')"><span
-                                                class="fchk"></span><span class="fopt-label">Việc làm</span><span
-                                                class="fopt-count">118</span></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Tỉnh thành','TP. Hồ Chí Minh')"><span class="fchk"></span><span class="fopt-label">TP. Hồ Chí Minh</span><span class="fopt-count">1.2k</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Tỉnh thành','Hà Nội')"><span class="fchk"></span><span class="fopt-label">Hà Nội</span><span class="fopt-count">840</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Tỉnh thành','Đà Nẵng')"><span class="fchk"></span><span class="fopt-label">Đà Nẵng</span><span class="fopt-count">215</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Tỉnh thành','Cần Thơ')"><span class="fchk"></span><span class="fopt-label">Cần Thơ</span><span class="fopt-count">98</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Tỉnh thành','Tỉnh khác')"><span class="fchk"></span><span class="fopt-label">Tỉnh thành khác</span><span class="fopt-count">312</span></label>
                     </div>
                 </div>
-            </div>
 
-            <!-- ── LV2: Thương hiệu ── -->
-            <div class="filter-section">
-                <div class="fs-title open" onclick="toggleSection(this)">
-                    <span class="fs-label"><span class="lv2-dot"></span> Thương hiệu</span>
-                    <span class="ms fs-arrow" style="font-size:16px">expand_more</span>
+                <!-- Quận huyện -->
+                <div class="sf-row" onclick="toggleSF(this)">
+                    <span>Quận huyện</span>
+                    <span class="ms sf-icon">add</span>
                 </div>
-                <div class="fs-body open">
+                <div class="sf-panel">
                     <div class="filter-opts">
-                        <label class="fopt"><input type="checkbox"
-                                onchange="updateFilters(this,'Thương hiệu','Nike')"><span class="fchk"></span><span
-                                class="fopt-label">Nike</span><span class="fopt-count">542</span></label>
-                        <label class="fopt"><input type="checkbox"
-                                onchange="updateFilters(this,'Thương hiệu','Adidas')"><span class="fchk"></span><span
-                                class="fopt-label">Adidas</span><span class="fopt-count">418</span></label>
-                        <label class="fopt"><input type="checkbox"
-                                onchange="updateFilters(this,'Thương hiệu','Yody')"><span class="fchk"></span><span
-                                class="fopt-label">Yody</span><span class="fopt-count">302</span></label>
-                        <label class="fopt"><input type="checkbox"
-                                onchange="updateFilters(this,'Thương hiệu','Routine')"><span class="fchk"></span><span
-                                class="fopt-label">Routine</span><span class="fopt-count">198</span></label>
-                        <label class="fopt"><input type="checkbox"
-                                onchange="updateFilters(this,'Thương hiệu','Owen')"><span class="fchk"></span><span
-                                class="fopt-label">Owen</span><span class="fopt-count">145</span></label>
-                        <label class="fopt"><input type="checkbox"
-                                onchange="updateFilters(this,'Thương hiệu','Khác')"><span class="fchk"></span><span
-                                class="fopt-label">Thương hiệu khác</span><span class="fopt-count">870</span></label>
-                    </div>
-
-                    <!-- LV3: Xuất xứ -->
-                    <div class="sub-filter">
-                        <div class="sub-title open" onclick="toggleSub(this)">
-                            <span class="lv3-dot"></span>&nbsp;Xuất xứ
-                            <span class="ms sub-arrow" style="font-size:13px">expand_more</span>
-                        </div>
-                        <div class="sub-body open">
-                            <div class="filter-opts">
-                                <label class="fopt"><input type="checkbox"
-                                        onchange="updateFilters(this,'Xuất xứ','Việt Nam')"><span
-                                        class="fchk"></span><span class="fopt-label">Việt Nam</span><span
-                                        class="fopt-count">1.4k</span></label>
-                                <label class="fopt"><input type="checkbox"
-                                        onchange="updateFilters(this,'Xuất xứ','Nhập khẩu')"><span
-                                        class="fchk"></span><span class="fopt-label">Nhập khẩu</span><span
-                                        class="fopt-count">680</span></label>
-                            </div>
-
-                            <!-- LV4: Vận chuyển -->
-                            <div class="subsub-filter">
-                                <div class="subsub-title open" onclick="toggleSubsub(this)">
-                                    <span class="lv4-dot"></span>&nbsp;Vận chuyển
-                                    <span class="ms subsub-arrow" style="font-size:12px">expand_more</span>
-                                </div>
-                                <div class="subsub-body open">
-                                    <div class="filter-opts">
-                                        <label class="fopt"><input type="checkbox"
-                                                onchange="updateFilters(this,'Vận chuyển','Hoả tốc (12h-24h)')"><span
-                                                class="fchk"></span><span class="fopt-label">Hoả tốc
-                                                (12h–24h)</span></label>
-                                        <label class="fopt"><input type="checkbox"
-                                                onchange="updateFilters(this,'Vận chuyển','Nhanh (1-2 ngày)')"><span
-                                                class="fchk"></span><span class="fopt-label">Nhanh (1–2
-                                                ngày)</span></label>
-                                        <label class="fopt"><input type="checkbox"
-                                                onchange="updateFilters(this,'Vận chuyển','Tiêu chuẩn (3-5 ngày)')"><span
-                                                class="fchk"></span><span class="fopt-label">Tiêu chuẩn (3–5
-                                                ngày)</span></label>
-                                        <label class="fopt"><input type="checkbox"
-                                                onchange="updateFilters(this,'Vận chuyển','Tự lấy hàng')"><span
-                                                class="fchk"></span><span class="fopt-label">Tự lấy hàng</span></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Quận huyện','Quận 1')"><span class="fchk"></span><span class="fopt-label">Quận 1</span><span class="fopt-count">340</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Quận huyện','Quận 3')"><span class="fchk"></span><span class="fopt-label">Quận 3</span><span class="fopt-count">220</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Quận huyện','Bình Thạnh')"><span class="fchk"></span><span class="fopt-label">Bình Thạnh</span><span class="fopt-count">185</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Quận huyện','Tân Bình')"><span class="fchk"></span><span class="fopt-label">Tân Bình</span><span class="fopt-count">163</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Quận huyện','Thủ Đức')"><span class="fchk"></span><span class="fopt-label">Thủ Đức</span><span class="fopt-count">97</span></label>
                     </div>
                 </div>
-            </div>
 
-            <!-- ── Giá bán ── -->
-            <div class="filter-section">
-                <div class="fs-title open" onclick="toggleSection(this)">
-                    <span class="fs-label"><span class="lv3-dot"></span> Giá bán</span>
-                    <span class="ms fs-arrow" style="font-size:16px">expand_more</span>
+                <!-- Thương hiệu -->
+                <div class="sf-row" onclick="toggleSF(this)">
+                    <span>Thương hiệu</span>
+                    <span class="ms sf-icon">add</span>
                 </div>
-                <div class="fs-body open">
+                <div class="sf-panel">
+                    <div class="filter-opts">
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Thương hiệu','Nike')"><span class="fchk"></span><span class="fopt-label">Nike</span><span class="fopt-count">542</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Thương hiệu','Adidas')"><span class="fchk"></span><span class="fopt-label">Adidas</span><span class="fopt-count">418</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Thương hiệu','Yody')"><span class="fchk"></span><span class="fopt-label">Yody</span><span class="fopt-count">302</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Thương hiệu','Routine')"><span class="fchk"></span><span class="fopt-label">Routine</span><span class="fopt-count">198</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Thương hiệu','Owen')"><span class="fchk"></span><span class="fopt-label">Owen</span><span class="fopt-count">145</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Thương hiệu','Thương hiệu khác')"><span class="fchk"></span><span class="fopt-label">Thương hiệu khác</span><span class="fopt-count">870</span></label>
+                    </div>
+                </div>
+
+                <!-- Xu hướng -->
+                <div class="sf-row" onclick="toggleSF(this)">
+                    <span>Xu hướng</span>
+                    <span class="ms sf-icon">add</span>
+                </div>
+                <div class="sf-panel">
+                    <div class="filter-opts">
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xu hướng','Streetwear')"><span class="fchk"></span><span class="fopt-label">Streetwear</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xu hướng','Oversized')"><span class="fchk"></span><span class="fopt-label">Oversized</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xu hướng','Vintage')"><span class="fchk"></span><span class="fopt-label">Vintage</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xu hướng','Sustainable')"><span class="fchk"></span><span class="fopt-label">Sustainable</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xu hướng','Local brand')"><span class="fchk"></span><span class="fopt-label">Local brand</span></label>
+                    </div>
+                </div>
+
+                <!-- Xuất xứ -->
+                <div class="sf-row" onclick="toggleSF(this)">
+                    <span>Xuất xứ</span>
+                    <span class="ms sf-icon">add</span>
+                </div>
+                <div class="sf-panel">
+                    <div class="filter-opts">
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xuất xứ','Việt Nam')"><span class="fchk"></span><span class="fopt-label">Việt Nam</span><span class="fopt-count">1.4k</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xuất xứ','Nhập khẩu')"><span class="fchk"></span><span class="fopt-label">Nhập khẩu</span><span class="fopt-count">680</span></label>
+                    </div>
+                </div>
+
+                <!-- Màu sắc -->
+                <div class="sf-row" onclick="toggleSF(this)">
+                    <span>Màu sắc</span>
+                    <span class="ms sf-icon">add</span>
+                </div>
+                <div class="sf-panel">
+                    <div class="color-opts">
+                        <div class="color-swatch" style="background:#111" title="Đen" onclick="toggleColor(this,'Đen')"></div>
+                        <div class="color-swatch" style="background:#fff;border-color:#ddd;" title="Trắng" onclick="toggleColor(this,'Trắng')"></div>
+                        <div class="color-swatch" style="background:#e74c3c" title="Đỏ" onclick="toggleColor(this,'Đỏ')"></div>
+                        <div class="color-swatch" style="background:#3498db" title="Xanh dương" onclick="toggleColor(this,'Xanh dương')"></div>
+                        <div class="color-swatch" style="background:#2ecc71" title="Xanh lá" onclick="toggleColor(this,'Xanh lá')"></div>
+                        <div class="color-swatch" style="background:#f39c12" title="Vàng" onclick="toggleColor(this,'Vàng')"></div>
+                        <div class="color-swatch" style="background:#9b59b6" title="Tím" onclick="toggleColor(this,'Tím')"></div>
+                        <div class="color-swatch" style="background:#f97316" title="Cam" onclick="toggleColor(this,'Cam')"></div>
+                        <div class="color-swatch" style="background:#e91e63" title="Hồng" onclick="toggleColor(this,'Hồng')"></div>
+                        <div class="color-swatch" style="background:#795548" title="Nâu" onclick="toggleColor(this,'Nâu')"></div>
+                        <div class="color-swatch" style="background:#9e9e9e" title="Xám" onclick="toggleColor(this,'Xám')"></div>
+                        <div class="color-swatch" style="background:linear-gradient(135deg,#f06,#f90,#0f9)" title="Đa sắc" onclick="toggleColor(this,'Đa sắc')"></div>
+                    </div>
+                </div>
+
+                <!-- Vận chuyển -->
+                <div class="sf-row" onclick="toggleSF(this)">
+                    <span>Vận chuyển</span>
+                    <span class="ms sf-icon">add</span>
+                </div>
+                <div class="sf-panel">
+                    <div class="filter-opts">
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Vận chuyển','Hoả tốc (12h-24h)')"><span class="fchk"></span><span class="fopt-label">Hoả tốc (12h–24h)</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Vận chuyển','Nhanh (1-2 ngày)')"><span class="fchk"></span><span class="fopt-label">Nhanh (1–2 ngày)</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Vận chuyển','Tiêu chuẩn (3-5 ngày)')"><span class="fchk"></span><span class="fopt-label">Tiêu chuẩn (3–5 ngày)</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Vận chuyển','Tự lấy hàng')"><span class="fchk"></span><span class="fopt-label">Tự lấy hàng</span></label>
+                    </div>
+                </div>
+
+                <!-- Giá bán -->
+                <div class="sf-row" onclick="toggleSF(this)">
+                    <span>Giá bán</span>
+                    <span class="ms sf-icon">add</span>
+                </div>
+                <div class="sf-panel">
                     <div class="price-grid">
                         <div class="price-pill" onclick="togglePrice(this,'Dưới 99k')">Dưới 99k</div>
                         <div class="price-pill" onclick="togglePrice(this,'100k – 299k')">100k – 299k</div>
                         <div class="price-pill" onclick="togglePrice(this,'300k – 499k')">300k – 499k</div>
                         <div class="price-pill" onclick="togglePrice(this,'500k trở lên')">500k trở lên</div>
                     </div>
-                    <!-- Custom range -->
-                    <div style="display:flex;gap:6px;margin-top:10px;align-items:center;">
-                        <input type="number" placeholder="Từ"
-                            style="flex:1;padding:6px 8px;border:1.5px solid #e5e7eb;border-radius:7px;font-size:12px;font-family:inherit;outline:none;"
-                            onfocus="this.style.borderColor='var(--p)'" onblur="this.style.borderColor='#e5e7eb'">
-                        <span style="color:#ccc;font-size:12px">–</span>
-                        <input type="number" placeholder="Đến"
-                            style="flex:1;padding:6px 8px;border:1.5px solid #e5e7eb;border-radius:7px;font-size:12px;font-family:inherit;outline:none;"
-                            onfocus="this.style.borderColor='var(--p)'" onblur="this.style.borderColor='#e5e7eb'">
-                        <button
-                            style="padding:6px 10px;background:var(--p);color:#fff;border:none;border-radius:7px;font-size:12px;cursor:pointer;font-family:inherit;">OK</button>
+                    <div style="display:flex;gap:6px;margin-top:10px;">
+                        <input type="number" id="priceFrom" placeholder="Từ (đ)" style="flex:1;padding:7px 10px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:12px;font-family:inherit;outline:none;min-width:0;" onfocus="this.style.borderColor='var(--p)'" onblur="this.style.borderColor='#e5e7eb'">
+                        <input type="number" id="priceTo" placeholder="Đến (đ)" style="flex:1;padding:7px 10px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:12px;font-family:inherit;outline:none;min-width:0;" onfocus="this.style.borderColor='var(--p)'" onblur="this.style.borderColor='#e5e7eb'">
                     </div>
-
-                    <!-- LV4: Khuyến mãi -->
-                    <div class="sub-filter" style="margin-top:10px;">
-                        <div class="sub-title open" onclick="toggleSub(this)">
-                            <span class="lv4-dot"></span>&nbsp;Khuyến mãi
-                            <span class="ms sub-arrow" style="font-size:13px">expand_more</span>
-                        </div>
-                        <div class="sub-body open">
-                            <div class="promo-tags">
-                                <div class="promo-tag" onclick="togglePromo(this,'10-30%')">10–30%</div>
-                                <div class="promo-tag" onclick="togglePromo(this,'30-50%')">30–50%</div>
-                                <div class="promo-tag" onclick="togglePromo(this,'Dưới 50%')">Dưới 50%</div>
-                            </div>
-
-                            <!-- LV5: Khác -->
-                            <div class="subsub-filter" style="margin-top:8px;">
-                                <div class="subsub-title open" onclick="toggleSubsub(this)">
-                                    <span
-                                        style="width:4px;height:4px;border-radius:50%;background:#e74c3c;flex-shrink:0;display:inline-block;"></span>&nbsp;Khác
-                                    <span class="ms subsub-arrow" style="font-size:12px">expand_more</span>
-                                </div>
-                                <div class="subsub-body open">
-                                    <div class="filter-opts">
-                                        <label class="fopt"><input type="checkbox"
-                                                onchange="updateFilters(this,'Khác','Có bán sỉ')"><span
-                                                class="fchk"></span><span class="fopt-label">Có bán sỉ</span></label>
-                                        <label class="fopt"><input type="checkbox"
-                                                onchange="updateFilters(this,'Khác','Cộng tác viên (CTV)')"><span
-                                                class="fchk"></span><span class="fopt-label">Cộng tác viên
-                                                (CTV)</span></label>
-                                        <label class="fopt"><input type="checkbox"
-                                                onchange="updateFilters(this,'Khác','Có big size')"><span
-                                                class="fchk"></span><span class="fopt-label">Có big size</span></label>
-                                    </div>
-                                </div>
-                            </div>
+                    <button onclick="applyPriceRange()" style="width:100%;margin-top:6px;padding:7px;background:var(--p);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;">Áp dụng giá</button>
+                    <div style="margin-top:10px;">
+                        <div style="font-size:12px;font-weight:600;color:#888;margin-bottom:6px;">Khuyến mãi</div>
+                        <div class="promo-tags">
+                            <div class="promo-tag" onclick="togglePromo(this,'10-30%')">10–30%</div>
+                            <div class="promo-tag" onclick="togglePromo(this,'30-50%')">30–50%</div>
+                            <div class="promo-tag" onclick="togglePromo(this,'Dưới 50%')">Dưới 50%</div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Khác -->
+                <div class="sf-row" onclick="toggleSF(this)" style="border-bottom:none;">
+                    <span>Khác</span>
+                    <span class="ms sf-icon">add</span>
+                </div>
+                <div class="sf-panel" style="border-bottom:none;">
+                    <div class="filter-opts">
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Khác','Có bán sỉ')"><span class="fchk"></span><span class="fopt-label">Có bán sỉ</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Khác','Cộng tác viên (CTV)')"><span class="fchk"></span><span class="fopt-label">Cộng tác viên (CTV)</span></label>
+                        <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Khác','Có big size')"><span class="fchk"></span><span class="fopt-label">Có big size</span></label>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Apply btn -->
-            <div style="padding:14px 16px;">
-                <button onclick="closeSidebar()"
-                    style="width:100%;padding:11px;background:var(--p);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;transition:background .15s;"
-                    onmouseover="this.style.background='var(--pd)'" onmouseout="this.style.background='var(--p)'">
-                    ✓ Áp dụng bộ lọc
-                </button>
+            <!-- Footer buttons -->
+            <div class="sf-footer">
+                <button class="sf-clear-btn" id="sfClearBtn" onclick="clearAllFilters()">Xóa lọc</button>
+                <button class="sf-apply-btn" id="sfApplyBtn" onclick="closeSidebar()">Áp dụng</button>
             </div>
         </aside>
 
@@ -2657,18 +2842,12 @@
 
             <!-- Sort bar -->
             <div class="sort-bar">
-                <div class="sort-left">
-                    <span class="sort-lbl">Sắp xếp:</span>
-                    <div class="sort-btns">
-                        <button class="sort-btn active" onclick="setSort(this)">Phù hợp nhất</button>
-                        <button class="sort-btn" onclick="setSort(this)">Mới nhất</button>
-                        <button class="sort-btn" onclick="setSort(this)">Giá thấp nhất</button>
-                        <button class="sort-btn" onclick="setSort(this)">Giá cao nhất</button>
-                        <button class="sort-btn" onclick="setSort(this)">Gần bạn</button>
-                    </div>
-                </div>
                 <div class="sort-right">
                     <span class="result-count">Tìm thấy <b>2.475</b> sản phẩm</span>
+                    <button class="nearby-btn" id="nearbyBtn" onclick="openNearby()">
+                        <span class="ms" style="font-size:16px">near_me</span>
+                        Quanh đây
+                    </button>
                     <div class="view-btns">
                         <button class="view-btn active" onclick="setView('grid',this)" title="Dạng lưới">
                             <span class="ms" style="font-size:16px">grid_view</span>
@@ -2676,6 +2855,24 @@
                         <button class="view-btn" onclick="setView('list',this)" title="Dạng danh sách">
                             <span class="ms" style="font-size:16px">view_list</span>
                         </button>
+                    </div>
+                </div>
+                <div class="sort-left">
+                    <span class="sort-lbl">Sắp xếp:</span>
+                    <div class="sort-drop-wrap" id="sortDropWrap">
+                        <button class="sort-drop-btn" onclick="toggleSortDrop(event)">
+                            <span id="sortLabel">Phù hợp nhất</span>
+                            <span class="ms sd-arrow">expand_more</span>
+                        </button>
+                        <div class="sort-menu">
+                            <div class="sort-opt active" onclick="setSort(this,'Phù hợp nhất')">Phù hợp nhất</div>
+                            <div class="sort-opt" onclick="setSort(this,'Mới nhất')">Mới nhất</div>
+                            <div class="sort-opt" onclick="setSort(this,'Mới đăng')">Mới đăng</div>
+                            <div class="sort-opt" onclick="setSort(this,'Xem nhiều')">Xem nhiều</div>
+                            <div class="sort-opt" onclick="setSort(this,'Giá thấp nhất')">Giá thấp nhất</div>
+                            <div class="sort-opt" onclick="setSort(this,'Giá cao nhất')">Giá cao nhất</div>
+                            <div class="sort-opt" onclick="setSort(this,'Gần bạn')">Gần bạn</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3018,8 +3215,7 @@
       <div>
         <div class="fi-logo"><img src="/assets/logo.png" alt="Chof.vn"
             style="height:36px;object-fit:contain;display:block;filter:brightness(0) invert(1)"></div>
-        <p style="font-size:12.5px;color:#666;line-height:1.7;margin-bottom:12px">Sàn đăng tin rao vặt thời trang hàng
-          đầu Việt Nam</p>
+        <p style="font-size:12.5px;color:#666;line-height:1.7;margin-bottom:12px">Sàn đăng tin rao vặt thời trang hàng đầu Việt Nam</p>
         <div style="font-size:12.5px;color:#666;line-height:2.3">
           <p><b style="color:#aaa">Địa chỉ:</b> 165 Đường D5, P.25, Q.Bình Thạnh, TP.HCM</p>
           <p><b style="color:#aaa">SĐT:</b> 0123 456 789</p>
@@ -3052,13 +3248,9 @@
       <div>
         <h4>Theo dõi</h4>
         <div style="display:flex;gap:10px;align-items:center">
-          <a href="#"
-            style="width:32px;height:32px;background:#1877f2;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700">f</a>
-          <a href="#"
-            style="width:32px;height:32px;background:#ff0050;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">TT</a>
-          <a href="#"
-            style="width:32px;height:32px;background:#ff0000;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff"><span
-              class="ms msf" style="font-size:15px">play_circle</span></a>
+          <a href="#" style="width:32px;height:32px;background:#1877f2;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700">f</a>
+          <a href="#" style="width:32px;height:32px;background:#ff0050;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">TT</a>
+          <a href="#" style="width:32px;height:32px;background:#ff0000;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff"><span class="ms msf" style="font-size:15px">play_circle</span></a>
         </div>
       </div>
     </div>
@@ -3164,6 +3356,29 @@
       var el = document.getElementById('ctScroll');
       if (el) el.scrollBy({ left: dir * 220, behavior: 'smooth' });
     }
+
+    // ── PRODUCT FEATURE TAGS inject ──
+    (function() {
+      var sets = [
+        ['ctv','si'], ['big'], ['ctv'], ['si'], ['ctv','big','si'],
+        ['big','si'], ['ctv','big'], ['si'], ['ctv'], [],
+        ['si'], ['ctv','si'], ['big'], []
+      ];
+      var map = { ctv:['CTV','pctag-ctv'], big:['Bigsize','pctag-big'], si:['Bán sỉ','pctag-si'] };
+      document.querySelectorAll('.pc .pcimg').forEach(function(img, i) {
+        var tags = sets[i % sets.length];
+        if (!tags.length) return;
+        var wrap = document.createElement('div');
+        wrap.className = 'pc-tags';
+        tags.forEach(function(t) {
+          var sp = document.createElement('span');
+          sp.className = 'pctag ' + map[t][1];
+          sp.textContent = map[t][0];
+          wrap.appendChild(sp);
+        });
+        img.appendChild(wrap);
+      });
+    })();
 
         // ═══ SHOP POPUP ═══
         document.querySelectorAll('.ibwrap').forEach(function (wrap) {
@@ -3319,22 +3534,18 @@
 
     <script>
         // ── Accordion toggles ──
-        function toggleSection(el) {
-            el.classList.toggle('open');
-            var body = el.nextElementSibling;
-            body.classList.toggle('open');
+        function toggleSF(row) {
+            row.classList.toggle('open');
+            row.nextElementSibling.classList.toggle('open');
         }
-        function toggleSub(el) {
-            el.classList.toggle('open');
-            el.nextElementSibling.classList.toggle('open');
-        }
-        function toggleSubsub(el) {
-            el.classList.toggle('open');
-            el.nextElementSibling.classList.toggle('open');
+
+        function toggleColor(el, val) {
+            el.classList.toggle('active');
+            updateFilterTag('Màu sắc', val, el.classList.contains('active'));
         }
 
         // ── Active filters ──
-        var activeFilters = { 'Danh mục': ['Mua bán'] }; // default
+        var activeFilters = {};
 
         function updateFilters(cb, group, value) {
             if (!activeFilters[group]) activeFilters[group] = [];
@@ -3350,6 +3561,14 @@
         function togglePrice(el, val) {
             el.classList.toggle('active');
             updateFilterTag('Giá bán', val, el.classList.contains('active'));
+        }
+
+        function applyPriceRange() {
+            var from = document.getElementById('priceFrom').value;
+            var to = document.getElementById('priceTo').value;
+            if (!from && !to) return;
+            var label = (from ? from + 'đ' : '0') + ' – ' + (to ? to + 'đ' : '∞');
+            updateFilterTag('Giá tùy chỉnh', label, true);
         }
 
         function togglePromo(el, val) {
@@ -3428,16 +3647,29 @@
             } else {
                 badge.style.display = 'none';
             }
+            var clearBtn = document.getElementById('sfClearBtn');
+            var applyBtn = document.getElementById('sfApplyBtn');
+            if (clearBtn) clearBtn.textContent = n > 0 ? 'Xóa lọc (' + n + ')' : 'Xóa lọc';
+            if (applyBtn) applyBtn.textContent = n > 0 ? 'Áp dụng (' + n + ')' : 'Áp dụng';
         }
 
-        // Initial render (Danh mục: Mua bán is pre-checked)
         renderActiveFilters();
 
-        // ── Sort ──
-        function setSort(btn) {
-            document.querySelectorAll('.sort-btn').forEach(function (b) { b.classList.remove('active'); });
-            btn.classList.add('active');
+        // ── Sort dropdown ──
+        function toggleSortDrop(e) {
+            e.stopPropagation();
+            document.getElementById('sortDropWrap').classList.toggle('open');
         }
+        function setSort(opt, label) {
+            document.querySelectorAll('.sort-opt').forEach(function (o) { o.classList.remove('active'); });
+            opt.classList.add('active');
+            document.getElementById('sortLabel').textContent = label;
+            document.getElementById('sortDropWrap').classList.remove('open');
+        }
+        document.addEventListener('click', function () {
+            var w = document.getElementById('sortDropWrap');
+            if (w) w.classList.remove('open');
+        });
 
         // ── View toggle ──
         function setView(type, btn) {
@@ -3454,6 +3686,75 @@
             btn.classList.add('active');
         }
 
+        // ── Tìm quanh đây ──
+        var radiusSteps = ['500m','1 km','2 km','3 km','5 km','10 km'];
+        var nearbyRadius = '1 km';
+
+        function openNearby() {
+            document.getElementById('nearbyOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeNearby() {
+            document.getElementById('nearbyOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function onRadiusSlide(slider) {
+            nearbyRadius = radiusSteps[+slider.value];
+            document.getElementById('radiusVal').textContent = nearbyRadius;
+            var pct = (+slider.value / 5 * 100).toFixed(1);
+            slider.style.background = 'linear-gradient(to right, var(--p) 0%, var(--p) ' + pct + '%, #e0e0e0 ' + pct + '%, #e0e0e0 100%)';
+        }
+        function snapRadius(idx) {
+            var slider = document.getElementById('radiusSlider');
+            slider.value = idx;
+            onRadiusSlide(slider);
+        }
+        function getLocation() {
+            var lbl = document.getElementById('nearbyLocAddr');
+            var mapLbl = document.getElementById('nearbyMapLbl');
+            lbl.textContent = 'Đang xác định vị trí…';
+            if (!navigator.geolocation) {
+                lbl.textContent = 'Trình duyệt không hỗ trợ định vị';
+                return;
+            }
+            navigator.geolocation.getCurrentPosition(function(pos) {
+                var lat = pos.coords.latitude, lng = pos.coords.longitude;
+                lbl.textContent = 'Đang tải địa chỉ…';
+                fetch('https://nominatim.openstreetmap.org/reverse?format=json&lat=' + lat + '&lon=' + lng + '&accept-language=vi')
+                    .then(function(r){ return r.json(); })
+                    .then(function(data){
+                        var addr = data.display_name || (lat.toFixed(5) + ', ' + lng.toFixed(5));
+                        lbl.textContent = addr;
+                        mapLbl.textContent = 'Đã xác định vị trí ✓';
+                        mapLbl.style.color = 'var(--p)';
+                    })
+                    .catch(function(){
+                        lbl.textContent = lat.toFixed(5) + ', ' + lng.toFixed(5);
+                        mapLbl.textContent = 'Đã xác định vị trí ✓';
+                    });
+            }, function() {
+                lbl.textContent = 'Không thể lấy vị trí. Vui lòng kiểm tra quyền truy cập.';
+            });
+        }
+        function applyNearby() {
+            var btn = document.getElementById('nearbyBtn');
+            btn.classList.add('active');
+            btn.innerHTML = '<span class="ms" style="font-size:16px">near_me</span>'
+                + ' Quanh đây · ' + nearbyRadius
+                + ' <span onclick="clearNearby(event)" style="margin-left:4px;font-size:15px;opacity:.7;line-height:1;" title="Xóa">×</span>';
+            closeNearby();
+        }
+        function clearNearby(e) {
+            e.stopPropagation();
+            var btn = document.getElementById('nearbyBtn');
+            btn.classList.remove('active');
+            btn.innerHTML = '<span class="ms" style="font-size:16px">near_me</span> Quanh đây';
+            document.getElementById('nearbyLocAddr').textContent = 'Bấm để lấy vị trí của bạn';
+            document.getElementById('nearbyMapLbl').textContent = 'Chưa xác định vị trí';
+            document.getElementById('nearbyMapLbl').style.color = '';
+            snapRadius(1);
+        }
+
         // ── Mobile sidebar ──
         function openSidebar() {
             document.getElementById('sidebar').classList.add('open');
@@ -3465,6 +3766,162 @@
             document.getElementById('sidebarOverlay').classList.remove('open');
             document.body.style.overflow = '';
         }
+    </script>
+
+    <!-- Nearby popup -->
+    <div class="nearby-overlay" id="nearbyOverlay" onclick="if(event.target===this)closeNearby()">
+        <div class="nearby-modal">
+            <div class="nearby-head">
+                <div class="nearby-head-title">
+                    <span class="ms" style="font-size:20px;color:var(--p)">near_me</span>
+                    Tìm shop quanh đây
+                </div>
+                <button class="nearby-close" onclick="closeNearby()">
+                    <span class="ms" style="font-size:18px;color:#666">close</span>
+                </button>
+            </div>
+
+            <!-- Map placeholder -->
+            <div class="nearby-map">
+                <span class="nearby-pin">📍</span>
+                <span class="nearby-map-lbl" id="nearbyMapLbl">Chưa xác định vị trí</span>
+            </div>
+
+            <!-- Current location -->
+            <div class="nearby-loc">
+                <span class="ms" style="font-size:20px;color:var(--p)">location_on</span>
+                <div class="nearby-loc-text">
+                    <span class="nearby-loc-lbl">Vị trí hiện tại</span>
+                    <span id="nearbyLocAddr">Bấm để lấy vị trí của bạn</span>
+                </div>
+                <button class="nearby-get-btn" onclick="getLocation()">
+                    <span class="ms" style="font-size:14px">my_location</span>
+                    Lấy vị trí
+                </button>
+            </div>
+
+            <!-- Radius slider -->
+            <div class="nearby-radius-lbl">
+                <span>Bán kính tìm kiếm</span>
+                <span class="nearby-radius-val" id="radiusVal">1 km</span>
+            </div>
+            <div class="radius-slider-wrap">
+                <input type="range" class="radius-slider" id="radiusSlider"
+                    min="0" max="5" step="1" value="1" oninput="onRadiusSlide(this)">
+                <div class="radius-ticks">
+                    <span class="radius-tick" onclick="snapRadius(0)">500m</span>
+                    <span class="radius-tick" onclick="snapRadius(1)">1km</span>
+                    <span class="radius-tick" onclick="snapRadius(2)">2km</span>
+                    <span class="radius-tick" onclick="snapRadius(3)">3km</span>
+                    <span class="radius-tick" onclick="snapRadius(4)">5km</span>
+                    <span class="radius-tick" onclick="snapRadius(5)">10km</span>
+                </div>
+            </div>
+
+            <div class="nearby-foot">
+                <button class="nearby-cancel" onclick="closeNearby()">Huỷ</button>
+                <button class="nearby-search" onclick="applyNearby()">
+                    <span class="ms" style="font-size:16px">search</span>
+                    Tìm shop gần tôi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick view modal -->
+    <div class="qvm-overlay" id="qvmOverlay" style="display:none" onclick="if(event.target===this)closeQV()">
+        <div class="qvm">
+            <div class="qvm-img-wrap">
+                <img id="qvmImg" src="" alt="">
+                <button class="qvm-close" onclick="closeQV()"><span class="ms" style="font-size:20px">close</span></button>
+                <button class="qvm-nav qvm-prev" id="qvmPrev" onclick="qvNav(-1)"><span class="ms" style="font-size:20px">chevron_left</span></button>
+                <button class="qvm-nav qvm-next" id="qvmNext" onclick="qvNav(1)"><span class="ms" style="font-size:20px">chevron_right</span></button>
+            </div>
+            <div class="qvm-foot" id="qvmFoot"></div>
+        </div>
+    </div>
+
+    <script>
+        // ═══ QUICK VIEW ═══
+        (function () {
+            var qvImgs = [], qvIdx = 0;
+            document.querySelectorAll('.pcimg').forEach(function (el) {
+                var img = el.querySelector('img');
+                if (!img) return;
+                var srcs = el.dataset.imgs ? el.dataset.imgs.split('|') : [img.src];
+                var cnt = document.createElement('span');
+                cnt.className = 'img-cnt';
+                cnt.innerHTML = '<span class="ms" style="font-size:11px">photo_camera</span>' + srcs.length;
+                el.appendChild(cnt);
+                var btn = document.createElement('button');
+                btn.className = 'qv-btn';
+                btn.innerHTML = '<span class="ms" style="font-size:13px">visibility</span>Xem nhanh';
+                btn.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); openQV(srcs); });
+                el.appendChild(btn);
+            });
+            function renderQV() {
+                document.getElementById('qvmImg').src = qvImgs[qvIdx];
+                document.getElementById('qvmPrev').disabled = qvIdx === 0;
+                document.getElementById('qvmNext').disabled = qvIdx === qvImgs.length - 1;
+                var foot = document.getElementById('qvmFoot');
+                foot.innerHTML = '';
+                qvImgs.forEach(function (_, i) {
+                    var d = document.createElement('div');
+                    d.className = 'qvm-dot' + (i === qvIdx ? ' active' : '');
+                    (function (ii) { d.onclick = function () { qvIdx = ii; renderQV(); }; })(i);
+                    foot.appendChild(d);
+                });
+                var ctr = document.createElement('span');
+                ctr.className = 'qvm-counter';
+                ctr.textContent = (qvIdx + 1) + '/' + qvImgs.length;
+                foot.appendChild(ctr);
+            }
+            window.openQV = function (list) { qvImgs = list; qvIdx = 0; renderQV(); document.getElementById('qvmOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden'; };
+            window.closeQV = function () { document.getElementById('qvmOverlay').style.display = 'none'; document.body.style.overflow = ''; };
+            window.qvNav = function (d) { qvIdx = Math.max(0, Math.min(qvImgs.length - 1, qvIdx + d)); renderQV(); };
+            document.addEventListener('keydown', function (e) {
+                if (document.getElementById('qvmOverlay').style.display === 'none') return;
+                if (e.key === 'Escape') closeQV();
+                if (e.key === 'ArrowLeft') qvNav(-1);
+                if (e.key === 'ArrowRight') qvNav(1);
+            });
+        })();
+
+        // ═══ MOBILE SHOP POPUP TAP ═══
+        document.addEventListener('click', function (e) {
+            var btn = e.target.closest('.infobtn');
+            if (btn) {
+                e.stopPropagation();
+                var wrap = btn.closest('.ibwrap');
+                var isOpen = wrap.classList.contains('sopen');
+                document.querySelectorAll('.ibwrap.sopen').forEach(function (w) { w.classList.remove('sopen'); });
+                if (!isOpen) wrap.classList.add('sopen');
+                return;
+            }
+            document.querySelectorAll('.ibwrap.sopen').forEach(function (w) { w.classList.remove('sopen'); });
+        });
+
+        // ═══ SHOP INFO INJECT ═══
+        (function () {
+            var vicoSVG = '<svg class="vico" viewBox="0 0 24 24" fill="none" stroke="#008848" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+            var popupHTML = '<div class="ibwrap"><button class="infobtn">!</button>'
+                + '<div class="spopup">'
+                + '<div class="ppr"><span class="pplbl">Tình trạng:</span><span class="ppval ok">Đã xác thực ✓</span></div>'
+                + '<div class="ppr"><span class="pplbl">Tài khoản:</span><span class="ppval">Cá nhân</span></div>'
+                + '<div class="ppr"><span class="pplbl">Tham gia:</span><span class="ppval">01/01/2025</span></div>'
+                + '<div class="ppr"><span class="pplbl">Địa chỉ:</span><span class="ppval">TP.HCM</span></div>'
+                + '<div class="ppr"><span class="pplbl">SĐT:</span><span class="ppval">0123456789</span></div>'
+                + '<div class="ppr"><span class="pplbl">Chat:</span><span class="ppval"><span class="cb zalo">Zalo</span><span class="cb fb">FB</span><span class="cb sms">SMS</span></span></div>'
+                + '<div class="ppr"><span class="pplbl">Uy tín:</span><span class="ppval gold">GOLD ⭐</span></div>'
+                + '<div class="pall"><span>Tất cả bài đăng</span><span>→</span></div>'
+                + '<button class="bfol">Theo dõi</button>'
+                + '</div></div>';
+            document.querySelectorAll('.srow').forEach(function (row) {
+                if (row.querySelector('.ibwrap')) return;
+                if (!row.querySelector('.vico')) row.insertAdjacentHTML('beforeend', vicoSVG);
+                row.insertAdjacentHTML('beforeend', popupHTML);
+            });
+        })();
     </script>
 
 </body>

@@ -2783,6 +2783,40 @@
       transform: translateX(-50%) translateY(0)
     }
 
+    /* ── PRODUCT FEATURE TAGS (hover) ── */
+    .pc-tags {
+      position: absolute;
+      bottom: 42px;
+      left: 8px;
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      max-width: calc(100% - 16px);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .2s, transform .2s;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .pc:hover .pc-tags,
+    .pc-hero:hover .pc-tags { opacity: 1; transform: translateY(0); }
+
+    .pctag {
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 5px;
+      letter-spacing: .2px;
+      white-space: nowrap;
+      backdrop-filter: blur(4px);
+    }
+
+    .pctag-ctv { background: rgba(249,115,22,.9);  color: #fff; }
+    .pctag-big { background: rgba(124,58,237,.85); color: #fff; }
+    .pctag-si  { background: rgba(0,136,72,.9);    color: #fff; }
+
+
     /* ── QUICK VIEW MODAL ── */
     .qvm-overlay {
       position: fixed;
@@ -2955,8 +2989,8 @@
                     </a>
                     <a href="/listing.html">
                       <div class="ml1" onmouseenter="swp('vietBrand',this)">
-                        <span class="ml1-label">Thương hiệu Việt</span><span
-                          class="ms" style="font-size:13px;opacity:.5">chevron_right</span>
+                        <span class="ml1-label">Thương hiệu Việt</span><span class="ms"
+                          style="font-size:13px;opacity:.5">chevron_right</span>
                       </div>
                     </a>
                     <a href="/listing.html">
@@ -3648,7 +3682,8 @@
             <div class="udrop-item"><span class="ms">group</span>Theo dõi</div>
             <div class="udrop-sep"></div>
             <div class="udrop-item"><span class="ms">article</span>Tất cả bài đăng</div>
-            <div class="udrop-item"><span class="ms">manage_accounts</span>Quản lý tài khoản</div>
+            <div class="udrop-item" onclick="window.location.href='/shopmanager.html'"><span
+                class="ms">manage_accounts</span>Quản lý tài khoản</div>
             <div class="udrop-sep"></div>
             <div class="udrop-item danger" onclick="doLogout()"><span class="ms">logout</span>Đăng xuất</div>
           </div>
@@ -3668,16 +3703,16 @@
           <span class="ms" style="font-size:16px">chevron_left</span>
         </button>
         <div class="ct-scroll" id="ctScroll">
-          <a href="/detail.html" class="ct-pill hot">🔥 Đầm voan hoa nhí cổ V Hàn Quốc</a>
-          <a href="/detail.html" class="ct-pill">👜 Túi Gucci GG Canvas</a>
-          <a href="/detail.html" class="ct-pill">👖 Quần jean baggy cao cấp</a>
-          <a href="/detail.html" class="ct-pill">👟 Giày Adidas Ultraboost</a>
-          <a href="/detail.html" class="ct-pill">⌚ Đồng hồ Casio Edifice</a>
-          <a href="/detail.html" class="ct-pill">🌹 Nước hoa Dior Sauvage</a>
-          <a href="/detail.html" class="ct-pill">🧥 Áo Hoodie nỉ Unisex</a>
-          <a href="/detail.html" class="ct-pill">👗 Váy hoa nhí dự tiệc</a>
-          <a href="/detail.html" class="ct-pill">💄 Mỹ phẩm Laneige Water Bank</a>
-          <a href="/detail.html" class="ct-pill">🏃 Giày chạy bộ siêu nhẹ</a>
+          <a href="/detail.html" class="ct-pill hot">Đầm voan hoa nhí cổ V Hàn Quốc</a>
+          <a href="/detail.html" class="ct-pill">Túi Gucci GG Canvas</a>
+          <a href="/detail.html" class="ct-pill">Quần jean baggy cao cấp</a>
+          <a href="/detail.html" class="ct-pill">Giày Adidas Ultraboost</a>
+          <a href="/detail.html" class="ct-pill">Đồng hồ Casio Edifice</a>
+          <a href="/detail.html" class="ct-pill">Nước hoa Dior Sauvage</a>
+          <a href="/detail.html" class="ct-pill">Áo Hoodie nỉ Unisex</a>
+          <a href="/detail.html" class="ct-pill">Váy hoa nhí dự tiệc</a>
+          <a href="/detail.html" class="ct-pill">Mỹ phẩm Laneige Water Bank</a>
+          <a href="/detail.html" class="ct-pill">Giày chạy bộ siêu nhẹ</a>
         </div>
         <button class="ct-nav" id="ctNext" aria-label="Tiếp" onclick="ctScroll(1)">
           <span class="ms" style="font-size:16px">chevron_right</span>
@@ -3982,11 +4017,7 @@
                   onerror="this.src='https://via.placeholder.com/300x300/e8f5e9/008848?text=Đồng+hồ'"><button
                   class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
               <div class="pcb">
-                <div class="srow"><span class="sname">Watch Station</span><svg class="vico" viewBox="0 0 24 24"
-                    fill="none" stroke="#008848" stroke-width="2.5">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                    <polyline points="22 4 12 14.01 9 11.01" />
-                  </svg></div><a href="/detail.html">
+                <div class="srow"><span class="sname">Watch Station</span></div><a href="/detail.html">
                   <p class="pc-title">Đồng hồ Casio Edifice chính hãng fullbox 99%</p>
                 </a>
                 <div><span class="pc-price-sale">1.200.000 đ</span><span class="pc-price-ori">2.100.000 đ</span></div>
@@ -4575,6 +4606,29 @@
       var el = document.getElementById('ctScroll');
       if (el) el.scrollBy({ left: dir * 220, behavior: 'smooth' });
     }
+
+    // ── PRODUCT FEATURE TAGS inject ──
+    (function() {
+      var sets = [
+        ['ctv','si'], ['big'], ['ctv'], ['si'], ['ctv','big','si'],
+        ['big','si'], ['ctv','big'], ['si'], ['ctv'], [],
+        ['si'], ['ctv','si'], ['big'], []
+      ];
+      var map = { ctv:['CTV','pctag-ctv'], big:['Bigsize','pctag-big'], si:['Bán sỉ','pctag-si'] };
+      document.querySelectorAll('.pc .pcimg, .pc-hero .pcimg').forEach(function(img, i) {
+        var tags = sets[i % sets.length];
+        if (!tags.length) return;
+        var wrap = document.createElement('div');
+        wrap.className = 'pc-tags';
+        tags.forEach(function(t) {
+          var sp = document.createElement('span');
+          sp.className = 'pctag ' + map[t][1];
+          sp.textContent = map[t][0];
+          wrap.appendChild(sp);
+        });
+        img.appendChild(wrap);
+      });
+    })();
 
     // TAB SWITCHER
     function setTab(btn) {

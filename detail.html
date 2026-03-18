@@ -16,6 +16,11 @@
             --pl: #e8f5ee;
             --ac: #f97316;
             --bg: #f2f2f2;
+            --ink: #111;
+            --muted: #888;
+            --line: #e5e5e5;
+            --card: #fff;
+            --r: 12px;
         }
 
         * {
@@ -715,9 +720,7 @@
            [HEADER] Cat-tabs
         ══════════════════════════════════════ */
     .cat-tabs {
-      background: #fff;
       border-top: 1px solid var(--line);
-      border-radius: 0 0 15px 15px;
     }
 
     .cat-tabs-inner {
@@ -858,7 +861,10 @@
         .detail-top {
             display: grid;
             grid-template-columns: 420px 1fr;
-            gap: 24px;
+            grid-template-rows: auto auto;
+            align-items: start;
+            column-gap: 24px;
+            row-gap: 14px;
             background: #fff;
             border-radius: 16px;
             padding: 24px;
@@ -882,7 +888,8 @@
             cursor: zoom-in;
         }
 
-        .gallery-main img {
+        .gallery-main img, .gallery-main video {
+            display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -938,19 +945,19 @@
         }
 
         .gallery-thumbs {
-            display: flex;
-            gap: 8px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
         }
 
         .thumb {
-            width: 72px;
-            height: 72px;
+            aspect-ratio: 1/1;
             border-radius: 8px;
             overflow: hidden;
             cursor: pointer;
             border: 2.5px solid transparent;
             transition: border-color .15s;
-            flex-shrink: 0;
+            position: relative;
         }
 
         .thumb.active {
@@ -963,8 +970,21 @@
             object-fit: cover;
         }
 
+        .thumb.vt::after {
+            content: '▶';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, .38);
+            color: #fff;
+            font-size: 15px;
+            border-radius: 6px;
+            pointer-events: none;
+        }
+
         /* ── Product info ── */
-        .pinfo {}
 
         .pinfo-title {
             font-size: 18px;
@@ -1061,6 +1081,11 @@
             color: #6a1b9a;
         }
 
+        .spec-badge.gray {
+            background: #f3f4f6;
+            color: #666;
+        }
+
         .info-icon {
             display: inline-flex;
             align-items: center;
@@ -1130,6 +1155,281 @@
             font-weight: 800;
             color: var(--ac);
         }
+
+        /* Bulk order button */
+        .bulk-order-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            background: var(--pl);
+            color: var(--p);
+            border: 1.5px solid var(--p);
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            margin-left: 6px;
+            transition: background .12s;
+            white-space: nowrap;
+        }
+
+        .bulk-order-btn:hover { background: #d0ebdb; }
+
+        /* Bulk order popup */
+        .bo-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .bo-overlay.open { display: flex; }
+
+        .bo-modal {
+            background: #fff;
+            border-radius: 14px;
+            width: 100%;
+            max-width: 480px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 24px 80px rgba(0,0,0,.25);
+        }
+
+        .bo-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px 14px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .bo-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .bo-close {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: #f3f4f6;
+            color: #555;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: inherit;
+            transition: background .12s;
+        }
+
+        .bo-close:hover { background: #e5e5e5; }
+
+        .bo-body { padding: 18px 20px; }
+
+        .bo-shop {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: #f8fafb;
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 16px;
+        }
+
+        .bo-shop-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: var(--pl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--p);
+        }
+
+        .bo-shop-info { font-size: 12px; color: #555; line-height: 1.9; }
+        .bo-shop-name { font-size: 13px; font-weight: 800; color: #111; margin-bottom: 2px; }
+
+        .bo-product {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0 14px;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 16px;
+        }
+
+        .bo-product-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 1px solid #eee;
+        }
+
+        .bo-product-name { flex: 1; font-size: 13px; font-weight: 600; color: #222; }
+
+        .bo-qty-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .bo-qty-lbl { font-size: 12.5px; color: #555; white-space: nowrap; }
+        .bo-qty-lbl span { color: #e74c3c; }
+
+        .bo-qty-input {
+            width: 110px;
+            height: 36px;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            padding: 0 10px;
+            font-size: 13px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color .15s;
+        }
+
+        .bo-qty-input:focus { border-color: var(--p); }
+
+        .bo-section-lbl {
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .bo-section-lbl span { color: #e74c3c; }
+
+        .bo-phone-wrap {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .bo-phone-prefix {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0 10px;
+            height: 40px;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            background: #fff;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .bo-phone-input {
+            flex: 1;
+            height: 40px;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            padding: 0 12px;
+            font-size: 13px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color .15s;
+        }
+
+        .bo-phone-input:focus { border-color: var(--p); }
+
+        .bo-textarea {
+            width: 100%;
+            height: 90px;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 13px;
+            font-family: inherit;
+            resize: none;
+            outline: none;
+            color: #333;
+            transition: border-color .15s;
+            margin-bottom: 10px;
+        }
+
+        .bo-textarea:focus { border-color: var(--p); }
+
+        .bo-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .bo-sug {
+            padding: 5px 10px;
+            background: #f3f4f6;
+            border-radius: 20px;
+            font-size: 11.5px;
+            color: #555;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: background .12s, border-color .12s, color .12s;
+            font-family: inherit;
+        }
+
+        .bo-sug:hover { background: var(--pl); color: var(--p); border-color: var(--p); }
+
+        .bo-footer {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            padding-top: 4px;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 4px;
+        }
+
+        .bo-cancel {
+            padding: 10px 20px;
+            border: 1.5px solid #ddd;
+            border-radius: 9px;
+            background: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            color: #555;
+            cursor: pointer;
+            font-family: inherit;
+            transition: border-color .12s;
+        }
+
+        .bo-cancel:hover { border-color: #aaa; }
+
+        .bo-submit {
+            padding: 10px 22px;
+            border: none;
+            border-radius: 9px;
+            background: var(--p);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            box-shadow: 0 2px 8px rgba(0,136,72,.25);
+            transition: background .12s;
+        }
+
+        .bo-submit:hover { background: var(--pd); }
 
         .price-contact {
             font-size: 13px;
@@ -1205,6 +1505,25 @@
 
         .shop-stats b {
             color: #222;
+        }
+
+        .follow-btn {
+            margin-top: 7px;
+            background: var(--p);
+            color: #fff;
+            border: none;
+            padding: 5px 18px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background .15s;
+            align-self: flex-start;
+        }
+
+        .follow-btn:hover {
+            background: var(--pd);
         }
 
         /* Right contact */
@@ -1651,6 +1970,57 @@
             color: #e74c3c;
         }
 
+        /* ══ INFO ROW (thumbs + price side by side inside pinfo) ══ */
+        .info-right {
+            min-width: 0;
+        }
+
+        /* ══ POLICY WIDGET (right sidebar) ══ */
+        .policy-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .07);
+            margin-top: 16px;
+            overflow: hidden;
+        }
+
+        .policy-hd {
+            padding: 12px 18px;
+            font-size: 12.5px;
+            font-weight: 800;
+            color: #222;
+            border-bottom: 1px solid #f0f0f0;
+            text-transform: uppercase;
+            letter-spacing: .3px;
+        }
+
+        .policy-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 18px;
+            border-bottom: 1px solid #f8f8f8;
+            font-size: 12.5px;
+            color: #444;
+        }
+
+        .policy-row:last-child {
+            border-bottom: none;
+        }
+
+        .policy-row .ms {
+            font-size: 18px;
+            color: var(--p);
+            flex-shrink: 0;
+        }
+
+        .policy-row b {
+            color: #222;
+            display: block;
+            font-size: 12px;
+            margin-bottom: 1px;
+        }
+
     /* ══ FOOTER ══ */
     footer {
       background: var(--ink)
@@ -1804,35 +2174,11 @@
             }
 
             .sbtn {
-                padding: 0 12px;
-                font-size: 12px;
+                display: none !important;
             }
 
             .blogin {
                 display: none;
-            }
-
-            .bpost-txt {
-                display: none;
-            }
-
-            .bpost-icon-desk {
-                display: none;
-            }
-
-            .bpost-plus {
-                display: block;
-                font-size: 26px;
-                font-weight: 900;
-                line-height: 1;
-            }
-
-            .bpost {
-                width: 38px;
-                height: 38px;
-                padding: 0;
-                border-radius: 50%;
-                justify-content: center;
             }
 
             .detail-top {
@@ -1864,7 +2210,13 @@
 
             .fi {
                 grid-template-columns: 1fr 1fr;
-                gap: 18px;
+                gap: 16px;
+                padding: 24px 14px 14px;
+            }
+
+            .fi-logo {
+                font-size: 20px;
+                margin-bottom: 8px;
             }
 
             .sticky-banner {
@@ -1903,6 +2255,13 @@
 
             .fi {
                 grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .fb2 {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
             }
 
             .pinfo-title {
@@ -2431,7 +2790,7 @@
             <div class="udrop-item"><span class="ms">group</span>Theo dõi</div>
             <div class="udrop-sep"></div>
             <div class="udrop-item"><span class="ms">article</span>Tất cả bài đăng</div>
-            <div class="udrop-item"><span class="ms">manage_accounts</span>Quản lý tài khoản</div>
+            <div class="udrop-item" onclick="window.location.href='/shopmanager.html'"><span class="ms">manage_accounts</span>Quản lý tài khoản</div>
             <div class="udrop-sep"></div>
             <div class="udrop-item danger" onclick="doLogout()"><span class="ms">logout</span>Đăng xuất</div>
           </div>
@@ -2451,16 +2810,16 @@
           <span class="ms" style="font-size:16px">chevron_left</span>
         </button>
         <div class="ct-scroll" id="ctScroll">
-          <a href="/detail.html" class="ct-pill hot">🔥 Đầm voan hoa nhí cổ V Hàn Quốc</a>
-          <a href="/detail.html" class="ct-pill">👜 Túi Gucci GG Canvas</a>
-          <a href="/detail.html" class="ct-pill">👖 Quần jean baggy cao cấp</a>
-          <a href="/detail.html" class="ct-pill">👟 Giày Adidas Ultraboost</a>
-          <a href="/detail.html" class="ct-pill">⌚ Đồng hồ Casio Edifice</a>
-          <a href="/detail.html" class="ct-pill">🌹 Nước hoa Dior Sauvage</a>
-          <a href="/detail.html" class="ct-pill">🧥 Áo Hoodie nỉ Unisex</a>
-          <a href="/detail.html" class="ct-pill">👗 Váy hoa nhí dự tiệc</a>
-          <a href="/detail.html" class="ct-pill">💄 Mỹ phẩm Laneige Water Bank</a>
-          <a href="/detail.html" class="ct-pill">🏃 Giày chạy bộ siêu nhẹ</a>
+          <a href="/detail.html" class="ct-pill hot">Đầm voan hoa nhí cổ V Hàn Quốc</a>
+          <a href="/detail.html" class="ct-pill">Túi Gucci GG Canvas</a>
+          <a href="/detail.html" class="ct-pill">Quần jean baggy cao cấp</a>
+          <a href="/detail.html" class="ct-pill">Giày Adidas Ultraboost</a>
+          <a href="/detail.html" class="ct-pill">Đồng hồ Casio Edifice</a>
+          <a href="/detail.html" class="ct-pill">Nước hoa Dior Sauvage</a>
+          <a href="/detail.html" class="ct-pill">Áo Hoodie nỉ Unisex</a>
+          <a href="/detail.html" class="ct-pill">Váy hoa nhí dự tiệc</a>
+          <a href="/detail.html" class="ct-pill">Mỹ phẩm Laneige Water Bank</a>
+          <a href="/detail.html" class="ct-pill">Giày chạy bộ siêu nhẹ</a>
         </div>
         <button class="ct-nav" id="ctNext" aria-label="Tiếp" onclick="ctScroll(1)">
           <span class="ms" style="font-size:16px">chevron_right</span>
@@ -2494,45 +2853,23 @@
         <!-- ══ TOP: Gallery + Info ══ -->
         <div class="detail-top">
 
-            <!-- Gallery -->
-            <div class="gallery">
-                <div class="gallery-main" id="mainImg">
+            <!-- col1/row1: main image -->
+            <div class="gallery-main" id="mainImg">
                     <img id="mainImgEl"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
+                        src="assets/aothun.avif"
                         alt="Áo thun oversize" onclick="openLightbox(this.src)" />
+                    <video id="mainVideoEl" src="assets/video.mp4" controls
+                        style="display:none;border-radius:12px;"></video>
                     <button class="gallery-fav" id="favBtn" onclick="toggleFav(event)">
                         <span class="ms" id="favIcon">favorite_border</span>
                     </button>
-                    <button class="gallery-zoom" onclick="openLightbox(document.getElementById('mainImgEl').src)">
+                    <button class="gallery-zoom" id="zoomBtn" onclick="openLightbox(document.getElementById('mainImgEl').src)">
                         <span class="ms" style="font-size:15px">zoom_in</span> Zoom
                     </button>
                 </div>
-                <div class="gallery-thumbs">
-                    <div class="thumb active"
-                        onclick="switchImg(this,'https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U')">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
-                            alt="">
-                    </div>
-                    <div class="thumb"
-                        onclick="switchImg(this,'https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80')">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
-                            alt="">
-                    </div>
-                    <div class="thumb"
-                        onclick="switchImg(this,'https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk')">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
-                            alt="">
-                    </div>
-                    <div class="thumb"
-                        onclick="switchImg(this,'https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0')">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
-                            alt="">
-                    </div>
-                </div>
-            </div>
 
-            <!-- Product info -->
-            <div class="pinfo">
+            <!-- col2/row1: title + spec -->
+            <div class="pinfo-top">
                 <h1 class="pinfo-title">Áo thun oversize in hình unisex phong cách streetwear – nhiều màu, form rộng
                     thoải mái</h1>
 
@@ -2586,8 +2923,7 @@
                                 <span class="tooltip-content">Đổi trả trong vòng 7 ngày kể từ ngày nhận hàng</span>
                             </span>
                         </td>
-                        <td><span class="spec-badge green"><span class="ms" style="font-size:14px">autorenew</span> 7
-                                ngày</span></td>
+                        <td><span class="spec-badge green"><span class="ms" style="font-size:14px">autorenew</span> 7 ngày</span></td>
                     </tr>
                     <tr>
                         <td>
@@ -2601,7 +2937,7 @@
                             <div style="display:flex;flex-wrap:wrap;gap:5px;">
                                 <span class="spec-badge purple">Hoả tốc</span>
                                 <span class="spec-badge blue">Nhanh</span>
-                                <span class="spec-badge orange">Tiêu chuẩn</span>
+                                <span class="spec-badge gray">Tiêu chuẩn</span>
                             </div>
                         </td>
                     </tr>
@@ -2620,6 +2956,49 @@
                         <td><span class="spec-badge green">30 ngày</span></td>
                     </tr>
                 </table>
+            </div><!-- /pinfo-top -->
+
+            <!-- col1/row2: thumbnails -->
+            <div class="gallery-thumbs">
+                    <div class="thumb active" onclick="switchImg(this,'assets/aothun.avif')">
+                        <img src="assets/aothun.avif" alt="Áo thun">
+                    </div>
+                    <div class="thumb" onclick="switchImg(this,'assets/polo.png')">
+                        <img src="assets/polo.png" alt="Polo">
+                    </div>
+                    <div class="thumb" onclick="switchImg(this,'assets/hoddie.webp')">
+                        <img src="assets/hoddie.webp" alt="Hoodie">
+                    </div>
+                    <div class="thumb" onclick="switchImg(this,'assets/jacket.webp')">
+                        <img src="assets/jacket.webp" alt="Jacket">
+                    </div>
+                    <div class="thumb" onclick="switchImg(this,'assets/nam.webp')">
+                        <img src="assets/nam.webp" alt="Nam">
+                    </div>
+                    <div class="thumb" onclick="switchImg(this,'assets/nu.webp')">
+                        <img src="assets/nu.webp" alt="Nữ">
+                    </div>
+                    <div class="thumb" onclick="switchImg(this,'assets/bo-quan-ao-the-thao-nerdy-1.webp')">
+                        <img src="assets/bo-quan-ao-the-thao-nerdy-1.webp" alt="Bộ thể thao">
+                    </div>
+                    <div class="thumb" onclick="switchImg(this,'assets/set-gym-nu-11.jpg')">
+                        <img src="assets/set-gym-nu-11.jpg" alt="Set gym nữ">
+                    </div>
+                    <div class="thumb" onclick="switchImg(this,'assets/thethaonu.webp')">
+                        <img src="assets/thethaonu.webp" alt="Thể thao nữ">
+                    </div>
+                    <div class="thumb" onclick="switchImg(this,'assets/quanshort.jpg')">
+                        <img src="assets/quanshort.jpg" alt="Quần short">
+                    </div>
+                    <!-- Video thumbnail (11th slot) -->
+                    <div class="thumb vt" onclick="switchVideo(this)">
+                        <video src="assets/video.mp4" muted preload="metadata"
+                            style="width:100%;height:100%;object-fit:cover;pointer-events:none;border-radius:6px;"></video>
+                    </div>
+            </div><!-- /gallery-thumbs -->
+
+            <!-- col2/row2: price + shop -->
+            <div class="info-right">
 
                 <!-- Price block -->
                 <div class="price-block">
@@ -2652,6 +3031,10 @@
                             </span>:
                         </span>
                         <span class="price-contact">Liên hệ</span>
+                        <button class="bulk-order-btn" onclick="openBulkOrder()">
+                            <span class="ms" style="font-size:14px">inventory_2</span>
+                            Đặt hàng số lượng
+                        </button>
                     </div>
                 </div>
 
@@ -2672,10 +3055,8 @@
                             <div class="shop-stats">
                                 <span><b>2k</b> lượt thích</span>
                                 <span><b>3k</b> theo dõi</span>
-                                <button onclick="alert('Đã theo dõi!')"
-                                    style="background:var(--p);color:#fff;border:none;padding:3px 12px;border-radius:6px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:inherit;">Theo
-                                    dõi</button>
                             </div>
+                            <button class="follow-btn" onclick="alert('Đã theo dõi!')">Theo dõi</button>
                         </div>
                     </div>
                     <div class="shop-contact">
@@ -2691,8 +3072,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div><!-- /info-right -->
+        </div><!-- /detail-top -->
 
         <!-- ══ MIDDLE: Description tabs + Reviews ══ -->
         <div class="detail-mid">
@@ -2855,62 +3236,9 @@
                     </div>
                 </div>
 
-                <!-- Recently viewed -->
-                <div class="related-sec">
-                    <div class="related-header">
-                        Đã xem gần đây
-                        <a href="/listing.html">Xóa lịch sử</a>
-                    </div>
-                    <div class="mini-grid">
-                        <div class="mc">
-                            <div class="mc-img"><img
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
-                                    alt=""></div>
-                            <div class="mc-info">
-                                <p class="mc-title">Giày Sneaker Nike Air Max đỏ</p><span class="mc-price">3.500.000
-                                    đ</span>
-                            </div>
-                        </div>
-                        <div class="mc">
-                            <div class="mc-img"><img
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
-                                    alt=""></div>
-                            <div class="mc-info">
-                                <p class="mc-title">Đồng hồ Casio Edifice</p><span class="mc-price">1.200.000 đ</span>
-                            </div>
-                        </div>
-                        <div class="mc">
-                            <div class="mc-img"><img
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX_zG51x9_HlDzqyWXE_LcbJUtRD_8Wmracv34LmDYoqKx-oEvKoMkHN_x5VphToHVV5WALzcpu1D99eH03MpjOfbDlPVfCOjNxrGeLBmSU4YPvcjY9vKo6l9AR7qqD_gfsX_7B7mRTpQ2Q-fl4j-ZCsHuVmZntGaYYq8GKhm4-74RSgKOv9CEAbj4nFPZtO8RfP2MpnPbKtGtqFzNSLnmc_YT3vMGELoz7fwL_bNz7CTcxPs72JslbUat5GZh8B-iWEE7b2XMMxs"
-                                    alt=""></div>
-                            <div class="mc-info">
-                                <p class="mc-title">Dịch vụ trang điểm tận nơi</p><span class="mc-price">300.000
-                                    đ</span>
-                            </div>
-                        </div>
-                        <div class="mc">
-                            <div class="mc-img"><img
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
-                                    alt=""></div>
-                            <div class="mc-info">
-                                <p class="mc-title">Bộ vest nam slim fit 2 cúc</p><span class="mc-price">890.000
-                                    đ</span>
-                            </div>
-                        </div>
-                        <div class="mc">
-                            <div class="mc-img"><img
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
-                                    alt=""></div>
-                            <div class="mc-info">
-                                <p class="mc-title">Đầm voan hoa nhí cổ V Hàn Quốc</p><span class="mc-price">250.000
-                                    đ</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <!-- Right: Reviews -->
+            <!-- Right: Reviews + Policy -->
             <div id="reviews">
                 <div class="review-card">
                     <div class="review-header">
@@ -2992,6 +3320,31 @@
                             <div class="ri-text">In hình đẹp, không bị bong tróc sau khi giặt. Màu trắng trông sạch sẽ,
                                 tuy nhiên hơi bị xuyên thấu nên nên mặc áo lót bên trong.</div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Policy widget -->
+                <div class="policy-card">
+                    <div class="policy-hd">Chính sách mua hàng</div>
+                    <div class="policy-row">
+                        <span class="ms">autorenew</span>
+                        <div><b>Đổi trả 7 ngày</b>Đổi trả miễn phí trong 7 ngày nếu lỗi từ shop</div>
+                    </div>
+                    <div class="policy-row">
+                        <span class="ms">verified_user</span>
+                        <div><b>Bảo hành 30 ngày</b>Bảo hành lỗi vải và đường may</div>
+                    </div>
+                    <div class="policy-row">
+                        <span class="ms">local_shipping</span>
+                        <div><b>Giao hàng 1–3 ngày</b>Hỏa tốc, nhanh, tiêu chuẩn tuỳ khu vực</div>
+                    </div>
+                    <div class="policy-row">
+                        <span class="ms">payments</span>
+                        <div><b>Thanh toán linh hoạt</b>COD · Chuyển khoản · Ví điện tử</div>
+                    </div>
+                    <div class="policy-row">
+                        <span class="ms">support_agent</span>
+                        <div><b>Hỗ trợ 8h–21h</b>Chat trực tiếp với shop qua Zalo / Mess</div>
                     </div>
                 </div>
             </div>
@@ -3077,6 +3430,73 @@
     </div>
   </footer>
 
+    <!-- ══ BULK ORDER POPUP ══ -->
+    <div class="bo-overlay" id="boOverlay" onclick="if(event.target===this)closeBulkOrder()">
+      <div class="bo-modal">
+        <div class="bo-head">
+          <span class="bo-title">Đặt hàng số lượng</span>
+          <button class="bo-close" onclick="closeBulkOrder()">
+            <span class="ms" style="font-size:18px">close</span>
+          </button>
+        </div>
+        <div class="bo-body">
+
+          <!-- Shop info -->
+          <div class="bo-shop">
+            <img id="boShopLogo" class="bo-shop-logo" src="" alt="" style="display:none;width:32px;height:32px;border-radius:6px;object-fit:cover;">
+            <div id="boShopLogoFallback" class="bo-shop-logo"></div>
+            <div>
+              <div class="bo-shop-name" id="boShopName"></div>
+              <div class="bo-shop-info" id="boShopInfo"></div>
+            </div>
+          </div>
+
+          <!-- Product row -->
+          <div class="bo-product">
+            <img id="boProductImg" class="bo-product-img" src="" alt="">
+            <span class="bo-product-name" id="boProductName"></span>
+            <div class="bo-qty-wrap">
+              <span class="bo-qty-lbl">Số lượng <span>(*)</span></span>
+              <input class="bo-qty-input" type="number" placeholder="Nhập số lượng" min="10">
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="bo-section-lbl">Thông tin liên hệ <span>(*)</span></div>
+          <div style="font-size:12.5px;color:#888;margin-bottom:8px;margin-top:-4px">Số điện thoại</div>
+          <div class="bo-phone-wrap">
+            <button class="bo-phone-prefix">
+              <span style="font-size:16px">🇻🇳</span> (+84) <span class="ms" style="font-size:14px">expand_more</span>
+            </button>
+            <input class="bo-phone-input" type="tel" placeholder="Vui lòng nhập số điện thoại">
+          </div>
+
+          <!-- Yêu cầu -->
+          <div class="bo-section-lbl" style="margin-top:4px">Yêu cầu cụ thể <span>(*)</span></div>
+          <div style="font-size:12px;color:#aaa;margin-bottom:8px;margin-top:-4px">Bạn cần điều gì? Thông tin, giá cả, bất cứ thứ gì!</div>
+          <textarea class="bo-textarea" placeholder="Hoặc để lại số điện thoại và chúng tôi sẽ liên hệ bạn"></textarea>
+
+          <!-- Suggestions -->
+          <div class="bo-suggestions">
+            <button class="bo-sug" onclick="appendSug(this)">Mức giá ưu đãi bạn có thể cung cấp là bao nhiêu?</button>
+            <button class="bo-sug" onclick="appendSug(this)">Tôi có thể xem thêm mẫu?</button>
+            <button class="bo-sug" onclick="appendSug(this)">Phí ship?</button>
+            <button class="bo-sug" onclick="appendSug(this)">Bao lâu thì đơn hàng đến được chỗ tôi?</button>
+            <button class="bo-sug" onclick="appendSug(this)">Tôi có thể thêm Logo chứ?</button>
+          </div>
+
+          <!-- Footer buttons -->
+          <div class="bo-footer">
+            <button class="bo-cancel" onclick="closeBulkOrder()">Hủy bỏ</button>
+            <button class="bo-submit">
+              <span class="ms" style="font-size:15px">send</span> Gửi yêu cầu
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <script>
     function doLogin() {
       document.getElementById('btnLogin').style.display = 'none';
@@ -3150,6 +3570,56 @@
     function ctScroll(dir) {
       var el = document.getElementById('ctScroll');
       if (el) el.scrollBy({ left: dir * 220, behavior: 'smooth' });
+    }
+
+    // BULK ORDER POPUP
+    function openBulkOrder() {
+      // Shop name
+      var shopNameEl = document.querySelector('.shop-name');
+      var shopName = shopNameEl ? shopNameEl.childNodes[0].textContent.trim() : '';
+      document.getElementById('boShopName').textContent = shopName;
+
+      // Shop logo
+      var shopLogo = document.querySelector('.shop-avatar');
+      var boLogo = document.getElementById('boShopLogo');
+      var boLogoFb = document.getElementById('boShopLogoFallback');
+      if (shopLogo && shopLogo.src && !shopLogo.naturalWidth === false) {
+        boLogo.src = shopLogo.src;
+        boLogo.style.display = 'block';
+        boLogoFb.style.display = 'none';
+      } else {
+        boLogo.style.display = 'none';
+        boLogoFb.style.display = 'flex';
+        boLogoFb.textContent = shopName ? shopName.charAt(0) : 'S';
+      }
+
+      // Shop phone
+      var phoneEl = document.getElementById('phoneNum');
+      var phone = phoneEl ? phoneEl.textContent.trim() : '';
+      var infoHtml = '';
+      if (phone) infoHtml += '<div>Số điện thoại: &nbsp;' + phone + '</div>';
+      document.getElementById('boShopInfo').innerHTML = infoHtml || '<div style="color:#aaa;font-style:italic">Chưa có thông tin liên hệ</div>';
+
+      // Product title
+      var titleEl = document.querySelector('.pinfo-title');
+      document.getElementById('boProductName').textContent = titleEl ? titleEl.textContent.trim() : '';
+
+      // Product image — lấy ảnh đang hiển thị
+      var activeImg = document.getElementById('mainImgEl') || document.querySelector('.gallery-main img');
+      if (activeImg) document.getElementById('boProductImg').src = activeImg.src;
+
+      document.getElementById('boOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeBulkOrder() {
+      document.getElementById('boOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function appendSug(btn) {
+      var ta = document.querySelector('.bo-textarea');
+      var txt = btn.textContent.trim();
+      ta.value = ta.value ? ta.value + '\n' + txt : txt;
+      ta.focus();
     }
 
         // ═══ SHOP POPUP ═══
@@ -3309,7 +3779,20 @@
         function switchImg(thumb, src) {
             document.querySelectorAll('.thumb').forEach(function (t) { t.classList.remove('active'); });
             thumb.classList.add('active');
+            var vid = document.getElementById('mainVideoEl');
+            vid.pause(); vid.style.display = 'none';
+            document.getElementById('mainImgEl').style.display = 'block';
+            document.getElementById('zoomBtn').style.display = 'flex';
             document.getElementById('mainImgEl').src = src;
+        }
+        function switchVideo(thumb) {
+            document.querySelectorAll('.thumb').forEach(function (t) { t.classList.remove('active'); });
+            thumb.classList.add('active');
+            document.getElementById('mainImgEl').style.display = 'none';
+            document.getElementById('zoomBtn').style.display = 'none';
+            var vid = document.getElementById('mainVideoEl');
+            vid.style.display = 'block';
+            vid.play().catch(function () {});
         }
 
         // Lightbox

@@ -16,6 +16,11 @@
             --pl: #e8f5ee;
             --ac: #f97316;
             --bg: #f2f2f2;
+            --ink: #111;
+            --muted: #888;
+            --line: #e5e5e5;
+            --card: #fff;
+            --r: 12px;
             --err: #e74c3c;
             --warn: #f59e0b;
             --radius: 12px;
@@ -2022,6 +2027,26 @@
             gap: 8px
         }
 
+        /* Addons */
+        .addon-section-title { font-size:12px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 10px }
+        .addon-grid { display:flex;flex-direction:column;gap:6px }
+        .addon-item { display:flex;align-items:center;gap:10px;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;transition:border-color .15s,background .15s;user-select:none }
+        .addon-item:hover { border-color:#bbb }
+        .addon-item.selected { border-color:var(--p);background:var(--pl) }
+        .addon-item input[type=checkbox] { display:none }
+        .addon-check { width:18px;height:18px;border-radius:5px;border:2px solid #ccc;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s }
+        .addon-item.selected .addon-check { background:var(--p);border-color:var(--p) }
+        .addon-icon { width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0 }
+        .addon-info { flex:1;min-width:0 }
+        .addon-name { font-size:13px;font-weight:600;color:var(--ink) }
+        .addon-desc { font-size:11px;color:#888;margin-top:1px }
+        .addon-price { font-size:13px;font-weight:700;color:var(--ac);white-space:nowrap;flex-shrink:0 }
+        .addon-tag { font-size:9px;font-weight:700;padding:2px 5px;border-radius:3px;color:#fff;margin-left:5px;vertical-align:middle }
+
+        /* Submit preview button */
+        .btn-preview { flex:1;padding:13px;background:#fff;border:1.5px solid var(--p);border-radius:10px;font-size:13px;font-weight:700;color:var(--p);cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .15s }
+        .btn-preview:hover { background:var(--pl) }
+
         .pkg {
             border: 1.5px solid #e5e7eb;
             border-radius: 9px;
@@ -2297,6 +2322,13 @@
 
             .fi {
                 grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .fb2 {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
             }
 
             .pinfo-title {
@@ -2323,35 +2355,11 @@
             }
 
             .sbtn {
-                padding: 0 12px;
-                font-size: 12px;
+                display: none !important;
             }
 
             .blogin {
                 display: none;
-            }
-
-            .bpost-txt {
-                display: none;
-            }
-
-            .bpost-icon-desk {
-                display: none;
-            }
-
-            .bpost-plus {
-                display: block;
-                font-size: 26px;
-                font-weight: 900;
-                line-height: 1;
-            }
-
-            .bpost {
-                width: 38px;
-                height: 38px;
-                padding: 0;
-                border-radius: 50%;
-                justify-content: center;
             }
 
             .detail-top {
@@ -2383,7 +2391,13 @@
 
             .fi {
                 grid-template-columns: 1fr 1fr;
-                gap: 18px;
+                gap: 16px;
+                padding: 24px 14px 14px;
+            }
+
+            .fi-logo {
+                font-size: 20px;
+                margin-bottom: 8px;
             }
 
             .sticky-banner {
@@ -2394,6 +2408,56 @@
                 padding: 12px 10px 80px;
             }
         }
+
+        /* ── Media tabs ── */
+        .media-tabs { display:flex;gap:4px;padding:0 20px 0;border-bottom:1px solid var(--line);margin-bottom:0 }
+        .media-tab { display:flex;align-items:center;gap:6px;padding:10px 16px;font-size:13px;font-weight:600;font-family:inherit;border:none;background:none;cursor:pointer;color:#888;border-bottom:2.5px solid transparent;margin-bottom:-1px;transition:color .15s,border-color .15s }
+        .media-tab.active { color:var(--p);border-bottom-color:var(--p) }
+        .media-tab:hover:not(.active) { color:var(--ink) }
+
+        /* ── YouTube / video upload ── */
+        .yt-input-row { display:flex;gap:8px;align-items:center;margin-bottom:12px }
+        .yt-input-row .finput { flex:1 }
+        .yt-preview { border-radius:10px;overflow:hidden;border:1px solid var(--line) }
+        .vid-upload-area { border:2px dashed var(--line);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;transition:border-color .2s;display:flex;flex-direction:column;align-items:center;gap:6px }
+        .vid-upload-area:hover { border-color:var(--p) }
+        .vid-upload-area p { margin:0;font-size:13px;color:#555 }
+        .vid-upload-area span:last-child { font-size:11px;color:#aaa }
+        .yt-clear-btn { display:flex;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:12px;color:#666;font-family:inherit;transition:border-color .15s }
+        .yt-clear-btn:hover { border-color:#e74c3c;color:#e74c3c }
+
+        /* ── Preview full button ── */
+        .prev-full-btn { display:flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:12px;padding:9px;background:var(--pl);color:var(--p);font-size:13px;font-weight:700;border:1.5px solid var(--p);border-radius:10px;cursor:pointer;font-family:inherit;transition:background .15s }
+        .prev-full-btn:hover { background:#d0ebd9 }
+
+        /* ── Preview modal ── */
+        .pvm-overlay { position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:8000;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto }
+        .pvm { background:var(--bg);border-radius:16px;width:100%;max-width:860px;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.5) }
+        .pvm-header { display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border-radius:16px 16px 0 0;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10 }
+        .pvm-header h3 { margin:0;font-size:15px;display:flex;align-items:center;gap:8px }
+        .pvm-close { width:34px;height:34px;border-radius:50%;border:none;background:var(--line);cursor:pointer;display:flex;align-items:center;justify-content:center }
+        .pvm-body { padding:20px }
+        /* Preview card styles inside modal */
+        .pvm-card { background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08) }
+        .pvm-img { aspect-ratio:16/9;background:#f3f4f6;position:relative;overflow:hidden }
+        .pvm-img img { width:100%;height:100%;object-fit:cover;display:block }
+        .pvm-img-placeholder { width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#bbb;font-size:13px }
+        .pvm-info { padding:16px 20px }
+        .pvm-badges { display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px }
+        .pvm-badge { font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;color:#fff }
+        .pvm-title { font-size:16px;font-weight:700;color:var(--ink);line-height:1.5;margin-bottom:10px }
+        .pvm-price-row { display:flex;align-items:baseline;gap:10px;margin-bottom:12px }
+        .pvm-price-sale { font-size:22px;font-weight:800;color:#e74c3c }
+        .pvm-price-ori { font-size:14px;color:#ccc;text-decoration:line-through }
+        .pvm-price-disc { font-size:12px;font-weight:700;color:#fff;background:#e74c3c;padding:2px 7px;border-radius:4px }
+        .pvm-meta { display:flex;gap:16px;font-size:12px;color:#888;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--line) }
+        .pvm-shop-row { display:flex;align-items:center;gap:10px;padding:12px 20px;border-top:1px solid var(--line);background:#fafafa }
+        .pvm-shop-avatar { width:36px;height:36px;border-radius:50%;background:var(--pl);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--p) }
+        .pvm-shop-name { font-size:13px;font-weight:600 }
+        .pvm-shop-meta { font-size:11px;color:#888 }
+        .pvm-desc-section { padding:16px 20px;border-top:1px solid var(--line) }
+        .pvm-desc-section h4 { margin:0 0 8px;font-size:13px;color:#555 }
+        .pvm-desc-text { font-size:13px;color:#444;line-height:1.7;white-space:pre-wrap }
     </style>
 </head>
 
@@ -3146,7 +3210,7 @@
             <div class="udrop-item"><span class="ms">group</span>Theo dõi</div>
             <div class="udrop-sep"></div>
             <div class="udrop-item"><span class="ms">article</span>Tất cả bài đăng</div>
-            <div class="udrop-item"><span class="ms">manage_accounts</span>Quản lý tài khoản</div>
+            <div class="udrop-item" onclick="window.location.href='/shopmanager.html'"><span class="ms">manage_accounts</span>Quản lý tài khoản</div>
             <div class="udrop-sep"></div>
             <div class="udrop-item danger" onclick="doLogout()"><span class="ms">logout</span>Đăng xuất</div>
           </div>
@@ -3166,16 +3230,16 @@
           <span class="ms" style="font-size:16px">chevron_left</span>
         </button>
         <div class="ct-scroll" id="ctScroll">
-          <a href="/detail.html" class="ct-pill hot">🔥 Đầm voan hoa nhí cổ V Hàn Quốc</a>
-          <a href="/detail.html" class="ct-pill">👜 Túi Gucci GG Canvas</a>
-          <a href="/detail.html" class="ct-pill">👖 Quần jean baggy cao cấp</a>
-          <a href="/detail.html" class="ct-pill">👟 Giày Adidas Ultraboost</a>
-          <a href="/detail.html" class="ct-pill">⌚ Đồng hồ Casio Edifice</a>
-          <a href="/detail.html" class="ct-pill">🌹 Nước hoa Dior Sauvage</a>
-          <a href="/detail.html" class="ct-pill">🧥 Áo Hoodie nỉ Unisex</a>
-          <a href="/detail.html" class="ct-pill">👗 Váy hoa nhí dự tiệc</a>
-          <a href="/detail.html" class="ct-pill">💄 Mỹ phẩm Laneige Water Bank</a>
-          <a href="/detail.html" class="ct-pill">🏃 Giày chạy bộ siêu nhẹ</a>
+          <a href="/detail.html" class="ct-pill hot">Đầm voan hoa nhí cổ V Hàn Quốc</a>
+          <a href="/detail.html" class="ct-pill">Túi Gucci GG Canvas</a>
+          <a href="/detail.html" class="ct-pill">Quần jean baggy cao cấp</a>
+          <a href="/detail.html" class="ct-pill">Giày Adidas Ultraboost</a>
+          <a href="/detail.html" class="ct-pill">Đồng hồ Casio Edifice</a>
+          <a href="/detail.html" class="ct-pill">Nước hoa Dior Sauvage</a>
+          <a href="/detail.html" class="ct-pill">Áo Hoodie nỉ Unisex</a>
+          <a href="/detail.html" class="ct-pill">Váy hoa nhí dự tiệc</a>
+          <a href="/detail.html" class="ct-pill">Mỹ phẩm Laneige Water Bank</a>
+          <a href="/detail.html" class="ct-pill">Giày chạy bộ siêu nhẹ</a>
         </div>
         <button class="ct-nav" id="ctNext" aria-label="Tiếp" onclick="ctScroll(1)">
           <span class="ms" style="font-size:16px">chevron_right</span>
@@ -3247,17 +3311,26 @@
                     </div>
                 </div>
 
-                <!-- 2. HÌNH ẢNH -->
+                <!-- 2. HÌNH ẢNH & VIDEO -->
                 <div class="card">
                     <div class="card-head">
-                        <div class="card-head-icon orange"><span class="ms"
-                                style="color:var(--ac);font-size:18px">photo_library</span></div>
-                        <div>
-                            <div class="card-title">Hình ảnh sản phẩm</div>
-                            <div class="card-subtitle">Tối đa 8 ảnh · JPEG/PNG · Tối đa 5MB/ảnh</div>
+                        <div class="card-head-icon orange"><span class="ms" style="color:var(--ac);font-size:18px">photo_library</span></div>
+                        <div style="flex:1">
+                            <div class="card-title">Hình ảnh &amp; Video sản phẩm</div>
+                            <div class="card-subtitle">Ảnh: tối đa 8 · JPEG/PNG · 5MB/ảnh</div>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <!-- Tabs -->
+                    <div class="media-tabs">
+                        <button class="media-tab active" onclick="switchMediaTab('img',this)">
+                            <span class="ms" style="font-size:15px">photo_library</span> Hình ảnh
+                        </button>
+                        <button class="media-tab" onclick="switchMediaTab('vid',this)">
+                            <span class="ms" style="font-size:15px">videocam</span> Video sản phẩm
+                        </button>
+                    </div>
+                    <!-- Image panel -->
+                    <div class="card-body" id="mediaPanel-img">
                         <div class="img-upload-area" id="dropzone" ondragover="dragOver(event)"
                             ondrop="dropFiles(event)" ondragleave="dragLeave(event)"
                             onclick="document.getElementById('fileInput').click()">
@@ -3268,6 +3341,40 @@
                         <input type="file" id="fileInput" accept="image/*" multiple style="display:none"
                             onchange="handleFiles(this.files)">
                         <div class="img-grid" id="imgGrid"></div>
+                    </div>
+                    <!-- Video panel -->
+                    <div class="card-body" id="mediaPanel-vid" style="display:none">
+                        <div class="field-label" style="margin-bottom:8px">Dán link YouTube</div>
+                        <div class="yt-input-row">
+                            <input type="url" id="ytInput" class="finput" placeholder="https://youtube.com/watch?v=..."
+                                oninput="previewYT(this.value)">
+                            <button class="yt-clear-btn" onclick="clearYT()" title="Xóa">
+                                <span class="ms" style="font-size:16px">close</span>
+                            </button>
+                        </div>
+                        <div id="ytPreview" class="yt-preview" style="display:none">
+                            <iframe id="ytFrame" src="" frameborder="0" allowfullscreen
+                                allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+                                style="width:100%;aspect-ratio:16/9;border-radius:10px;display:block"></iframe>
+                            <button class="yt-clear-btn" onclick="clearYT()" style="margin-top:8px;width:100%;justify-content:center;gap:6px">
+                                <span class="ms" style="font-size:15px">delete</span> Xóa video
+                            </button>
+                        </div>
+                        <div class="sdiv" style="margin:16px 0 12px"></div>
+                        <div class="field-label" style="margin-bottom:8px">Hoặc upload video từ máy</div>
+                        <div class="vid-upload-area" onclick="document.getElementById('vidFileInput').click()">
+                            <span class="ms" style="font-size:32px;color:#d1d5db">video_file</span>
+                            <p>Chọn file video <b style="color:var(--p)">từ máy tính</b></p>
+                            <span>MP4 · Tối đa 100MB</span>
+                        </div>
+                        <input type="file" id="vidFileInput" accept="video/*" style="display:none"
+                            onchange="handleVideoFile(this.files)">
+                        <div id="vidLocalPreview" style="display:none;margin-top:12px">
+                            <video id="vidLocalEl" controls style="width:100%;border-radius:10px;max-height:280px"></video>
+                            <button class="yt-clear-btn" onclick="clearLocalVideo()" style="margin-top:8px;width:100%;justify-content:center;gap:6px">
+                                <span class="ms" style="font-size:15px">delete</span> Xóa video
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -3689,7 +3796,139 @@
                     </div>
                 </div>
 
-                <!-- 8. CÀI ĐẶT NÂNG CAO -->
+                <!-- 8. GÓI ĐĂNG TIN -->
+                <div class="card">
+                    <div class="card-head">
+                        <div class="card-head-icon orange"><span class="ms msf" style="color:var(--ac);font-size:18px">workspace_premium</span></div>
+                        <div>
+                            <div class="card-title">Gói đăng tin</div>
+                            <div class="card-subtitle">Chọn gói phù hợp để tăng khả năng tiếp cận</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="pkg-grid">
+                            <div class="pkg" onclick="selectPkg(this)">
+                                <div class="pkg-icon" style="background:#f3f4f6"><span class="ms" style="color:#888;font-size:20px">article</span></div>
+                                <div>
+                                    <div class="pkg-name">Tin thường</div>
+                                    <div class="pkg-desc">Hiển thị 7 ngày</div>
+                                </div>
+                                <div class="pkg-price">Miễn phí</div>
+                            </div>
+                            <div class="pkg active" onclick="selectPkg(this)">
+                                <div class="pkg-icon" style="background:#fff3e0"><span class="ms msf" style="color:var(--ac);font-size:20px">star</span></div>
+                                <div>
+                                    <div class="pkg-name">Tin nổi bật <span class="pkg-badge">HOT</span></div>
+                                    <div class="pkg-desc">Hiển thị 14 ngày · Ưu tiên tìm kiếm</div>
+                                </div>
+                                <div class="pkg-price">29k</div>
+                            </div>
+                            <div class="pkg" onclick="selectPkg(this)">
+                                <div class="pkg-icon" style="background:#fff8e1"><span class="ms msf" style="color:#f39c12;font-size:20px">workspace_premium</span></div>
+                                <div>
+                                    <div class="pkg-name">Tin VIP</div>
+                                    <div class="pkg-desc">Hiển thị 30 ngày · Top đầu danh mục</div>
+                                </div>
+                                <div class="pkg-price">79k</div>
+                            </div>
+                        </div>
+
+                        <!-- Addons -->
+                        <div class="addon-section-title">Dịch vụ bổ sung (addons)</div>
+                        <div class="addon-grid">
+                            <div class="addon-item" onclick="toggleAddon(this)">
+                                <div class="addon-check"><span class="ms" style="font-size:12px;color:#fff">check</span></div>
+                                <div class="addon-icon" style="background:#fff3e0"><span class="ms msf" style="color:var(--ac);font-size:18px">rocket_launch</span></div>
+                                <div class="addon-info">
+                                    <div class="addon-name">Đẩy tin <span class="addon-tag" style="background:#f97316">PHỔ BIẾN</span></div>
+                                    <div class="addon-desc">Đưa tin lên đầu trang · Mỗi 24h/lần</div>
+                                </div>
+                                <div class="addon-price">9k/lần</div>
+                            </div>
+                            <div class="addon-item" onclick="toggleAddon(this)">
+                                <div class="addon-check"><span class="ms" style="font-size:12px;color:#fff">check</span></div>
+                                <div class="addon-icon" style="background:#e3f2fd"><span class="ms msf" style="color:#1565c0;font-size:18px">push_pin</span></div>
+                                <div class="addon-info">
+                                    <div class="addon-name">Ghim tin</div>
+                                    <div class="addon-desc">Giữ tin ở vị trí đầu tiên trong 7 ngày</div>
+                                </div>
+                                <div class="addon-price">19k</div>
+                            </div>
+                            <div class="addon-item" onclick="toggleAddon(this)">
+                                <div class="addon-check"><span class="ms" style="font-size:12px;color:#fff">check</span></div>
+                                <div class="addon-icon" style="background:#e8f5e9"><span class="ms" style="color:var(--p);font-size:18px">library_add</span></div>
+                                <div class="addon-info">
+                                    <div class="addon-name">Đăng nhiều tin</div>
+                                    <div class="addon-desc">Gói 10 tin / 30 tin / không giới hạn</div>
+                                </div>
+                                <div class="addon-price">từ 49k</div>
+                            </div>
+                            <div class="addon-item" onclick="toggleAddon(this)">
+                                <div class="addon-check"><span class="ms" style="font-size:12px;color:#fff">check</span></div>
+                                <div class="addon-icon" style="background:#fce4ec"><span class="ms msf" style="color:#c62828;font-size:18px">local_fire_department</span></div>
+                                <div class="addon-info">
+                                    <div class="addon-name">Làm nổi bật tin</div>
+                                    <div class="addon-desc">Viền màu + badge HOT trên tin đăng</div>
+                                </div>
+                                <div class="addon-price">15k</div>
+                            </div>
+                            <div class="addon-item" onclick="toggleAddon(this)">
+                                <div class="addon-check"><span class="ms" style="font-size:12px;color:#fff">check</span></div>
+                                <div class="addon-icon" style="background:#f3e5f5"><span class="ms msf" style="color:#6a1b9a;font-size:18px">diamond</span></div>
+                                <div class="addon-info">
+                                    <div class="addon-name">Gói thành viên VIP <span class="addon-tag" style="background:#9b59b6">VIP</span></div>
+                                    <div class="addon-desc">Ưu tiên hỗ trợ · Huy hiệu VIP · 3 tháng</div>
+                                </div>
+                                <div class="addon-price">199k</div>
+                            </div>
+                            <div class="addon-item" onclick="toggleAddon(this)">
+                                <div class="addon-check"><span class="ms" style="font-size:12px;color:#fff">check</span></div>
+                                <div class="addon-icon" style="background:#e8eaf6"><span class="ms msf" style="color:#283593;font-size:18px">workspace_premium</span></div>
+                                <div class="addon-info">
+                                    <div class="addon-name">Gói thành viên PRO <span class="addon-tag" style="background:#3949ab">PRO</span></div>
+                                    <div class="addon-desc">Tất cả tính năng VIP + phân tích thống kê</div>
+                                </div>
+                                <div class="addon-price">399k</div>
+                            </div>
+                            <div class="addon-item" onclick="toggleAddon(this)">
+                                <div class="addon-check"><span class="ms" style="font-size:12px;color:#fff">check</span></div>
+                                <div class="addon-icon" style="background:#fff8e1"><span class="ms msf" style="color:#f9a825;font-size:18px">videocam</span></div>
+                                <div class="addon-info">
+                                    <div class="addon-name">KOC / PR sản phẩm</div>
+                                    <div class="addon-desc">Review & quảng bá qua KOC, Reels, TikTok</div>
+                                </div>
+                                <div class="addon-price">Liên hệ</div>
+                            </div>
+                            <div class="addon-item" onclick="toggleAddon(this)">
+                                <div class="addon-check"><span class="ms" style="font-size:12px;color:#fff">check</span></div>
+                                <div class="addon-icon" style="background:#e0f2f1"><span class="ms" style="color:#00695c;font-size:18px">store</span></div>
+                                <div class="addon-info">
+                                    <div class="addon-name">Xác thực cửa hàng offline</div>
+                                    <div class="addon-desc">Đội ngũ xác thực tận nơi · Badge "Đã xác thực"</div>
+                                </div>
+                                <div class="addon-price">99k</div>
+                            </div>
+                            <div class="addon-item" onclick="toggleAddon(this)">
+                                <div class="addon-check"><span class="ms" style="font-size:12px;color:#fff">check</span></div>
+                                <div class="addon-icon" style="background:#e8f5e9"><span class="ms msf" style="color:var(--p);font-size:18px">verified</span></div>
+                                <div class="addon-info">
+                                    <div class="addon-name">Xác thực thành viên uy tín</div>
+                                    <div class="addon-desc">CCCD + tài khoản ngân hàng · Huy hiệu uy tín</div>
+                                </div>
+                                <div class="addon-price">Miễn phí</div>
+                            </div>
+                        </div>
+
+                        <!-- Tổng tiền -->
+                        <div class="sdiv" style="margin:16px 0 12px"></div>
+                        <div style="display:flex;justify-content:space-between;align-items:center">
+                            <span style="font-size:13px;color:#555;font-weight:600">Tổng thanh toán:</span>
+                            <span id="pkgTotal" style="font-size:18px;font-weight:800;color:var(--ac)">29.000 đ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. CÀI ĐẶT NÂNG CAO -->
                 <div class="card">
                     <div class="card-head">
                         <div class="card-head-icon purple"><span class="ms"
@@ -3743,6 +3982,9 @@
 
                 <!-- Submit -->
                 <div class="submit-area">
+                    <button class="btn-preview" onclick="openPreviewModal()">
+                        <span class="ms" style="font-size:16px">preview</span> Xem trước
+                    </button>
                     <button class="btn-draft" onclick="saveDraft()">
                         <span class="ms" style="font-size:16px;vertical-align:middle">save</span> Lưu nháp
                     </button>
@@ -3788,45 +4030,10 @@
                     </div>
                 </div>
 
-                <!-- Gói đăng tin -->
-                <div class="sidebar-card">
-                    <h4><span class="ms" style="font-size:16px;color:var(--ac)">workspace_premium</span> Gói đăng tin
-                    </h4>
-                    <div class="pkg-grid">
-                        <div class="pkg" onclick="selectPkg(this)">
-                            <div class="pkg-icon" style="background:#f3f4f6"><span class="ms"
-                                    style="color:#888;font-size:20px">article</span></div>
-                            <div>
-                                <div class="pkg-name">Tin thường</div>
-                                <div class="pkg-desc">Hiển thị 7 ngày</div>
-                            </div>
-                            <div class="pkg-price">Miễn phí</div>
-                        </div>
-                        <div class="pkg active" onclick="selectPkg(this)">
-                            <div class="pkg-icon" style="background:#fff3e0"><span class="ms msf"
-                                    style="color:var(--ac);font-size:20px">star</span></div>
-                            <div>
-                                <div class="pkg-name">Tin nổi bật <span class="pkg-badge">HOT</span></div>
-                                <div class="pkg-desc">Hiển thị 14 ngày · Ưu tiên tìm kiếm</div>
-                            </div>
-                            <div class="pkg-price">29k</div>
-                        </div>
-                        <div class="pkg" onclick="selectPkg(this)">
-                            <div class="pkg-icon" style="background:#fff8e1"><span class="ms msf"
-                                    style="color:#f39c12;font-size:20px">workspace_premium</span></div>
-                            <div>
-                                <div class="pkg-name">Tin VIP</div>
-                                <div class="pkg-desc">Hiển thị 30 ngày · Top đầu danh mục</div>
-                            </div>
-                            <div class="pkg-price">79k</div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Preview -->
                 <div class="sidebar-card">
                     <h4><span class="ms" style="font-size:16px;color:#888">preview</span> Xem trước tin đăng</h4>
-                    <div class="prev-card">
+                    <div class="prev-card" id="prevCard">
                         <div class="prev-img" id="prevImg">
                             <span class="ms" style="font-size:40px;color:#ddd">image</span>
                         </div>
@@ -4507,7 +4714,175 @@
         updateScore();
         catPath.l3 = 'Áo thun'; catPath.l2 = 'Áo'; catPath.l1 = 'Nam';
         updateCatDisplay();
+
+        // ══ ADDON TOGGLE & TOTAL ══
+        var addonPrices = [9,19,49,15,199,399,0,99,0]; // k đơn vị
+        function toggleAddon(el) {
+            el.classList.toggle('selected');
+            calcTotal();
+        }
+        function calcTotal() {
+            var pkgEl = document.querySelector('.pkg.active .pkg-price');
+            var pkgText = pkgEl ? pkgEl.textContent.trim() : '';
+            var pkgVal = pkgText === 'Miễn phí' ? 0 : parseInt(pkgText) || 0;
+            var addons = document.querySelectorAll('.addon-item.selected');
+            var addonSum = 0;
+            addons.forEach(function(el) {
+                var priceEl = el.querySelector('.addon-price');
+                var t = priceEl ? priceEl.textContent.trim() : '';
+                var v = parseInt(t.replace(/\D/g,'')) || 0;
+                addonSum += v;
+            });
+            var total = (pkgVal + addonSum) * 1000;
+            document.getElementById('pkgTotal').textContent = total === 0 ? 'Miễn phí' : total.toLocaleString('vi-VN') + ' đ';
+        }
+        // Recalc when package changes
+        var _origSelectPkg;
+        document.addEventListener('DOMContentLoaded', function() {
+            _origSelectPkg = window.selectPkg;
+            window.selectPkg = function(el) {
+                if (_origSelectPkg) _origSelectPkg(el);
+                calcTotal();
+            };
+        });
+
+        // ══ MEDIA TABS ══
+        function switchMediaTab(tab, btn) {
+            document.querySelectorAll('.media-tab').forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            document.getElementById('mediaPanel-img').style.display = tab === 'img' ? '' : 'none';
+            document.getElementById('mediaPanel-vid').style.display = tab === 'vid' ? '' : 'none';
+        }
+
+        // ══ YOUTUBE PREVIEW ══
+        function previewYT(url) {
+            var id = extractYTId(url);
+            if (!id) { document.getElementById('ytPreview').style.display = 'none'; return; }
+            document.getElementById('ytFrame').src = 'https://www.youtube.com/embed/' + id;
+            document.getElementById('ytPreview').style.display = 'block';
+        }
+        function extractYTId(url) {
+            var m = url.match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/);
+            return m ? m[1] : null;
+        }
+        function clearYT() {
+            document.getElementById('ytInput').value = '';
+            document.getElementById('ytFrame').src = '';
+            document.getElementById('ytPreview').style.display = 'none';
+        }
+
+        // ══ LOCAL VIDEO ══
+        function handleVideoFile(files) {
+            if (!files || !files[0]) return;
+            var url = URL.createObjectURL(files[0]);
+            document.getElementById('vidLocalEl').src = url;
+            document.getElementById('vidLocalPreview').style.display = 'block';
+        }
+        function clearLocalVideo() {
+            var vid = document.getElementById('vidLocalEl');
+            URL.revokeObjectURL(vid.src);
+            vid.src = '';
+            document.getElementById('vidFileInput').value = '';
+            document.getElementById('vidLocalPreview').style.display = 'none';
+        }
+
+        // ══ PREVIEW MODAL ══
+        function openPreviewModal() {
+            // Gather data
+            var title = (document.getElementById('titleInput') || {}).value || '';
+            var salePriceEl = document.getElementById('priceSale');
+            var salePrice = salePriceEl ? salePriceEl.value : '';
+            var oriPriceEl = document.getElementById('priceOri');
+            var oriPrice = oriPriceEl ? oriPriceEl.value : '';
+            var descEl = document.getElementById('descInput');
+            var desc = descEl ? descEl.value : '';
+
+            // First uploaded image
+            var firstImg = document.querySelector('#imgGrid .img-item img');
+            var imgSrc = firstImg ? firstImg.src : '';
+
+            // Discount
+            var discHtml = '';
+            if (salePrice && oriPrice) {
+                var s = parseFloat(salePrice.replace(/\D/g, '')), o = parseFloat(oriPrice.replace(/\D/g, ''));
+                if (o > s && s > 0) {
+                    var pct = Math.round((1 - s / o) * 100);
+                    discHtml = '<span class="pvm-price-disc">-' + pct + '%</span>';
+                }
+            }
+
+            var modal = document.getElementById('pvmOverlay');
+
+            // Image area
+            var imgHtml = imgSrc
+                ? '<img src="' + imgSrc + '" alt="">'
+                : '<div class="pvm-img-placeholder"><span class="ms" style="font-size:48px">image</span><span>Chưa có ảnh sản phẩm</span></div>';
+
+            document.getElementById('pvm-img-wrap').innerHTML = imgHtml;
+            document.getElementById('pvm-title').textContent = title || 'Tiêu đề sản phẩm sẽ hiển thị ở đây...';
+            document.getElementById('pvm-price-sale').textContent = salePrice || '— vnđ';
+            document.getElementById('pvm-price-ori').textContent = oriPrice ? oriPrice : '';
+            document.getElementById('pvm-price-disc').innerHTML = discHtml;
+            document.getElementById('pvm-desc').textContent = desc || 'Chưa có mô tả sản phẩm.';
+
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closePreviewModal() {
+            document.getElementById('pvmOverlay').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closePreviewModal();
+        });
     </script>
+
+    <!-- Preview modal -->
+    <div class="pvm-overlay" id="pvmOverlay" style="display:none" onclick="if(event.target===this)closePreviewModal()">
+        <div class="pvm">
+            <div class="pvm-header">
+                <h3><span class="ms" style="font-size:18px;color:var(--p)">preview</span> Xem trước tin đăng</h3>
+                <button class="pvm-close" onclick="closePreviewModal()"><span class="ms" style="font-size:20px">close</span></button>
+            </div>
+            <div class="pvm-body">
+                <div class="pvm-card">
+                    <!-- Image -->
+                    <div class="pvm-img" id="pvm-img-wrap"></div>
+                    <!-- Info -->
+                    <div class="pvm-info">
+                        <div class="pvm-badges">
+                            <span class="pvm-badge" style="background:#e74c3c">-50%</span>
+                            <span class="pvm-badge" style="background:var(--p)">MỚI</span>
+                        </div>
+                        <div class="pvm-title" id="pvm-title"></div>
+                        <div class="pvm-price-row">
+                            <span class="pvm-price-sale" id="pvm-price-sale"></span>
+                            <span class="pvm-price-ori" id="pvm-price-ori"></span>
+                            <span id="pvm-price-disc"></span>
+                        </div>
+                        <div class="pvm-meta">
+                            <span><span class="ms" style="font-size:13px">location_on</span> Bình Thạnh, TP.HCM</span>
+                            <span><span class="ms" style="font-size:13px">schedule</span> Vừa đăng</span>
+                            <span><span class="ms msf" style="font-size:13px;color:#f39c12">star</span> Chưa có đánh giá</span>
+                        </div>
+                    </div>
+                    <!-- Shop -->
+                    <div class="pvm-shop-row">
+                        <div class="pvm-shop-avatar">A</div>
+                        <div>
+                            <div class="pvm-shop-name">ANA SHOP <svg style="width:13px;height:13px;vertical-align:middle" viewBox="0 0 24 24" fill="none" stroke="#008848" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                            <div class="pvm-shop-meta">GOLD ⭐ · Bình Thạnh, HCM · 36 bài đăng</div>
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="pvm-desc-section">
+                        <h4>Mô tả sản phẩm</h4>
+                        <div class="pvm-desc-text" id="pvm-desc"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
