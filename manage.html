@@ -160,7 +160,7 @@
     }
 
     .logo img {
-      height: 46px;
+      height: 65px;
       width: auto;
       object-fit: contain;
       display: block;
@@ -771,7 +771,7 @@
       padding: 9px 16px;
       border-radius: 9px;
       font-weight: 700;
-      font-size: 13px;
+      font-size: 10px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -790,93 +790,153 @@
       display: none;
     }
 
-    /* ══════════════════════════════════════
-           [HEADER] Cat-tabs
-        ══════════════════════════════════════ */
+    /* CAT TABS - Category Menu */
     .cat-tabs {
       border-top: 1px solid var(--line);
     }
 
     .cat-tabs-inner {
-      max-width: 1320px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 10px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      height: 52px
-    }
-
-    .ct-scroll {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      scroll-behavior: smooth;
-      padding: 0 2px;
-      min-width: 0
-    }
-
-    .ct-scroll::-webkit-scrollbar {
-      display: none
-    }
-
-    .ct-pill {
-      display: inline-flex;
-      align-items: center;
-      white-space: nowrap;
-      padding: 5px 14px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: #555;
-      background: #f5f5f5;
-      border-radius: 20px;
-      text-decoration: none;
-      border: 1.5px solid transparent;
-      flex-shrink: 0;
-      transition: background .15s, color .15s, border-color .15s
-    }
-
-    .ct-pill:hover {
-      background: var(--pl);
-      color: var(--p);
-      border-color: var(--p)
-    }
-
-    .ct-pill.hot {
-      color: var(--ac);
-      background: #fff8f3;
-      border-color: #ffd5ba
-    }
-
-    .ct-pill.hot:hover {
-      background: #fef0e5;
-      border-color: var(--ac)
-    }
-
-    .ct-nav {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #fff;
-      border: 1.5px solid var(--line);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
-      cursor: pointer;
+      padding: 0 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      color: #666;
-      transition: all .15s;
-      padding: 0
+      gap: 15px;
+      height: 52px;
+      overflow: visible
     }
 
-    .ct-nav:hover {
-      background: var(--pl);
+    .ct-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 0 12px;
+      height: 100%;
+      cursor: pointer;
+      white-space: nowrap;
+      font-size: 13px;
+      font-weight: 700;
       color: var(--p);
-      border-color: var(--p)
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color .15s, opacity .15s;
+      flex-shrink: 0
+    }
+
+    .ct-item:hover {
+      border-bottom-color: var(--p)
+    }
+
+    .ct-item .ms {
+      font-size: 17px;
+      transition: transform .2s
+    }
+
+    .ct-item:hover .ms {
+      transform: rotate(180deg)
+    }
+
+    .ct-dropdown {
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 0;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .13);
+      padding: 20px 30px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      z-index: 200;
+      display: grid;
+      gap: 14px 28px
+    }
+
+    .ct-dropdown.dd-r {
+      left: auto;
+      right: 0
+    }
+
+    .ct-item:hover .ct-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0)
+    }
+
+    .ct-dd-head {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--p);
+      margin-bottom: 5px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--p);
+      white-space: nowrap
+    }
+
+    .ct-dd-head a {
+      color: var(--p);
+      text-decoration: none;
+      transition: opacity .12s
+    }
+
+    .ct-dd-head a:hover {
+      opacity: .75
+    }
+
+    .ct-dd-group a {
+      display: block;
+      padding: 3px 0;
+      font-size: 12px;
+      font-weight: 500;
+      color: #666;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color .12s
+    }
+
+    .ct-dd-group a:hover {
+      color: var(--p)
+    }
+
+    .ct-divider {
+      width: 1px;
+      height: 18px;
+      background: var(--line);
+      flex-shrink: 0;
+      align-self: center
+    }
+
+    @media(max-width:768px) {
+      .cat-tabs-inner {
+        padding: 0 8px;
+        height: 44px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: visible;
+        gap: 0;
+        scrollbar-width: none
+      }
+
+      .cat-tabs-inner::-webkit-scrollbar {
+        display: none
+      }
+
+      .ct-item {
+        padding: 0 10px;
+        font-size: 12px;
+        font-weight: 600
+      }
+
+      .ct-item:hover .ct-dropdown {
+        display: none
+      }
+
+      .ct-divider {
+        display: none
+      }
     }
 
 
@@ -1489,6 +1549,57 @@
       gap: 8px
     }
 
+    /* ── Brand selector ── */
+    .brand-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .brand-chip {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1.5px solid #e5e7eb;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #555;
+      transition: border-color .12s, background .12s, color .12s;
+    }
+
+    .brand-chip:hover { border-color: var(--p); color: var(--p); }
+
+    .brand-chip.active {
+      border-color: var(--p);
+      background: var(--pl);
+      color: var(--p);
+    }
+
+    .brand-chip-other {
+      border-style: dashed;
+      color: #888;
+    }
+
+    .brand-chip-other.active {
+      border-style: solid;
+    }
+
+    .brand-logo-upload {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 90px;
+      height: 90px;
+      border: 2px dashed #d1d5db;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      transition: border-color .12s, background .12s;
+    }
+
+    .brand-logo-upload:hover { border-color: var(--p); background: var(--pl); }
+
     .size-btn {
       padding: 6px 16px;
       border-radius: 7px;
@@ -1557,6 +1668,56 @@
       gap: 12px
     }
 
+    .price-main-block {
+      background: #f9fafb;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+
+    .price-row-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 14px;
+      align-items: end;
+    }
+
+    .price-sale-input {
+      font-size: 20px !important;
+      font-weight: 700 !important;
+      color: var(--p) !important;
+      padding-right: 32px !important;
+    }
+
+    .price-sale-suffix {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--p);
+    }
+
+    .price-discount-badge {
+      display: inline-flex;
+      align-items: center;
+      background: #fff3e0;
+      color: #e65100;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 20px;
+      margin-top: 6px;
+      gap: 4px;
+    }
+
+    .price-secondary-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #e5e7eb;
+    }
+
     .price-type-tabs {
       display: flex;
       background: #f3f4f6;
@@ -1583,6 +1744,40 @@
       background: #fff;
       color: var(--p);
       box-shadow: 0 1px 4px rgba(0, 0, 0, .1)
+    }
+
+    /* ── Ship fee toggle ── */
+    .ship-fee-toggle {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .ship-fee-btn {
+      flex: 1;
+      padding: 8px;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      background: #fff;
+      color: #666;
+      text-align: center;
+      transition: all .15s;
+    }
+
+    .ship-fee-btn.active {
+      border-color: var(--p);
+      background: var(--pl);
+      color: var(--p);
+    }
+
+    .weight-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
     }
 
     /* ══ TAG INPUT ══ */
@@ -3616,24 +3811,279 @@
     <!-- CAT TABS -->
     <div class="cat-tabs" id="catTabs">
       <div class="cat-tabs-inner">
-        <button class="ct-nav" id="ctPrev" aria-label="Trước" onclick="ctScroll(-1)">
-          <span class="ms" style="font-size:16px">chevron_left</span>
-        </button>
-        <div class="ct-scroll" id="ctScroll">
-          <a href="/detail.html" class="ct-pill hot">Đầm voan hoa nhí cổ V Hàn Quốc</a>
-          <a href="/detail.html" class="ct-pill">Túi Gucci GG Canvas</a>
-          <a href="/detail.html" class="ct-pill">Quần jean baggy cao cấp</a>
-          <a href="/detail.html" class="ct-pill">Giày Adidas Ultraboost</a>
-          <a href="/detail.html" class="ct-pill">Đồng hồ Casio Edifice</a>
-          <a href="/detail.html" class="ct-pill">Nước hoa Dior Sauvage</a>
-          <a href="/detail.html" class="ct-pill">Áo Hoodie nỉ Unisex</a>
-          <a href="/detail.html" class="ct-pill">Váy hoa nhí dự tiệc</a>
-          <a href="/detail.html" class="ct-pill">Mỹ phẩm Laneige Water Bank</a>
-          <a href="/detail.html" class="ct-pill">Giày chạy bộ siêu nhẹ</a>
+
+        <!-- Nam -->
+        <div class="ct-item">
+          Nam <span class="ms">expand_more</span>
+          <div class="ct-dropdown" style="grid-template-columns:repeat(4,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Áo</a></div>
+              <a href="/listing.html">Áo thun</a>
+              <a href="/listing.html">Áo sơ mi</a>
+              <a href="/listing.html">Áo khoác</a>
+              <a href="/listing.html">Áo vest</a>
+              <a href="/listing.html">Áo khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Quần</a></div>
+              <a href="/listing.html">Quần ngắn</a>
+              <a href="/listing.html">Quần dài</a>
+              <a href="/listing.html">Quần lót</a>
+              <a href="/listing.html">Quần khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Nón – Mắt kính</a></div>
+              <a href="/listing.html">Nón</a>
+              <a href="/listing.html">Mắt kính</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Balo – Túi xách</a></div>
+              <a href="/listing.html">Ba lô</a>
+              <a href="/listing.html">Túi xách</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Đồng hồ – Bóp ví</a></div>
+              <a href="/listing.html">Đồng hồ</a>
+              <a href="/listing.html">Bóp ví</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Đồ lót – Giày dép</a></div>
+              <a href="/listing.html">Đồ lót</a>
+              <a href="/listing.html">Giày dép</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Nước hoa – Mỹ phẩm</a></div>
+              <a href="/listing.html">Nước hoa</a>
+              <a href="/listing.html">Mỹ phẩm</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Phụ kiện – Khác</a></div>
+              <a href="/listing.html">Phụ kiện</a>
+              <a href="/listing.html">Khác</a>
+            </div>
+          </div>
         </div>
-        <button class="ct-nav" id="ctNext" aria-label="Tiếp" onclick="ctScroll(1)">
-          <span class="ms" style="font-size:16px">chevron_right</span>
-        </button>
+        <div class="ct-divider"></div>
+
+        <!-- Nữ -->
+        <div class="ct-item">
+          Nữ <span class="ms">expand_more</span>
+          <div class="ct-dropdown" style="grid-template-columns:repeat(4,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Áo</a></div>
+              <a href="/listing.html">Áo thun</a>
+              <a href="/listing.html">Áo sơ mi</a>
+              <a href="/listing.html">Áo khoác</a>
+              <a href="/listing.html">Áo dài</a>
+              <a href="/listing.html">Áo khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Quần – Váy đầm</a></div>
+              <a href="/listing.html">Quần</a>
+              <a href="/listing.html">Váy đầm</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Nón – Mắt kính</a></div>
+              <a href="/listing.html">Nón</a>
+              <a href="/listing.html">Mắt kính</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Balo – Túi xách</a></div>
+              <a href="/listing.html">Ba lô</a>
+              <a href="/listing.html">Túi xách</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Đồng hồ – Bóp ví</a></div>
+              <a href="/listing.html">Đồng hồ</a>
+              <a href="/listing.html">Bóp ví</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Đồ lót – Giày dép</a></div>
+              <a href="/listing.html">Đồ lót</a>
+              <a href="/listing.html">Giày dép</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Nước hoa – Mỹ phẩm</a></div>
+              <a href="/listing.html">Nước hoa</a>
+              <a href="/listing.html">Mỹ phẩm</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Phụ kiện – Khác</a></div>
+              <a href="/listing.html">Phụ kiện</a>
+              <a href="/listing.html">Khác</a>
+            </div>
+          </div>
+        </div>
+        <div class="ct-divider"></div>
+
+        <!-- Trẻ em -->
+        <div class="ct-item">
+          Trẻ em <span class="ms">expand_more</span>
+          <div class="ct-dropdown" style="grid-template-columns:repeat(4,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Quần áo sơ sinh</a></div>
+              <a href="/listing.html">Dưới 1 tháng</a>
+              <a href="/listing.html">1–6 tháng</a>
+              <a href="/listing.html">6–12 tháng</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Quần áo bé trai</a></div>
+              <a href="/listing.html">Dưới 3 tuổi</a>
+              <a href="/listing.html">3–6 tuổi</a>
+              <a href="/listing.html">Trên 6 tuổi</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Quần áo bé gái</a></div>
+              <a href="/listing.html">Dưới 3 tuổi</a>
+              <a href="/listing.html">3–6 tuổi</a>
+              <a href="/listing.html">Trên 6 tuổi</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Phụ kiện – Khác</a></div>
+              <a href="/listing.html">Phụ kiện</a>
+              <a href="/listing.html">Khác</a>
+            </div>
+          </div>
+        </div>
+        <div class="ct-divider"></div>
+
+        <!-- Chuyên đề -->
+        <div class="ct-item">
+          Chuyên đề <span class="ms">expand_more</span>
+          <div class="ct-dropdown" style="grid-template-columns:repeat(3,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">TT Gia dụng</a></div>
+              <a href="/listing.html">Mền/mùng</a>
+              <a href="/listing.html">Áo gối/ra giường</a>
+              <a href="/listing.html">Rèm/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">TT Chuyên dụng</a></div>
+              <a href="/listing.html">Đồng phục/nghề nghiệp</a>
+              <a href="/listing.html">Bà bầu/hội cưới</a>
+              <a href="/listing.html">Thú cưng/sân khấu</a>
+              <a href="/listing.html">PK điện tử/handmade</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Thời trang xanh</a></div>
+              <a href="/listing.html">Nam/Nữ/Trẻ em</a>
+              <a href="/listing.html">Đồ lót/phụ kiện/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">TT Thể thao</a></div>
+              <a href="/listing.html">Nam/Nữ/Trẻ em</a>
+              <a href="/listing.html">Đồ lót/phụ kiện/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">TT Đồng giá</a></div>
+              <a href="/listing.html">10k/50k/100k</a>
+              <a href="/listing.html">200k/300k</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Nguyên phụ liệu</a></div>
+              <a href="/listing.html">Vải/khoá kéo</a>
+              <a href="/listing.html">Khuy nút/chỉ may</a>
+              <a href="/listing.html">Tem nhãn/máy móc</a>
+              <a href="/listing.html">Manocanh/khác</a>
+            </div>
+          </div>
+        </div>
+        <div class="ct-divider"></div>
+
+        <!-- Thương hiệu Việt -->
+        <div class="ct-item">
+          Thương hiệu Việt <span class="ms">expand_more</span>
+          <div class="ct-dropdown dd-r" style="grid-template-columns:repeat(4,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Thời trang nam</a></div>
+              <a href="/listing.html">Áo nam</a>
+              <a href="/listing.html">Quần nam</a>
+              <a href="/listing.html">Đồ lót/phụ kiện/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Thời trang nữ</a></div>
+              <a href="/listing.html">Áo nữ</a>
+              <a href="/listing.html">Quần/đồ lót</a>
+              <a href="/listing.html">Phụ kiện/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Thời trang trẻ em</a></div>
+              <a href="/listing.html">Quần áo bé trai</a>
+              <a href="/listing.html">Quần áo bé gái</a>
+              <a href="/listing.html">Phụ kiện/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Trang phục truyền thống</a></div>
+              <a href="/listing.html">Trang phục nam</a>
+              <a href="/listing.html">Trang phục nữ</a>
+              <a href="/listing.html">Trang phục trẻ em</a>
+              <a href="/listing.html">Phụ kiện/khác</a>
+            </div>
+          </div>
+        </div>
+        <div class="ct-divider"></div>
+
+        <!-- 4 Foreigner -->
+        <div class="ct-item">
+          4 Foreigner <span class="ms">expand_more</span>
+          <div class="ct-dropdown dd-r" style="grid-template-columns:repeat(4,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">For Men</a></div>
+              <a href="/listing.html">Shirt/T-shirt</a>
+              <a href="/listing.html">Short/Pants</a>
+              <a href="/listing.html">Jacket</a>
+              <a href="/listing.html">Underwear</a>
+              <a href="/listing.html">Accessories/Others</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">For Women</a></div>
+              <a href="/listing.html">Top/Dress</a>
+              <a href="/listing.html">Skirt/Short</a>
+              <a href="/listing.html">Underwear</a>
+              <a href="/listing.html">Accessories/Others</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">For Kids</a></div>
+              <a href="/listing.html">For Boy</a>
+              <a href="/listing.html">For Girl</a>
+              <a href="/listing.html">Accessories/Others</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Made to Order</a></div>
+              <a href="/listing.html">For Men/Women/Kids</a>
+              <a href="/listing.html">Underwear/Accessories/Others</a>
+            </div>
+          </div>
+        </div>
+        <div class="ct-divider"></div>
+
+        <!-- Dịch vụ -->
+        <div class="ct-item">
+          Dịch vụ <span class="ms">expand_more</span>
+          <div class="ct-dropdown dd-r" style="grid-template-columns:repeat(3,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">DV May mặc</a></div>
+              <a href="/listing.html">In thêu</a>
+              <a href="/listing.html">Giặt ủi</a>
+              <a href="/listing.html">Sửa quần áo</a>
+              <a href="/listing.html">Khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">DV Phụ trợ</a></div>
+              <a href="/listing.html">Người mẫu</a>
+              <a href="/listing.html">Trang điểm</a>
+              <a href="/listing.html">Chụp ảnh</a>
+              <a href="/listing.html">Tatoo</a>
+              <a href="/listing.html">Khóa học/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Theo yêu cầu</a></div>
+              <a href="/listing.html">May đo</a>
+              <a href="/listing.html">Gia công</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </header>
@@ -3796,9 +4246,31 @@
 
             <div class="field">
               <div class="field-label">Thương hiệu <span class="hint">(không bắt buộc)</span></div>
-              <div class="finput-wrap">
-                <span class="finput-icon ms" style="font-size:17px">sell</span>
-                <input class="finput" type="text" placeholder="Vd: Style House, Zara, H&M, Hàng không nhãn hiệu..." />
+              <div class="brand-list" id="brandList">
+                <div class="brand-chip" onclick="selBrand(this,'Yody')">Yody</div>
+                <div class="brand-chip" onclick="selBrand(this,'Nike')">Nike</div>
+                <div class="brand-chip" onclick="selBrand(this,'Apple')">Apple</div>
+                <div class="brand-chip" onclick="selBrand(this,'Cocoon')">Cocoon</div>
+                <div class="brand-chip" onclick="selBrand(this,'LG')">LG</div>
+                <div class="brand-chip" onclick="selBrand(this,'Samsung')">Samsung</div>
+                <div class="brand-chip" onclick="selBrand(this,'Gold Spa')">Gold Spa</div>
+                <div class="brand-chip" onclick="selBrand(this,'ZARA')">ZARA</div>
+                <div class="brand-chip" onclick="selBrand(this,'Unilever')">Unilever</div>
+                <div class="brand-chip" onclick="selBrand(this,'Baby adult')">Baby adult</div>
+                <div class="brand-chip brand-chip-other" onclick="selBrand(this,'__other__')">+ Thương hiệu khác</div>
+              </div>
+              <div id="brandOther" style="display:none;margin-top:10px">
+                <div class="finput-wrap" style="margin-bottom:8px">
+                  <span class="finput-icon ms" style="font-size:17px">sell</span>
+                  <input class="finput" id="brandNameInput" type="text" placeholder="Nhập tên thương hiệu..." style="padding-left:37px" />
+                </div>
+                <div style="font-size:12px;font-weight:600;color:#666;margin-bottom:6px">Logo thương hiệu</div>
+                <label class="brand-logo-upload" for="brandLogoInput">
+                  <span class="ms" style="font-size:22px;color:#aaa">add_photo_alternate</span>
+                  <span style="font-size:12px;color:#aaa;margin-top:4px">Tải ảnh logo lên</span>
+                  <img id="brandLogoPreview" src="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:8px;padding:6px" />
+                </label>
+                <input type="file" id="brandLogoInput" accept="image/*" style="display:none" onchange="previewBrandLogo(this)" />
               </div>
             </div>
 
@@ -3856,71 +4328,28 @@
             </div>
             <div>
               <div class="card-title">Kích thước & Màu sắc</div>
-              <div class="card-subtitle">Bỏ chọn các size/màu không có hàng</div>
+              <div class="card-subtitle">Nhập các size/màu có sẵn, cách nhau bằng dấu phẩy</div>
             </div>
           </div>
           <div class="card-body">
             <div class="field">
               <div class="field-label">Kích thước có sẵn</div>
-              <div class="size-grid" id="sizeGrid">
-                <button class="size-btn" onclick="toggleSize(this)">XS</button>
-                <button class="size-btn active" onclick="toggleSize(this)">S</button>
-                <button class="size-btn active" onclick="toggleSize(this)">M</button>
-                <button class="size-btn active" onclick="toggleSize(this)">L</button>
-                <button class="size-btn active" onclick="toggleSize(this)">XL</button>
-                <button class="size-btn active" onclick="toggleSize(this)">2XL</button>
-                <button class="size-btn" onclick="toggleSize(this)">3XL</button>
-                <button class="size-btn" onclick="toggleSize(this)">4XL</button>
-                <button class="size-btn" onclick="toggleSize(this)" style="font-size:12px">Freesize</button>
+              <div class="finput-wrap">
+                <span class="finput-icon ms" style="font-size:17px">straighten</span>
+                <input class="finput" type="text" placeholder="Vd: S, M, L, XL, 2XL, Freesize" style="padding-left:37px" />
               </div>
+              <div style="font-size:11.5px;color:#aaa;margin-top:5px">Nhập các size cách nhau bằng dấu phẩy</div>
             </div>
 
             <div class="sdiv"></div>
 
             <div class="field">
               <div class="field-label">Màu sắc có sẵn</div>
-              <div class="color-grid" id="colorGrid">
-                <div class="color-item" onclick="toggleColor(this)">
-                  <div class="color-dot active" style="background:#fff;border:2px solid #ddd"></div>
-                  <span class="color-label">Trắng</span>
-                </div>
-                <div class="color-item" onclick="toggleColor(this)">
-                  <div class="color-dot active" style="background:#1a1a1a"></div>
-                  <span class="color-label">Đen</span>
-                </div>
-                <div class="color-item" onclick="toggleColor(this)">
-                  <div class="color-dot" style="background:#d2b48c"></div>
-                  <span class="color-label">Be</span>
-                </div>
-                <div class="color-item" onclick="toggleColor(this)">
-                  <div class="color-dot" style="background:#003153"></div>
-                  <span class="color-label">Navy</span>
-                </div>
-                <div class="color-item" onclick="toggleColor(this)">
-                  <div class="color-dot" style="background:#e74c3c"></div>
-                  <span class="color-label">Đỏ</span>
-                </div>
-                <div class="color-item" onclick="toggleColor(this)">
-                  <div class="color-dot" style="background:#3498db"></div>
-                  <span class="color-label">Xanh dương</span>
-                </div>
-                <div class="color-item" onclick="toggleColor(this)">
-                  <div class="color-dot" style="background:#2ecc71"></div>
-                  <span class="color-label">Xanh lá</span>
-                </div>
-                <div class="color-item" onclick="toggleColor(this)">
-                  <div class="color-dot" style="background:#f39c12"></div>
-                  <span class="color-label">Vàng</span>
-                </div>
-                <div class="color-item" onclick="toggleColor(this)">
-                  <div class="color-dot" style="background:#9b59b6"></div>
-                  <span class="color-label">Tím</span>
-                </div>
-                <div class="color-item" onclick="toggleColor(this)">
-                  <div class="color-dot" style="background:#e91e63"></div>
-                  <span class="color-label">Hồng</span>
-                </div>
+              <div class="finput-wrap">
+                <span class="finput-icon ms" style="font-size:17px">palette</span>
+                <input class="finput" type="text" placeholder="Vd: Trắng, Đen, Be, Navy, Đỏ, Xanh" style="padding-left:37px" />
               </div>
+              <div style="font-size:11.5px;color:#aaa;margin-top:5px">Nhập các màu cách nhau bằng dấu phẩy</div>
             </div>
           </div>
         </div>
@@ -3991,77 +4420,68 @@
             <div class="card-head-icon orange"><span class="ms" style="color:var(--ac);font-size:18px">payments</span>
             </div>
             <div>
-              <div class="card-title">Giá bán & Tồn kho</div>
+              <div class="card-title">Giá bán</div>
             </div>
           </div>
           <div class="card-body">
-            <div class="price-type-tabs">
-              <button class="pt-btn active" onclick="setPriceType(this,'fixed')">Giá cố định</button>
-              <button class="pt-btn" onclick="setPriceType(this,'negotiable')">Thương lượng</button>
-              <button class="pt-btn" onclick="setPriceType(this,'wholesale')">Có giá sỉ</button>
-            </div>
 
-            <div id="priceFixed">
-              <div class="price-grid">
-                <div class="field">
-                  <div class="field-label">Giá gốc (vnđ)</div>
-                  <div class="finput-wrap">
-                    <input class="finput has-suffix" type="text" id="priceOri" placeholder="199.000"
-                      oninput="formatPrice(this);calcDiscount()" />
-                    <span class="finput-suffix">đ</span>
-                  </div>
-                </div>
-                <div class="field">
+            <!-- Giá bán block -->
+            <div class="price-main-block">
+              <div class="price-row-top">
+                <div class="field" style="margin:0">
                   <div class="field-label">Giá bán <span class="req">*</span></div>
                   <div class="finput-wrap">
-                    <input class="finput has-suffix" type="text" id="priceSale" placeholder="99.000"
+                    <input class="finput has-suffix price-sale-input" type="text" id="priceSale" placeholder="99.000"
                       oninput="formatPrice(this);calcDiscount();updatePreview()" />
-                    <span class="finput-suffix">đ</span>
+                    <span class="finput-suffix price-sale-suffix">đ</span>
                   </div>
                 </div>
-                <div class="field">
-                  <div class="field-label">% Giảm giá</div>
+                <div class="field" style="margin:0">
+                  <div class="field-label">Giá gốc <span class="hint">(để tính % giảm)</span></div>
                   <div class="finput-wrap">
-                    <input class="finput has-suffix" type="text" id="discountPct" placeholder="0" readonly
-                      style="background:#f9fafb;color:var(--err);font-weight:700" />
-                    <span class="finput-suffix">%</span>
+                    <input class="finput has-suffix" type="text" id="priceOri" placeholder="199.000"
+                      oninput="formatPrice(this);calcDiscount()" style="text-decoration:line-through;color:#aaa" />
+                    <span class="finput-suffix">đ</span>
                   </div>
                 </div>
               </div>
-
-              <div class="field-row" style="margin-top:4px">
-                <div class="field">
+              <div id="discountBadgeWrap" style="display:none;margin-top:8px">
+                <span class="price-discount-badge">
+                  <span class="ms" style="font-size:14px">local_offer</span>
+                  Giảm <span id="discountPct">0%</span> so với giá gốc
+                </span>
+              </div>
+              <div class="price-secondary-row">
+                <div class="field" style="margin:0">
                   <div class="field-label">Giá CTV <span class="hint">(không bắt buộc)</span></div>
                   <div class="finput-wrap">
-                    <input class="finput has-suffix" type="text" placeholder="Liên hệ hoặc nhập giá" />
+                    <input class="finput has-suffix" type="text" placeholder="Nhập giá hoặc bỏ trống" />
                     <span class="finput-suffix">đ</span>
                   </div>
                 </div>
-                <div class="field">
+                <div class="field" style="margin:0">
                   <div class="field-label">Giá bán sỉ <span class="hint">(từ x sản phẩm)</span></div>
                   <div class="finput-wrap">
-                    <input class="finput has-suffix" type="text" placeholder="Liên hệ hoặc nhập giá" />
+                    <input class="finput has-suffix" type="text" placeholder="Nhập giá hoặc bỏ trống" />
                     <span class="finput-suffix">đ</span>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="sdiv"></div>
 
             <div class="field-row">
               <div class="field">
-                <div class="field-label">Tồn kho (tổng)</div>
+                <div class="field-label">Số lượng</div>
                 <div class="finput-wrap">
-                  <span class="finput-icon ms" style="font-size:17px">inventory</span>
+                  <span class="finput-icon ms" style="font-size:17px">format_list_numbered</span>
                   <input class="finput" type="number" placeholder="Vd: 100" min="0" style="padding-left:37px" />
                 </div>
               </div>
               <div class="field">
-                <div class="field-label">SKU / Mã sản phẩm</div>
+                <div class="field-label">Chất liệu</div>
                 <div class="finput-wrap">
-                  <span class="finput-icon ms" style="font-size:17px">qr_code</span>
-                  <input class="finput" type="text" placeholder="Vd: SH-ATOSS-001" style="padding-left:37px" />
+                  <span class="finput-icon ms" style="font-size:17px">texture</span>
+                  <input class="finput" type="text" placeholder="Vd: Cotton, Polyester, Linen..." style="padding-left:37px" />
                 </div>
               </div>
             </div>
@@ -4096,8 +4516,8 @@
             <div class="card-head-icon blue"><span class="ms" style="color:#1565c0;font-size:18px">local_shipping</span>
             </div>
             <div>
-              <div class="card-title">Phương thức giao hàng</div>
-              <div class="card-subtitle">Có thể chọn nhiều phương thức</div>
+              <div class="card-title">Giao hàng</div>
+              <div class="card-subtitle">Phương thức, phí ship và thông tin kiện hàng</div>
             </div>
           </div>
           <div class="card-body">
@@ -4149,6 +4569,82 @@
                 </div>
                 <div class="del-check"></div>
               </div>
+            </div>
+
+            <div class="sdiv"></div>
+
+            <!-- Phí giao hàng -->
+            <div class="field">
+              <div class="field-label">Phí giao hàng</div>
+              <div class="ship-fee-toggle">
+                <button class="ship-fee-btn active" onclick="setShipFee(this,'free')">
+                  <span class="ms" style="font-size:15px;vertical-align:middle">redeem</span> Miễn phí ship
+                </button>
+                <button class="ship-fee-btn" onclick="setShipFee(this,'paid')">
+                  <span class="ms" style="font-size:15px;vertical-align:middle">payments</span> Người mua trả
+                </button>
+                <button class="ship-fee-btn" onclick="setShipFee(this,'nego')">
+                  <span class="ms" style="font-size:15px;vertical-align:middle">handshake</span> Thỏa thuận
+                </button>
+              </div>
+              <div id="shipFeeInput" style="display:none">
+                <div class="finput-wrap">
+                  <span class="finput-icon ms" style="font-size:17px">local_shipping</span>
+                  <input class="finput has-suffix" type="text" placeholder="Phí ship ước tính" style="padding-left:37px" />
+                  <span class="finput-suffix">đ</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thông tin kiện hàng -->
+            <div class="field">
+              <div class="field-label">Thông tin kiện hàng <span class="hint">(để tính phí vận chuyển)</span></div>
+              <div class="weight-row">
+                <div>
+                  <div style="font-size:11.5px;color:#888;font-weight:600;margin-bottom:4px">Trọng lượng (g)</div>
+                  <div class="finput-wrap">
+                    <input class="finput" type="number" placeholder="Vd: 300" min="0" />
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size:11.5px;color:#888;font-weight:600;margin-bottom:4px">Dài × Rộng (cm)</div>
+                  <div style="display:flex;gap:5px">
+                    <input class="finput" type="number" placeholder="Dài" min="0" />
+                    <input class="finput" type="number" placeholder="Rộng" min="0" />
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size:11.5px;color:#888;font-weight:600;margin-bottom:4px">Cao (cm)</div>
+                  <div class="finput-wrap">
+                    <input class="finput" type="number" placeholder="Vd: 5" min="0" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Địa chỉ lấy hàng -->
+            <div class="field">
+              <div class="field-label">Địa chỉ nhận hàng <span class="req">*</span></div>
+              <div class="field-row" style="margin-bottom:8px">
+                <div class="finput-wrap">
+                  <span class="finput-icon ms" style="font-size:17px">location_on</span>
+                  <input class="finput" type="text" placeholder="Số nhà, tên đường..." style="padding-left:37px" />
+                </div>
+                <select class="fselect">
+                  <option value="">-- Tỉnh / Thành phố --</option>
+                  <option value="hcm" selected>TP. Hồ Chí Minh</option>
+                  <option value="hn">Hà Nội</option>
+                  <option value="dn">Đà Nẵng</option>
+                  <option value="ct">Cần Thơ</option>
+                  <option value="other">Tỉnh thành khác</option>
+                </select>
+              </div>
+              <select class="fselect">
+                <option value="">-- Phường / Xã --</option>
+                <option value="p1">Phường 1</option>
+                <option value="p2">Phường 2</option>
+                <option value="p25">Phường 25</option>
+              </select>
             </div>
 
             <div class="sdiv"></div>
@@ -4964,6 +5460,33 @@
     function dragLeave() { document.getElementById('dropzone').classList.remove('drag'); }
     function dropFiles(e) { e.preventDefault(); dragLeave(); handleFiles(e.dataTransfer.files); }
 
+    // ══ SHIP FEE ══
+    function setShipFee(btn, type) {
+      document.querySelectorAll('.ship-fee-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('shipFeeInput').style.display = (type === 'paid') ? 'block' : 'none';
+    }
+
+    // ══ BRAND ══
+    function selBrand(el, val) {
+      document.querySelectorAll('.brand-chip').forEach(function(c){ c.classList.remove('active'); });
+      el.classList.add('active');
+      document.getElementById('brandOther').style.display = (val === '__other__') ? 'block' : 'none';
+    }
+
+    function previewBrandLogo(input) {
+      if (!input.files || !input.files[0]) return;
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var img = document.getElementById('brandLogoPreview');
+        img.src = e.target.result;
+        img.style.display = 'block';
+        var lbl = document.querySelector('.brand-logo-upload');
+        lbl.querySelectorAll(':not(img)').forEach(function(el){ el.style.display = 'none'; });
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+
     // ══ SIZE / COLOR ══
     function toggleSize(btn) { btn.classList.toggle('active'); }
     function toggleColor(item) { var d = item.querySelector('.color-dot'); d.classList.toggle('active'); }
@@ -4984,9 +5507,15 @@
     function calcDiscount() {
       var ori = parseInt((document.getElementById('priceOri').value || '0').replace(/\D/g, '')) || 0;
       var sale = parseInt((document.getElementById('priceSale').value || '0').replace(/\D/g, '')) || 0;
+      var badge = document.getElementById('discountBadgeWrap');
       var pct = document.getElementById('discountPct');
-      if (ori > 0 && sale > 0 && sale < ori) { pct.value = Math.round((ori - sale) / ori * 100) + '%'; }
-      else { pct.value = '0%'; }
+      if (ori > 0 && sale > 0 && sale < ori) {
+        var p = Math.round((ori - sale) / ori * 100);
+        pct.textContent = p + '%';
+        badge.style.display = 'block';
+      } else {
+        badge.style.display = 'none';
+      }
       setSi('price', sale > 0); updateScore();
     }
     function setPriceType(btn, type) {

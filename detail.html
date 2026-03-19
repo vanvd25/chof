@@ -86,7 +86,7 @@
     }
 
     .logo img {
-      height: 46px;
+      height: 65px;
       width: auto;
       object-fit: contain;
       display: block;
@@ -697,7 +697,7 @@
       padding: 9px 16px;
       border-radius: 9px;
       font-weight: 700;
-      font-size: 13px;
+      font-size: 10px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -716,102 +716,151 @@
       display: none;
     }
 
-    /* ══════════════════════════════════════
-           [HEADER] Cat-tabs
-        ══════════════════════════════════════ */
+    /* CAT TABS - Category Menu */
     .cat-tabs {
       border-top: 1px solid var(--line);
     }
 
     .cat-tabs-inner {
-      max-width: 1320px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 10px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      height: 52px
-    }
-
-    .ct-scroll {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      scroll-behavior: smooth;
-      padding: 0 2px;
-      min-width: 0
-    }
-
-    .ct-scroll::-webkit-scrollbar {
-      display: none
-    }
-
-    .ct-pill {
-      display: inline-flex;
-      align-items: center;
-      white-space: nowrap;
-      padding: 5px 14px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: #555;
-      background: #f5f5f5;
-      border-radius: 20px;
-      text-decoration: none;
-      border: 1.5px solid transparent;
-      flex-shrink: 0;
-      transition: background .15s, color .15s, border-color .15s
-    }
-
-    .ct-pill:hover {
-      background: var(--pl);
-      color: var(--p);
-      border-color: var(--p)
-    }
-
-    .ct-pill.hot {
-      color: var(--ac);
-      background: #fff8f3;
-      border-color: #ffd5ba
-    }
-
-    .ct-pill.hot:hover {
-      background: #fef0e5;
-      border-color: var(--ac)
-    }
-
-    .ct-nav {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #fff;
-      border: 1.5px solid var(--line);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
-      cursor: pointer;
+      padding: 0 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      color: #666;
-      transition: all .15s;
-      padding: 0
+      gap: 15px;
+      height: 52px;
+      overflow: visible
     }
 
-    .ct-nav:hover {
-      background: var(--pl);
+    .ct-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 0 12px;
+      height: 100%;
+      cursor: pointer;
+      white-space: nowrap;
+      font-size: 13px;
+      font-weight: 700;
       color: var(--p);
-      border-color: var(--p)
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color .15s, opacity .15s;
+      flex-shrink: 0
+    }
+
+    .ct-item:hover {
+      border-bottom-color: var(--p)
+    }
+
+    .ct-item .ms {
+      font-size: 17px;
+      transition: transform .2s
+    }
+
+    .ct-item:hover .ms {
+      transform: rotate(180deg)
+    }
+
+    .ct-dropdown {
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 0;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .13);
+      padding: 20px 30px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      z-index: 200;
+      display: grid;
+      gap: 14px 28px
+    }
+
+    .ct-dropdown.dd-r {
+      left: auto;
+      right: 0
+    }
+
+    .ct-item:hover .ct-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0)
+    }
+
+    .ct-dd-head {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--p);
+      margin-bottom: 5px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--p);
+      white-space: nowrap
+    }
+
+    .ct-dd-head a {
+      color: var(--p);
+      text-decoration: none;
+      transition: opacity .12s
+    }
+
+    .ct-dd-head a:hover {
+      opacity: .75
+    }
+
+    .ct-dd-group a {
+      display: block;
+      padding: 3px 0;
+      font-size: 12px;
+      font-weight: 500;
+      color: #666;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color .12s
+    }
+
+    .ct-dd-group a:hover {
+      color: var(--p)
+    }
+
+    .ct-divider {
+      width: 1px;
+      height: 18px;
+      background: var(--line);
+      flex-shrink: 0;
+      align-self: center
     }
 
     @media(max-width:768px) {
       .cat-tabs-inner {
         padding: 0 8px;
-        height: 46px
+        height: 44px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: visible;
+        gap: 0;
+        scrollbar-width: none
       }
 
-      .ct-nav {
+      .cat-tabs-inner::-webkit-scrollbar {
+        display: none
+      }
+
+      .ct-item {
+        padding: 0 10px;
+        font-size: 12px;
+        font-weight: 600
+      }
+
+      .ct-item:hover .ct-dropdown {
+        display: none
+      }
+
+      .ct-divider {
         display: none
       }
     }
@@ -972,6 +1021,11 @@
       object-fit: cover;
     }
 
+    .thumb.vt {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
     .thumb.vt::after {
       content: '▶';
       position: absolute;
@@ -981,7 +1035,7 @@
       justify-content: center;
       background: rgba(0, 0, 0, .38);
       color: #fff;
-      font-size: 15px;
+      font-size: 22px;
       border-radius: 6px;
       pointer-events: none;
     }
@@ -1489,7 +1543,7 @@
     .shop-block {
       border: 1.5px solid #e5e7eb;
       border-radius: 12px;
-      padding: 14px 16px;
+      padding: 80px 16px;
 
       display: flex;
       justify-content: space-between;
@@ -1612,33 +1666,24 @@
     }
 
     .chat-icon {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: 700;
-      color: #fff;
+      overflow: hidden;
       cursor: pointer;
       transition: opacity .15s;
+      flex-shrink: 0;
+    }
+
+    .chat-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .chat-icon:hover {
-      opacity: .85;
-    }
-
-    .ci-sms {
-      background: #555;
-    }
-
-    .ci-zalo {
-      background: #0068ff;
-    }
-
-    .ci-fb {
-      background: #1877f2;
+      opacity: .8;
     }
 
     /* ══ MIDDLE: tabs + comments ══ */
@@ -3155,24 +3200,279 @@
     <!-- CAT TABS -->
     <div class="cat-tabs" id="catTabs">
       <div class="cat-tabs-inner">
-        <button class="ct-nav" id="ctPrev" aria-label="Trước" onclick="ctScroll(-1)">
-          <span class="ms" style="font-size:16px">chevron_left</span>
-        </button>
-        <div class="ct-scroll" id="ctScroll">
-          <a href="/detail.html" class="ct-pill hot">Đầm voan hoa nhí cổ V Hàn Quốc</a>
-          <a href="/detail.html" class="ct-pill">Túi Gucci GG Canvas</a>
-          <a href="/detail.html" class="ct-pill">Quần jean baggy cao cấp</a>
-          <a href="/detail.html" class="ct-pill">Giày Adidas Ultraboost</a>
-          <a href="/detail.html" class="ct-pill">Đồng hồ Casio Edifice</a>
-          <a href="/detail.html" class="ct-pill">Nước hoa Dior Sauvage</a>
-          <a href="/detail.html" class="ct-pill">Áo Hoodie nỉ Unisex</a>
-          <a href="/detail.html" class="ct-pill">Váy hoa nhí dự tiệc</a>
-          <a href="/detail.html" class="ct-pill">Mỹ phẩm Laneige Water Bank</a>
-          <a href="/detail.html" class="ct-pill">Giày chạy bộ siêu nhẹ</a>
+
+        <!-- Nam -->
+        <div class="ct-item">
+          Nam <span class="ms">expand_more</span>
+          <div class="ct-dropdown" style="grid-template-columns:repeat(4,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Áo</a></div>
+              <a href="/listing.html">Áo thun</a>
+              <a href="/listing.html">Áo sơ mi</a>
+              <a href="/listing.html">Áo khoác</a>
+              <a href="/listing.html">Áo vest</a>
+              <a href="/listing.html">Áo khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Quần</a></div>
+              <a href="/listing.html">Quần ngắn</a>
+              <a href="/listing.html">Quần dài</a>
+              <a href="/listing.html">Quần lót</a>
+              <a href="/listing.html">Quần khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Nón – Mắt kính</a></div>
+              <a href="/listing.html">Nón</a>
+              <a href="/listing.html">Mắt kính</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Balo – Túi xách</a></div>
+              <a href="/listing.html">Ba lô</a>
+              <a href="/listing.html">Túi xách</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Đồng hồ – Bóp ví</a></div>
+              <a href="/listing.html">Đồng hồ</a>
+              <a href="/listing.html">Bóp ví</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Đồ lót – Giày dép</a></div>
+              <a href="/listing.html">Đồ lót</a>
+              <a href="/listing.html">Giày dép</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Nước hoa – Mỹ phẩm</a></div>
+              <a href="/listing.html">Nước hoa</a>
+              <a href="/listing.html">Mỹ phẩm</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Phụ kiện – Khác</a></div>
+              <a href="/listing.html">Phụ kiện</a>
+              <a href="/listing.html">Khác</a>
+            </div>
+          </div>
         </div>
-        <button class="ct-nav" id="ctNext" aria-label="Tiếp" onclick="ctScroll(1)">
-          <span class="ms" style="font-size:16px">chevron_right</span>
-        </button>
+        <div class="ct-divider"></div>
+
+        <!-- Nữ -->
+        <div class="ct-item">
+          Nữ <span class="ms">expand_more</span>
+          <div class="ct-dropdown" style="grid-template-columns:repeat(4,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Áo</a></div>
+              <a href="/listing.html">Áo thun</a>
+              <a href="/listing.html">Áo sơ mi</a>
+              <a href="/listing.html">Áo khoác</a>
+              <a href="/listing.html">Áo dài</a>
+              <a href="/listing.html">Áo khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Quần – Váy đầm</a></div>
+              <a href="/listing.html">Quần</a>
+              <a href="/listing.html">Váy đầm</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Nón – Mắt kính</a></div>
+              <a href="/listing.html">Nón</a>
+              <a href="/listing.html">Mắt kính</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Balo – Túi xách</a></div>
+              <a href="/listing.html">Ba lô</a>
+              <a href="/listing.html">Túi xách</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Đồng hồ – Bóp ví</a></div>
+              <a href="/listing.html">Đồng hồ</a>
+              <a href="/listing.html">Bóp ví</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Đồ lót – Giày dép</a></div>
+              <a href="/listing.html">Đồ lót</a>
+              <a href="/listing.html">Giày dép</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Nước hoa – Mỹ phẩm</a></div>
+              <a href="/listing.html">Nước hoa</a>
+              <a href="/listing.html">Mỹ phẩm</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Phụ kiện – Khác</a></div>
+              <a href="/listing.html">Phụ kiện</a>
+              <a href="/listing.html">Khác</a>
+            </div>
+          </div>
+        </div>
+        <div class="ct-divider"></div>
+
+        <!-- Trẻ em -->
+        <div class="ct-item">
+          Trẻ em <span class="ms">expand_more</span>
+          <div class="ct-dropdown" style="grid-template-columns:repeat(4,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Quần áo sơ sinh</a></div>
+              <a href="/listing.html">Dưới 1 tháng</a>
+              <a href="/listing.html">1–6 tháng</a>
+              <a href="/listing.html">6–12 tháng</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Quần áo bé trai</a></div>
+              <a href="/listing.html">Dưới 3 tuổi</a>
+              <a href="/listing.html">3–6 tuổi</a>
+              <a href="/listing.html">Trên 6 tuổi</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Quần áo bé gái</a></div>
+              <a href="/listing.html">Dưới 3 tuổi</a>
+              <a href="/listing.html">3–6 tuổi</a>
+              <a href="/listing.html">Trên 6 tuổi</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Phụ kiện – Khác</a></div>
+              <a href="/listing.html">Phụ kiện</a>
+              <a href="/listing.html">Khác</a>
+            </div>
+          </div>
+        </div>
+        <div class="ct-divider"></div>
+
+        <!-- Chuyên đề -->
+        <div class="ct-item">
+          Chuyên đề <span class="ms">expand_more</span>
+          <div class="ct-dropdown" style="grid-template-columns:repeat(3,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">TT Gia dụng</a></div>
+              <a href="/listing.html">Mền/mùng</a>
+              <a href="/listing.html">Áo gối/ra giường</a>
+              <a href="/listing.html">Rèm/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">TT Chuyên dụng</a></div>
+              <a href="/listing.html">Đồng phục/nghề nghiệp</a>
+              <a href="/listing.html">Bà bầu/hội cưới</a>
+              <a href="/listing.html">Thú cưng/sân khấu</a>
+              <a href="/listing.html">PK điện tử/handmade</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Thời trang xanh</a></div>
+              <a href="/listing.html">Nam/Nữ/Trẻ em</a>
+              <a href="/listing.html">Đồ lót/phụ kiện/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">TT Thể thao</a></div>
+              <a href="/listing.html">Nam/Nữ/Trẻ em</a>
+              <a href="/listing.html">Đồ lót/phụ kiện/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">TT Đồng giá</a></div>
+              <a href="/listing.html">10k/50k/100k</a>
+              <a href="/listing.html">200k/300k</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Nguyên phụ liệu</a></div>
+              <a href="/listing.html">Vải/khoá kéo</a>
+              <a href="/listing.html">Khuy nút/chỉ may</a>
+              <a href="/listing.html">Tem nhãn/máy móc</a>
+              <a href="/listing.html">Manocanh/khác</a>
+            </div>
+          </div>
+        </div>
+        <div class="ct-divider"></div>
+
+        <!-- Thương hiệu Việt -->
+        <div class="ct-item">
+          Thương hiệu Việt <span class="ms">expand_more</span>
+          <div class="ct-dropdown dd-r" style="grid-template-columns:repeat(4,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Thời trang nam</a></div>
+              <a href="/listing.html">Áo nam</a>
+              <a href="/listing.html">Quần nam</a>
+              <a href="/listing.html">Đồ lót/phụ kiện/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Thời trang nữ</a></div>
+              <a href="/listing.html">Áo nữ</a>
+              <a href="/listing.html">Quần/đồ lót</a>
+              <a href="/listing.html">Phụ kiện/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Thời trang trẻ em</a></div>
+              <a href="/listing.html">Quần áo bé trai</a>
+              <a href="/listing.html">Quần áo bé gái</a>
+              <a href="/listing.html">Phụ kiện/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Trang phục truyền thống</a></div>
+              <a href="/listing.html">Trang phục nam</a>
+              <a href="/listing.html">Trang phục nữ</a>
+              <a href="/listing.html">Trang phục trẻ em</a>
+              <a href="/listing.html">Phụ kiện/khác</a>
+            </div>
+          </div>
+        </div>
+        <div class="ct-divider"></div>
+
+        <!-- 4 Foreigner -->
+        <div class="ct-item">
+          4 Foreigner <span class="ms">expand_more</span>
+          <div class="ct-dropdown dd-r" style="grid-template-columns:repeat(4,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">For Men</a></div>
+              <a href="/listing.html">Shirt/T-shirt</a>
+              <a href="/listing.html">Short/Pants</a>
+              <a href="/listing.html">Jacket</a>
+              <a href="/listing.html">Underwear</a>
+              <a href="/listing.html">Accessories/Others</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">For Women</a></div>
+              <a href="/listing.html">Top/Dress</a>
+              <a href="/listing.html">Skirt/Short</a>
+              <a href="/listing.html">Underwear</a>
+              <a href="/listing.html">Accessories/Others</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">For Kids</a></div>
+              <a href="/listing.html">For Boy</a>
+              <a href="/listing.html">For Girl</a>
+              <a href="/listing.html">Accessories/Others</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Made to Order</a></div>
+              <a href="/listing.html">For Men/Women/Kids</a>
+              <a href="/listing.html">Underwear/Accessories/Others</a>
+            </div>
+          </div>
+        </div>
+        <div class="ct-divider"></div>
+
+        <!-- Dịch vụ -->
+        <div class="ct-item">
+          Dịch vụ <span class="ms">expand_more</span>
+          <div class="ct-dropdown dd-r" style="grid-template-columns:repeat(3,1fr)">
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">DV May mặc</a></div>
+              <a href="/listing.html">In thêu</a>
+              <a href="/listing.html">Giặt ủi</a>
+              <a href="/listing.html">Sửa quần áo</a>
+              <a href="/listing.html">Khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">DV Phụ trợ</a></div>
+              <a href="/listing.html">Người mẫu</a>
+              <a href="/listing.html">Trang điểm</a>
+              <a href="/listing.html">Chụp ảnh</a>
+              <a href="/listing.html">Tatoo</a>
+              <a href="/listing.html">Khóa học/khác</a>
+            </div>
+            <div class="ct-dd-group">
+              <div class="ct-dd-head"><a href="/listing.html">Theo yêu cầu</a></div>
+              <a href="/listing.html">May đo</a>
+              <a href="/listing.html">Gia công</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </header>
@@ -3307,6 +3607,11 @@
 
       <!-- col1/row2: thumbnails -->
       <div class="gallery-thumbs">
+        <!-- Video thumbnail — đầu tiên, to 2×2 -->
+        <div class="thumb vt" onclick="switchVideo(this)">
+          <video src="assets/video.mp4" muted preload="metadata"
+            style="width:100%;height:100%;object-fit:cover;pointer-events:none;border-radius:6px;"></video>
+        </div>
         <div class="thumb active" onclick="switchImg(this,'assets/aothun.avif')">
           <img src="assets/aothun.avif" alt="Áo thun">
         </div>
@@ -3337,10 +3642,11 @@
         <div class="thumb" onclick="switchImg(this,'assets/quanshort.jpg')">
           <img src="assets/quanshort.jpg" alt="Quần short">
         </div>
-        <!-- Video thumbnail (11th slot) -->
-        <div class="thumb vt" onclick="switchVideo(this)">
-          <video src="assets/video.mp4" muted preload="metadata"
-            style="width:100%;height:100%;object-fit:cover;pointer-events:none;border-radius:6px;"></video>
+        <div class="thumb" onclick="switchImg(this,'assets/set-gym-nu-11.jpg')">
+          <img src="assets/set-gym-nu-11.jpg" alt="Set gym nữ">
+        </div>
+        <div class="thumb" onclick="switchImg(this,'assets/quanshort.jpg')">
+          <img src="assets/bra.jpg" alt="Quần short">
         </div>
       </div><!-- /gallery-thumbs -->
 
@@ -3413,9 +3719,9 @@
             </div>
             <div class="shop-chat-lbl">Chat qua:</div>
             <div class="chat-icons">
-              <div class="chat-icon ci-sms" title="SMS">SMS</div>
-              <div class="chat-icon ci-zalo" title="Zalo">Zalo</div>
-              <div class="chat-icon ci-fb" title="Messenger">Mess</div>
+              <div class="chat-icon ci-sms" title="SMS"><img src="/assets/sms.png" alt="SMS"></div>
+              <div class="chat-icon ci-zalo" title="Zalo"><img src="/assets/zalo.webp" alt="Zalo"></div>
+              <div class="chat-icon ci-fb" title="Messenger"><img src="/assets/fb.png" alt="Messenger"></div>
             </div>
           </div>
         </div>
