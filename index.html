@@ -1262,6 +1262,188 @@
       border-color: var(--p)
     }
 
+    /* SERVICE CARDS */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .svc-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--bg);
+      border-radius: var(--r);
+      padding: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow .2s, transform .2s;
+      border: 1px solid var(--line);
+    }
+
+    .svc-card:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .09);
+      transform: translateY(-2px);
+    }
+
+    .svc-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .svc-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .svc-name {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .svc-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .svc-meta {
+      display: flex;
+      gap: 10px;
+    }
+
+    .svc-count {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--p);
+    }
+
+    .svc-rate {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--ac);
+    }
+
+    /* TREND GRID */
+    .trend-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .trend-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .trend-img {
+      width: 100%;
+      height: 88px;
+      border-radius: var(--r);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .22s cubic-bezier(.34, 1.56, .64, 1);
+    }
+    .trend-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .trend-item:hover .trend-img {
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    .trend-lbl {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink);
+      text-align: center;
+    }
+
+    .trend-cnt {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* WHY CHOF */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .why-card {
+      background: var(--bg);
+      border-radius: var(--r);
+      padding: 20px;
+      border: 1px solid var(--line);
+      transition: box-shadow .2s, transform .2s;
+    }
+
+    .why-card:hover {
+      box-shadow: 0 6px 24px rgba(0, 136, 72, .1);
+      transform: translateY(-2px);
+      border-color: var(--pl);
+    }
+
+    .why-icon {
+      margin-bottom: 12px;
+    }
+
+    .why-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .why-desc {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    @media(max-width:768px) {
+      .svc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trend-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:480px) {
+      .svc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trend-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* MAIN */
     .main {
       max-width: 1320px;
@@ -2800,7 +2982,10 @@
     }
 
     .pc:hover .pc-tags,
-    .pc-hero:hover .pc-tags { opacity: 1; transform: translateY(0); }
+    .pc-hero:hover .pc-tags {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     .pctag {
       font-size: 10.5px;
@@ -2812,9 +2997,20 @@
       backdrop-filter: blur(4px);
     }
 
-    .pctag-ctv { background: rgba(249,115,22,.9);  color: #fff; }
-    .pctag-big { background: rgba(124,58,237,.85); color: #fff; }
-    .pctag-si  { background: rgba(0,136,72,.9);    color: #fff; }
+    .pctag-ctv {
+      background: rgba(249, 115, 22, .9);
+      color: #fff;
+    }
+
+    .pctag-big {
+      background: rgba(124, 58, 237, .85);
+      color: #fff;
+    }
+
+    .pctag-si {
+      background: rgba(0, 136, 72, .9);
+      color: #fff;
+    }
 
 
     /* ── QUICK VIEW MODAL ── */
@@ -3865,27 +4061,11 @@
             <div class="cimg bh"><img src="/assets/jacket.webp" alt="" onerror="this.parentNode.innerHTML='🧥'"></div>
             <span class="clbl">Jacket</span>
           </a>
+          <a class="catitem" href="/listing.html">
+            <div class="cimg bh"><img src="/assets/aothun.avif" alt="" onerror="this.parentNode.innerHTML='🧥'"></div>
+            <span class="clbl">Áo thun</span>
+          </a>
         </div>
-      </div>
-    </div>
-
-    <!-- ĐỒNG GIÁ -->
-    <div class="sec ap">
-      <div class="esc">
-        <div class="esc-left">
-          <span class="esc-num">01</span>
-          <div class="esc-texts"><span class="esc-eyebrow">Chuyên mục</span><span class="esc-title">Mua hàng đồng
-              giá</span></div>
-        </div>
-        <a href="/listing.html" class="esc-more">Xem tất cả <span class="ms"
-            style="font-size:14px">chevron_right</span></a>
-      </div>
-      <div class="dg-wrap">
-        <button class="dg-nav" id="dgPrev" disabled><span class="ms" style="font-size:20px">chevron_left</span></button>
-        <div class="dg-outer" id="dgOuter">
-          <div class="dg-track" id="dgTrack"></div>
-        </div>
-        <button class="dg-nav" id="dgNext"><span class="ms" style="font-size:20px">chevron_right</span></button>
       </div>
     </div>
 
@@ -3893,7 +4073,7 @@
     <div class="sec ap">
       <div class="esc">
         <div class="esc-left">
-          <span class="esc-num">02</span>
+          <span class="esc-num">01</span>
           <div class="esc-texts">
             <span class="esc-eyebrow">Xu hướng</span>
             <div style="display:flex;align-items:center">
@@ -4162,7 +4342,7 @@
     <div class="sec ap">
       <div class="esc">
         <div class="esc-left">
-          <span class="esc-num">03</span>
+          <span class="esc-num">02</span>
           <div class="esc-texts">
             <span class="esc-eyebrow">Mới nhất</span>
             <div style="display:flex;align-items:center">
@@ -4268,11 +4448,165 @@
       <div class="lm"><button onclick="location.href='/listing.html'" class="boutp">Xem thêm sản phẩm</button></div>
     </div>
 
+    <!-- ĐỒNG GIÁ -->
+    <div class="sec ap">
+      <div class="esc">
+        <div class="esc-left">
+          <span class="esc-num">03</span>
+          <div class="esc-texts"><span class="esc-eyebrow">Chuyên mục</span><span class="esc-title">Mua hàng đồng
+              giá</span></div>
+        </div>
+        <a href="/listing.html" class="esc-more">Xem tất cả <span class="ms"
+            style="font-size:14px">chevron_right</span></a>
+      </div>
+      <div class="dg-wrap">
+        <button class="dg-nav" id="dgPrev" disabled><span class="ms" style="font-size:20px">chevron_left</span></button>
+        <div class="dg-outer" id="dgOuter">
+          <div class="dg-track" id="dgTrack"></div>
+        </div>
+        <button class="dg-nav" id="dgNext"><span class="ms" style="font-size:20px">chevron_right</span></button>
+      </div>
+    </div>
+
+    <!-- NỔI BẬT TRÊN CHOF -->
+    <div class="sec ap">
+      <div class="esc">
+        <div class="esc-left">
+          <span class="esc-num">04</span>
+          <div class="esc-texts"><span class="esc-eyebrow">Nền tảng</span><span class="esc-title">Nổi bật trên ChoF</span></div>
+        </div>
+        <a href="/listing.html" class="esc-more">Khám phá <span class="ms" style="font-size:14px">chevron_right</span></a>
+      </div>
+      <div class="svc-grid">
+        <a href="/listing.html" class="svc-card">
+          <div class="svc-icon"><img src="/assets/sanpham.jpg" alt="Đăng tin" style="width:100%;height:100%;object-fit:cover;border-radius:12px"></div>
+          <div class="svc-info">
+            <div class="svc-name">Sàn đăng tin miễn phí</div>
+            <div class="svc-desc">Đăng tin bán hàng thời trang nhanh chóng, tiếp cận hàng triệu người mua</div>
+            <div class="svc-meta"><span class="svc-count">12.000+ tin</span><span class="svc-rate">Miễn phí</span></div>
+          </div>
+        </a>
+        <a href="/listing.html" class="svc-card">
+          <div class="svc-icon"><img src="/assets/bo-quan-ao-the-thao-nerdy-1.webp" alt="Sỉ lẻ" style="width:100%;height:100%;object-fit:cover;border-radius:12px"></div>
+          <div class="svc-info">
+            <div class="svc-name">Hợp tác sỉ lẻ</div>
+            <div class="svc-desc">Kết nối trực tiếp xưởng, nguồn hàng sỉ uy tín, đặt hàng số lượng lớn</div>
+            <div class="svc-meta"><span class="svc-count">800+ nguồn sỉ</span><span class="svc-rate">★ 4.8</span></div>
+          </div>
+        </a>
+        <a href="/listing.html" class="svc-card">
+          <div class="svc-icon"><img src="/assets/set-gym-nu-11.jpg" alt="Bigsize" style="width:100%;height:100%;object-fit:cover;border-radius:12px"></div>
+          <div class="svc-info">
+            <div class="svc-name">Thời trang Bigsize</div>
+            <div class="svc-desc">Hàng nghìn sản phẩm từ size L đến XXXXL cho mọi vóc dáng</div>
+            <div class="svc-meta"><span class="svc-count">2.400+ sản phẩm</span><span class="svc-rate">★ 4.7</span></div>
+          </div>
+        </a>
+        <a href="/listing.html" class="svc-card">
+          <div class="svc-icon"><img src="/assets/gucci-logo-inkythuatso-01-02-09-59-44.jpg" alt="Thương hiệu lớn" style="width:100%;height:100%;object-fit:cover;border-radius:12px"></div>
+          <div class="svc-info">
+            <div class="svc-name">Thương hiệu lớn</div>
+            <div class="svc-desc">Mua hàng chính hãng từ các thương hiệu thời trang nổi tiếng trong và ngoài nước</div>
+            <div class="svc-meta"><span class="svc-count">50+ thương hiệu</span><span class="svc-rate">★ 4.9</span></div>
+          </div>
+        </a>
+        <a href="/listing.html" class="svc-card">
+          <div class="svc-icon"><img src="/assets/aothun.avif" alt="Local brand" style="width:100%;height:100%;object-fit:cover;border-radius:12px"></div>
+          <div class="svc-info">
+            <div class="svc-name">Local Brand Việt Nam</div>
+            <div class="svc-desc">Khám phá và ủng hộ các thương hiệu thời trang Việt sáng tạo, chất lượng cao</div>
+            <div class="svc-meta"><span class="svc-count">300+ local brand</span><span class="svc-rate">★ 4.8</span></div>
+          </div>
+        </a>
+        <a href="/listing.html" class="svc-card">
+          <div class="svc-icon"><img src="/assets/shoplogo.jpg" alt="CTV" style="width:100%;height:100%;object-fit:cover;border-radius:12px"></div>
+          <div class="svc-info">
+            <div class="svc-name">Mạng lưới CTV thời trang</div>
+            <div class="svc-desc">Trở thành cộng tác viên, kiếm thêm thu nhập bằng cách giới thiệu sản phẩm</div>
+            <div class="svc-meta"><span class="svc-count">5.000+ CTV</span><span class="svc-rate">★ 4.7</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- XU HƯỚNG TÌM KIẾM -->
+    <div class="sec ap">
+      <div class="esc">
+        <div class="esc-left">
+          <span class="esc-num">05</span>
+          <div class="esc-texts"><span class="esc-eyebrow">Khám phá</span><span class="esc-title">Xu hướng tìm
+              kiếm</span></div>
+        </div>
+      </div>
+      <div class="trend-grid">
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/dam.webp" alt="Váy đầm nữ" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Váy đầm nữ</div>
+          <div class="trend-cnt">2.4k tin</div>
+        </a>
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/giaychaybo.webp" alt="Giày sneaker" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Giày sneaker</div>
+          <div class="trend-cnt">1.8k tin</div>
+        </a>
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/dongho.jpg" alt="Đồng hồ" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Đồng hồ</div>
+          <div class="trend-cnt">1.2k tin</div>
+        </a>
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/tui.jpg" alt="Túi xách" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Túi xách</div>
+          <div class="trend-cnt">980 tin</div>
+        </a>
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/mypham.jpg" alt="Mỹ phẩm" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Mỹ phẩm</div>
+          <div class="trend-cnt">760 tin</div>
+        </a>
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/nuochoa.jpg" alt="Nước hoa" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Nước hoa</div>
+          <div class="trend-cnt">540 tin</div>
+        </a>
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/jacket.webp" alt="Áo khoác" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Áo khoác</div>
+          <div class="trend-cnt">870 tin</div>
+        </a>
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/tresosinh.jpg" alt="Thời trang trẻ em" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Thời trang trẻ em</div>
+          <div class="trend-cnt">650 tin</div>
+        </a>
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/balo.jpeg" alt="Balo" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Balo – Túi đeo</div>
+          <div class="trend-cnt">430 tin</div>
+        </a>
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/kinh.png" alt="Mắt kính" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Mắt kính</div>
+          <div class="trend-cnt">380 tin</div>
+        </a>
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/nam.webp" alt="Thời trang nam" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Thời trang nam</div>
+          <div class="trend-cnt">1.5k tin</div>
+        </a>
+        <a href="/listing.html" class="trend-item">
+          <div class="trend-img"><img src="/assets/giay-da.jpg" alt="Phụ kiện" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="trend-lbl">Phụ kiện thời trang</div>
+          <div class="trend-cnt">920 tin</div>
+        </a>
+      </div>
+    </div>
+
     <!-- THƯƠNG HIỆU -->
     <div class="brand-sec">
       <div class="esc" style="margin-bottom:0">
         <div class="esc-left">
-          <span class="esc-num" style="color:var(--ac);opacity:.1">04</span>
+          <span class="esc-num" style="color:var(--ac);opacity:.1">06</span>
           <div class="esc-texts"><span class="esc-eyebrow" style="color:var(--ac)">Đối tác</span><span
               class="esc-title">Thương hiệu nổi bật</span></div>
         </div>
@@ -4323,6 +4657,55 @@
         <button class="brand-nav" id="brandNext"><span class="ms" style="font-size:18px">chevron_right</span></button>
       </div>
       <div class="brand-dots" id="brandDots"></div>
+    </div>
+
+    <!-- LÝ DO YÊU THÍCH -->
+    <div class="sec ap whychof">
+      <div class="esc">
+        <div class="esc-left">
+          <span class="esc-num">07</span>
+          <div class="esc-texts"><span class="esc-eyebrow">Lý do</span><span class="esc-title">Tại sao bạn sẽ yêu thích
+              ChoF?</span></div>
+        </div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><span class="ms" style="font-size:32px;color:var(--p)">storefront</span></div>
+          <div class="why-title">Chuyên biệt thời trang</div>
+          <div class="why-desc">Nền tảng đăng tin duy nhất tập trung hoàn toàn vào thời trang & dịch vụ liên quan, không
+            lẫn lộn với các sản phẩm khác.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><span class="ms" style="font-size:32px;color:var(--p)">price_check</span></div>
+          <div class="why-title">Đăng tin miễn phí</div>
+          <div class="why-desc">Người bán có thể đăng tin rao vặt hoàn toàn miễn phí, không giới hạn số lượng tin trong
+            gói cơ bản.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><span class="ms" style="font-size:32px;color:var(--p)">verified_user</span></div>
+          <div class="why-title">Người bán đã xác thực</div>
+          <div class="why-desc">Mọi gian hàng đều qua quy trình xác minh danh tính, giúp người mua yên tâm giao dịch an
+            toàn.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><span class="ms" style="font-size:32px;color:var(--p)">forum</span></div>
+          <div class="why-title">Kết nối trực tiếp</div>
+          <div class="why-desc">Chat Zalo, Facebook, SMS trực tiếp với người bán — không qua trung gian, không mất phí
+            giao dịch.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><span class="ms" style="font-size:32px;color:var(--p)">inventory_2</span></div>
+          <div class="why-title">Hỗ trợ bán sỉ</div>
+          <div class="why-desc">Tính năng "Đặt hàng số lượng" dành riêng cho người kinh doanh muốn nhập hàng với số
+            lượng lớn.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><span class="ms" style="font-size:32px;color:var(--p)">diversity_3</span></div>
+          <div class="why-title">Cộng đồng CTV rộng lớn</div>
+          <div class="why-desc">Hàng nghìn CTV thời trang trên toàn quốc, giúp sản phẩm của bạn tiếp cận khách hàng khắp
+            mọi nơi.</div>
+        </div>
+      </div>
     </div>
 
     <!-- SEO -->
@@ -4392,7 +4775,7 @@
     <div class="fi">
       <div>
         <div class="fi-logo"><img src="/assets/logo.png" alt="Chof.vn"
-            style="height:36px;object-fit:contain;display:block;filter:brightness(0) invert(1)"></div>
+            style="height:36px;object-fit:contain;display:block;"></div>
         <p style="font-size:12.5px;color:#666;line-height:1.7;margin-bottom:12px">Sàn đăng tin rao vặt thời trang hàng
           đầu Việt Nam</p>
         <div style="font-size:12.5px;color:#666;line-height:2.3">
@@ -4608,19 +4991,19 @@
     }
 
     // ── PRODUCT FEATURE TAGS inject ──
-    (function() {
+    (function () {
       var sets = [
-        ['ctv','si'], ['big'], ['ctv'], ['si'], ['ctv','big','si'],
-        ['big','si'], ['ctv','big'], ['si'], ['ctv'], [],
-        ['si'], ['ctv','si'], ['big'], []
+        ['ctv', 'si'], ['big'], ['ctv'], ['si'], ['ctv', 'big', 'si'],
+        ['big', 'si'], ['ctv', 'big'], ['si'], ['ctv'], [],
+        ['si'], ['ctv', 'si'], ['big'], []
       ];
-      var map = { ctv:['CTV','pctag-ctv'], big:['Bigsize','pctag-big'], si:['Bán sỉ','pctag-si'] };
-      document.querySelectorAll('.pc .pcimg, .pc-hero .pcimg').forEach(function(img, i) {
+      var map = { ctv: ['CTV', 'pctag-ctv'], big: ['Bigsize', 'pctag-big'], si: ['Bán sỉ', 'pctag-si'] };
+      document.querySelectorAll('.pc .pcimg, .pc-hero .pcimg').forEach(function (img, i) {
         var tags = sets[i % sets.length];
         if (!tags.length) return;
         var wrap = document.createElement('div');
         wrap.className = 'pc-tags';
-        tags.forEach(function(t) {
+        tags.forEach(function (t) {
           var sp = document.createElement('span');
           sp.className = 'pctag ' + map[t][1];
           sp.textContent = map[t][0];
