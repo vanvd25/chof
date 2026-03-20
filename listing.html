@@ -1968,24 +1968,48 @@
 
     .cft {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 3px;
       font-size: 10.5px;
       color: #aaa;
       border-top: 1px solid #f5f5f5;
       padding-top: 6px;
     }
 
-    .cloc {
+    .cft-row {
       display: flex;
       align-items: center;
-      gap: 3px;
+      justify-content: space-between;
     }
 
-    .stars {
-      color: #f39c12;
+    .cloc-ward {
+      color: #555;
+      font-weight: 500;
+    }
+
+    .cloc-city {
+      color: #aaa;
+    }
+
+    .crating {
       font-size: 11px;
-      letter-spacing: -1px;
+    }
+
+    .cstar {
+      color: #f39c12;
+    }
+
+    .cnum {
+      color: #111;
+      font-weight: 600;
+    }
+
+    .crev {
+      color: #aaa;
+    }
+
+    .ctime {
+      color: #aaa;
     }
 
     /* Pagination */
@@ -3790,25 +3814,6 @@
           </div>
         </div>
 
-        <!-- Xu hướng -->
-        <div class="sf-row" onclick="toggleSF(this)">
-          <span>Xu hướng</span>
-          <span class="ms sf-icon">add</span>
-        </div>
-        <div class="sf-panel">
-          <div class="filter-opts">
-            <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xu hướng','Streetwear')"><span
-                class="fchk"></span><span class="fopt-label">Streetwear</span></label>
-            <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xu hướng','Oversized')"><span
-                class="fchk"></span><span class="fopt-label">Oversized</span></label>
-            <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xu hướng','Vintage')"><span
-                class="fchk"></span><span class="fopt-label">Vintage</span></label>
-            <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xu hướng','Sustainable')"><span
-                class="fchk"></span><span class="fopt-label">Sustainable</span></label>
-            <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xu hướng','Local brand')"><span
-                class="fchk"></span><span class="fopt-label">Local brand</span></label>
-          </div>
-        </div>
 
         <!-- Xuất xứ -->
         <div class="sf-row" onclick="toggleSF(this)">
@@ -3821,32 +3826,6 @@
                 class="fchk"></span><span class="fopt-label">Việt Nam</span><span class="fopt-count">1.4k</span></label>
             <label class="fopt"><input type="checkbox" onchange="updateFilters(this,'Xuất xứ','Nhập khẩu')"><span
                 class="fchk"></span><span class="fopt-label">Nhập khẩu</span><span class="fopt-count">680</span></label>
-          </div>
-        </div>
-
-        <!-- Màu sắc -->
-        <div class="sf-row" onclick="toggleSF(this)">
-          <span>Màu sắc</span>
-          <span class="ms sf-icon">add</span>
-        </div>
-        <div class="sf-panel">
-          <div class="color-opts">
-            <div class="color-swatch" style="background:#111" title="Đen" onclick="toggleColor(this,'Đen')"></div>
-            <div class="color-swatch" style="background:#fff;border-color:#ddd;" title="Trắng"
-              onclick="toggleColor(this,'Trắng')"></div>
-            <div class="color-swatch" style="background:#e74c3c" title="Đỏ" onclick="toggleColor(this,'Đỏ')"></div>
-            <div class="color-swatch" style="background:#3498db" title="Xanh dương"
-              onclick="toggleColor(this,'Xanh dương')"></div>
-            <div class="color-swatch" style="background:#2ecc71" title="Xanh lá" onclick="toggleColor(this,'Xanh lá')">
-            </div>
-            <div class="color-swatch" style="background:#f39c12" title="Vàng" onclick="toggleColor(this,'Vàng')"></div>
-            <div class="color-swatch" style="background:#9b59b6" title="Tím" onclick="toggleColor(this,'Tím')"></div>
-            <div class="color-swatch" style="background:#f97316" title="Cam" onclick="toggleColor(this,'Cam')"></div>
-            <div class="color-swatch" style="background:#e91e63" title="Hồng" onclick="toggleColor(this,'Hồng')"></div>
-            <div class="color-swatch" style="background:#795548" title="Nâu" onclick="toggleColor(this,'Nâu')"></div>
-            <div class="color-swatch" style="background:#9e9e9e" title="Xám" onclick="toggleColor(this,'Xám')"></div>
-            <div class="color-swatch" style="background:linear-gradient(135deg,#f06,#f90,#0f9)" title="Đa sắc"
-              onclick="toggleColor(this,'Đa sắc')"></div>
           </div>
         </div>
 
@@ -4019,18 +3998,17 @@
               <p class="pctit">Đầm voan hoa nhí cổ V phong cách Hàn Quốc cực xinh</p>
             </a>
             <div class="prow"><span class="psal">250.000 đ</span><span class="pori">500.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Quận 1, HCM</span><span class="stars">★★★★★</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Quận 1</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">5</span><span class="crev">(2 bình luận)</span></span><span class="ctime">Vừa đăng</span></div>
+            </div>
           </div>
         </div>
 
         <div class="pc">
           <div class="pcimg"><img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
-              alt=""><span class="bge bhot">HOT</span><button class="bfav"><span class="ms msf"
+              alt=""><button class="bfav"><span class="ms msf"
                 style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
             <div class="srow"><span class="sname">Sneaker World</span><svg class="vico" viewBox="0 0 24 24" fill="none"
@@ -4042,18 +4020,17 @@
               <p class="pctit">Giày Sneaker nam Nike Air Max đỏ đô size 40–44</p>
             </a>
             <div class="prow"><span class="psal">3.500.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Bình Thạnh, HCM</span><span class="stars">★★★★☆</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Bình Thạnh</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">4</span><span class="crev">(8 bình luận)</span></span><span class="ctime">1 giờ trước</span></div>
+            </div>
           </div>
         </div>
 
         <div class="pc">
           <div class="pcimg"><img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhl4LM9BRIi5e1tdI9DoshWvvomYsHpppENGqafeFF_Dzd0LNgPy27Bu65ZunHtsj8G9zMOUFFWiACtZQwlq5584qdTaONtx-YyDKPSA9E7Z0wn1Bst-qMipOb7U9xcCSTMDyQPCa2sJcnDPCU0bQvy3k2WsMBe6mdoqP7I5wUDSqrcAOZVnSk52-PivbvbCSP8Vb8tH0x1R4Eg-FWyprRr-t9CjTy1nCkBW6LegRrJD6zSAU_5a86J_W73SMBcyzxZEDHqo8S9zk"
-              alt=""><button class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+              alt=""><span class="bge bsale">-43%</span><button class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
             <div class="srow"><span class="sname">Watch Station</span><svg class="vico" viewBox="0 0 24 24" fill="none"
                 stroke="#008848" stroke-width="2.5">
@@ -4065,18 +4042,17 @@
             </a>
             <div class="prow"><span class="psal">1.200.000 đ</span><span class="pori">2.100.000 đ</span>
             </div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Thủ Đức, HCM</span><span class="stars">★★★★★</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Thủ Đức</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">5</span><span class="crev">(5 bình luận)</span></span><span class="ctime">3 giờ trước</span></div>
+            </div>
           </div>
         </div>
 
         <div class="pc">
           <div class="pcimg"><img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
-              alt=""><span class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
+              alt=""><span class="bge bsale">-26%</span><button class="bfav"><span class="ms msf"
                 style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
             <div class="srow"><span class="sname">Suit & Style</span></div>
@@ -4084,18 +4060,17 @@
               <p class="pctit">Bộ vest nam lịch lãm 2 cúc slim fit dành cho sự kiện</p>
             </a>
             <div class="prow"><span class="psal">890.000 đ</span><span class="pori">1.200.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Tân Bình, HCM</span><span class="stars">★★★★☆</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Tân Bình</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">4</span><span class="crev">(3 bình luận)</span></span><span class="ctime">2 ngày trước</span></div>
+            </div>
           </div>
         </div>
 
         <div class="pc">
           <div class="pcimg"><img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX_zG51x9_HlDzqyWXE_LcbJUtRD_8Wmracv34LmDYoqKx-oEvKoMkHN_x5VphToHVV5WALzcpu1D99eH03MpjOfbDlPVfCOjNxrGeLBmSU4YPvcjY9vKo6l9AR7qqD_gfsX_7B7mRTpQ2Q-fl4j-ZCsHuVmZntGaYYq8GKhm4-74RSgKOv9CEAbj4nFPZtO8RfP2MpnPbKtGtqFzNSLnmc_YT3vMGELoz7fwL_bNz7CTcxPs72JslbUat5GZh8B-iWEE7b2XMMxs"
-              alt=""><span class="bge bsvc">DỊCH VỤ</span><button class="bfav"><span class="ms msf"
+              alt=""><button class="bfav"><span class="ms msf"
                 style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
             <div class="srow"><span class="sname">Makeup by Linh</span><svg class="vico" viewBox="0 0 24 24" fill="none"
@@ -4108,16 +4083,15 @@
             </a>
             <div class="prow"><span class="psal">300.000 đ</span><span style="font-size:10px;color:#aaa">/lần</span>
             </div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Quận 7, HCM</span><span class="stars">★★★★★</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Quận 7</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">5</span><span class="crev">(12 bình luận)</span></span><span class="ctime">Vừa đăng</span></div>
+            </div>
           </div>
         </div>
 
         <div class="pc">
-          <div class="pcimg"><img src="/assets/aothun.avif" alt=""><span class="bge bnew">MỚI</span><button
+          <div class="pcimg"><img src="/assets/aothun.avif" alt=""><button
               class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
             <div class="srow"><span class="sname">Style House</span></div>
@@ -4125,11 +4099,10 @@
               <p class="pctit">Áo thun oversize in hình unisex phong cách streetwear</p>
             </a>
             <div class="prow"><span class="psal">185.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Quận 3, HCM</span><span style="font-size:10px;color:#aaa">2 giờ trước</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Quận 3</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">5</span><span class="crev">(1 bình luận)</span></span><span class="ctime">2 giờ trước</span></div>
+            </div>
           </div>
         </div>
 
@@ -4142,17 +4115,15 @@
               <p class="pctit">Đồng hồ Daniel Wellington Classic Petite chính hãng</p>
             </a>
             <div class="prow"><span class="psal">2.800.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Quận 5, HCM</span><span style="font-size:10px;color:#aaa">1 ngày trước</span>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Quận 5</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">4</span><span class="crev">(6 bình luận)</span></span><span class="ctime">1 ngày trước</span></div>
             </div>
           </div>
         </div>
 
         <div class="pc">
-          <div class="pcimg"><img src="/assets/giaychaybo.webp" alt=""><span class="bge bhot">HOT</span><button
+          <div class="pcimg"><img src="/assets/giaychaybo.webp" alt=""><span class="bge bsale">-24%</span><button
               class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
             <div class="srow"><span class="sname">Kicks SG</span></div>
@@ -4161,18 +4132,17 @@
             </a>
             <div class="prow"><span class="psal">4.200.000 đ</span><span class="pori">5.500.000 đ</span>
             </div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Gò Vấp, HCM</span><span style="font-size:10px;color:#aaa">Vừa xong</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Gò Vấp</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">5</span><span class="crev">(4 bình luận)</span></span><span class="ctime">Vừa đăng</span></div>
+            </div>
           </div>
         </div>
 
         <div class="pc">
           <div class="pcimg"><img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
-              alt=""><span class="bge bsvc">DỊCH VỤ</span><button class="bfav"><span class="ms msf"
+              alt=""><button class="bfav"><span class="ms msf"
                 style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
             <div class="srow"><span class="sname">Tailor House</span></div>
@@ -4181,17 +4151,15 @@
             </a>
             <div class="prow"><span class="psal">1.500.000 đ</span><span style="font-size:10px;color:#aaa">/bộ</span>
             </div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Tân Bình, HCM</span><span style="font-size:10px;color:#aaa">5 giờ trước</span>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Tân Bình</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">4</span><span class="crev">(7 bình luận)</span></span><span class="ctime">5 giờ trước</span></div>
             </div>
           </div>
         </div>
 
         <div class="pc">
-          <div class="pcimg"><img src="/assets/nuochoa.jpg" alt=""><span class="bge bnew">MỚI</span><button
+          <div class="pcimg"><img src="/assets/nuochoa.jpg" alt=""><button
               class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
             <div class="srow"><span class="sname">Beauty Corner</span></div>
@@ -4199,11 +4167,9 @@
               <p class="pctit">Set nước hoa Dior Sauvage EDT chính hãng 60ml</p>
             </a>
             <div class="prow"><span class="psal">2.100.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Quận 10, HCM</span><span style="font-size:10px;color:#aaa">3 giờ trước</span>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Quận 10</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">5</span><span class="crev">(3 bình luận)</span></span><span class="ctime">3 giờ trước</span></div>
             </div>
           </div>
         </div>
@@ -4221,11 +4187,10 @@
               <p class="pctit">Đầm midi dự tiệc cúp ngực tay phồng màu đỏ</p>
             </a>
             <div class="prow"><span class="psal">420.000 đ</span><span class="pori">600.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Quận 7, HCM</span><span class="stars">★★★★☆</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Quận 7</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">4</span><span class="crev">(9 bình luận)</span></span><span class="ctime">Hôm qua</span></div>
+            </div>
           </div>
         </div>
 
@@ -4238,11 +4203,10 @@
               <p class="pctit">Bộ đồ thể thao nữ tập gym áo crop quần legging</p>
             </a>
             <div class="prow"><span class="psal">320.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Quận 12, HCM</span><span class="stars">★★★☆☆</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Quận 12</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">3</span><span class="crev">(2 bình luận)</span></span><span class="ctime">Vừa đăng</span></div>
+            </div>
           </div>
         </div>
 
@@ -4255,11 +4219,10 @@
               <p class="pctit">Set đồ tập yoga nữ co giãn 4 chiều, ôm dáng năng động</p>
             </a>
             <div class="prow"><span class="psal">289.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Gò Vấp, HCM</span><span class="stars">★★★★☆</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Gò Vấp</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">4</span><span class="crev">(5 bình luận)</span></span><span class="ctime">4 giờ trước</span></div>
+            </div>
           </div>
         </div>
 
@@ -4272,11 +4235,10 @@
               <p class="pctit">Bộ quần áo thể thao nữ chạy bộ thoáng khí, form tôn dáng</p>
             </a>
             <div class="prow"><span class="psal">350.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Tân Bình, HCM</span><span class="stars">★★★★★</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Tân Bình</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">5</span><span class="crev">(11 bình luận)</span></span><span class="ctime">Vừa đăng</span></div>
+            </div>
           </div>
         </div>
 
@@ -4289,11 +4251,10 @@
               <p class="pctit">Áo bra kèm legging nữ tập gym chất liệu mềm mịn cao cấp</p>
             </a>
             <div class="prow"><span class="psal">410.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Thủ Đức, HCM</span><span class="stars">★★★★☆</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Thủ Đức</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">4</span><span class="crev">(6 bình luận)</span></span><span class="ctime">6 giờ trước</span></div>
+            </div>
           </div>
         </div>
 
@@ -4306,11 +4267,10 @@
               <p class="pctit">Bộ đồ tập nữ croptop tay ngắn phối quần legging cạp cao</p>
             </a>
             <div class="prow"><span class="psal">299.000 đ</span></div>
-            <div class="cft"><span class="cloc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Quận 7, HCM</span><span class="stars">★★★☆☆</span></div>
+            <div class="cft">
+              <div class="cft-row"><span class="cloc-ward">Quận 7</span><span class="cloc-city">TP.HCM</span></div>
+              <div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">3</span><span class="crev">(1 bình luận)</span></span><span class="ctime">Vừa đăng</span></div>
+            </div>
           </div>
         </div>
 
@@ -4980,7 +4940,7 @@
         var srcs = el.dataset.imgs ? el.dataset.imgs.split('|') : [img.src];
         var cnt = document.createElement('span');
         cnt.className = 'img-cnt';
-        cnt.innerHTML = '<span class="ms" style="font-size:11px">photo_camera</span>' + srcs.length;
+        cnt.innerHTML = '<span class="ms" style="font-size:11px">image</span>' + srcs.length;
         el.appendChild(cnt);
         var btn = document.createElement('button');
         btn.className = 'qv-btn';

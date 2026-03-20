@@ -2018,17 +2018,38 @@
 
     .pc-foot {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 3px;
       border-top: 1px solid #f5f5f5;
       padding-top: 6px;
       margin-top: 2px;
-      gap: 4px
+      font-size: 10.5px;
+    }
+
+    .pc-foot-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pc-ward {
+      color: #555;
+      font-weight: 500;
+    }
+
+    .pc-city {
+      color: #aaa;
     }
 
     .pc-stars {
       color: #f39c12;
       font-size: 11px
+    }
+
+    .pc-num {
+      color: #111;
+      font-weight: 600;
+      font-size: 11px;
     }
 
     .pc-rcount {
@@ -2136,12 +2157,48 @@
 
     .cft {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 3px;
       font-size: 10.5px;
       color: #aaa;
       border-top: 1px solid #f5f5f5;
       padding-top: 6px
+    }
+
+    .cft-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cloc-ward {
+      color: #555;
+      font-weight: 500;
+    }
+
+    .cloc-city {
+      color: #aaa;
+    }
+
+    .crating {
+      font-size: 11px;
+    }
+
+    .cstar {
+      color: #f39c12;
+    }
+
+    .cnum {
+      color: #111;
+      font-weight: 600;
+    }
+
+    .crev {
+      color: #aaa;
+    }
+
+    .ctime {
+      color: #aaa;
     }
 
     /* ĐỒNG GIÁ */
@@ -4337,7 +4394,7 @@
           <div class="esc-texts">
             <span class="esc-eyebrow">Xu hướng</span>
             <div style="display:flex;align-items:center">
-              <span class="esc-title">Hôm nay có gì Hot</span>
+              <span class="esc-title">Hôm nay có gì "Hot"</span>
               <div class="esc-tabs">
                 <button class="esc-tab active" onclick="setTab(this)">Hot</button>
                 <button class="esc-tab" onclick="setTab(this)">Xu hướng</button>
@@ -4345,7 +4402,7 @@
             </div>
           </div>
         </div>
-        <a href="/listing.html" class="esc-more">Xem thêm <span class="ms"
+        <a href="/listing.html" class="esc-more">Xem tất cả <span class="ms"
             style="font-size:14px">chevron_right</span></a>
       </div>
       <div class="tab-panes">
@@ -4363,15 +4420,12 @@
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">250.000 đ</span><span
                     class="pc-price-ori">500.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
-                      class="pc-rcount">(2 bình luận)</span></div><span class="pc-time">Vừa đăng</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Quận 1</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">5</span><span class="pc-rcount">(2 bình luận)</span></span><span class="pc-time">Vừa đăng</span></div></div>
               </div>
             </div>
             <div class="pc">
               <div class="pcimg" data-imgs="/assets/dongho.jpg|/assets/giay-da.jpg"><img src="/assets/dongho.jpg" alt=""
-                  onerror="this.src='https://via.placeholder.com/300x300'"><span class="bge bhot">HOT</span><button
+                  onerror="this.src='https://via.placeholder.com/300x300'"><span class="bge bsale">-43%</span><button
                   class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
               <div class="pcb">
                 <div class="srow"><span class="sname">Watch Station</span></div>
@@ -4380,16 +4434,13 @@
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">1.200.000 đ</span><span
                     class="pc-price-ori">2.100.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
-                      class="pc-rcount">(14 bình luận)</span></div><span class="pc-time">1 ngày</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Thủ Đức</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">5</span><span class="pc-rcount">(14 bình luận)</span></span><span class="pc-time">1 ngày trước</span></div></div>
               </div>
             </div>
             <div class="pc">
               <div class="pcimg"><img
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
-                  alt=""><span class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
+                  alt=""><span class="bge bsale">-60%</span><button class="bfav"><span class="ms msf"
                     style="font-size:13px">favorite</span></button></div>
               <div class="pcb">
                 <div class="srow"><span class="sname">Ana Fashion</span></div>
@@ -4398,10 +4449,7 @@
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">1.250.000 đ</span><span
                     class="pc-price-ori">500.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
-                      class="pc-rcount">(2 bình luận)</span></div><span class="pc-time">Vừa đăng</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Quận 3</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">5</span><span class="pc-rcount">(2 bình luận)</span></span><span class="pc-time">Vừa đăng</span></div></div>
               </div>
             </div>
             <div class="pc">
@@ -4414,10 +4462,7 @@
                   <p class="pc-title">Bộ mỹ phẩm dưỡng da cao cấp chính hãng</p>
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">900.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
-                      class="pc-rcount">(2 bình luận)</span></div><span class="pc-time">Vừa đăng</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Quận 7</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">5</span><span class="pc-rcount">(2 bình luận)</span></span><span class="pc-time">Vừa đăng</span></div></div>
               </div>
             </div>
             <div class="pc">
@@ -4430,10 +4475,7 @@
                   <p class="pc-title">Đồng hồ nam dây da sang trọng Full Box</p>
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">2.500.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4.8</span><span
-                      class="pc-rcount">(15 bình luận)</span></div><span class="pc-time">2 phút</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Bình Thạnh</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">4.8</span><span class="pc-rcount">(15 bình luận)</span></span><span class="pc-time">2 phút trước</span></div></div>
               </div>
             </div>
             <div class="pc">
@@ -4446,10 +4488,7 @@
                   <p class="pc-title">Giày chạy bộ nam siêu nhẹ thoáng khí</p>
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">750.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4.5</span><span
-                      class="pc-rcount">(42 bình luận)</span></div><span class="pc-time">15 phút</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Gò Vấp</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">4.5</span><span class="pc-rcount">(42 bình luận)</span></span><span class="pc-time">15 phút trước</span></div></div>
               </div>
             </div>
             <div class="pc">
@@ -4462,10 +4501,7 @@
                   <p class="pc-title">Váy hoa nhí dáng dài tay bồng phong cách Hàn</p>
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">350.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4.9</span><span
-                      class="pc-rcount">(15 bình luận)</span></div><span class="pc-time">10 phút</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Tân Bình</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">4.9</span><span class="pc-rcount">(15 bình luận)</span></span><span class="pc-time">10 phút trước</span></div></div>
               </div>
             </div>
             <div class="pc">
@@ -4478,10 +4514,7 @@
                   <p class="pc-title">Áo Hoodie nỉ bông dày form rộng Unisex</p>
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">280.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
-                      class="pc-rcount">(8 bình luận)</span></div><span class="pc-time">Vừa đăng</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Quận 10</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">5</span><span class="pc-rcount">(8 bình luận)</span></span><span class="pc-time">Vừa đăng</span></div></div>
               </div>
             </div>
           </div>
@@ -4491,7 +4524,7 @@
           <div class="pgrid-mini" style="grid-template-columns:repeat(4,1fr)">
             <div class="pc">
               <div class="pcimg"><img src="/assets/vayhoa.jpg" alt=""
-                  onerror="this.src='https://via.placeholder.com/300x300'"><span class="bge bhot">HOT</span><button
+                  onerror="this.src='https://via.placeholder.com/300x300'"><button
                   class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
               <div class="pcb">
                 <div class="srow"><span class="sname">Tiệm Đồ May</span></div>
@@ -4499,15 +4532,12 @@
                   <p class="pc-title">Váy hoa nhí dáng dài tay bồng phong cách Hàn</p>
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">350.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4.9</span><span
-                      class="pc-rcount">(31 bình luận)</span></div><span class="pc-time">5 phút</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Tân Bình</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">4.9</span><span class="pc-rcount">(31 bình luận)</span></span><span class="pc-time">5 phút trước</span></div></div>
               </div>
             </div>
             <div class="pc">
               <div class="pcimg"><img src="/assets/hoddie.webp" alt=""
-                  onerror="this.src='https://via.placeholder.com/300x300'"><span class="bge bnew">MỚI</span><button
+                  onerror="this.src='https://via.placeholder.com/300x300'"><button
                   class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
               <div class="pcb">
                 <div class="srow"><span class="sname">Streetwear SG</span></div>
@@ -4515,10 +4545,7 @@
                   <p class="pc-title">Áo Hoodie nỉ bông dày form rộng Unisex</p>
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">280.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
-                      class="pc-rcount">(22 bình luận)</span></div><span class="pc-time">20 phút</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Quận 10</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">5</span><span class="pc-rcount">(22 bình luận)</span></span><span class="pc-time">20 phút trước</span></div></div>
               </div>
             </div>
             <div class="pc">
@@ -4531,10 +4558,7 @@
                   <p class="pc-title">Giày chạy bộ nam siêu nhẹ thoáng khí</p>
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">750.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4.5</span><span
-                      class="pc-rcount">(42 bình luận)</span></div><span class="pc-time">30 phút</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Gò Vấp</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">4.5</span><span class="pc-rcount">(42 bình luận)</span></span><span class="pc-time">30 phút trước</span></div></div>
               </div>
             </div>
             <div class="pc">
@@ -4548,16 +4572,13 @@
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">320.000 đ</span><span
                     class="pc-price-ori">460.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4.8</span><span
-                      class="pc-rcount">(18 bình luận)</span></div><span class="pc-time">1 giờ</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Quận 7</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">4.8</span><span class="pc-rcount">(18 bình luận)</span></span><span class="pc-time">1 giờ trước</span></div></div>
               </div>
             </div>
             <div class="pc">
               <div class="pcimg"><img
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
-                  alt=""><button class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
+                  alt=""><span class="bge bsale">-50%</span><button class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
               <div class="pcb">
                 <div class="srow"><span class="sname">Ana Fashion</span></div>
                 <a href="/detail.html">
@@ -4565,15 +4586,12 @@
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">250.000 đ</span><span
                     class="pc-price-ori">500.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
-                      class="pc-rcount">(9 bình luận)</span></div><span class="pc-time">2 giờ</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Quận 1</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">5</span><span class="pc-rcount">(9 bình luận)</span></span><span class="pc-time">2 giờ trước</span></div></div>
               </div>
             </div>
             <div class="pc">
               <div class="pcimg"><img src="/assets/dongho.jpg" alt=""
-                  onerror="this.src='https://via.placeholder.com/300x300'"><span class="bge bhot">HOT</span><button
+                  onerror="this.src='https://via.placeholder.com/300x300'"><span class="bge bsale">-43%</span><button
                   class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
               <div class="pcb">
                 <div class="srow"><span class="sname">Watch Station</span></div>
@@ -4582,10 +4600,7 @@
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">1.200.000 đ</span><span
                     class="pc-price-ori">2.100.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">5</span><span
-                      class="pc-rcount">(27 bình luận)</span></div><span class="pc-time">3 giờ</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Thủ Đức</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">5</span><span class="pc-rcount">(27 bình luận)</span></span><span class="pc-time">3 giờ trước</span></div></div>
               </div>
             </div>
             <div class="pc">
@@ -4598,15 +4613,12 @@
                   <p class="pc-title">Đồng hồ nam dây da sang trọng Full Box</p>
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">2.500.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4.8</span><span
-                      class="pc-rcount">(20 bình luận)</span></div><span class="pc-time">4 giờ</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Bình Thạnh</span><span class="pc-city">TP.HCM</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">4.8</span><span class="pc-rcount">(20 bình luận)</span></span><span class="pc-time">4 giờ trước</span></div></div>
               </div>
             </div>
             <div class="pc">
               <div class="pcimg"><img src="/assets/aothun.avif" alt=""
-                  onerror="this.src='https://via.placeholder.com/300x300'"><span class="bge bnew">MỚI</span><button
+                  onerror="this.src='https://via.placeholder.com/300x300'"><button
                   class="bfav"><span class="ms msf" style="font-size:13px">favorite</span></button></div>
               <div class="pcb">
                 <div class="srow"><span class="sname">Local Brand HN</span></div>
@@ -4614,16 +4626,13 @@
                   <p class="pc-title">Áo thun oversize Local Brand in chữ phong cách</p>
                 </a>
                 <div style="margin-bottom:6px"><span class="pc-price-sale">199.000 đ</span></div>
-                <div class="pc-foot">
-                  <div><span class="pc-stars">★</span><span style="font-weight:800;font-size:11px">4.7</span><span
-                      class="pc-rcount">(11 bình luận)</span></div><span class="pc-time">5 giờ</span>
-                </div>
+                <div class="pc-foot"><div class="pc-foot-row"><span class="pc-ward">Hoàn Kiếm</span><span class="pc-city">Hà Nội</span></div><div class="pc-foot-row"><span><span class="pc-stars">★</span><span class="pc-num">4.7</span><span class="pc-rcount">(11 bình luận)</span></span><span class="pc-time">5 giờ trước</span></div></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="lm"><button onclick="location.href='/listing.html'" class="boutp">Xem thêm sản phẩm</button></div>
+      <div class="lm"><button onclick="location.href='/listing.html'" class="boutp">Xem tất cả sản phẩm</button></div>
     </div>
 
     <!-- SẢN PHẨM VỪA ĐĂNG -->
@@ -4641,25 +4650,21 @@
             </div>
           </div>
         </div>
-        <a href="/listing.html" class="esc-more">Xem thêm <span class="ms"
+        <a href="/listing.html" class="esc-more">Xem tất cả <span class="ms"
             style="font-size:14px">chevron_right</span></a>
       </div>
       <div class="pgrid">
         <div class="pc">
           <div class="pcimg"><img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Yyn7yLl0pJ_tsBsPE2UmtaMGtEn3pmBY9PskCT8ClbW-J2hKbCsLDDBpnPdQ4tT_0Zynwiibpos35odVdZY--kvgjvwH3VjkA2qqwC1FofRvWpJ3RsInYZdPBjimR12OE8EijqvkVLBxYW_8KDD6khTvpHulp-OjDmx7deO8bo1NiDg3gaOiWj7hWqWvH_bNO01Wlj4mDaXs7dIfctbCz8wtFzf3QB1OAYS8vIU0XsWh9Ketxm8WClJUtBdlKrs-fYqzsbPbF5U"
-              alt=""><span class="bge bnew">MỚI</span><button class="bfav"><span class="ms msf"
+              alt=""><button class="bfav"><span class="ms msf"
                 style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
             <div class="srow"><span class="sname">Style House</span></div><a href="/detail.html">
               <p class="pctit">Áo thun oversize in hình unisex phong cách streetwear</p>
             </a>
             <div style="margin-bottom:6px"><span class="psal">185.000 đ</span></div>
-            <div class="cft"><span style="display:flex;align-items:center;gap:2px;font-size:10.5px;color:#aaa"><svg
-                  width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Quận 3</span><span style="font-size:10px;color:#aaa">Vừa xong</span></div>
+            <div class="cft"><div class="cft-row"><span class="cloc-ward">Quận 3</span><span class="cloc-city">TP.HCM</span></div><div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">5</span><span class="crev">(1 bình luận)</span></span><span class="ctime">Vừa đăng</span></div></div>
           </div>
         </div>
         <div class="pc">
@@ -4671,17 +4676,13 @@
               <p class="pctit">Đồng hồ Daniel Wellington Classic Petite chính hãng</p>
             </a>
             <div style="margin-bottom:6px"><span class="psal">2.800.000 đ</span></div>
-            <div class="cft"><span style="display:flex;align-items:center;gap:2px;font-size:10.5px;color:#aaa"><svg
-                  width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Quận 5</span><span style="font-size:10px;color:#aaa">1 giờ trước</span></div>
+            <div class="cft"><div class="cft-row"><span class="cloc-ward">Quận 5</span><span class="cloc-city">TP.HCM</span></div><div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">4</span><span class="crev">(6 bình luận)</span></span><span class="ctime">1 giờ trước</span></div></div>
           </div>
         </div>
         <div class="pc">
           <div class="pcimg"><img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBVVIZketQBDtZ01s-VhwOPv55VCDPD3oI37f2ldKYErGUBsi2Qqtvwk8lDJuSAYCQEcLwaW4nuTTbINs_klKKcVi-Pv6zxLnnPXUbs5bxxUr6TGOa06kMOTRnedil08Vg7lx7dk3_zepY8J4vaiKx2-f2A9trZjwLXBZQHNZCMDnUtW7_bxLQ6majIbWm4oWA5vxLAJalC89KdmBc2IzY54-z34iAaZ58Q7RgKTp_R50xxu206xjGiCh17zD3pJyO72ULczkq80"
-              alt=""><span class="bge bhot">HOT</span><button class="bfav"><span class="ms msf"
+              alt=""><span class="bge bsale">-24%</span><button class="bfav"><span class="ms msf"
                 style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
             <div class="srow"><span class="sname">Kicks SG</span></div><a href="/detail.html">
@@ -4689,28 +4690,20 @@
             </a>
             <div style="margin-bottom:6px"><span class="psal">4.200.000 đ</span><span class="pori">5.500.000 đ</span>
             </div>
-            <div class="cft"><span style="display:flex;align-items:center;gap:2px;font-size:10.5px;color:#aaa"><svg
-                  width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Gò Vấp</span><span style="font-size:10px;color:#aaa">1 giờ</span></div>
+            <div class="cft"><div class="cft-row"><span class="cloc-ward">Gò Vấp</span><span class="cloc-city">TP.HCM</span></div><div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">5</span><span class="crev">(4 bình luận)</span></span><span class="ctime">Vừa đăng</span></div></div>
           </div>
         </div>
         <div class="pc">
           <div class="pcimg"><img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79uvvVXt4Yp0NgCNFAiM8FRoMF81-nh6exhzJCCgP-Dq3l20DSOFlelBrqbNc1m7G-nOTHDIUQKQZBJx3VUZlp-fn7kOHMGTYLvrsyfhgc4q_eV1LN_R5txxrQLPHowI4YL2mfQw5y4zZENACSEQu-Foav3fkLUGNrS5sCU2_rBCPXebTrDQzUGqHKFIK5NZrraAVihGE_5wlClC2T6BzwL1qRvB-kUKeAc52CmgHeXpso2b7oXkCcyRxH4K4irLriIDhUfKNEe0"
-              alt=""><span class="bge bsvc">DỊCH VỤ</span><button class="bfav"><span class="ms msf"
+              alt=""><button class="bfav"><span class="ms msf"
                 style="font-size:13px">favorite</span></button></div>
           <div class="pcb">
             <div class="srow"><span class="sname">Tailor House</span></div><a href="/detail.html">
               <p class="pctit">Vest đo tay theo yêu cầu, giao tận nhà</p>
             </a>
             <div style="margin-bottom:6px"><span class="psal">1.500.000 đ</span></div>
-            <div class="cft"><span style="display:flex;align-items:center;gap:2px;font-size:10.5px;color:#aaa"><svg
-                  width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Tân Bình</span><span style="font-size:10px;color:#aaa">5 giờ</span></div>
+            <div class="cft"><div class="cft-row"><span class="cloc-ward">Tân Bình</span><span class="cloc-city">TP.HCM</span></div><div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">4</span><span class="crev">(7 bình luận)</span></span><span class="ctime">5 giờ trước</span></div></div>
           </div>
         </div>
         <div class="pc">
@@ -4724,15 +4717,11 @@
               <p class="pctit">Set nước hoa Dior Sauvage EDT chính hãng 60ml</p>
             </a>
             <div style="margin-bottom:6px"><span class="psal">2.100.000 đ</span></div>
-            <div class="cft"><span style="display:flex;align-items:center;gap:2px;font-size:10.5px;color:#aaa"><svg
-                  width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>Quận 10</span><span style="font-size:10px;color:#aaa">12 giờ</span></div>
+            <div class="cft"><div class="cft-row"><span class="cloc-ward">Quận 10</span><span class="cloc-city">TP.HCM</span></div><div class="cft-row"><span class="crating"><span class="cstar">★</span><span class="cnum">5</span><span class="crev">(3 bình luận)</span></span><span class="ctime">3 giờ trước</span></div></div>
           </div>
         </div>
       </div>
-      <div class="lm"><button onclick="location.href='/listing.html'" class="boutp">Xem thêm sản phẩm</button></div>
+      <div class="lm"><button onclick="location.href='/listing.html'" class="boutp">Xem tất cả sản phẩm</button></div>
     </div>
 
     <!-- ĐỒNG GIÁ -->
@@ -5418,7 +5407,7 @@
         // Badge số ảnh (góc phải bên dưới)
         var cnt = document.createElement('span');
         cnt.className = 'img-cnt';
-        cnt.innerHTML = '<span class="ms" style="font-size:11px">photo_camera</span>' + srcs.length;
+        cnt.innerHTML = '<span class="ms" style="font-size:11px">image</span>' + srcs.length;
         el.appendChild(cnt);
 
         // Nút Xem nhanh (giữa bên dưới)

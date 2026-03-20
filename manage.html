@@ -1556,45 +1556,52 @@
       gap: 7px;
     }
 
-    .brand-chip {
-      padding: 6px 14px;
-      border-radius: 8px;
-      border: 1.5px solid #e5e7eb;
+    .brand-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1.5px solid #e5e7eb;
+      margin-bottom: 12px;
+    }
+
+    .brand-tab {
+      padding: 7px 16px;
       font-size: 13px;
       font-weight: 600;
-      cursor: pointer;
-      color: #555;
-      transition: border-color .12s, background .12s, color .12s;
-    }
-
-    .brand-chip:hover { border-color: var(--p); color: var(--p); }
-
-    .brand-chip.active {
-      border-color: var(--p);
-      background: var(--pl);
-      color: var(--p);
-    }
-
-    .brand-chip-other {
-      border-style: dashed;
       color: #888;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1.5px;
+      transition: color .12s, border-color .12s;
     }
 
-    .brand-chip-other.active {
-      border-style: solid;
+    .brand-tab.active {
+      color: var(--p);
+      border-bottom-color: var(--p);
     }
+
+    .brand-pane { display: none; }
+    .brand-pane.active { display: block; }
+
+    .brand-new-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .brand-new-row .finput-wrap { flex: 1; margin-bottom: 0; }
 
     .brand-logo-upload {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 90px;
-      height: 90px;
+      width: 44px;
+      height: 44px;
       border: 2px dashed #d1d5db;
       border-radius: 10px;
       cursor: pointer;
       position: relative;
+      flex-shrink: 0;
       transition: border-color .12s, background .12s;
     }
 
@@ -4245,31 +4252,43 @@
 
             <div class="field">
               <div class="field-label">Thương hiệu <span class="hint">(không bắt buộc)</span></div>
-              <div class="brand-list" id="brandList">
-                <div class="brand-chip" onclick="selBrand(this,'Yody')">Yody</div>
-                <div class="brand-chip" onclick="selBrand(this,'Nike')">Nike</div>
-                <div class="brand-chip" onclick="selBrand(this,'Apple')">Apple</div>
-                <div class="brand-chip" onclick="selBrand(this,'Cocoon')">Cocoon</div>
-                <div class="brand-chip" onclick="selBrand(this,'LG')">LG</div>
-                <div class="brand-chip" onclick="selBrand(this,'Samsung')">Samsung</div>
-                <div class="brand-chip" onclick="selBrand(this,'Gold Spa')">Gold Spa</div>
-                <div class="brand-chip" onclick="selBrand(this,'ZARA')">ZARA</div>
-                <div class="brand-chip" onclick="selBrand(this,'Unilever')">Unilever</div>
-                <div class="brand-chip" onclick="selBrand(this,'Baby adult')">Baby adult</div>
-                <div class="brand-chip brand-chip-other" onclick="selBrand(this,'__other__')">+ Thương hiệu khác</div>
+
+              <!-- Tabs -->
+              <div class="brand-tabs">
+                <div class="brand-tab active" onclick="switchBrandTab(this,'existing')">Thương hiệu đã có</div>
+                <div class="brand-tab" onclick="switchBrandTab(this,'new')">Thương hiệu mới</div>
               </div>
-              <div id="brandOther" style="display:none;margin-top:10px">
-                <div class="finput-wrap" style="margin-bottom:8px">
-                  <span class="finput-icon ms" style="font-size:17px">sell</span>
-                  <input class="finput" id="brandNameInput" type="text" placeholder="Nhập tên thương hiệu..." style="padding-left:37px" />
+
+              <!-- Tab: Thương hiệu đã có -->
+              <div class="brand-pane active" id="brandPaneExisting">
+                <select class="fselect" id="brandSelect">
+                  <option value="">-- Chọn thương hiệu --</option>
+                  <option>Yody</option>
+                  <option>Nike</option>
+                  <option>Apple</option>
+                  <option>Cocoon</option>
+                  <option>LG</option>
+                  <option>Samsung</option>
+                  <option>Gold Spa</option>
+                  <option>ZARA</option>
+                  <option>Unilever</option>
+                  <option>Baby adult</option>
+                </select>
+              </div>
+
+              <!-- Tab: Thương hiệu mới -->
+              <div class="brand-pane" id="brandPaneNew">
+                <div class="brand-new-row">
+                  <div class="finput-wrap">
+                    <span class="finput-icon ms" style="font-size:17px">sell</span>
+                    <input class="finput" id="brandNameInput" type="text" placeholder="Nhập tên thương hiệu..." style="padding-left:37px" />
+                  </div>
+                  <label class="brand-logo-upload" for="brandLogoInput" title="Tải hình ảnh">
+                    <span class="ms" style="font-size:20px;color:#aaa">image</span>
+                    <img id="brandLogoPreview" src="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:8px;padding:4px" />
+                  </label>
+                  <input type="file" id="brandLogoInput" accept="image/*" style="display:none" onchange="previewBrandLogo(this)" />
                 </div>
-                <div style="font-size:12px;font-weight:600;color:#666;margin-bottom:6px">Logo thương hiệu</div>
-                <label class="brand-logo-upload" for="brandLogoInput">
-                  <span class="ms" style="font-size:22px;color:#aaa">add_photo_alternate</span>
-                  <span style="font-size:12px;color:#aaa;margin-top:4px">Tải ảnh logo lên</span>
-                  <img id="brandLogoPreview" src="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:8px;padding:6px" />
-                </label>
-                <input type="file" id="brandLogoInput" accept="image/*" style="display:none" onchange="previewBrandLogo(this)" />
               </div>
             </div>
 
@@ -4291,30 +4310,6 @@
                 <div class="field-label">Chất liệu <span class="req">*</span></div>
                 <input class="finput" type="text" placeholder="Vd: Cotton 100%, Polyester, Linen..."
                   id="materialInput" />
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="field-label">Tình trạng sản phẩm <span class="req">*</span></div>
-              <div style="display:flex;gap:10px;flex-wrap:wrap">
-                <label
-                  style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;transition:all .15s"
-                  id="cond1" onclick="setCond(1)">
-                  <span class="ms msf" style="font-size:16px;color:#bbb" id="cond1ico">radio_button_unchecked</span> Mới
-                  100%
-                </label>
-                <label
-                  style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;transition:all .15s"
-                  id="cond2" onclick="setCond(2)">
-                  <span class="ms msf" style="font-size:16px;color:#bbb" id="cond2ico">radio_button_unchecked</span> Đã
-                  qua sử dụng
-                </label>
-                <label
-                  style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;transition:all .15s"
-                  id="cond3" onclick="setCond(3)">
-                  <span class="ms msf" style="font-size:16px;color:#bbb" id="cond3ico">radio_button_unchecked</span>
-                  Hàng lỗi/thanh lý
-                </label>
               </div>
             </div>
           </div>
@@ -5467,10 +5462,11 @@
     }
 
     // ══ BRAND ══
-    function selBrand(el, val) {
-      document.querySelectorAll('.brand-chip').forEach(function(c){ c.classList.remove('active'); });
+    function switchBrandTab(el, pane) {
+      document.querySelectorAll('.brand-tab').forEach(function(t){ t.classList.remove('active'); });
+      document.querySelectorAll('.brand-pane').forEach(function(p){ p.classList.remove('active'); });
       el.classList.add('active');
-      document.getElementById('brandOther').style.display = (val === '__other__') ? 'block' : 'none';
+      document.getElementById('brandPane' + pane.charAt(0).toUpperCase() + pane.slice(1)).classList.add('active');
     }
 
     function previewBrandLogo(input) {
